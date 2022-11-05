@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="4d5faad6-7169-4223-ac9f-ebbb2279d16a" name="SpeedGauge" organization="Rockwell Automation" version="0" date="2000-05-30" author="JHC" header="package fb.rt.benchmarks.cruisecontrol;">
+  <states>
+    <functionBlockModelHasStates Id="780b7a8e-40b9-4724-ba05-0d6de91e2e85">
+      <state Id="93c9c959-0d52-4f84-8e8f-e3fc887f9756" name="START" comments="Initial State" x="552.94116" y="452.94116" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="534a625e-8773-4a3e-95fd-845181bd4a9d">
+            <transitionNodeMoniker Id="c9bbd56d-4c84-4240-9a33-f4ca832abb68" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="c8c3b9c4-5c8c-4a75-b136-4f61fb9e8d1c">
+      <state Id="06263464-0c25-4934-a456-35bd6762838e" name="CALC" x="564.7059" y="811.7647" isInitial="false">
+        <actionSet>
+          <actionLink Id="a511de0d-d138-4159-aac4-7488226debdc">
+            <actionSetMoniker Id="c4d0a836-78b2-4788-8a85-ccca497262b6" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="ffa7ef20-cab1-40e7-b73c-66af91608859">
+            <transitionNodeMoniker Id="3e41aa97-7d1b-4fd1-8ab9-dd0ed95226bb" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="727e97c2-cfd3-45dc-876e-a24e0320ccb7">
+      <actionSet Id="c4d0a836-78b2-4788-8a85-ccca497262b6" x="787.5" y="831.25">
+        <actionItems>
+          <actionSetHasActionItems Id="a38b9a9b-5f93-481b-bf2d-ef9e85848d50">
+            <actionEvent Id="8e3bada0-e560-4940-8cbe-568d8074f4ab">
+              <event>
+                <actionEventReferencesEvent Id="3d10ad1b-1f3b-4f44-a733-21c2871c486b">
+                  <eventMoniker name="/SpeedGauge/SpeedGauge/speed" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="a4eb20b2-5e3b-4357-8714-2a8838c39273">
+            <actionAlgorithm Id="aaef0818-2fcb-4e45-b2c7-5227ad1537b4">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="9bf42c71-60b6-417c-ab19-3720160074b2">
+                  <algorithmMoniker name="/SpeedGauge/calcSpeed" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="60025b0c-ebbb-4d5a-a469-f27504408462">
+      <algorithm Id="fb188ee8-6d62-4552-95ed-99a821260ede" name="calcSpeed" code="IF rotaryCount &gt;= prevCount THEN&#xA;    count := rotaryCount - prevCount;&#xA;ELSE&#xA;    count := 1000 + rotaryCount - prevCount;&#xA;END_IF;&#xA;&#xA;IF speedVal = 0 THEN&#xA;    speedVal := (count * 7012) / 10000;&#xA;ELSE&#xA;    speedVal := (count * 7012) / 10000;&#xA;END_IF;&#xA;&#xA;prevTime := time;&#xA;prevCount := rotaryCount;&#xA;" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="2a2c983f-fbe1-4366-a61f-dc1227d22220">
+      <functionBlockInterface Id="306af503-3ec1-41c0-aacc-6d82ec25036a" name="SpeedGauge" x="500" y="500">
+        <events>
+          <functionBlockHasEvents Id="df5c7ab4-efeb-4b63-8e9a-378db4c786ee">
+            <event Id="998dd425-fd63-4e4e-aa84-c519eb612b1e" name="cclock" comments="10ms tick" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="5334c366-485e-4449-9a67-1893ab74bde3">
+            <event Id="648bd634-8443-4147-98a3-c56052fd102d" name="speed" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="f7aa9039-afb1-4479-bc08-a00398f10cfd">
+            <variable Id="b63991f1-aae5-4fb7-a3c7-817ddb167716" name="time" comments="in us" scope="Input" initialValue="0" type="UDINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="061f514f-72b5-4aa7-8787-1ead73c0426b">
+            <variable Id="6a1a590d-fd16-4657-918a-891c6d95be60" name="rotaryCount" comments="ranges from 0 to 1000" scope="Input" initialValue="0" type="UINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="7eca6e76-2824-4056-ae69-2d02860e9ea2">
+            <variable Id="91109431-6609-40ac-b5dc-d52646d1aa56" name="speedVal" comments="Output event qualifier" scope="Output" initialValue="0" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="f4c80e99-505a-4ef5-8a2a-0b21bdf33d1a">
+            <variable Id="1eac5e12-3e7d-428e-a9ea-0ec53f932309" name="prevCount" scope="Internal" initialValue="0" type="UINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="202ec9d7-0062-421d-a528-3b69c35f29ba">
+            <variable Id="121ac949-25b4-4505-a854-f848a5785c28" name="prevTime" scope="Internal" initialValue="0" type="UDINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="f53d035d-ecf2-464c-9cbf-3eeda911a0f8">
+            <variable Id="b55ae964-65e4-402e-88ef-b5e3dee942d2" name="count" scope="Internal" type="USINT" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="77dddc34-8133-4929-ad47-127d35d46c52">
+            <inputEventPort Id="16f0327a-bf90-4d1c-94c5-ab6f46676558">
+              <targetPort>
+                <association Id="d4964a34-fe2d-4e1e-a754-c9ccf690c47e">
+                  <inputVariablePortMoniker Id="7bcb90a1-bc35-4648-be6e-0224ce08191b" />
+                </association>
+                <association Id="61184884-4d0c-4a84-8f1b-dd407c2c69c2">
+                  <inputVariablePortMoniker Id="6d097f15-d9d6-4e03-aec2-8509d5643ff8" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="55a9a107-2ebd-4f4e-aea5-159aef112d23">
+                  <eventMoniker name="/SpeedGauge/SpeedGauge/cclock" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="fa64160b-6cea-4709-a290-7160a41d8549">
+            <outputEventPort Id="14182666-5432-4f5e-bdd0-5dc02685843e">
+              <targetPort>
+                <association Id="276d8034-6fc7-4f77-8266-fbb630dca72b">
+                  <outputVariablePortMoniker Id="dc5c0971-9eba-4b30-b3da-c6127f22293b" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="776fa706-5424-4884-9e2a-000879435d84">
+                  <eventMoniker name="/SpeedGauge/SpeedGauge/speed" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="8964b6bb-dcfc-4a71-a3ef-713f70d59065">
+            <inputVariablePort Id="7bcb90a1-bc35-4648-be6e-0224ce08191b">
+              <variable>
+                <inputVariablePortReferencesVariable Id="e02077f2-e8b2-4646-bbf9-980110a618d9">
+                  <variableMoniker name="/SpeedGauge/SpeedGauge/time" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="e4d03c79-09bc-4c12-9426-c40f6cf6a4c5">
+            <inputVariablePort Id="6d097f15-d9d6-4e03-aec2-8509d5643ff8">
+              <variable>
+                <inputVariablePortReferencesVariable Id="6241f73c-0729-4807-af0c-27387fb97982">
+                  <variableMoniker name="/SpeedGauge/SpeedGauge/rotaryCount" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="665b44b7-ccd4-4664-a8b3-e6a45b02ec8a">
+            <outputVariablePort Id="dc5c0971-9eba-4b30-b3da-c6127f22293b">
+              <variable>
+                <outputVariablePortReferencesVariable Id="ce4ea750-ebcb-4d7b-bf41-dc4906ea9271">
+                  <variableMoniker name="/SpeedGauge/SpeedGauge/speedVal" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="0d3ffd75-65ce-4ec0-b28f-77e6ef2f9bc0">
+      <transitionNode Id="c9bbd56d-4c84-4240-9a33-f4ca832abb68" x="564.7059" y="617.64703" event="cclock">
+        <targetState>
+          <transitionNodeConnectsToStates Id="a591b652-033f-4614-89e6-1aea342b3a27">
+            <stateMoniker name="/SpeedGauge/CALC" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="6ebab3fe-7222-4c4a-90ae-cc788db482ce">
+      <transitionNode Id="3e41aa97-7d1b-4fd1-8ab9-dd0ed95226bb" x="564.7059" y="1058.8235" event="cclock">
+        <targetState>
+          <transitionNodeConnectsToStates Id="b2890acd-f63b-4ea3-bb9f-8edb8e981dcb">
+            <stateMoniker name="/SpeedGauge/CALC" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

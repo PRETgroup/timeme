@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="7c6ea078-af84-433f-aec5-900329f06bc0" name="HighestRequestProducer" organization="CANTO-AIR-PC" date="2014-07-16" author="Canto-Air">
+  <states>
+    <functionBlockModelHasStates Id="e3533141-d886-4d41-bdec-aaa1be42418f">
+      <state Id="c765075a-e14c-4a5a-b518-0fd2fc7b979c" name="Start" x="481.25" y="1137.5" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="630b54e3-f387-4107-a75a-48ecb5da3ca1">
+            <transitionNodeMoniker Id="d80d7a89-afe2-4654-8f65-86f07f122966" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="805af70f-4f34-4c86-ab64-ccc13dd413c2">
+            <transitionNodeMoniker Id="3027289a-1143-4195-afa2-3fbfc5dc0477" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="59aec320-bc9d-4957-a8ca-b96157cb851d">
+            <transitionNodeMoniker Id="25bea462-3ff6-4e2b-9a8f-b87810e911dd" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="607152d1-904f-4530-9d63-30dae438569f">
+      <state Id="577a7758-3ac5-45c4-a037-be9f793101fb" name="DirectionUp" x="1575" y="262.5" isInitial="false">
+        <actionSet>
+          <actionLink Id="194d4d95-ab67-4158-83ff-a1c90e103cbf">
+            <actionSetMoniker Id="cf827af7-5452-470f-bdfd-dc2dcf24f3a6" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="3bf80c81-7a82-4f51-9284-054b0bfc37da">
+            <transitionNodeMoniker Id="eb77ce6a-bf6c-4c4d-b995-f20bf7ea3f40" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="45ad9eab-2ae3-417a-a1a0-e843642387ce">
+            <transitionNodeMoniker Id="4f0d5256-5ab2-4680-a27a-e00db53b9eb5" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="4c62f58c-f33a-4ea5-b06b-214998f09df4">
+            <transitionNodeMoniker Id="ab7b7438-7d35-4249-b3a4-4dc24b688eb0" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="7a260cba-2518-45b2-9cfa-4d95226ec896">
+      <state Id="6bc35ad3-65a5-4b3e-b22c-beb8d604af1c" name="DirectionDown" x="1662.5" y="1137.5" isInitial="false">
+        <actionSet>
+          <actionLink Id="2f2fb1be-2108-4dbf-ac5e-6b2002485d5d">
+            <actionSetMoniker Id="bc7cff7b-39dc-4cea-8bf0-a3b871edde7a" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="87ad2273-61d2-458a-a0d4-72e47dbb321b">
+            <transitionNodeMoniker Id="7ef6c391-bd1c-4b44-b252-7d63e7bcec93" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="c3dc03a8-baaf-4c34-be0e-ee29bf1f751c">
+            <transitionNodeMoniker Id="1f8909a4-4465-49fa-9ab2-a347b46711ca" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="4712e1a1-ee48-4b22-adc4-588c81ed2580">
+            <transitionNodeMoniker Id="5e845b9f-35e0-44bb-963a-320f11269485" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="27b9821f-45a6-4245-ad4b-1c57ae8fd41b">
+      <state Id="2bbb97ce-54a7-463b-a4c9-a3f4cbd69e46" name="DirectionIdle" x="1706.25" y="2187.5" isInitial="false">
+        <actionSet>
+          <actionLink Id="90d0b7ce-f6e8-434a-a871-3facdf79f439">
+            <actionSetMoniker Id="a8f1f7d5-1d66-4305-9386-c5117acf0d5b" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="333e482e-7f22-4789-9305-1250269f7e15">
+            <transitionNodeMoniker Id="aaa7915e-4728-42bb-ba55-eaa5ee41ae4f" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="f4ecd127-bd61-428d-ae6a-d196e9d20218">
+            <transitionNodeMoniker Id="f3717197-1c4d-4413-aaf7-8450088c95e8" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="6b853c8b-d9a5-425f-a444-0acde514fb13">
+            <transitionNodeMoniker Id="dbd6e3a3-e2f5-421d-870a-5c9ca22ce2b8" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="ff199c7f-17b9-41e5-9261-660f08cea937">
+      <actionSet Id="cf827af7-5452-470f-bdfd-dc2dcf24f3a6" x="2012.5" y="262.5">
+        <actionItems>
+          <actionSetHasActionItems Id="53e34b8e-2baf-476e-a199-c9bee8cda373">
+            <actionEvent Id="34a1000a-79cb-4c71-8ff5-cc23d3017a7c">
+              <event>
+                <actionEventReferencesEvent Id="3c247579-42fc-4df4-b19e-32e88ee0b0f0">
+                  <eventMoniker name="/HighestRequestProducer/HighestRequestProducer/CurrentPriority" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="021b3179-0d54-4a28-9e52-67ce03e3ed78">
+            <actionAlgorithm Id="da34bc6f-c93e-483a-b860-08927dea4de4">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="a3f00df5-7a55-4be2-a729-b0d5aa7b6aed">
+                  <algorithmMoniker name="/HighestRequestProducer/ResolvePriorityUp" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="746d851b-51ad-434e-8d6c-74832ece4d2b">
+      <actionSet Id="bc7cff7b-39dc-4cea-8bf0-a3b871edde7a" x="2187.5" y="1137.5">
+        <actionItems>
+          <actionSetHasActionItems Id="e4b52b2f-1a17-4c9c-83d8-05e47dd4d74c">
+            <actionEvent Id="5d443957-b2fe-4c9b-8430-c141fa6b6f61">
+              <event>
+                <actionEventReferencesEvent Id="295edb80-63ff-4684-afd5-6d83e3f33c1a">
+                  <eventMoniker name="/HighestRequestProducer/HighestRequestProducer/CurrentPriority" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="f9f2ff97-238e-4581-8067-0190c38e6616">
+            <actionAlgorithm Id="16a333d9-fb05-46cd-9344-1e1300de185a">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="44757311-3f3e-4f44-a0e6-291cceaa9c2f">
+                  <algorithmMoniker name="/HighestRequestProducer/ResolvePriorityDown" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="3cfb43d3-e84d-4ee2-9065-0950dc45181c">
+      <actionSet Id="a8f1f7d5-1d66-4305-9386-c5117acf0d5b" x="2187.5" y="2187.5">
+        <actionItems>
+          <actionSetHasActionItems Id="6619f0fd-c595-461d-8fdb-4538820856d1">
+            <actionEvent Id="a87c3ce3-791f-4bc6-8286-48aa4db6b654">
+              <event>
+                <actionEventReferencesEvent Id="71f3f711-2349-4f29-a8d9-824fcc587e04">
+                  <eventMoniker name="/HighestRequestProducer/HighestRequestProducer/CurrentPriority" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="08bb57e4-5dad-4a66-b845-9c68b4e11fcb">
+            <actionAlgorithm Id="40def0a3-c8a5-4648-afba-824134df81f5">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="2f6acd31-3d5e-4da5-af29-b47c83c3b72f">
+                  <algorithmMoniker name="/HighestRequestProducer/ResolvePriorityIdle" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="f36739da-f731-47a6-89ee-51e5ce6ba4b1">
+      <algorithm Id="d0aefa20-7d1f-45de-9a70-651e34dbd896" name="ResolvePriorityUp" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="14353a35-323e-4589-ba31-eb0d496944d5">
+      <algorithm Id="a7fa60b7-f317-4c59-918e-5cb8106728de" name="ResolvePriorityDown" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="539543ea-9748-413d-96a4-b64358aed817">
+      <algorithm Id="61b2b036-ce71-482a-a364-4aeb1d91f6de" name="ResolvePriorityIdle" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="aa5d8ff0-5010-491b-b878-a2e91cfc9700">
+      <functionBlockInterface Id="076f017b-4fdb-492d-9e99-36de7c2b03a8" name="HighestRequestProducer" x="1400" y="481.25">
+        <events>
+          <functionBlockHasEvents Id="f0310a2c-89bf-44c8-8638-54fcc00f5ec9">
+            <event Id="03d25a04-c086-47d9-86f6-2cf1399cf24b" name="MotorDirectionUp" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="4893b0b0-b7e6-485c-ab62-3ff10f08abfa">
+            <event Id="8455a0d5-1401-407e-a863-66cba0a83e2a" name="MotorDirectionDown" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="c8e635a1-cda7-42cb-9be1-3a41ff6f40f8">
+            <event Id="3257ef74-3e54-46e8-b5e4-f5d66d472229" name="MotorDirectionIdle" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="c33abd6f-f927-490f-bc50-3c2c8f33dd37">
+            <event Id="4812d3bc-604b-49de-b15b-a88e47e14faa" name="FloorSensor" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="e86b0c3e-7820-4ee6-9a71-dd74a301db22">
+            <event Id="da848a03-42d3-4a32-876a-4820f1c1413e" name="PendingReq" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="b3dbb02f-6578-40d5-85d7-fcd1ad7e48a6">
+            <event Id="754af1ff-65d3-4bdc-b572-d7638147ad5d" name="CurrentPriority" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="bf34d6ba-013f-423c-bfa4-0ea5526fc8a9">
+            <variable Id="7eb53c51-cb4f-4d4c-b9df-349fcf94bfa2" name="FloorSensorValue" scope="Input" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="bc8a4651-3bd3-4a31-b829-8426797c5e3c">
+            <variable Id="25585a32-f1aa-4710-b591-0842ed0e3bfd" name="PendingReqValue" scope="Input" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="2b0912b1-bd50-4396-961c-a416537c63e7">
+            <variable Id="ebe818ba-19cc-4cc8-b73b-b8e05af8315a" name="CurrentPriorityValue" scope="Output" type="INT" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="09e266f9-e20c-49a3-adc5-30f152b2891d">
+            <inputEventPort Id="d1e27fc6-7dab-46de-b78e-59b8dac83f00">
+              <targetPort>
+                <association Id="48d079c2-20cd-4a8b-bcfb-dc0b34850bb1">
+                  <inputVariablePortMoniker Id="350dc92f-afa6-4b25-9a07-c7855b8588c4" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="092b6187-ec67-4a25-8c48-ed2ce5670cc2">
+                  <eventMoniker name="/HighestRequestProducer/HighestRequestProducer/FloorSensor" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="d8fb6aa5-7762-4627-9dd1-12650fd9baf3">
+            <inputEventPort Id="69bd4c07-8e11-4f93-a0aa-5eb271e1f0fc">
+              <event>
+                <inputEventPortReferencesEvent Id="2ea1ea1e-4eb5-4e5b-9bd0-27d94fafb402">
+                  <eventMoniker name="/HighestRequestProducer/HighestRequestProducer/MotorDirectionUp" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="5f9ce563-9c90-41f4-9157-1a3ea3ef5daa">
+            <inputEventPort Id="8486baca-b16e-4aec-ab5a-15f778d7b362">
+              <event>
+                <inputEventPortReferencesEvent Id="29b4e47a-eddf-4783-913b-44245cc8c162">
+                  <eventMoniker name="/HighestRequestProducer/HighestRequestProducer/MotorDirectionDown" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="ec0d776a-90ab-4b63-a9f5-d5abc0d30083">
+            <inputEventPort Id="35451ef8-5486-4ecb-b2f7-974ba3af6040">
+              <event>
+                <inputEventPortReferencesEvent Id="98986fcb-f1c7-4dc9-8f0b-63ac6b5d3076">
+                  <eventMoniker name="/HighestRequestProducer/HighestRequestProducer/MotorDirectionIdle" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="8ecd4b39-00df-48fa-af17-dcebe902d3a7">
+            <inputEventPort Id="198b3422-05f0-4a69-856d-2a370e92b703">
+              <targetPort>
+                <association Id="ca599f1a-aea9-4df8-905c-baead4a85701">
+                  <inputVariablePortMoniker Id="2f81dfe5-bd79-49d9-89cf-a4f6d3287a60" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="785408be-a74a-444f-99e7-9ea456213594">
+                  <eventMoniker name="/HighestRequestProducer/HighestRequestProducer/PendingReq" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="7cab76ce-f4e7-4923-b9cb-41d3ae06f259">
+            <outputEventPort Id="aa423017-5df3-4368-aa1e-11d4b381d12e">
+              <targetPort>
+                <association Id="de43c9d1-2d18-4ad0-8cd1-4ce58d044a65">
+                  <outputVariablePortMoniker Id="d1cf82ae-5e2f-48d5-b779-6d5e881bdf9e" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="cf5ce7be-7994-44d0-abd7-d56c0115c3f5">
+                  <eventMoniker name="/HighestRequestProducer/HighestRequestProducer/CurrentPriority" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="445f12f8-1323-4c61-a344-2b9feaf4ffff">
+            <inputVariablePort Id="350dc92f-afa6-4b25-9a07-c7855b8588c4">
+              <variable>
+                <inputVariablePortReferencesVariable Id="b01c8ed0-e9b6-44ab-9ba4-3b44ee2f1afb">
+                  <variableMoniker name="/HighestRequestProducer/HighestRequestProducer/FloorSensorValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="eb743808-af6e-42cd-9ef0-6fe0d521a373">
+            <inputVariablePort Id="2f81dfe5-bd79-49d9-89cf-a4f6d3287a60">
+              <variable>
+                <inputVariablePortReferencesVariable Id="ebeaa6ab-32d4-4a67-a133-730d2a693a78">
+                  <variableMoniker name="/HighestRequestProducer/HighestRequestProducer/PendingReqValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="7cd4aa20-ace8-4c00-bc1f-0b02064e193a">
+            <outputVariablePort Id="d1cf82ae-5e2f-48d5-b779-6d5e881bdf9e">
+              <variable>
+                <outputVariablePortReferencesVariable Id="3af5c60a-83a5-483b-9638-563726c2d4b5">
+                  <variableMoniker name="/HighestRequestProducer/HighestRequestProducer/CurrentPriorityValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="4716b7be-f3ad-47d3-ad64-5332a8c2d7a6">
+      <transitionNode Id="d80d7a89-afe2-4654-8f65-86f07f122966" x="481.25" y="481.25" event="MotorDirectionUp &amp;&amp; FloorSensor &amp;&amp; PendingReq">
+        <targetState>
+          <transitionNodeConnectsToStates Id="0bb3faba-a43c-455a-82fe-d02074b6cbcd">
+            <stateMoniker name="/HighestRequestProducer/DirectionUp" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="095c0826-a838-4ebb-ba49-4a260a7360f7">
+      <transitionNode Id="3027289a-1143-4195-afa2-3fbfc5dc0477" x="437.5" y="1400" event="MotorDirectionDown &amp;&amp; FloorSensor &amp;&amp; PendingReq">
+        <targetState>
+          <transitionNodeConnectsToStates Id="03605b9f-074b-4274-871e-d6fb911047e9">
+            <stateMoniker name="/HighestRequestProducer/DirectionDown" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="d4c8c41c-4db3-4859-a3b6-dfba9f1eddf2">
+      <transitionNode Id="25bea462-3ff6-4e2b-9a8f-b87810e911dd" x="175" y="2143.75" event="MotorDirectionIdle &amp;&amp; FloorSensor &amp;&amp; PendingReq">
+        <targetState>
+          <transitionNodeConnectsToStates Id="55850bb6-ecce-4170-8e48-dd0c32f0e2df">
+            <stateMoniker name="/HighestRequestProducer/DirectionIdle" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="90683425-819a-44e9-ad84-b4485fb33374">
+      <transitionNode Id="eb77ce6a-bf6c-4c4d-b995-f20bf7ea3f40" x="4112.5" y="962.5" event="MotorDirectionIdle &amp;&amp; FloorSensor &amp;&amp; PendingReq">
+        <targetState>
+          <transitionNodeConnectsToStates Id="1196d8ba-8b5d-4a3b-bd21-2a8cf528604a">
+            <stateMoniker name="/HighestRequestProducer/DirectionIdle" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="544fc7ff-05eb-4fcc-9582-e4fed9de666d">
+      <transitionNode Id="4f0d5256-5ab2-4680-a27a-e00db53b9eb5" x="1006.25" y="787.5" event="MotorDirectionDown &amp;&amp; FloorSensor &amp;&amp; PendingReq">
+        <targetState>
+          <transitionNodeConnectsToStates Id="8851a38e-5aeb-4c8d-be70-722c8d91196d">
+            <stateMoniker name="/HighestRequestProducer/DirectionDown" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="1869ea79-b820-4038-aa1a-b1cba39e9429">
+      <transitionNode Id="7ef6c391-bd1c-4b44-b252-7d63e7bcec93" x="1837.5" y="656.25" event="MotorDirectionUp &amp;&amp; FloorSensor &amp;&amp; PendingReq">
+        <targetState>
+          <transitionNodeConnectsToStates Id="8e0a86a8-1827-43a8-8917-c5ae7993d972">
+            <stateMoniker name="/HighestRequestProducer/DirectionUp" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="cb230696-9e90-450f-bfd3-46046845ef42">
+      <transitionNode Id="1f8909a4-4465-49fa-9ab2-a347b46711ca" x="1706.25" y="1443.75" event="MotorDirectionIdle &amp;&amp; FloorSensor &amp;&amp; PendingReq">
+        <targetState>
+          <transitionNodeConnectsToStates Id="088d968d-626b-45bf-8783-d38e7d0227fe">
+            <stateMoniker name="/HighestRequestProducer/DirectionIdle" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="02cac3af-427d-4015-8ee9-a4d423472b1d">
+      <transitionNode Id="aaa7915e-4728-42bb-ba55-eaa5ee41ae4f" x="2887.5" y="962.5" event="MotorDirectionUp &amp;&amp; FloorSensor &amp;&amp; PendingReq">
+        <targetState>
+          <transitionNodeConnectsToStates Id="b683dcf1-63eb-48a5-9c08-54fbb4e9827d">
+            <stateMoniker name="/HighestRequestProducer/DirectionUp" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="9a27648e-11dd-4989-a2c1-b15d82f43fe9">
+      <transitionNode Id="f3717197-1c4d-4413-aaf7-8450088c95e8" x="1093.75" y="1662.5" event="MotorDirectionDown &amp;&amp; FloorSensor &amp;&amp; PendingReq">
+        <targetState>
+          <transitionNodeConnectsToStates Id="e59b5db1-d6ab-4836-9277-4f81d5c35eac">
+            <stateMoniker name="/HighestRequestProducer/DirectionDown" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="ba30ec05-55ec-41d2-bbd9-ef05ad2a0d9b">
+      <transitionNode Id="ab7b7438-7d35-4249-b3a4-4dc24b688eb0" x="393.75" y="306.25">
+        <targetState>
+          <transitionNodeConnectsToStates Id="87e038f1-7c30-4a6f-8894-645790ba1ab6">
+            <stateMoniker name="/HighestRequestProducer/Start" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="7ed9f040-7e6b-4483-ae9d-82f042da8b0e">
+      <transitionNode Id="5e845b9f-35e0-44bb-963a-320f11269485" x="1137.5" y="1181.25">
+        <targetState>
+          <transitionNodeConnectsToStates Id="4178607b-8e1a-47c4-8b18-f072793fe58e">
+            <stateMoniker name="/HighestRequestProducer/Start" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="5f384b8b-7382-4e28-a749-265b7684612b">
+      <transitionNode Id="dbd6e3a3-e2f5-421d-870a-5c9ca22ce2b8" x="700" y="1881.25">
+        <targetState>
+          <transitionNodeConnectsToStates Id="189e4329-cab2-4e36-acc0-d92faf347ebb">
+            <stateMoniker name="/HighestRequestProducer/Start" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

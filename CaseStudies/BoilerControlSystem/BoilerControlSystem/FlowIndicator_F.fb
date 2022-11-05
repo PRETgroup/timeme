@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="c41e616f-5e3d-4e4f-bf29-6eb382beb8e9" name="FlowIndicator_F" organization="EC" date="2012-02-28" author="zbha001">
+  <states>
+    <functionBlockModelHasStates Id="509549ec-6c3c-4317-af35-cb796a97e938">
+      <state Id="f287eefd-9744-4523-986b-76959507ec00" name="START" x="175" y="175" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="b53d3969-5b6d-4950-81a3-0fe9772b1d32">
+            <transitionNodeMoniker Id="9e56b54c-93c1-477d-90d8-dd3018880c0a" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="626c4389-8a80-4684-a4d4-6311919e1122">
+      <state Id="2497677c-4eb6-4ece-8974-80ac51e25394" name="F1" x="1312.5" y="175" isInitial="false" />
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="17e22ac4-96be-49d5-95cf-de26f105823c">
+      <state Id="5327d482-3116-410c-be9a-59fc78a278b4" name="INPUT_REC" x="700" y="175" isInitial="false">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="c16ce0b4-c3b9-4c13-8dc9-96faf1b20655">
+            <transitionNodeMoniker Id="11904b4b-b1c2-4dc5-925b-23d88345f1fa" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="d9ba75bf-ef77-43c3-8f41-d8957dbda940">
+            <transitionNodeMoniker Id="e850600f-615e-4fb0-bb21-c1f3c7e071b9" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="e152de8e-b21e-4eb1-8ef2-f3dfcc8c00b0">
+      <state Id="ba3266ce-253e-4490-92e1-be5a3c5c3572" name="OUTPUT_SEN" x="656.25" y="656.25" isInitial="false">
+        <actionSet>
+          <actionLink Id="ee0bd0fb-f28b-4378-87df-b45a6d092950">
+            <actionSetMoniker Id="1bc73fbb-1bcb-48c1-87ec-be38c5d047b8" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="8a8cc107-52c4-4b50-91d2-dca2af044a80">
+            <transitionNodeMoniker Id="fba96e65-5e05-4020-a863-960fbf97c061" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="9fa2fbbd-9307-4406-9ecb-b39530792bb9">
+      <actionSet Id="1bc73fbb-1bcb-48c1-87ec-be38c5d047b8" x="1050" y="656.25">
+        <actionItems>
+          <actionSetHasActionItems Id="c34c2afb-b3e8-4327-a87d-8020c1a857fa">
+            <actionEvent Id="2cba275f-42b3-4012-aeca-e393f3e41728">
+              <event>
+                <actionEventReferencesEvent Id="76dfe3ae-24ee-4f9c-960a-7420e05bad11">
+                  <eventMoniker name="/FlowIndicator_F/FlowIndicator_F/output" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="e8195952-f8c8-43ce-8f1a-016475a1c1f5">
+      <algorithm Id="80b75dc3-2e88-402a-959d-6a4c91101ef1" name="emitValue" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="3c5ac7b7-c33c-49c4-af44-e1d068b3dc6b">
+      <algorithm Id="bfc3e9cd-53b1-4784-b67a-bfaccc4d6815" name="raiseError" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="8690eaa2-0ad0-465d-a42b-4bd0304a2548">
+      <functionBlockInterface Id="4a3b7707-2dd9-49d8-9627-e4c613263cb9" name="FlowIndicator_F" x="787.5" y="393.75">
+        <events>
+          <functionBlockHasEvents Id="ba09ed97-57ea-4ad0-bc3f-2216db0b8722">
+            <event Id="62df7e0b-9422-4952-bf74-22522da60c90" name="input" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="ecbf3ce2-1469-4d43-8cc6-593618b3c06c">
+            <event Id="96ff06f7-0fa4-46fa-93de-b870f947f0fe" name="output" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="ca78b14c-96f7-4af9-9e44-d482a1cec9f8">
+            <variable Id="17303361-fc89-4f67-b83e-4c20c4519269" name="outputValue" scope="Output" type="ANY" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="7a42e57a-5fed-4eec-82b0-8d73944321ff">
+            <variable Id="4499628e-5e30-4418-a9f4-8a347e0139f1" name="inputValue" scope="Input" type="ANY" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="22022314-ceab-4686-9863-241fb2f9ec5d">
+            <variable Id="62954847-145a-4be6-aa86-fb4e29460f49" name="errorIndicator" scope="Output" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="7bce8e74-80b9-42ec-a2fe-6439dd29c5af">
+            <inputEventPort Id="d43646f7-b472-4e0b-b505-3f25f6051f2d">
+              <targetPort>
+                <association Id="22dd7d90-2732-41b9-8f39-19ab41726016">
+                  <inputVariablePortMoniker Id="8e7f19a8-56ad-495e-b681-ad3ca01e818d" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="9ba78ea4-d68c-4759-ad66-e4fd8a13998e">
+                  <eventMoniker name="/FlowIndicator_F/FlowIndicator_F/input" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="23daf357-b4fb-4573-b315-a486c1678db2">
+            <outputEventPort Id="532cad85-6390-4283-932d-4ff5190f38a9">
+              <targetPort>
+                <association Id="dafabc46-f803-433d-97b4-bf037ac4c433">
+                  <outputVariablePortMoniker Id="623faac6-33a4-4789-962e-f2f10868c434" />
+                </association>
+                <association Id="82b0e495-189a-4f9e-b3ad-8ce10185b2f7">
+                  <outputVariablePortMoniker Id="e26c98ba-4485-49cf-91d1-1b162b4f5d0b" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="8eeb07c1-201c-4141-a931-fc8a6c39ee53">
+                  <eventMoniker name="/FlowIndicator_F/FlowIndicator_F/output" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="19170dc5-dfdd-4860-8b31-24d9bf3db266">
+            <inputVariablePort Id="8e7f19a8-56ad-495e-b681-ad3ca01e818d">
+              <variable>
+                <inputVariablePortReferencesVariable Id="60c94819-c741-4c8e-b2c6-fd6242152d13">
+                  <variableMoniker name="/FlowIndicator_F/FlowIndicator_F/inputValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="e17db494-6474-4ccd-8d33-86951a26da85">
+            <outputVariablePort Id="623faac6-33a4-4789-962e-f2f10868c434">
+              <variable>
+                <outputVariablePortReferencesVariable Id="a1d783e0-35e6-477a-86e7-1c9e90df00d3">
+                  <variableMoniker name="/FlowIndicator_F/FlowIndicator_F/outputValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="3b5f11d5-cc20-416c-be66-a8072d308e5b">
+            <outputVariablePort Id="e26c98ba-4485-49cf-91d1-1b162b4f5d0b">
+              <variable>
+                <outputVariablePortReferencesVariable Id="5afffeda-1724-4ba5-b095-625c9e257873">
+                  <variableMoniker name="/FlowIndicator_F/FlowIndicator_F/errorIndicator" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="7e1c2e42-964d-4caa-8e0f-3d4dddaedfe5">
+      <transitionNode Id="9e56b54c-93c1-477d-90d8-dd3018880c0a" x="437.5" y="175" event=" input ">
+        <targetState>
+          <transitionNodeConnectsToStates Id="04d3b785-528b-4425-8273-00f4a754e46e">
+            <stateMoniker name="/FlowIndicator_F/INPUT_REC" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="c60bca2c-6908-4060-9ad6-bb1e672262ae">
+      <transitionNode Id="11904b4b-b1c2-4dc5-925b-23d88345f1fa" x="1093.75" y="175" expression="0.18">
+        <targetState>
+          <transitionNodeConnectsToStates Id="87a88b8c-ca5e-4fc4-9d22-b161203b7126">
+            <stateMoniker name="/FlowIndicator_F/F1" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="421c21a6-dc2b-45e0-92be-2b71b1a625e8">
+      <transitionNode Id="e850600f-615e-4fb0-bb21-c1f3c7e071b9" x="612.5" y="393.75" expression="0.82">
+        <targetState>
+          <transitionNodeConnectsToStates Id="d6ab03bb-3fa6-4b54-80ae-07aaa9fd415c">
+            <stateMoniker name="/FlowIndicator_F/OUTPUT_SEN" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="31ae5967-cdf3-43b3-a800-bdba4a44abb1">
+      <transitionNode Id="fba96e65-5e05-4020-a863-960fbf97c061" x="875" y="393.75" event=" input ">
+        <targetState>
+          <transitionNodeConnectsToStates Id="08c78bd4-880c-40a0-9fe0-ac531a633245">
+            <stateMoniker name="/FlowIndicator_F/INPUT_REC" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

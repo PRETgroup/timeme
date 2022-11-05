@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="f439dc68-c3c1-42fb-9c39-2934be4b9bbe" name="VVI_LRI" organization="CANTO-AIR-PC" date="2014-08-18" author="Canto-Air">
+  <states>
+    <functionBlockModelHasStates Id="e03cb51c-177b-4783-bea2-034baf37301a">
+      <state Id="2114ba7f-a6b3-4400-87ac-499abbe4a9c2" name="Start" x="1137.5" y="481.25" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="0a4d3f96-249d-4928-a3f3-24f8e95f3dea">
+            <transitionNodeMoniker Id="74f91111-a005-46af-b7a5-4daf1d8ce146" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="bf733721-d9ce-43d8-b7d7-af75d72191c2">
+      <state Id="e08cc1d1-2b6c-42d6-a4d3-6db86e31764f" name="Resting" x="2052.6042222976685" y="488.54168057441711" isInitial="false">
+        <actionSet>
+          <actionLink Id="652d3116-f574-4035-92dc-0d2b82dd5bea">
+            <actionSetMoniker Id="a6f281e5-81a2-476f-9354-31abae4c855c" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="8b213d3b-531a-4921-b8ce-c72573983e3a">
+            <transitionNodeMoniker Id="e27ebb65-63ef-4198-a731-18e7e35ceabb" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="7d0e9b6a-a690-4242-a0bc-ded4059f5c6a">
+            <transitionNodeMoniker Id="76cbe7f6-3253-4b8f-a6ac-5869f6db157c" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="98e1ff14-e719-4caf-8292-4b943db718d0">
+      <state Id="c6867baf-a98d-4d7f-aa9c-ca260e455817" name="LRI_Timer_Expired" x="1925" y="175" isInitial="false">
+        <actionSet>
+          <actionLink Id="d6061350-03aa-4897-8e6a-4b6074a948c7">
+            <actionSetMoniker Id="0fcd326a-845b-4127-8759-5fdf9458e641" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="cf4c81bf-e9f9-4910-a183-47a0b8f87301">
+            <transitionNodeMoniker Id="9098c001-6c60-4fd8-9f27-b1e869c7d681" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="a01c0c4d-74b9-4cb8-9ec3-c7c16226ac6d">
+      <state Id="88520ee0-6733-4112-9e0d-c80ed53c5ddf" name="VSense_Detected" x="1925" y="962.5" isInitial="false">
+        <actionSet>
+          <actionLink Id="6902f330-9a26-49ac-98ce-d6b6bb728220">
+            <actionSetMoniker Id="8dee6f3c-8640-4c96-b73d-ff3b927350a9" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="ca5dbde4-14c2-4517-8075-0ef63d0afa0d">
+            <transitionNodeMoniker Id="36bfc1e7-a701-4bd0-9a3b-ae7ac91adf72" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="c57e2d1b-def6-4921-87b4-6259a9cc8cb4">
+      <actionSet Id="a6f281e5-81a2-476f-9354-31abae4c855c" x="2450" y="875">
+        <actionItems>
+          <actionSetHasActionItems Id="3ade4228-fb49-4891-bc19-952a715f3d43">
+            <actionAlgorithm Id="173c4d20-70ec-45e2-86d0-1508420d941d">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="3455f2d0-d2da-4386-a312-6d44ca435a2b">
+                  <algorithmMoniker name="/VVI_LRI/LRI_Set_Timeout_Value" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="3f87d3db-4860-4afa-8854-a2ae204b3888">
+            <actionEvent Id="2c49f26a-40b5-42b4-9b86-48764f828e3e">
+              <event>
+                <actionEventReferencesEvent Id="b45ba1b7-6dab-4397-94f3-8201e1362d3a">
+                  <eventMoniker name="/VVI_LRI/VVI_LRI/LRI_Timer_Start" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="a9b3f36c-2b3c-4f59-b4df-1f51f1bb835e">
+      <actionSet Id="8dee6f3c-8640-4c96-b73d-ff3b927350a9" x="2450" y="525">
+        <actionItems>
+          <actionSetHasActionItems Id="194ddfe6-be17-42f2-9f8b-d1ba735dd586">
+            <actionEvent Id="2cd2779d-7c85-4eeb-b527-1bbf2098a8bb">
+              <event>
+                <actionEventReferencesEvent Id="dee5e8b9-d58c-4010-bd71-a39a86ef010d">
+                  <eventMoniker name="/VVI_LRI/VVI_LRI/LRI_Timer_Stop" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="4490b27c-88dd-42e2-9174-70070c14ed7a">
+      <actionSet Id="0fcd326a-845b-4127-8759-5fdf9458e641" x="2450" y="1225">
+        <actionItems>
+          <actionSetHasActionItems Id="c7db0038-9035-46ae-8d04-afbb040cbcd9">
+            <actionEvent Id="16ddb6c3-4a0f-4e7c-a91e-2caf0687d4ce">
+              <event>
+                <actionEventReferencesEvent Id="de591b77-75aa-48cf-840f-9cd69724fcbc">
+                  <eventMoniker name="/VVI_LRI/VVI_LRI/VPace" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="ac263d40-f72d-4714-ac40-b6e3d5a7efab">
+      <algorithm Id="8663aae1-1a0b-441e-9fd0-ef3df5290813" name="LRI_Set_Timeout_Value" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="2be7d74d-c3ab-4d1e-8edb-976677ee4654">
+      <functionBlockInterface Id="4223ec6d-013a-4852-9a74-05669ad0667c" name="VVI_LRI" x="2143.75" y="612.5">
+        <events>
+          <functionBlockHasEvents Id="249629ed-9ebd-4c3c-ab71-90137afea576">
+            <event Id="f1e95170-55e2-4db8-8294-70b1ff9ea9ab" name="VSense" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="a2570097-a511-4b95-8320-58e24dc4ff47">
+            <event Id="693b6ba7-810b-41d8-81b0-7f823f8b7c2b" name="LRI_Timer_Start" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="e47c8486-3f1b-4641-9260-634e6d96fb8d">
+            <event Id="548173ed-92f7-4a30-ad8a-4bf831cd4b8d" name="LRI_Timer_Timeout" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="4d96dffa-ae50-4e50-be3d-b78700a6a2a9">
+            <event Id="c99f9104-3b3f-4f4f-af0c-b0f69955fcbd" name="LRI_Timer_Stop" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="bc5f1863-c861-46e8-9eb8-18357636a25e">
+            <event Id="1a4214d3-ce4f-4766-9a99-c2559a49283c" name="VPace" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="38cb00b6-185c-4b27-8134-014a9d486f62">
+            <variable Id="7b5e92bd-2eb1-4ada-94c1-e0a36f6ef192" name="LRI_Timeout_Value" scope="Output" type="INT" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="ba4f7f13-4016-4b2c-b53b-0f634857c660">
+            <inputEventPort Id="f5aba0d3-aa81-49eb-bf4c-204cb02a7939">
+              <event>
+                <inputEventPortReferencesEvent Id="4a325396-0370-445e-8b6d-6f1ce555932e">
+                  <eventMoniker name="/VVI_LRI/VVI_LRI/VSense" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="a46e2122-c8f1-48a5-9db1-6f10f1abdcf5">
+            <inputEventPort Id="24737f46-32c1-4351-9a32-69ee4a3964c0">
+              <event>
+                <inputEventPortReferencesEvent Id="72a4b38d-0407-476f-b0dc-bb1b8cdd1bab">
+                  <eventMoniker name="/VVI_LRI/VVI_LRI/LRI_Timer_Timeout" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="ba1c9241-b4ee-4256-878a-492bd2414868">
+            <outputEventPort Id="d382ed47-6e9c-46e5-8cf5-413da27a0042">
+              <event>
+                <outputEventPortReferencesEvent Id="0fe7746c-df2f-4f1c-ae11-1987c67ff906">
+                  <eventMoniker name="/VVI_LRI/VVI_LRI/VPace" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="d64fdbd1-756e-4f9e-b967-ca3aeae7b0b4">
+            <outputEventPort Id="87b6183d-ea4b-436e-b2ad-27f956a8ccff">
+              <targetPort>
+                <association Id="6cd8730a-f640-4560-b318-06ddfd5d6a7e">
+                  <outputVariablePortMoniker Id="7d6b2c23-a315-4ae3-a914-04659ac9a06d" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="680887d0-e4b4-4755-8eec-11f85d23ae51">
+                  <eventMoniker name="/VVI_LRI/VVI_LRI/LRI_Timer_Start" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="13a99cac-33d3-4bbc-bed1-4621bb7bb56a">
+            <outputEventPort Id="18315842-2448-43cc-8e77-52c419570ec1">
+              <event>
+                <outputEventPortReferencesEvent Id="296f5461-d4a7-40e6-9ded-cd77df3227b3">
+                  <eventMoniker name="/VVI_LRI/VVI_LRI/LRI_Timer_Stop" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="9003ab2a-8609-4843-a5d1-fd7208206c9b">
+            <outputVariablePort Id="7d6b2c23-a315-4ae3-a914-04659ac9a06d">
+              <variable>
+                <outputVariablePortReferencesVariable Id="ba4df1ab-6d05-4396-b2d9-146354bf5e76">
+                  <variableMoniker name="/VVI_LRI/VVI_LRI/LRI_Timeout_Value" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="7443fa99-d926-4097-8edd-add5f1f4dba6">
+      <transitionNode Id="74f91111-a005-46af-b7a5-4daf1d8ce146" x="1531.25" y="393.75" event="VSense">
+        <targetState>
+          <transitionNodeConnectsToStates Id="0d47d367-e9ff-4905-9f69-1fdf515d967f">
+            <stateMoniker name="/VVI_LRI/Resting" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="bd52b09b-aa33-464e-ad49-afdea583fe62">
+      <transitionNode Id="9098c001-6c60-4fd8-9f27-b1e869c7d681" x="1793.75" y="306.25">
+        <targetState>
+          <transitionNodeConnectsToStates Id="dfc83bea-a4eb-4613-88ba-b40e4a086475">
+            <stateMoniker name="/VVI_LRI/Resting" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="efbe702d-914c-416f-8479-46194ee2544e">
+      <transitionNode Id="76cbe7f6-3253-4b8f-a6ac-5869f6db157c" x="2406.25" y="350" event="LRI_Timer_Timeout">
+        <targetState>
+          <transitionNodeConnectsToStates Id="239cbb44-9a15-4b45-986d-75ffedae4bd9">
+            <stateMoniker name="/VVI_LRI/LRI_Timer_Expired" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="60ccb586-1389-490f-b07d-b31a982f3945">
+      <transitionNode Id="e27ebb65-63ef-4198-a731-18e7e35ceabb" x="2143.75" y="743.75" event="VSense">
+        <targetState>
+          <transitionNodeConnectsToStates Id="fabc3b98-98e4-40a9-b1e9-ab48cbe4b1bc">
+            <stateMoniker name="/VVI_LRI/VSense_Detected" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="74e57540-2516-46ad-b729-0d6754f33bad">
+      <transitionNode Id="36bfc1e7-a701-4bd0-9a3b-ae7ac91adf72" x="1837.5" y="700">
+        <targetState>
+          <transitionNodeConnectsToStates Id="d3d3f864-e80d-4b66-aace-00d962246877">
+            <stateMoniker name="/VVI_LRI/Resting" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

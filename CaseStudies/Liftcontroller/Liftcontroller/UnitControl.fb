@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="78ed9c87-bf3b-468b-80b5-6fff59637398" name="UnitControl" organization="CANTO-AIR-PC" date="2014-07-16" author="Canto-Air">
+  <states>
+    <functionBlockModelHasStates Id="367e80d2-1901-4a97-87f8-9d0b192a5c9f">
+      <state Id="edca236b-0481-4e0d-b431-a1a95042da96" name="Start" x="2187.5" y="568.75" isInitial="true">
+        <actionSet>
+          <actionLink Id="729212fd-d43f-4feb-89b7-6274a22fe632">
+            <actionSetMoniker Id="947b7566-1b93-4d85-b98c-788949b3c589" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="2da99501-dbd8-431a-8270-9839ce95a520">
+            <transitionNodeMoniker Id="29dd2c8c-9a8f-4bea-946c-0017ed0d547c" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="8cd7b3b8-960f-4d19-89b4-a42fb97bdb97">
+      <state Id="e9baa755-44ea-4c45-a595-3fd14fb44aa5" name="IdleState" x="2143.75" y="962.5" isInitial="false">
+        <actionSet>
+          <actionLink Id="a5f56260-71ca-4eca-ad9b-865d701473a4">
+            <actionSetMoniker Id="215767ea-5a57-44b3-b386-b4806bff4aff" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="1070cf3e-7a73-42d5-9e96-3bf7bc266ea8">
+            <transitionNodeMoniker Id="32293f78-f505-4ab7-92cf-b663555cb46a" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="e705a868-34fa-4158-8065-06a6945f0f2f">
+            <transitionNodeMoniker Id="e80fcdbf-c91f-4705-bc16-8a1d986306b8" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="d6a9ba24-ed60-4898-a568-54203d7aec3a">
+            <transitionNodeMoniker Id="30d3e79e-4e53-4145-b165-962f5da5b3a3" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="c467060c-8e23-4b2b-bf6a-39c7f06bfdd5">
+      <state Id="5166f6b0-d872-4170-9005-8fa0b0f2302c" name="UpState" x="1575" y="1400" isInitial="false">
+        <actionSet>
+          <actionLink Id="c6470697-8feb-4aee-b580-843af2f0a21a">
+            <actionSetMoniker Id="45cd32f2-6219-4a7f-ad9a-6af99d4da0c3" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="c9060270-9d73-4154-af9c-5e52d0b71c1d">
+            <transitionNodeMoniker Id="d29863cc-7fa3-45d0-928d-ba6b607e3e2c" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="89446582-b3cf-4c6b-86c5-0472bbe4e0f3">
+            <transitionNodeMoniker Id="7451e615-523e-4d60-89cc-c250db9a5f35" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="4c15db6e-bc95-4273-840a-349423faded0">
+      <state Id="f51e77f2-6b30-4e17-90eb-1b7b2f0ae6dd" name="DoorOpen" x="2143.75" y="2143.75" isInitial="false">
+        <actionSet>
+          <actionLink Id="ac801993-1049-4273-bb7f-a66d723fd3bf">
+            <actionSetMoniker Id="22d1109a-f18f-4032-9ef1-c1c16d3bb4a7" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="7afd9e68-c2c6-441e-b39c-6675c5bc1f22">
+            <transitionNodeMoniker Id="f9e71852-75f9-4d61-b1d5-120123e4ca9c" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="b677ee13-b87b-4e37-8d2f-45c7de39e456">
+      <state Id="c2d0187e-175f-44f4-88b8-50614f073c47" name="DownState" x="2712.5" y="1400" isInitial="false">
+        <actionSet>
+          <actionLink Id="015e8054-4630-4842-a5d8-e1bd522a6910">
+            <actionSetMoniker Id="95c8aa25-53d4-4514-82b4-09d665f8cb35" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="8a99c8f7-608f-4e44-8374-61a5f0fd1035">
+            <transitionNodeMoniker Id="3cfa44c1-ecb1-40dd-9997-e64866837e1a" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="09aa0066-0148-49e8-ab49-74cd1aac426b">
+            <transitionNodeMoniker Id="4b49bfa9-40f7-445b-9288-ad8496d72177" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="2d94d2fa-b305-4673-b8ab-2f33bf8550ad">
+      <state Id="38199bf1-d7f2-4174-9169-3703611a7558" name="DoorOpened" x="2100" y="1618.75" isInitial="false">
+        <actionSet>
+          <actionLink Id="81640a01-c633-43e7-8da3-272689d785ab">
+            <actionSetMoniker Id="72d61934-f507-43e8-8fa0-5a2113d44d88" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="d1c925ad-492d-46b7-8c49-60646273deec">
+            <transitionNodeMoniker Id="32e05a7e-2c7b-4bb5-804a-74326c846d63" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="97b4a327-1214-4f5b-8acc-5af639a8c80b">
+            <transitionNodeMoniker Id="5da9826b-a8c8-4b8b-b5a1-ce86473048d2" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="f27e6b1e-55d2-48a6-bcc2-9e358261a05e">
+      <actionSet Id="947b7566-1b93-4d85-b98c-788949b3c589" x="2493.75" y="481.25">
+        <actionItems>
+          <actionSetHasActionItems Id="3e21ea97-4170-4bdb-81b5-cef3055e4b61">
+            <actionEvent Id="c07060d0-71e9-46ec-a966-fc7b46ef0b44">
+              <event>
+                <actionEventReferencesEvent Id="07456f02-f40b-46f8-a3bf-3e63864ba10e">
+                  <eventMoniker name="/UnitControl/UnitControl/DoorOpen" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="90bed692-fddc-4054-886d-45bb9d7bd867">
+            <actionEvent Id="fb0e70a5-0bcf-4b28-a456-68abee207d3e">
+              <event>
+                <actionEventReferencesEvent Id="7a81496d-8697-4e5f-9bbe-581f5d7f7453">
+                  <eventMoniker name="/UnitControl/UnitControl/MotorDirectionIdle" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="ab567d97-0047-4292-b5f7-81f71ea0a33b">
+            <actionAlgorithm Id="7780a63e-f84d-45b3-8812-e1b347063603">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="fe639e51-7983-48a4-8c16-231865fc7d0b">
+                  <algorithmMoniker name="/UnitControl/ResetStoppedAtFloor" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="e4d96424-af85-4a0e-9d8a-ca11b45268a0">
+            <actionEvent Id="9ed6a54a-1410-4ea4-b1c8-144a598d10f0">
+              <event>
+                <actionEventReferencesEvent Id="44fcbd17-5bb1-4e87-a540-d80375f99460">
+                  <eventMoniker name="/UnitControl/UnitControl/StoppedAtFloor" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="e1b3b270-f552-473a-8542-f600c04bf408">
+      <actionSet Id="215767ea-5a57-44b3-b386-b4806bff4aff" x="2493.75" y="831.25">
+        <actionItems>
+          <actionSetHasActionItems Id="1faed2d2-5eb6-4734-9860-a86024903bc7">
+            <actionEvent Id="eca75762-ea3a-48f1-ac29-00e96b3820b0">
+              <event>
+                <actionEventReferencesEvent Id="ee3cd83d-c3df-4065-9e03-b0e5264925dc">
+                  <eventMoniker name="/UnitControl/UnitControl/MotorDirectionIdle" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="630a49a2-d2ba-44f3-9c74-dd0ebdd731fa">
+            <actionEvent Id="7d8d4fc6-40f0-4997-afe0-cf7030441552">
+              <event>
+                <actionEventReferencesEvent Id="684e6dd0-d648-4c7b-aa0b-2c11a6fa88f9">
+                  <eventMoniker name="/UnitControl/UnitControl/DoorClose" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="9e0c4ce1-054e-4705-b3b7-5c04cc16147e">
+      <actionSet Id="45cd32f2-6219-4a7f-ad9a-6af99d4da0c3" x="875" y="1400">
+        <actionItems>
+          <actionSetHasActionItems Id="fa16683e-8586-4fa4-8ad4-d43f2e89a385">
+            <actionEvent Id="27bede51-dd7b-41f9-81bd-74242f27353c">
+              <event>
+                <actionEventReferencesEvent Id="d4aa1d22-da63-4ec8-9de3-e1a59bd982b8">
+                  <eventMoniker name="/UnitControl/UnitControl/MotorDirectionUp" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="20d9579d-6241-4302-9759-f479ae63b822">
+      <actionSet Id="22d1109a-f18f-4032-9ef1-c1c16d3bb4a7" x="2537.5" y="2187.5">
+        <actionItems>
+          <actionSetHasActionItems Id="dce6e380-7afc-4436-bd99-edc819067ebd">
+            <actionEvent Id="6ce742a0-9a55-46fd-9429-305a0a1e4782">
+              <event>
+                <actionEventReferencesEvent Id="be3bc83d-2b3d-4901-a849-fdcda377136e">
+                  <eventMoniker name="/UnitControl/UnitControl/DoorOpen" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="95eac571-ee5f-4d5a-8dfd-f83c9b2cb7ad">
+            <actionEvent Id="bc492a83-ff92-4cce-8aa5-7e2596e9ae18">
+              <event>
+                <actionEventReferencesEvent Id="c5f4db87-91e2-4d6f-9e68-64169e73a7a3">
+                  <eventMoniker name="/UnitControl/UnitControl/StartTimer" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="974f414e-384f-43f3-bc27-f35ae1889bbe">
+            <actionEvent Id="6c268a94-f635-4694-a58a-c9814c6d3f58">
+              <event>
+                <actionEventReferencesEvent Id="1bb76d91-e6b1-42d6-899a-e4f8e4f4d4e9">
+                  <eventMoniker name="/UnitControl/UnitControl/StoppedAtFloor" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="55b7b101-e6d7-42fd-950b-9fef07f8cdc2">
+            <actionAlgorithm Id="3403912f-eb46-4f10-a3aa-f8c4141f6fa3">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="f35dc123-6b53-496a-ba7b-f00cb2619095">
+                  <algorithmMoniker name="/UnitControl/UpdateStoppedAtFloor" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="561ec8c0-227f-4564-b7d3-f5db40d2f074">
+            <actionEvent Id="dcad9598-3708-47d8-81f9-20c930b69608">
+              <event>
+                <actionEventReferencesEvent Id="4c2b7586-112b-466d-b682-d382a52f5df6">
+                  <eventMoniker name="/UnitControl/UnitControl/MotorDirectionIdle" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="512d6999-3cf5-4445-b397-ba26268c4a5f">
+      <actionSet Id="95c8aa25-53d4-4514-82b4-09d665f8cb35" x="3106.25" y="1400">
+        <actionItems>
+          <actionSetHasActionItems Id="9b321d5f-e561-4644-90c2-20175f9e6c10">
+            <actionEvent Id="484d1d42-3fc9-41fc-a82a-f4c9ebfd1838">
+              <event>
+                <actionEventReferencesEvent Id="4ebd79fd-1cd5-4dde-9bb9-eb475e1468c2">
+                  <eventMoniker name="/UnitControl/UnitControl/MotorDirectionDown" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="8ad586de-e25d-4499-b163-3acc970b9c55">
+      <actionSet Id="72d61934-f507-43e8-8fa0-5a2113d44d88" x="2537.5" y="1618.75">
+        <actionItems>
+          <actionSetHasActionItems Id="5a25f0b1-bd53-4586-a616-ea35521b6119">
+            <actionEvent Id="6782d488-409f-4f2d-a1a5-d2d639e1f104">
+              <event>
+                <actionEventReferencesEvent Id="c47de78c-3cae-4a70-935b-581a6d615d4c">
+                  <eventMoniker name="/UnitControl/UnitControl/StoppedAtFloor" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="9386f9e0-590f-4fb0-b756-a51089174e86">
+            <actionEvent Id="ff540fd7-6cf6-423d-805f-0b6290a8e3fc">
+              <event>
+                <actionEventReferencesEvent Id="2b3d715d-3587-4d76-b874-8cb33461e063">
+                  <eventMoniker name="/UnitControl/UnitControl/MotorDirectionIdle" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="91b6978c-27fb-4d25-8c4a-57f7e625382b">
+            <actionAlgorithm Id="5508946a-79d9-4d53-ae8d-ab8e4b57550d">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="b58cd8fa-397a-44b6-9594-7125f9625c33">
+                  <algorithmMoniker name="/UnitControl/ResetStoppedAtFloor" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="8a4af464-36f3-4f80-8c64-9d670c71403c">
+      <algorithm Id="a92942c5-1a17-4378-bc6e-338ec7b0e0c5" name="UpdateStoppedAtFloor" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="5e6f8f13-b37f-497b-9a95-fe2be3bcf69a">
+      <algorithm Id="482961ac-d59c-41f9-9d92-e55884e6bb3e" name="ResetStoppedAtFloor" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="0406fbe3-39fc-4b76-9499-a325b0c18b8f">
+      <functionBlockInterface Id="8f7f0d4e-d274-4b5c-b76a-44c409d08fce" name="UnitControl" x="1662.5" y="481.25">
+        <events>
+          <functionBlockHasEvents Id="2a2a17a6-6775-4067-8689-e8489be8c4e0">
+            <event Id="93cdc56b-fd97-45f9-865f-60250d209c59" name="MotorDirectionUp" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="47336917-5776-4191-b09a-65761aed339f">
+            <event Id="24bfcab5-c4d0-4df5-b249-70e664ef30f5" name="MotorDirectionDown" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="77b62b1e-1333-401f-aecc-1c9b9d610e84">
+            <event Id="e97f33fa-3dfd-46b3-beba-de47ecd1d56b" name="MotorDirectionIdle" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="e4b5be30-7c60-4834-a97f-8064d0446093">
+            <event Id="804b579b-63c8-42d1-9074-f76f7149665a" name="TimerExpired" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="d2be4261-eaeb-4c62-8f0a-6cf113a06856">
+            <event Id="95a0cb05-6914-49f6-b4be-b0dde2aa1c57" name="DoorOpen" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="d6704461-f1a3-41f1-a073-1e41e862945f">
+            <event Id="e6feb296-191b-40eb-bc27-502bf1fd2b25" name="DoorClose" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="2faada45-355e-41ee-ae2c-732981e7d340">
+            <event Id="2dfda81a-90a5-4d9e-b024-ba5e415379dc" name="Request" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="04d21c3d-69f5-45a9-b353-80c33689f95a">
+            <event Id="0b43e9a8-e992-46ae-b4db-07e4745fc52a" name="FloorSensor" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="1b697311-da8b-4447-9f28-2a9f45b42613">
+            <event Id="7f98c695-ce5c-43e3-9926-3d9c8d7af585" name="StartTimer" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="30134e86-93c2-445a-82ab-3d4d3676ea56">
+            <event Id="b9ec11d5-9385-49e6-ba60-aa6d3201cc8d" name="StoppedAtFloor" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="2435c29e-2bf5-42e8-a537-99429c125d06">
+            <variable Id="2e01cba7-6dea-4336-87e6-f6e10d2c0884" name="FloorSensorValue" scope="Input" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="27accaea-9f3f-4091-8d69-ee8c9b55c3e0">
+            <variable Id="f13bfad0-bc37-484e-8325-a69045030453" name="RequestValue" scope="Input" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="e9977ce4-d752-4e83-88ee-4f35a3f9136d">
+            <variable Id="f3f0eaea-9a1b-4ab6-b398-6aa06dd78540" name="StoppedAtFloorValue" scope="Output" type="INT" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="86d207b8-c360-4a76-a27b-5e060b35b68f">
+            <inputEventPort Id="6ec30cb2-8788-44e3-bcfb-799a39ee408c">
+              <targetPort>
+                <association Id="3d018570-1e99-478e-acc5-fa073535e563">
+                  <inputVariablePortMoniker Id="e6986682-0a56-4b20-a53c-1d0921f7085b" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="1cc88e66-26fc-450f-bde2-99ead39f59df">
+                  <eventMoniker name="/UnitControl/UnitControl/FloorSensor" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="82985a10-1640-49b0-81c0-26fd44c0744b">
+            <inputEventPort Id="73534fad-4bb2-4430-98a0-bcd1ac3b7bef">
+              <targetPort>
+                <association Id="b2456767-fb48-4697-b3de-2ea235615e24">
+                  <inputVariablePortMoniker Id="532cb2da-924c-4137-8110-34ca4f3ac324" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="0192b2f0-bace-4947-8ce4-f350b559b00c">
+                  <eventMoniker name="/UnitControl/UnitControl/Request" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="3eb7c48d-78a5-4275-9e77-71c74aff95a5">
+            <inputEventPort Id="f857bcea-7329-49d3-9c1c-1a87c052fd3c">
+              <event>
+                <inputEventPortReferencesEvent Id="1e037382-70b9-4b14-8bee-57a467c60f84">
+                  <eventMoniker name="/UnitControl/UnitControl/TimerExpired" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="8b0270bb-670e-4092-a968-7b56ca685bd4">
+            <outputEventPort Id="4cf530b1-8b39-497d-b9e1-301cad032080">
+              <event>
+                <outputEventPortReferencesEvent Id="11eaa82b-2069-4446-a761-15a30b879b2b">
+                  <eventMoniker name="/UnitControl/UnitControl/MotorDirectionUp" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="2c9ad0c2-40b1-4f25-8c78-de24afabff57">
+            <outputEventPort Id="c447564d-b671-439d-80ed-e7ad3f4d60f4">
+              <event>
+                <outputEventPortReferencesEvent Id="d7aab877-067c-4506-9eb4-c14650f25a02">
+                  <eventMoniker name="/UnitControl/UnitControl/MotorDirectionDown" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="41dabe34-c40b-4285-b86c-0ec5ae59a2cf">
+            <outputEventPort Id="200c8adb-5d30-4e59-b87f-10c2490d554c">
+              <event>
+                <outputEventPortReferencesEvent Id="a00db3f8-9fce-4b3c-8b2d-9d4c57f353d4">
+                  <eventMoniker name="/UnitControl/UnitControl/MotorDirectionIdle" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="0286457d-1cb7-469c-ad9d-d920aa7d97e2">
+            <outputEventPort Id="09c73e84-1790-4095-857a-4f521d8427e4">
+              <targetPort>
+                <association Id="75ef8d4e-7f6e-49d8-8c82-1502b8153d66">
+                  <outputVariablePortMoniker Id="b7879a29-b05c-48fb-9aca-d5e4e999a7f0" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="04b17c50-9668-45eb-99a5-11c11223a7b9">
+                  <eventMoniker name="/UnitControl/UnitControl/StoppedAtFloor" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="99b9d24f-3db6-4789-b120-106c17edd92f">
+            <outputEventPort Id="85e1cc9e-6509-4001-b1f9-c7f605af4704">
+              <event>
+                <outputEventPortReferencesEvent Id="fd6bd2ce-5319-4546-8250-ba61eb588d35">
+                  <eventMoniker name="/UnitControl/UnitControl/StartTimer" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="db7d668c-104f-4f64-b4a0-f4182afe2b2b">
+            <outputEventPort Id="920dabd1-94c3-43d3-a11d-38508dda9c6d">
+              <event>
+                <outputEventPortReferencesEvent Id="004901de-c1e1-4e82-9e29-91bea9fd1234">
+                  <eventMoniker name="/UnitControl/UnitControl/DoorOpen" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="c8e77001-e841-4113-8ec0-d51341dd8b06">
+            <outputEventPort Id="56a82bd8-cfd6-4efd-9427-f6e77991f23a">
+              <event>
+                <outputEventPortReferencesEvent Id="9ab22bf6-1466-497b-a92a-e67a7d625dbc">
+                  <eventMoniker name="/UnitControl/UnitControl/DoorClose" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="aa286232-2202-42ba-af7a-26b3afb45e4b">
+            <inputVariablePort Id="e6986682-0a56-4b20-a53c-1d0921f7085b">
+              <variable>
+                <inputVariablePortReferencesVariable Id="12f907e3-5495-48cc-a92a-dc0795e1079e">
+                  <variableMoniker name="/UnitControl/UnitControl/FloorSensorValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="e0fcd80d-e5e2-4e25-b183-982c0991fcb9">
+            <inputVariablePort Id="532cb2da-924c-4137-8110-34ca4f3ac324">
+              <variable>
+                <inputVariablePortReferencesVariable Id="ea088309-76c4-4ad7-bb6d-fc6e94c87b94">
+                  <variableMoniker name="/UnitControl/UnitControl/RequestValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="bf2a41f1-2835-4ef9-a748-3278cabb5c24">
+            <outputVariablePort Id="b7879a29-b05c-48fb-9aca-d5e4e999a7f0">
+              <variable>
+                <outputVariablePortReferencesVariable Id="8ae8e180-c2ea-4ed2-b5a4-36c61eb48179">
+                  <variableMoniker name="/UnitControl/UnitControl/StoppedAtFloorValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="52196b39-84c6-4a4d-b2a1-3d8894af3cff">
+      <transitionNode Id="29dd2c8c-9a8f-4bea-946c-0017ed0d547c" x="2187.5" y="743.75">
+        <targetState>
+          <transitionNodeConnectsToStates Id="3cf00659-2054-458f-8272-d804f33f1e50">
+            <stateMoniker name="/UnitControl/IdleState" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="99937742-57c4-48d6-9d70-3c6c5752edbf">
+      <transitionNode Id="32293f78-f505-4ab7-92cf-b663555cb46a" x="787.5" y="1181.25" event="Request &amp;&amp; FloorSensor" expression="RequestValue&gt;FloorSensorValue">
+        <targetState>
+          <transitionNodeConnectsToStates Id="114e3d4f-22d7-4bf5-a126-cc084717a76f">
+            <stateMoniker name="/UnitControl/UpState" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="5550e005-cd23-4e31-bcab-c7058aba2229">
+      <transitionNode Id="e80fcdbf-c91f-4705-bc16-8a1d986306b8" x="2537.5" y="1181.25" event="Request &amp;&amp; FloorSensor" expression="RequestValue&lt;FloorSensorValue">
+        <targetState>
+          <transitionNodeConnectsToStates Id="784015ab-1d9d-4b73-95f8-cdfe5a61aa62">
+            <stateMoniker name="/UnitControl/DownState" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="dc3aa1c2-7ce1-49f1-b1ea-a9553448db85">
+      <transitionNode Id="d29863cc-7fa3-45d0-928d-ba6b607e3e2c" x="612.5" y="2012.5" event="Request &amp;&amp; FloorSensor" expression="RequestValue==FloorSensorValue">
+        <targetState>
+          <transitionNodeConnectsToStates Id="c460455a-4e1b-4ecd-9f39-8ff672d1df51">
+            <stateMoniker name="/UnitControl/DoorOpen" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="87781429-b6c7-479a-ae37-3d8fe8648654">
+      <transitionNode Id="30d3e79e-4e53-4145-b165-962f5da5b3a3" x="1750" y="962.5">
+        <targetState>
+          <transitionNodeConnectsToStates Id="5727ac2c-1836-48e8-880d-87d3e1c8d9c2">
+            <stateMoniker name="/UnitControl/IdleState" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="a14e695f-4a38-4e9f-9c30-3fa765c47d51">
+      <transitionNode Id="7451e615-523e-4d60-89cc-c250db9a5f35" x="1968.75" y="1400">
+        <targetState>
+          <transitionNodeConnectsToStates Id="a49a3f70-8f10-4455-b55c-40db6a49b0c5">
+            <stateMoniker name="/UnitControl/UpState" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="eb40735a-f18e-499d-9ee2-871b91d03297">
+      <transitionNode Id="3cfa44c1-ecb1-40dd-9997-e64866837e1a" x="2756.25" y="2012.5" event="Request &amp;&amp; FloorSensor" expression="RequestValue==FloorSensorValue">
+        <targetState>
+          <transitionNodeConnectsToStates Id="d9c8f4a8-cde5-4b62-9a3f-3c3d6c7348f4">
+            <stateMoniker name="/UnitControl/DoorOpen" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="4565c7a0-057b-493d-92d0-490528e364c9">
+      <transitionNode Id="4b49bfa9-40f7-445b-9288-ad8496d72177" x="2406.25" y="1400">
+        <targetState>
+          <transitionNodeConnectsToStates Id="7a5b3770-4783-43bf-a71c-36425601ae1b">
+            <stateMoniker name="/UnitControl/DownState" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="c77a346d-164b-4364-ae1d-695911a343a0">
+      <transitionNode Id="f9e71852-75f9-4d61-b1d5-120123e4ca9c" x="2187.5" y="1881.25">
+        <targetState>
+          <transitionNodeConnectsToStates Id="444a9686-25f1-4880-a09c-cc81e23d551f">
+            <stateMoniker name="/UnitControl/DoorOpened" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="f8fd7d82-947d-4bd6-8c2c-8dfccc8f65ee">
+      <transitionNode Id="32e05a7e-2c7b-4bb5-804a-74326c846d63" x="2100" y="1312.5" event="TimerExpired">
+        <targetState>
+          <transitionNodeConnectsToStates Id="0be66f6f-458f-4a1f-b26a-cfbbb6498c85">
+            <stateMoniker name="/UnitControl/IdleState" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="0ba53dea-68dd-49bd-b6c9-a6f039d221e9">
+      <transitionNode Id="5da9826b-a8c8-4b8b-b5a1-ce86473048d2" x="1793.75" y="1618.75">
+        <targetState>
+          <transitionNodeConnectsToStates Id="73f75c2d-c1b8-4936-9dbe-6268f95cf4fd">
+            <stateMoniker name="/UnitControl/DoorOpened" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

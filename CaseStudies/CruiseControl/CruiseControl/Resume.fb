@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="11efb5a1-eb46-4fe5-bea0-8c4ba544044b" name="Resume" organization="Zeeshan-VAIO" date="2011-01-22" author="Zeeshan" modelType="Observer">
+  <states>
+    <functionBlockModelHasStates Id="ebc3d4b8-cbbf-4bcd-ba9b-a458d8ddc9e6">
+      <state Id="e9dd6863-76fb-410f-be77-eb016b869857" name="InStandBy" x="1400" y="656.25" isInitial="false">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="1cda1e6a-bdc7-458f-ae03-a0e50571af9c">
+            <transitionNodeMoniker Id="f1888f90-8694-46bf-b66a-98548e2598ef" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="dbc7a560-7842-42ec-97e5-af2b46b421c6">
+            <transitionNodeMoniker Id="0b51d847-a3e3-48ae-86d9-9c5b0a6bc035" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="5d612ace-0b52-46ff-8e92-fbb9fb787ba7">
+            <transitionNodeMoniker Id="d6279e14-2616-4f1b-a482-83fadf0ea169" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="80e5509a-f5ff-456d-8480-b1e2ec1d9ce9">
+            <transitionNodeMoniker Id="61fc754a-a66a-410d-a88a-6e4232c53065" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="0533dc72-1c69-4200-a424-d1945631d626">
+            <transitionNodeMoniker Id="0aa82119-5451-476e-9753-7b3d36fa7fff" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="06c68d51-e465-4df8-8aad-a293db15f194">
+      <state Id="e9698079-d4d9-4939-bd8e-f6d17cdd8a33" name="NotInStandBy" x="525" y="656.25" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="8740f6a0-2d81-48b4-ae92-5b63b513def1">
+            <transitionNodeMoniker Id="e6e1188a-8887-4a6b-b3a0-e1a5c0870b7c" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="3e112078-d6eb-4dc8-b8f5-117a6bc43ec7">
+      <state Id="03090922-e7eb-459c-b78b-7e72090ca38a" name="Violation" x="2143.75" y="656.25" isInitial="false" />
+    </functionBlockModelHasStates>
+  </states>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="1636e864-fa36-4765-a0ac-e8088b9b050f">
+      <functionBlockInterface Id="534a9dd3-c035-4ab4-a26a-1bea3b1eec2c" name="Resume" x="1006.25" y="262.5" modelType="Observer">
+        <events>
+          <functionBlockHasEvents Id="3bfdc589-87b6-437a-bf75-3c505947baa3">
+            <event Id="8e99ea78-6a86-4ce3-93bf-eab953b2134f" name="brakePressed" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="5b0912d7-03aa-48a9-ba65-bd37ca937d59">
+            <event Id="812c2796-5656-4ff9-9d32-e1774bd06794" name="off" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="9c448a07-9d44-42d3-b1e2-a18896d5fee9">
+            <event Id="40207f62-a739-4e41-8b53-73dbbc2bebe0" name="set" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="437a4336-83e7-4f5c-9d2d-07353aa3494b">
+            <event Id="d837d3fa-0f46-4117-9be8-c5d72819da64" name="resume" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="a5ee063a-1e68-4947-844a-a7fb3c4e0a9a">
+            <event Id="eb3a7f53-bfb1-4d60-9790-12ff3ea3ec25" name="regulStdby" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="78d6b641-0ffc-4b82-b4c8-aa0006138153">
+            <event Id="ed7ea250-a41d-482b-8b02-85b39ce5dff7" name="regulResume" scope="Input" />
+          </functionBlockHasEvents>
+        </events>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="103b1916-a08a-481a-b7c7-3e8d8501feb0">
+            <inputEventPort Id="6b1a6bae-d716-411d-b89f-8bfba30efcdc">
+              <event>
+                <inputEventPortReferencesEvent Id="e9fd2c62-e011-41d8-8e64-9d9358c2a921">
+                  <eventMoniker name="/Resume/Resume/brakePressed" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="f230aaf1-fcd0-49a9-a05c-2556fb3b3af2">
+            <inputEventPort Id="f7aa1f2b-4c80-4f4c-9064-e4dead6977da">
+              <event>
+                <inputEventPortReferencesEvent Id="6edeccdd-a720-4f7c-b184-cebd51f00efa">
+                  <eventMoniker name="/Resume/Resume/off" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="aa7d8b63-7390-444c-a762-baa17698594d">
+            <inputEventPort Id="db86c7c9-a908-4ba1-8771-5052c502a299">
+              <event>
+                <inputEventPortReferencesEvent Id="b89b8a7a-ff82-4537-bfcf-de56df17a607">
+                  <eventMoniker name="/Resume/Resume/set" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="42701fe2-40e8-437e-8eac-ad0be822095c">
+            <inputEventPort Id="11a7da85-2dd1-4742-b6d2-74574111a91b">
+              <event>
+                <inputEventPortReferencesEvent Id="ffc9d8bc-cfe6-497a-a3c0-f3c7e8cd60c0">
+                  <eventMoniker name="/Resume/Resume/resume" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="1fb41aac-62de-4f98-a98e-df29be4d8724">
+            <inputEventPort Id="07a769c9-9e4d-46f5-906a-8a786b5c12d7">
+              <event>
+                <inputEventPortReferencesEvent Id="18dd4b75-8bb2-45b0-8475-a8932485ab7b">
+                  <eventMoniker name="/Resume/Resume/regulStdby" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="9aca36c8-b85e-409d-8809-45a3ea991013">
+            <inputEventPort Id="7cad0f16-604f-4e0c-8f40-0a23f89704c4">
+              <event>
+                <inputEventPortReferencesEvent Id="f020409b-a4a7-4522-beac-005eb3f048ce">
+                  <eventMoniker name="/Resume/Resume/regulResume" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="ee22c5f6-9255-4324-98fb-65891c80bc06">
+      <transitionNode Id="e6e1188a-8887-4a6b-b3a0-e1a5c0870b7c" x="1006.25" y="656.25" event="regulStdby">
+        <targetState>
+          <transitionNodeConnectsToStates Id="87e1fa8a-f51d-4bab-b5d1-a40fe49ead86">
+            <stateMoniker name="/Resume/InStandBy" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="db1252b3-2067-4ff1-a330-f3c841c8f7e7">
+      <transitionNode Id="f1888f90-8694-46bf-b66a-98548e2598ef" x="1093.75" y="875" event=" off ">
+        <targetState>
+          <transitionNodeConnectsToStates Id="08e92c8d-d1cd-44cf-82ec-c8712783839b">
+            <stateMoniker name="/Resume/NotInStandBy" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="02542dd5-c461-4cab-9d92-e4394c4d658d">
+      <transitionNode Id="0b51d847-a3e3-48ae-86d9-9c5b0a6bc035" x="1006.25" y="218.75" event=" brakePressed ">
+        <targetState>
+          <transitionNodeConnectsToStates Id="1e9ac9ab-f600-46cf-a34c-6441178676d0">
+            <stateMoniker name="/Resume/NotInStandBy" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="82a0fe5b-2b80-4d15-8234-6758df70c3fb">
+      <transitionNode Id="d6279e14-2616-4f1b-a482-83fadf0ea169" x="1093.75" y="437.5" event=" set ">
+        <targetState>
+          <transitionNodeConnectsToStates Id="8adecd28-0097-4446-83c1-dcc6e954cf58">
+            <stateMoniker name="/Resume/NotInStandBy" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="b15a7ec3-6bf6-4a5a-a7d3-b368ca9c1ae0">
+      <transitionNode Id="61fc754a-a66a-410d-a88a-6e4232c53065" x="918.75" y="1093.75" event=" resume &amp;&amp; regulResume ">
+        <targetState>
+          <transitionNodeConnectsToStates Id="3ed781a6-5417-4882-8910-8ad44c1a5702">
+            <stateMoniker name="/Resume/NotInStandBy" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="63f85aef-508f-43ba-967b-2eb23d169730">
+      <transitionNode Id="0aa82119-5451-476e-9753-7b3d36fa7fff" x="1793.75" y="656.25" event=" resume ">
+        <targetState>
+          <transitionNodeConnectsToStates Id="05ceb4d8-e750-4005-abca-f5f3cbe66819">
+            <stateMoniker name="/Resume/Violation" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

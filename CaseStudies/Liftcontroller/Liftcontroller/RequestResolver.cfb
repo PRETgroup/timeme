@@ -1,0 +1,982 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<compositeFunctionBlockModel Id="0c087fd9-66a6-483e-b822-e1dd8b2e35aa" name="RequestResolver" organization="CANTO-AIR-PC" date="2014-07-16" author="Canto-Air" modelType="Composite">
+  <functionBlockInterface>
+    <cFBModelHasFBInterface Id="719a629b-8553-409b-a997-a41528e12e7b">
+      <functionBlockInterface Id="637bf9ce-79fe-49a7-98d1-fe20015c48c1" name="RequestResolver" x="1575" y="700" modelType="Composite">
+        <events>
+          <functionBlockHasEvents Id="756b0a75-a83e-4e69-b724-1f59ae1c7161">
+            <event Id="6f14a86c-bd68-4f7b-86bb-2c3d8c12aa95" name="FloorSensor" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="d72febf2-6791-4c25-8c9a-f2e393084d47">
+            <event Id="17a26b03-48c3-4c5c-831b-3c53caeb31e9" name="MotorDirectionUp" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="7d180473-ac5a-48f3-86bb-ab3100792db1">
+            <event Id="ba623a5d-ef12-4b85-af7c-38f212a80ccf" name="PendingReq" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="418976f4-1927-4b5e-ab68-9fd7ebb4cc4d">
+            <event Id="404408a8-9ea5-4049-b32f-be7da23c46b7" name="CurrentPriority" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="b66530e8-9941-41ad-a2a1-d6c74a2ec6ca">
+            <event Id="cf7fb71f-e77c-4bea-a45e-797c4dce3138" name="MotorDirectionDown" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="c4ad5915-6848-4290-81de-ff648063e076">
+            <event Id="dba822cb-b41b-404b-aaf4-1c493a0ffa21" name="MotorDirectionIdle" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="30a6b374-99a7-47f1-816e-af6427b8d2b0">
+            <event Id="90b948bf-76de-45a1-b0de-37c6e8c2c575" name="StoppedAtFloor" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="87af8d09-6dad-40e7-bb83-d2014252ecd5">
+            <event Id="7bdba3b5-e1f7-4688-bc84-c508f1939555" name="request" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="56dd9054-e300-400b-91d1-93cae2a470be">
+            <event Id="2ec09fc1-9c62-4b56-8637-22cc9569e121" name="CabinCall" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="cb639841-b79f-481d-b376-7d676522e626">
+            <event Id="2a0ab517-336e-438b-9ff1-55537416fa13" name="UpCall" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="bca37261-f6e7-46f2-818a-f3b592b89eb5">
+            <event Id="ca4c723e-f59e-45fe-a28d-346fee9f7483" name="DownCall" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="5763d08e-d159-4825-93a7-bba383f3bfdd">
+            <event Id="4bbf08a6-9651-4108-af8b-e9fc9ba8a4a7" name="PendingCabinCall" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="231e750d-f5a1-4913-a844-01855953ae9e">
+            <event Id="1ad92651-db4e-4146-97e4-3ec3bcccf939" name="PendingUpCall" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="31deb957-f0ec-4912-8efa-ea24192f66d2">
+            <event Id="cfd9c835-86f2-42a1-bc7c-8ad144781714" name="PendingDownCall" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="34954e0b-7bc6-4ed5-84bc-dc26e08e88f2">
+            <event Id="d5eb2032-8d2a-45d5-b5d1-6c8bce85c501" name="PendingCall" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="6ecd7101-8dd4-46ab-b3c3-73467c021d39">
+            <variable Id="075482f3-1e3d-4938-a4e0-e610db6878ab" name="PendingReqValue" scope="Output" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="d0768edd-bbe5-4657-92b6-d2bed609ffa6">
+            <variable Id="99a16eef-c37d-47cf-b6d3-6781cdaa9fe2" name="CurrentPriorityValue" scope="Output" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="62ba1ad4-37ba-4047-9785-8392fd2df17c">
+            <variable Id="a8b25b87-efc1-43fe-a09c-b2c9562ea851" name="StoppedAtFloorValue" scope="Input" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="8405caf9-54df-4199-ba66-5a9400b10f9e">
+            <variable Id="9c78bd6a-4175-4d68-93b1-94ac73cb1c3e" name="requestValue" scope="Output" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="e41c772f-d2fa-4257-96d7-9082f63a29ff">
+            <variable Id="56c432a6-c5ff-4b2f-9e27-614175b99546" name="CabinCallValue" scope="Input" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="a2bbcb39-d927-47df-a66b-62e34f21d9b6">
+            <variable Id="fff9a87f-01ed-489c-900f-acba386cf5f7" name="UpCallValue" scope="Input" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="2b4775c5-411c-49a6-a7bc-7047a1e30c2d">
+            <variable Id="02c7fa8e-8f21-4a0a-b874-8711e8daf3f4" name="DownCallValue" scope="Input" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="1e17840d-b9fb-4f40-8fec-48f0e414da46">
+            <variable Id="76691a16-2bab-4bc9-8349-95562d08e9aa" name="PendingCabinCallValue" scope="Output" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="11b3df49-528f-4390-b751-16e4a12d1382">
+            <variable Id="ba83c21f-2335-4a5a-a0af-ea0e26674822" name="PendingUpCallValue" scope="Output" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="13afa559-61f1-4a66-a662-91be320e2545">
+            <variable Id="4dca4e56-2503-4903-83d3-88fd3c4d26cf" name="PendingDownCallValue" scope="Output" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="faa362e1-9596-4b9e-9dfe-91a6f3716876">
+            <variable Id="aadb5e47-49e2-4e03-ae41-0198b7df9add" name="PendingCallValue" scope="Output" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="54e5f734-9926-43a8-964b-4a87e385cd54">
+            <variable Id="abc115d6-4850-419b-b0c5-cf7337720505" name="FloorSensorValue" scope="Input" type="INT" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="43c2cede-d672-4934-ae2f-4b1cd0119ae5">
+            <inputEventPort Id="5cf3c452-fba9-48a8-b762-3712ed87de84">
+              <proxyTargetPorts>
+                <proxyConnection Id="83874fd4-5b03-40b8-a8c5-4e88000f5ccc">
+                  <inputEventPortMoniker Id="d1f19d9c-4ca7-4734-b154-4a8faaf18dd0" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="6bbe0078-be09-4a1a-91c7-623f857ab862">
+                  <eventMoniker name="/RequestResolver/RequestResolver/FloorSensor" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="5c71f5e5-54f4-4c16-b88a-9fc6141daac5">
+            <inputEventPort Id="0b8302da-9fad-4f00-b849-2c8a2c3e4317">
+              <proxyTargetPorts>
+                <proxyConnection Id="7449053a-1cc0-45bd-9871-97eca7d1e28f">
+                  <inputEventPortMoniker Id="2e617c9c-60b5-4da9-bced-de60b90cf9ae" />
+                </proxyConnection>
+                <proxyConnection Id="6aefa346-bb2e-432e-9d74-b3697b9b17c8">
+                  <inputEventPortMoniker Id="361c6e2e-4d35-4cfd-b899-829fc5d774cb" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="cd6f136b-9227-40c9-a90d-05beaa1233a2">
+                  <eventMoniker name="/RequestResolver/RequestResolver/MotorDirectionUp" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="4483384f-4106-4e69-a6c7-6639e0012cec">
+            <inputEventPort Id="b071a597-5548-4eba-9926-20f4c8ee8ab9">
+              <proxyTargetPorts>
+                <proxyConnection Id="93b1e7a6-3b21-4c0e-9209-30ea4026db87">
+                  <inputEventPortMoniker Id="1702b9c4-442d-4252-8ee6-59fbfe910a56" />
+                </proxyConnection>
+                <proxyConnection Id="f81d6693-0b3e-4d2a-9c34-f5eef23a6aa7">
+                  <inputEventPortMoniker Id="620a4f93-7298-40a3-b08b-9ee9edc2cf5d" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="a07b4549-46e2-4057-a53c-4a6e0d5341c0">
+                  <eventMoniker name="/RequestResolver/RequestResolver/MotorDirectionDown" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="3a124f70-671d-4223-8ce0-b368f6e27f00">
+            <inputEventPort Id="56e20e20-fe43-4ceb-bb93-1609803c4066">
+              <proxyTargetPorts>
+                <proxyConnection Id="b3717503-593f-475a-9062-e953499dd50a">
+                  <inputEventPortMoniker Id="0ec42568-e514-437d-ad33-9a58d11ed09c" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="68b285a8-d400-46bd-a43a-e602ab6bb52b">
+                  <eventMoniker name="/RequestResolver/RequestResolver/MotorDirectionIdle" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="409bcf88-aae5-4d8e-a472-d85a1d9b32d3">
+            <inputEventPort Id="0175136a-5039-4ae4-a816-c96bd80962d2">
+              <proxyTargetPorts>
+                <proxyConnection Id="4b25b0bc-c8c7-46b7-9208-a23e39e2a9fc">
+                  <inputEventPortMoniker Id="e66b5a64-552e-4256-8910-f98205b7c4c1" />
+                </proxyConnection>
+                <proxyConnection Id="b50e2403-974e-47d9-b2b9-1dacc5f92ce8">
+                  <inputEventPortMoniker Id="188b3216-8397-4591-a1fb-aaa516e61f90" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="fe6ce817-9aec-455b-ba6e-41a210e6ef65">
+                  <eventMoniker name="/RequestResolver/RequestResolver/StoppedAtFloor" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="81cba878-80ff-456c-81ba-10c0a42841b9">
+            <inputEventPort Id="3d820dee-90d6-4dcc-8a3b-552f1ce1ee1b">
+              <proxyTargetPorts>
+                <proxyConnection Id="209d2903-9380-4b9f-a8b4-59e7ae25d3b4">
+                  <inputEventPortMoniker Id="c1bf8919-ec05-4bb3-96c1-e0a9f655eab1" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="c6e50c0b-b5f5-4142-aa4b-bc11d303cb5c">
+                  <eventMoniker name="/RequestResolver/RequestResolver/CabinCall" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="d2a7b035-f11d-42c3-a269-78815ec49c2b">
+            <inputEventPort Id="35190eb4-8469-4ca5-86d9-98c1eecb57e5">
+              <proxyTargetPorts>
+                <proxyConnection Id="dd5a8a57-f795-4d50-a9ea-e898d6966391">
+                  <inputEventPortMoniker Id="36f89bd4-6983-47e2-b15a-f72e25779cc5" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="4244d8e8-e8a3-4ef9-9b3b-de7d91ef9ab0">
+                  <eventMoniker name="/RequestResolver/RequestResolver/UpCall" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="13deb8a0-72d6-454f-888a-288ae309863b">
+            <inputEventPort Id="a5ce9ea5-5d33-4cbd-b08e-15327d64338e">
+              <proxyTargetPorts>
+                <proxyConnection Id="8228839f-77de-4318-83f3-1f49402c2932">
+                  <inputEventPortMoniker Id="78383867-0848-403d-8960-997467770f9f" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="e14a46f7-ef8b-4bd9-98d1-76bfd98cf223">
+                  <eventMoniker name="/RequestResolver/RequestResolver/DownCall" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="aa5f1689-40cf-4e1e-9bb2-0bf68f4cc491">
+            <outputEventPort Id="f7b8b673-bbd4-41ed-89fb-0e9f823d5fbe">
+              <proxyTargetPorts>
+                <proxyConnection Id="cd772574-c9cf-4f95-9384-3f999c4d13bf">
+                  <outputEventPortMoniker Id="b11eaf6a-acb0-48f8-98dd-708f4e6cb0be" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="a06ff9bc-9fe5-41a0-98e8-c93d2aec5f55">
+                  <eventMoniker name="/RequestResolver/RequestResolver/PendingReq" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="dd90a999-928f-4167-b716-3687c7748e65">
+            <outputEventPort Id="49de6779-6dbd-43ee-b31d-6ab987fd07d0">
+              <proxyTargetPorts>
+                <proxyConnection Id="5cb0f68d-53bc-4440-99ab-225801824343">
+                  <outputEventPortMoniker Id="ec4e0511-d4bd-4652-8efe-b168226ecfc1" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="00a1b6b2-6b26-4215-8882-e905c15feb37">
+                  <eventMoniker name="/RequestResolver/RequestResolver/CurrentPriority" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="378d8d62-bb6a-47b3-a3de-1f95bccdcf3b">
+            <outputEventPort Id="7104d670-5fa9-45e0-ae9c-8e5af97cbfe5">
+              <proxyTargetPorts>
+                <proxyConnection Id="14f75c96-279c-443d-b3f2-891546b708bd">
+                  <outputEventPortMoniker Id="ef06d057-e1f5-439a-9a8a-282899b564d9" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="ff5fbb93-8495-4f4f-a155-7a773bc54f1a">
+                  <eventMoniker name="/RequestResolver/RequestResolver/request" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="7fd7fd93-bdbd-4c2e-9998-5f537047a657">
+            <outputEventPort Id="9e07bccc-f640-4498-909a-88b695824b72">
+              <proxyTargetPorts>
+                <proxyConnection Id="49495d08-6548-4ec0-bf19-634078b97af4">
+                  <outputEventPortMoniker Id="92be9273-f301-48b4-9d1f-1b2c6849488e" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="2e2b4bee-9143-48f2-9d01-c5dc3cd76dcd">
+                  <eventMoniker name="/RequestResolver/RequestResolver/PendingCabinCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="3d581992-d7dc-48cc-8286-7805fb62e529">
+            <outputEventPort Id="2966d50a-7f8f-4506-a764-db980bd9d3c2">
+              <proxyTargetPorts>
+                <proxyConnection Id="a162518d-24d6-4c5a-97b9-ec9894806d2f">
+                  <outputEventPortMoniker Id="8fcd0f74-435f-4538-85c3-8f3dda0f30a3" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="eb37daa7-10d9-4d71-bea5-6cf127d5ae80">
+                  <eventMoniker name="/RequestResolver/RequestResolver/PendingUpCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="8018b8e5-c781-4d64-a896-46a195cbee8c">
+            <outputEventPort Id="dcd238de-7e4b-4e95-a765-5d2282c18ddf">
+              <proxyTargetPorts>
+                <proxyConnection Id="c683ff44-be76-4b3b-9c65-13b517d32b40">
+                  <outputEventPortMoniker Id="f43664ae-c45d-4672-838a-47055c3375f6" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="1a8741f1-1539-4822-9d91-ee4f48cc2aff">
+                  <eventMoniker name="/RequestResolver/RequestResolver/PendingDownCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="bc44f546-9cab-4c59-88ab-77949b84f479">
+            <outputEventPort Id="fab50b53-6299-4c30-93cc-8147c7753a82">
+              <proxyTargetPorts>
+                <proxyConnection Id="31ef945b-bc48-4716-bba9-482f8d1e3bc7">
+                  <outputEventPortMoniker Id="0d8e3974-5816-49dd-814e-a763172338ae" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="5879f4af-2c80-4ffe-a163-9856359e3327">
+                  <eventMoniker name="/RequestResolver/RequestResolver/PendingCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="af03a626-e727-4f93-86d6-b1970b23443c">
+            <inputVariablePort Id="09f29857-9709-41e1-98d2-49a58d497538">
+              <proxyTargetPorts>
+                <proxyConnection Id="13c29e0a-7203-496c-87ef-7a883e8c2009">
+                  <inputVariablePortMoniker Id="f664da8d-0c82-4080-9bb5-cbe2f465624d" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <inputVariablePortReferencesVariable Id="6569bdec-77b3-4fd4-a9b2-2b3599c6265c">
+                  <variableMoniker name="/RequestResolver/RequestResolver/FloorSensorValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="c43d82bd-8537-4977-b536-79f6bc695fec">
+            <inputVariablePort Id="71d87a72-fc97-4189-9c33-3fe644aa3b3b">
+              <proxyTargetPorts>
+                <proxyConnection Id="92738c77-fdaf-4a8c-b4c5-b8a5066cc708">
+                  <inputVariablePortMoniker Id="87327c3c-2738-4452-937f-0d1bcca17c5b" />
+                </proxyConnection>
+                <proxyConnection Id="4a3c081d-58a3-4909-b2d3-0a7a2df994a0">
+                  <inputVariablePortMoniker Id="a1ff903b-a064-4610-b187-d8c3ad692760" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <inputVariablePortReferencesVariable Id="2285debe-75f8-4ec2-a95e-a42786811d24">
+                  <variableMoniker name="/RequestResolver/RequestResolver/StoppedAtFloorValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="fbab4490-35c2-4b24-a982-432b3786203a">
+            <inputVariablePort Id="07bd4494-787c-4c08-bc77-52d8bdf74067">
+              <proxyTargetPorts>
+                <proxyConnection Id="612749e8-dc2b-4c40-89f6-750902f378e1">
+                  <inputVariablePortMoniker Id="45f0d791-9dde-48d3-9b99-55bd19e0f343" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <inputVariablePortReferencesVariable Id="0f96bc7b-12c0-465f-ae04-40a5bc986bfa">
+                  <variableMoniker name="/RequestResolver/RequestResolver/CabinCallValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="ee0ef75f-eed2-47ce-b092-c41c0a9d927a">
+            <inputVariablePort Id="fbe41d61-00d1-4feb-b785-78676f05d7d1">
+              <proxyTargetPorts>
+                <proxyConnection Id="60beeb0f-4988-4000-8c55-7be234168294">
+                  <inputVariablePortMoniker Id="d7d36276-4f48-4cf1-ba34-f950737d0283" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <inputVariablePortReferencesVariable Id="2d97685f-592e-42f2-96f8-5bb3df16a1ab">
+                  <variableMoniker name="/RequestResolver/RequestResolver/UpCallValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="77b12763-1349-435a-ad3b-82ef530f6394">
+            <inputVariablePort Id="45fb9290-2d01-468e-910a-659c9b7dd847">
+              <proxyTargetPorts>
+                <proxyConnection Id="6d5cc5b6-03a7-48a5-9538-b69c17cee530">
+                  <inputVariablePortMoniker Id="e25ac59d-0e4f-4b17-9f90-c6967ee91619" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <inputVariablePortReferencesVariable Id="9f8d3b04-41da-4c72-a99e-bdebd89eb316">
+                  <variableMoniker name="/RequestResolver/RequestResolver/DownCallValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="ca12983a-3539-4a41-923e-b5473399fb85">
+            <outputVariablePort Id="0be8c03b-b8ee-4505-aeac-8f2c9ebb8185">
+              <proxyTargetPorts>
+                <proxyConnection Id="3222aa7a-8cc0-4031-a986-7e702a25e9d2">
+                  <outputVariablePortMoniker Id="9a914f32-ea8d-4202-b631-726b5e35cdba" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="e4cabbd4-020a-4c76-bd8c-56dd8b0be8a8">
+                  <variableMoniker name="/RequestResolver/RequestResolver/PendingReqValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="49b8132b-35fc-4ee1-9679-e73bf146ce5c">
+            <outputVariablePort Id="7a648d08-e42a-433d-a0cd-a4ba35b2b355">
+              <proxyTargetPorts>
+                <proxyConnection Id="bf7b8e3d-bcd2-4b7a-989c-48383ac6e59b">
+                  <outputVariablePortMoniker Id="c7ee224e-1a4a-41da-b312-fd50c0da70eb" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="6b23dfa1-eb89-45a8-83e5-88a1d0c5a6ca">
+                  <variableMoniker name="/RequestResolver/RequestResolver/CurrentPriorityValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="51b735c0-5cc3-4e52-8e2b-64f9bf13c3f5">
+            <outputVariablePort Id="01842300-d5e2-4c2e-9651-4fecb9063c4b">
+              <proxyTargetPorts>
+                <proxyConnection Id="c879f17b-fefe-49db-9aab-6c61e70d93c1">
+                  <outputVariablePortMoniker Id="9866aaa5-cab9-4ba9-acce-960d42fbfde5" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="0afa9296-467a-41f7-b36a-5bda1a318c56">
+                  <variableMoniker name="/RequestResolver/RequestResolver/requestValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="065ce0d6-b3d7-4c92-aa6e-52ec7b5c313a">
+            <outputVariablePort Id="7164a549-e252-49fd-a31f-491e937f42a7">
+              <proxyTargetPorts>
+                <proxyConnection Id="66157b9c-91fd-48e5-987d-08089b7503f4">
+                  <outputVariablePortMoniker Id="205fe412-0a2a-4d2d-ae97-1b30de1ac0e5" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="0bf216c5-5734-41b8-8186-d4a10841f1ce">
+                  <variableMoniker name="/RequestResolver/RequestResolver/PendingCabinCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="f1c2abec-1c99-4b4f-b2b3-dc7334d204cb">
+            <outputVariablePort Id="2a85c942-ad53-4ed4-81cf-685d283c2d27">
+              <proxyTargetPorts>
+                <proxyConnection Id="45de5f76-f23c-404c-8294-0f95b610b413">
+                  <outputVariablePortMoniker Id="8cd4b044-531c-488e-8266-def3f031a1b6" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="4aa797b3-9c4a-49f4-9792-a16c3960fc86">
+                  <variableMoniker name="/RequestResolver/RequestResolver/PendingUpCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="bf190471-366b-4e62-9078-4b54afcfb7aa">
+            <outputVariablePort Id="d1518880-bab3-4254-90f3-9d0dc5bf7595">
+              <proxyTargetPorts>
+                <proxyConnection Id="95addfab-03ff-477f-9868-1d0568b6695b">
+                  <outputVariablePortMoniker Id="144acca3-b22f-4434-98f2-33c669919ccc" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="9a8959f1-5998-4d47-b430-42ec655cdd5d">
+                  <variableMoniker name="/RequestResolver/RequestResolver/PendingDownCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="36bb85c4-da96-4a21-b88a-faa6f16f4226">
+            <outputVariablePort Id="645e3056-a14d-4e7b-a64f-973e7951d33a">
+              <proxyTargetPorts>
+                <proxyConnection Id="f73eb5cd-328f-4995-8a3a-8a65f3c31b85">
+                  <outputVariablePortMoniker Id="8d351719-5b85-474f-822d-ef13bc52d57d" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="8dce2aeb-5183-4572-9474-918144bc78b6">
+                  <variableMoniker name="/RequestResolver/RequestResolver/PendingCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </cFBModelHasFBInterface>
+  </functionBlockInterface>
+  <functionBlockReferences>
+    <cFBModelHasFBReferences Id="4aca3e7c-fceb-4d22-ac97-bec466b0abde">
+      <functionBlockReference Id="4365f1c6-1a7c-469a-a5f0-4cc7e6681fc9" name="PendingRequestGenerator" x="743.75" y="1093.75" creationMode="Resource" referencedFile="PendingRequestGenerator.fb">
+        <events>
+          <functionBlockHasEvents Id="b8a691b7-589b-4a0c-9037-f1bb58562281">
+            <eventRef Id="c02308c0-e3e9-4726-aa2d-320607fa525e" name="CabinCall" scope="Input" referencedID="657e50b6-49c5-4038-b38a-d17c19954033" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="49007000-6d3e-4464-945b-91afe2a4d8c4">
+            <eventRef Id="9a754698-c2ce-48d9-89be-22974d87283c" name="UpCall" scope="Input" referencedID="37bba855-d45e-4846-81c0-c067ad9872d6" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="00a9f31f-d222-4a9a-97c6-5831abfb7921">
+            <eventRef Id="12dd0532-67e4-41c1-88cd-88da83fa1da9" name="DownCall" scope="Input" referencedID="47b0c137-42a6-4bf8-8e80-6ca2cffb2c34" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="94070b64-1339-4629-a667-f424e1ec6d36">
+            <eventRef Id="5899c9bb-7314-4dda-ae24-7631e86210cd" name="PendingCabinCall" scope="Output" referencedID="2925d508-f2e7-4110-853a-83032e6596a3" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="cfdb0240-4103-48bc-96f7-9c9fb7e3a7d0">
+            <eventRef Id="48405078-d0f4-4810-b850-5f0652a50eaf" name="PendingUpCall" scope="Output" referencedID="c175cfd0-3f70-4079-9dde-0836b9b94cb0" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="4daaef6a-9986-4f2f-ba35-1b68d80e9918">
+            <eventRef Id="3c32cd75-3170-48d4-8cbd-762c9fb663b3" name="PendingDownCall" scope="Output" referencedID="cfc38b91-2d26-4d7d-a534-e5ff2c23a6cf" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="4d0ad573-9d1d-4594-8267-c877c07e5156">
+            <eventRef Id="9980033c-0534-4d1b-8886-979633e34733" name="PendingCall" scope="Output" referencedID="62beeb91-ce03-4dc0-ae3b-444c1fcd0e52" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="e2c483b3-bdca-438b-8cd3-0ac06af9518f">
+            <eventRef Id="dfc0910b-771c-4c11-b695-3fda246f0ec7" name="PendingReq" scope="Output" referencedID="391dafef-a362-441c-8c4e-45b639c8d2e5" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="84a53da0-e76b-4bda-946a-ecc4b1ce6d37">
+            <eventRef Id="71812f14-175e-4beb-be04-bc067c73cd0f" name="StoppedAtFloor" scope="Input" referencedID="31198174-2b8a-4dc2-9dbb-abeb0e574369" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="e931fe6a-be6a-4c78-932e-f45429035d81">
+            <eventRef Id="5b7ffbef-9489-4d21-92be-991978cfccb1" name="MotorDirectionUp" scope="Input" referencedID="0a55d934-80ec-4f4c-862e-c58ced920e40" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="496d7cc4-8f25-40ef-b1a3-35c157305f5c">
+            <eventRef Id="42872ed1-a44c-4a0d-85de-5943944afaa3" name="MotorDirectionDown" scope="Input" referencedID="972b4a79-231a-47be-9c66-4bd2862fb0aa" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="7bb6495b-c6df-4b8a-b50d-99252e78eaeb">
+            <variableRef Id="794bcd68-2239-4370-9d74-4c72d4e27e65" name="CabinCallValue" scope="Input" arraySize="4" referencedID="d424f449-0af8-4e2c-9451-de96df9576c6" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="12d07860-1409-4945-9ff6-78f1d9c5dbe7">
+            <variableRef Id="27912807-af2b-4ab7-9719-40a985fd3723" name="UpCallValue" scope="Input" arraySize="4" referencedID="104f148f-5b9c-40ad-8be2-d77dd78fa045" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="1e3a9967-abab-4a2f-97b9-e92eab709a16">
+            <variableRef Id="bc371e44-6cc1-4076-8865-1a04a6c16423" name="DownCallValue" scope="Input" arraySize="4" referencedID="59641a3a-643d-4596-85e3-b292151c24be" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="b30b48fc-d46c-449b-8025-ec401379d166">
+            <variableRef Id="092ca530-f913-4feb-8563-5e21aeaf2ef3" name="PendingCabinCallValue" scope="Output" arraySize="4" referencedID="4cdbd534-05e7-4274-9606-1549f3ea67cb" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="0b66e96e-a669-43ac-a056-2cb6afd57cd9">
+            <variableRef Id="03db59d4-cf83-434b-a871-cba57eddb089" name="PendingUpCallValue" scope="Output" arraySize="4" referencedID="49518f5e-12aa-4a32-a315-ffbce1b766d6" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="b735b223-d650-4e2a-88af-01072c2043ad">
+            <variableRef Id="b44de76a-22f9-474d-a425-5fed52574cbc" name="PendingDownCallValue" scope="Output" arraySize="4" referencedID="4e3feb4a-fc7b-4caf-a4e6-c4f0345134af" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="da65d938-fa03-4f44-b825-0db8c12394c6">
+            <variableRef Id="5255b0ce-9279-4ab6-8317-98b69781d875" name="PendingCallValue" scope="Output" arraySize="4" referencedID="c6f2d1f0-652d-4a3b-a3d2-9214415fa54b" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="24f572f1-5fd1-46e6-97b1-9985f8606ad8">
+            <variableRef Id="0f705adb-a14b-4976-9489-9031b886e630" name="PendingReqValue" scope="Output" arraySize="4" referencedID="b770ca71-1bd2-4f72-a749-231051086fa3" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="31799517-fa3b-4bed-8bbd-0ddfbe6fa5a6">
+            <variableRef Id="7bfa3790-4215-459e-838e-fd21d5b99de1" name="StoppedAtFloorValue" scope="Input" type="INT" referencedID="61679b18-6d19-4aa5-979c-06e1f23589cf" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="83bae882-c65a-419c-9b33-5831beffbfa2">
+            <inputEventPort Id="c1bf8919-ec05-4bb3-96c1-e0a9f655eab1">
+              <event>
+                <inputEventPortReferencesEvent Id="15f1d29e-8ef7-4afb-90b7-b43eb6ea50e0">
+                  <eventRefMoniker name="/RequestResolver/PendingRequestGenerator/CabinCall" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="82a0ec19-710e-48d6-8ebc-73e680febf3b">
+            <inputEventPort Id="36f89bd4-6983-47e2-b15a-f72e25779cc5">
+              <event>
+                <inputEventPortReferencesEvent Id="61f3fefe-df03-4cbd-98fe-ba2e6ca94233">
+                  <eventRefMoniker name="/RequestResolver/PendingRequestGenerator/UpCall" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="bfcd1572-7e84-4ed8-bcaf-886ea7858fcd">
+            <inputEventPort Id="78383867-0848-403d-8960-997467770f9f">
+              <event>
+                <inputEventPortReferencesEvent Id="92a0c756-4736-4e83-816c-d7c2e8536634">
+                  <eventRefMoniker name="/RequestResolver/PendingRequestGenerator/DownCall" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="6dac1352-bbd9-44f3-8206-3466bd164a60">
+            <inputEventPort Id="188b3216-8397-4591-a1fb-aaa516e61f90">
+              <event>
+                <inputEventPortReferencesEvent Id="45d5d71d-ca47-4b15-a3c5-b7f591ff928a">
+                  <eventRefMoniker name="/RequestResolver/PendingRequestGenerator/StoppedAtFloor" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="6810b987-4941-43ec-949c-68e4129c9ec6">
+            <inputEventPort Id="361c6e2e-4d35-4cfd-b899-829fc5d774cb">
+              <event>
+                <inputEventPortReferencesEvent Id="6274acbc-166f-48cd-8cea-b9013372fba3">
+                  <eventRefMoniker name="/RequestResolver/PendingRequestGenerator/MotorDirectionUp" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="0c762cc2-0f52-45c7-9089-dacfddb9e19d">
+            <inputEventPort Id="620a4f93-7298-40a3-b08b-9ee9edc2cf5d">
+              <event>
+                <inputEventPortReferencesEvent Id="d6512acb-1068-4444-894a-2ea48e9f50f1">
+                  <eventRefMoniker name="/RequestResolver/PendingRequestGenerator/MotorDirectionDown" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="98d53a90-c1b5-4834-87e6-41eeee7b0004">
+            <outputEventPort Id="92be9273-f301-48b4-9d1f-1b2c6849488e">
+              <event>
+                <outputEventPortReferencesEvent Id="81ea249a-a561-421e-8959-6c5ba27e8227">
+                  <eventRefMoniker name="/RequestResolver/PendingRequestGenerator/PendingCabinCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="32a2d62d-7789-4775-bb33-d8ad609e7415">
+            <outputEventPort Id="8fcd0f74-435f-4538-85c3-8f3dda0f30a3">
+              <event>
+                <outputEventPortReferencesEvent Id="a1295f25-a9f5-44fe-9b70-96bce6e0ab9a">
+                  <eventRefMoniker name="/RequestResolver/PendingRequestGenerator/PendingUpCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="a5472c26-2635-4d26-b585-adef682c10f5">
+            <outputEventPort Id="f43664ae-c45d-4672-838a-47055c3375f6">
+              <event>
+                <outputEventPortReferencesEvent Id="c6fa5318-efd6-438c-a1bf-d88523df1579">
+                  <eventRefMoniker name="/RequestResolver/PendingRequestGenerator/PendingDownCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="56e5a769-f8cd-4d59-9084-bfa2eeceda53">
+            <outputEventPort Id="0d8e3974-5816-49dd-814e-a763172338ae">
+              <event>
+                <outputEventPortReferencesEvent Id="f677b4fa-65de-4ce3-9968-38f986a4cabf">
+                  <eventRefMoniker name="/RequestResolver/PendingRequestGenerator/PendingCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="4b947ec6-1591-4fda-91a4-aff5fca17802">
+            <outputEventPort Id="b11eaf6a-acb0-48f8-98dd-708f4e6cb0be">
+              <wireTargetPorts>
+                <wireConnection Id="53e647b9-a9b6-4320-ac3b-33b8287ff9b0" unitDelayed="false">
+                  <inputEventPortMoniker Id="b9099a2f-4233-45c1-a2b1-0932ebbcd132" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="e67ce746-fd5b-483f-9a38-05a3ac34912d">
+                  <eventRefMoniker name="/RequestResolver/PendingRequestGenerator/PendingReq" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="6344c5c7-7516-49b8-86db-c6fdc555b3af">
+            <inputVariablePort Id="45f0d791-9dde-48d3-9b99-55bd19e0f343">
+              <variable>
+                <inputVariablePortReferencesVariable Id="f4fa080b-0b0e-48b2-bc2a-3fa1f8c25573">
+                  <variableRefMoniker name="/RequestResolver/PendingRequestGenerator/CabinCallValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="f95d6909-cffb-4e6a-a992-29d3a366a6b3">
+            <inputVariablePort Id="d7d36276-4f48-4cf1-ba34-f950737d0283">
+              <variable>
+                <inputVariablePortReferencesVariable Id="f19a08a2-f879-4f26-9f26-05a6878d8365">
+                  <variableRefMoniker name="/RequestResolver/PendingRequestGenerator/UpCallValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="ebba41fd-dd73-4b42-8c82-1a854203386a">
+            <inputVariablePort Id="e25ac59d-0e4f-4b17-9f90-c6967ee91619">
+              <variable>
+                <inputVariablePortReferencesVariable Id="45e9a571-f776-4f1f-a1bd-01d1745091c4">
+                  <variableRefMoniker name="/RequestResolver/PendingRequestGenerator/DownCallValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="0b6d487d-70be-43b2-8e9b-00a8334fee31">
+            <inputVariablePort Id="a1ff903b-a064-4610-b187-d8c3ad692760">
+              <variable>
+                <inputVariablePortReferencesVariable Id="16e45c23-c1a9-42b0-ba8d-0be19ba6bc7b">
+                  <variableRefMoniker name="/RequestResolver/PendingRequestGenerator/StoppedAtFloorValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="3a57d23f-0274-4bf1-81c1-743d04d34014">
+            <outputVariablePort Id="205fe412-0a2a-4d2d-ae97-1b30de1ac0e5">
+              <variable>
+                <outputVariablePortReferencesVariable Id="8b56dff3-2ecb-4a82-ba54-ed343d7fbd2d">
+                  <variableRefMoniker name="/RequestResolver/PendingRequestGenerator/PendingCabinCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="ae43743a-13fc-4013-80ab-71b8779d3ff8">
+            <outputVariablePort Id="8cd4b044-531c-488e-8266-def3f031a1b6">
+              <variable>
+                <outputVariablePortReferencesVariable Id="5abd7e71-fe1e-493a-aaca-efab780d8dbe">
+                  <variableRefMoniker name="/RequestResolver/PendingRequestGenerator/PendingUpCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="18a742d5-1b2f-49d5-8afb-fe1a3dd440fd">
+            <outputVariablePort Id="144acca3-b22f-4434-98f2-33c669919ccc">
+              <variable>
+                <outputVariablePortReferencesVariable Id="d87e0916-daa5-4526-ac10-4659981d22ab">
+                  <variableRefMoniker name="/RequestResolver/PendingRequestGenerator/PendingDownCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="61b79673-be95-4e10-babf-1b8e50547ab6">
+            <outputVariablePort Id="8d351719-5b85-474f-822d-ef13bc52d57d">
+              <variable>
+                <outputVariablePortReferencesVariable Id="8e253e97-e8da-4ab3-a1cc-62610b1f07e2">
+                  <variableRefMoniker name="/RequestResolver/PendingRequestGenerator/PendingCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="6ff5a656-352b-47a3-94b3-06e7734a39c8">
+            <outputVariablePort Id="9a914f32-ea8d-4202-b631-726b5e35cdba">
+              <wireTargetPorts>
+                <wireConnection Id="7dd18a8b-189f-423d-ba95-3eacd8fe33ed" unitDelayed="false">
+                  <inputVariablePortMoniker Id="b7c711c9-e377-4d46-8e9d-8b04e40fddef" />
+                </wireConnection>
+              </wireTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="cd0f6964-db65-4c66-ae05-874743f20cdb">
+                  <variableRefMoniker name="/RequestResolver/PendingRequestGenerator/PendingReqValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockReference>
+    </cFBModelHasFBReferences>
+    <cFBModelHasFBReferences Id="aab52ff8-caa2-4e97-bd97-72f1fff6405f">
+      <functionBlockReference Id="79c61961-454c-4c2a-a6f6-52dd412c40b9" name="HighestRequestProducer" x="2450" y="1312.5" creationMode="Resource" referencedFile="HighestRequestProducer.fb">
+        <events>
+          <functionBlockHasEvents Id="c9b4c567-4089-4ff2-9ad0-2d423dace6aa">
+            <eventRef Id="9c066371-bc59-4dd0-a531-aa9fa429e555" name="FloorSensor" scope="Input" referencedID="4812d3bc-604b-49de-b15b-a88e47e14faa" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="ebfcfdd0-339e-4832-8d69-9a7b81cfbffb">
+            <eventRef Id="ca371e38-a3b5-4acd-82c7-aa1c39121e4e" name="MotorDirectionUp" scope="Input" referencedID="03d25a04-c086-47d9-86f6-2cf1399cf24b" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="aa98b344-2bf6-4c52-8096-ccd719ba8e17">
+            <eventRef Id="41ebd2f8-555a-4c12-abd0-93c609d10cd7" name="MotorDirectionDown" scope="Input" referencedID="8455a0d5-1401-407e-a863-66cba0a83e2a" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="dc2b6210-4b58-4bae-a059-0833b54580a6">
+            <eventRef Id="1e848e7e-649b-463d-96cc-32b4f341d24d" name="MotorDirectionIdle" scope="Input" referencedID="3257ef74-3e54-46e8-b5e4-f5d66d472229" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="74a71d58-4fae-4df5-8d83-cf9991468830">
+            <eventRef Id="64d4e095-4246-4e13-ace7-af3fe67ff3f2" name="PendingReq" scope="Input" referencedID="da848a03-42d3-4a32-876a-4820f1c1413e" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="0e2fdacb-a6fe-430a-811c-cc766bc208c7">
+            <eventRef Id="7b9ffd1e-34fa-4b00-bcf8-27aa195142ba" name="CurrentPriority" scope="Output" referencedID="754af1ff-65d3-4bdc-b572-d7638147ad5d" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="d7863393-1c0d-4029-ba15-0c5e74550bb1">
+            <variableRef Id="25b9a706-0639-44a2-af48-0a49a5591f29" name="FloorSensorValue" scope="Input" type="INT" referencedID="7eb53c51-cb4f-4d4c-b9df-349fcf94bfa2" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="507d7bc9-8a8d-4999-a983-260605ff203b">
+            <variableRef Id="5da2a312-df46-44f1-a02e-da5985de2f70" name="PendingReqValue" scope="Input" arraySize="4" referencedID="25585a32-f1aa-4710-b591-0842ed0e3bfd" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="beeb067c-4048-450e-831f-d74cc23b9a23">
+            <variableRef Id="eba882bb-f472-43fe-af72-2a78b7e6e26c" name="CurrentPriorityValue" scope="Output" type="INT" referencedID="ebe818ba-19cc-4cc8-b73b-b8e05af8315a" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="56e3e8c1-1f1d-4166-87bd-577f5b28c09a">
+            <inputEventPort Id="d1f19d9c-4ca7-4734-b154-4a8faaf18dd0">
+              <event>
+                <inputEventPortReferencesEvent Id="3c0baa2f-193b-47c3-8341-a7302111acf6">
+                  <eventRefMoniker name="/RequestResolver/HighestRequestProducer/FloorSensor" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="ec7e7ee7-4984-4101-908b-c7f9613a3f25">
+            <inputEventPort Id="2e617c9c-60b5-4da9-bced-de60b90cf9ae">
+              <event>
+                <inputEventPortReferencesEvent Id="c0e3373b-fc3d-4ccb-9275-4d7e04ff4bec">
+                  <eventRefMoniker name="/RequestResolver/HighestRequestProducer/MotorDirectionUp" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="957f3140-a76a-4991-8fc3-33ef03798192">
+            <inputEventPort Id="1702b9c4-442d-4252-8ee6-59fbfe910a56">
+              <event>
+                <inputEventPortReferencesEvent Id="a0de66e9-227d-4c79-93ff-22e049768fd0">
+                  <eventRefMoniker name="/RequestResolver/HighestRequestProducer/MotorDirectionDown" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="e0798628-37af-45f7-92fe-3617a458eb9b">
+            <inputEventPort Id="0ec42568-e514-437d-ad33-9a58d11ed09c">
+              <event>
+                <inputEventPortReferencesEvent Id="7f8e07fa-22c7-4a86-9b13-2a990769ec64">
+                  <eventRefMoniker name="/RequestResolver/HighestRequestProducer/MotorDirectionIdle" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="3bef4750-3bcb-461a-923b-76389d790492">
+            <inputEventPort Id="b9099a2f-4233-45c1-a2b1-0932ebbcd132">
+              <event>
+                <inputEventPortReferencesEvent Id="209dfd06-b7ef-4086-a6cd-95173b00c8c6">
+                  <eventRefMoniker name="/RequestResolver/HighestRequestProducer/PendingReq" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="efc0e169-5da1-4c71-95a4-fb5e285e9d02">
+            <outputEventPort Id="ec4e0511-d4bd-4652-8efe-b168226ecfc1">
+              <wireTargetPorts>
+                <wireConnection Id="ce90f4eb-fa7a-4b3a-826e-b2ea33ae00f3" unitDelayed="false">
+                  <inputEventPortMoniker Id="492245f8-83b8-4b6b-b15c-6d1dd5ac1250" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="4798a3e6-b5cb-4302-a4b5-c93fc5542f89">
+                  <eventRefMoniker name="/RequestResolver/HighestRequestProducer/CurrentPriority" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="32842bec-bb6b-4903-b57e-5dc710f81051">
+            <inputVariablePort Id="f664da8d-0c82-4080-9bb5-cbe2f465624d">
+              <variable>
+                <inputVariablePortReferencesVariable Id="a206acab-cd2e-459d-8c65-878e4de76856">
+                  <variableRefMoniker name="/RequestResolver/HighestRequestProducer/FloorSensorValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="bdc07e96-284f-41f7-b129-4d4f1c088c40">
+            <inputVariablePort Id="b7c711c9-e377-4d46-8e9d-8b04e40fddef">
+              <variable>
+                <inputVariablePortReferencesVariable Id="8f47be3a-0dbe-48bc-a77b-a1ba45dbba7f">
+                  <variableRefMoniker name="/RequestResolver/HighestRequestProducer/PendingReqValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="f8d68433-6f22-4d54-8e27-e7e79eccbff4">
+            <outputVariablePort Id="c7ee224e-1a4a-41da-b312-fd50c0da70eb">
+              <wireTargetPorts>
+                <wireConnection Id="70ee50ac-9222-4e84-b199-58a3a5d10747" unitDelayed="false">
+                  <inputVariablePortMoniker Id="065793e0-e617-4943-9cf2-1dd4849d1ee7" />
+                </wireConnection>
+              </wireTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="d717d7dc-51c6-4ff4-b7db-2c13d27135e5">
+                  <variableRefMoniker name="/RequestResolver/HighestRequestProducer/CurrentPriorityValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockReference>
+    </cFBModelHasFBReferences>
+    <cFBModelHasFBReferences Id="fd567af8-5188-4e3f-a290-f6ec3659a768">
+      <functionBlockReference Id="0a0fc388-8a1d-4a10-894f-b3e33137c6a7" name="RequestConsumer" x="2537.5" y="612.5" creationMode="Resource" referencedFile="RequestConsumer.fb">
+        <events>
+          <functionBlockHasEvents Id="123000a8-0fea-409d-b2ba-2400fcda952c">
+            <eventRef Id="33176965-22b7-4fdc-b802-e1bef39f56b9" name="CurrentPriority" scope="Input" referencedID="7e95bbad-b3f1-4d5e-8549-2c435fc0042c" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="d3ad738d-874a-4d34-8300-efc1294a373a">
+            <eventRef Id="8dba3996-72e3-4764-9855-c61b1481200f" name="StoppedAtFloor" scope="Input" referencedID="ba503525-61ac-4325-9ed2-87b21e0ba777" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="6fc9889c-e612-49c2-a4da-c9f95dcee630">
+            <eventRef Id="a93f6043-b703-42e1-8218-b776590ee495" name="request" scope="Output" referencedID="56028ab8-b3ed-4d91-adb5-a8f70c892bbe" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="2efc1beb-5bf8-4f5c-8b95-8aeef8100cda">
+            <variableRef Id="6c85c6ca-dc6a-48dd-8efb-5af1e9e56be8" name="CurrentPriorityValue" scope="Input" type="INT" referencedID="ddab5110-17d3-4f16-938e-e41a1983c9ab" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="a9a0ff6c-7e23-4531-b434-3b557a8f5303">
+            <variableRef Id="52ca6f69-3068-4af3-8d15-7b906e692d8f" name="StoppedAtFloorValue" scope="Input" type="INT" referencedID="74dacff1-3737-4b29-83dc-d840550f210b" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="b2db79a0-1e18-4a47-90bb-3df87eb1352d">
+            <variableRef Id="6633fdff-7c94-4183-b22c-1b5b4cc2ad52" name="requestValue" scope="Output" type="INT" referencedID="25654e13-52d0-443b-b235-0951ec765f3b" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="ba3cc78d-9531-443a-8405-725bf02355ec">
+            <inputEventPort Id="492245f8-83b8-4b6b-b15c-6d1dd5ac1250">
+              <event>
+                <inputEventPortReferencesEvent Id="3b71de11-9ab6-49fc-b1f4-6170d2979268">
+                  <eventRefMoniker name="/RequestResolver/RequestConsumer/CurrentPriority" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="2fd013cc-4941-44c5-82c7-89c4a007a1e7">
+            <inputEventPort Id="e66b5a64-552e-4256-8910-f98205b7c4c1">
+              <event>
+                <inputEventPortReferencesEvent Id="4a1062b7-0936-4e13-85b1-0b25ddc78ee7">
+                  <eventRefMoniker name="/RequestResolver/RequestConsumer/StoppedAtFloor" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="49326dc2-9ca1-4456-b1a1-497f33f2d543">
+            <outputEventPort Id="ef06d057-e1f5-439a-9a8a-282899b564d9">
+              <event>
+                <outputEventPortReferencesEvent Id="4667f322-7dac-4d00-b79f-6b7162cfcf18">
+                  <eventRefMoniker name="/RequestResolver/RequestConsumer/request" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="b4ac3fd0-9449-4afe-b781-cd3c9b0aa53f">
+            <inputVariablePort Id="065793e0-e617-4943-9cf2-1dd4849d1ee7">
+              <variable>
+                <inputVariablePortReferencesVariable Id="4bca5052-c049-474c-93ff-aa1d44517536">
+                  <variableRefMoniker name="/RequestResolver/RequestConsumer/CurrentPriorityValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="4600b2c2-ea19-4d4b-818f-92f1bfe6260b">
+            <inputVariablePort Id="87327c3c-2738-4452-937f-0d1bcca17c5b">
+              <variable>
+                <inputVariablePortReferencesVariable Id="8595efdf-f16e-4793-a020-a3d3b0d4cb53">
+                  <variableRefMoniker name="/RequestResolver/RequestConsumer/StoppedAtFloorValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="6c7bfd81-bbe4-4997-bd5f-95a9dbeb5d9a">
+            <outputVariablePort Id="9866aaa5-cab9-4ba9-acce-960d42fbfde5">
+              <variable>
+                <outputVariablePortReferencesVariable Id="f68b094f-b192-42c9-bce5-8c6ab61af90b">
+                  <variableRefMoniker name="/RequestResolver/RequestConsumer/requestValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockReference>
+    </cFBModelHasFBReferences>
+  </functionBlockReferences>
+</compositeFunctionBlockModel>

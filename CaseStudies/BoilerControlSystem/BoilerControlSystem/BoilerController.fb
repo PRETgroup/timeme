@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="bea647a4-05eb-4b4e-abfd-67aab89dbe99" name="BoilerController" organization="EC" date="2012-02-28" author="zbha001">
+  <states>
+    <functionBlockModelHasStates Id="698b3171-b3fa-4552-8c0b-388ec9f21c77">
+      <state Id="2431925c-9e89-4b40-8366-0ab11260236b" name="CLOSED" x="1225" y="918.75" isInitial="true">
+        <actionSet>
+          <actionLink Id="d32bd6d3-e522-4992-8a45-cf12c7e2476f">
+            <actionSetMoniker Id="2083fa55-187a-4755-a578-1562f850efa2" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="f92745cd-48fb-45de-bed8-3fcf3843f32a">
+            <transitionNodeMoniker Id="5d380834-045d-45d7-b86e-e1ea13ba21f9" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="c04e766f-afe2-4f6c-801f-d5dc723ff0cf">
+      <state Id="7f1646ce-874b-49c9-b021-11ae51e500a5" name="OPEN" x="2931.25" y="918.75" isInitial="false">
+        <actionSet>
+          <actionLink Id="163aaaeb-bef6-4ffa-923b-e5940901b688">
+            <actionSetMoniker Id="63a8dfc2-191a-4a3d-a1f9-520778c45f0a" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="fe2c1c6c-f2ec-41b4-a85c-c2ca4054ab57">
+            <transitionNodeMoniker Id="46e48760-5e40-4979-9b7d-8ab0e0123e1d" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="fb7d3f14-8625-4c50-aa8e-f93c4b451965">
+      <actionSet Id="63a8dfc2-191a-4a3d-a1f9-520778c45f0a" x="2100" y="656.25">
+        <actionItems>
+          <actionSetHasActionItems Id="e2b2e433-fcf1-4912-bf4f-212a51269dc9">
+            <actionEvent Id="ae0f9d91-5ecf-4525-9b0e-a1eff174f941">
+              <event>
+                <actionEventReferencesEvent Id="39faca8e-e057-4453-8703-bffc06569486">
+                  <eventMoniker name="/BoilerController/BoilerController/trigger" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="88fb7e3c-480b-443b-a939-5852f1f188b4">
+            <actionAlgorithm Id="803c7bf0-2963-432b-a017-55e2ab64f9bb">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="04d223bf-51d7-445a-9080-93af1a7a0f73">
+                  <algorithmMoniker name="/BoilerController/openValve" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="371e2fa8-5735-4d60-8831-0d4251a86e5f">
+      <actionSet Id="2083fa55-187a-4755-a578-1562f850efa2" x="1225" y="656.25">
+        <actionItems>
+          <actionSetHasActionItems Id="a5575e2b-7723-4cd3-a6d9-0c2e6a8f2557">
+            <actionEvent Id="8a439134-7333-441d-ae2b-4c5b40820541">
+              <event>
+                <actionEventReferencesEvent Id="5db05766-749f-4931-89c8-11175a418b2c">
+                  <eventMoniker name="/BoilerController/BoilerController/trigger" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="03a5bad3-35b9-413f-89d2-da21bce13966">
+            <actionAlgorithm Id="79fbce00-6558-49e0-b654-94a55da5dc2a">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="afa5b0d8-3075-4c34-9da2-abc85abf2acd">
+                  <algorithmMoniker name="/BoilerController/closeValve" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="17fda119-9c3f-4296-9586-cfe6cef00198">
+      <algorithm Id="54ca48e1-af48-4996-902d-35c5d36e783e" name="openValve" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="20d4a7b4-e1b2-40b2-8b72-12d8baa176d8">
+      <algorithm Id="8bdcebf9-7bfb-4c6a-88ca-0aeaab2f1906" name="closeValve" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="cf65bbfa-2c20-47d5-a767-d33086f4a934">
+      <functionBlockInterface Id="6bb63c36-90be-4d0b-b69d-0be1913b0b5d" name="BoilerController" x="656.25" y="175">
+        <events>
+          <functionBlockHasEvents Id="47118f45-1c18-42fb-a633-78a17faf92ca">
+            <event Id="e3fdb741-8be0-4fe8-b8ae-975b3ddfa7b8" name="changed" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="49bff764-6033-4655-9eb8-97fb7af38d33">
+            <event Id="b9d2cfd1-f9d3-4ff8-8358-d1813d437e9d" name="trigger" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="398dea36-c173-41e3-92e2-42d41dec8085">
+            <variable Id="025d5fc8-8527-404f-89c0-b0e19593b425" name="pressure" scope="Input" initialValue="0" minimumValue="0" maximumValue="1000" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="83df995b-a8f7-46ca-844e-23f8572593c0">
+            <variable Id="96e0ff8d-7daa-4b01-b819-c0ac1a743f42" name="threshold" scope="Input" initialValue="0" minimumValue="0" maximumValue="1000" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="b07a81bb-9cd4-4437-b3f6-932085c23b33">
+            <variable Id="d5a8d664-39ce-4292-b86c-b044048d033a" name="flow" scope="Input" initialValue="false" type="BOOL" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="b5794ddb-2ae8-4509-9f64-4a4353b7c756">
+            <variable Id="8976999d-86f8-4bb7-94fa-2a755e4daeb0" name="valveCtl" scope="Output" initialValue="false" type="BOOL" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="6c292600-59cc-4dfd-b2f1-60dcee7f6e9c">
+            <inputEventPort Id="ed7ee8d8-91e1-4ef0-a426-94f829828145">
+              <targetPort>
+                <association Id="24f34ef1-74f0-482e-98a5-5aa57ce52cdd">
+                  <inputVariablePortMoniker Id="5383ea67-153e-4501-b2f6-783fbbaeafa6" />
+                </association>
+                <association Id="8459c210-1ceb-4990-8d24-d888cb80e8fe">
+                  <inputVariablePortMoniker Id="dae70048-eb17-4efb-b4be-8d8d82beb94f" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="023c759f-9596-423c-9bd6-b21c874919fb">
+                  <eventMoniker name="/BoilerController/BoilerController/changed" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="53ef7b0f-64de-493f-be3c-88ba00f8d8dd">
+            <outputEventPort Id="1575b683-9bdd-4c94-805b-8b473280ba28">
+              <targetPort>
+                <association Id="245f1c7b-66f4-4b50-a57c-1d20cab01a14">
+                  <outputVariablePortMoniker Id="d5e76f68-de2b-44e8-8e4f-6acb33c7f7e8" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="25a7a753-c016-44cd-be01-6ed205620b4d">
+                  <eventMoniker name="/BoilerController/BoilerController/trigger" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="56936f09-a57e-47e1-b783-ba6badcc2503">
+            <inputVariablePort Id="dae70048-eb17-4efb-b4be-8d8d82beb94f">
+              <variable>
+                <inputVariablePortReferencesVariable Id="30267480-ebeb-4dbf-bfe2-5b032a9876e6">
+                  <variableMoniker name="/BoilerController/BoilerController/flow" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="631c634a-63de-4d24-8409-2954bd44cfd6">
+            <inputVariablePort Id="5383ea67-153e-4501-b2f6-783fbbaeafa6">
+              <variable>
+                <inputVariablePortReferencesVariable Id="ec80155a-68a4-40a1-8109-17f600501b2f">
+                  <variableMoniker name="/BoilerController/BoilerController/pressure" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="1e90e7e7-fab0-4a34-ba91-5ab7bbcd19be">
+            <inputVariablePort Id="9f71f9cf-8a86-4f0c-bee0-210e029d6f47">
+              <variable>
+                <inputVariablePortReferencesVariable Id="315f0846-03aa-4c43-9c22-132347805eb5">
+                  <variableMoniker name="/BoilerController/BoilerController/threshold" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="a8ab055e-893b-48f9-9fe0-209699ba87ee">
+            <outputVariablePort Id="d5e76f68-de2b-44e8-8e4f-6acb33c7f7e8">
+              <variable>
+                <outputVariablePortReferencesVariable Id="4e748c6a-7ad0-4c2c-a0f0-7dea81170a14">
+                  <variableMoniker name="/BoilerController/BoilerController/valveCtl" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="12e8e530-f0a5-4501-8ab2-6832190e75b5">
+      <transitionNode Id="5d380834-045d-45d7-b86e-e1ea13ba21f9" x="1618.75" y="831.25" event="changed" expression="pressure &gt; threshold">
+        <targetState>
+          <transitionNodeConnectsToStates Id="9dd6b7b3-973c-4fe0-a292-50b0d1ca1501">
+            <stateMoniker name="/BoilerController/OPEN" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="665832be-d1d9-4d3a-9ffb-dc7943eae528">
+      <transitionNode Id="46e48760-5e40-4979-9b7d-8ab0e0123e1d" x="1618.75" y="1050" event="changed" expression="pressure &lt;= threshold">
+        <targetState>
+          <transitionNodeConnectsToStates Id="32b0668f-0557-4eda-8b3c-f1565367aaf5">
+            <stateMoniker name="/BoilerController/CLOSED" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{92B81AF7-8D03-46D0-9C71-430DAE7A074E}") = "VVIModePacemaker", "VVIModePacemaker\VVIModePacemaker.bproj", "{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Deploy|gnu = Deploy|gnu
+		OpenRTM|gnu = OpenRTM|gnu
+		Remote|gnu = Remote|gnu
+		Run|gnu = Run|gnu
+		Simulation|gnu = Simulation|gnu
+		Verification|gnu = Verification|gnu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.Deploy|gnu.ActiveCfg = Deploy|gnu
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.Deploy|gnu.Build.0 = Deploy|gnu
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.OpenRTM|gnu.ActiveCfg = OpenRTM|gnu
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.OpenRTM|gnu.Build.0 = OpenRTM|gnu
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.Remote|gnu.ActiveCfg = Remote|gnu
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.Remote|gnu.Build.0 = Remote|gnu
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.Run|gnu.ActiveCfg = Run|gnu
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.Run|gnu.Build.0 = Run|gnu
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.Simulation|gnu.ActiveCfg = Simulation|gnu
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.Simulation|gnu.Build.0 = Simulation|gnu
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.Verification|gnu.ActiveCfg = Verification|gnu
+		{0B9CE5FF-E8FE-444A-A65D-69013D17CF4A}.Verification|gnu.Build.0 = Verification|gnu
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="0e571a92-1fe7-4866-9c13-3d5177f45001" name="AccelDecel" organization="Rockwell Automation" version="0" date="2000-05-30" author="JHC" header="package fb.rt.benchmarks.cruisecontrol;">
+  <states>
+    <functionBlockModelHasStates Id="c890cabf-58d3-46e3-96cc-5e5ce0cab632">
+      <state Id="852fe00c-f0fa-483f-ac60-a66a0333e6d9" name="START" comments="Initial State" x="552.94116" y="429.41174000000007" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="bcc37fc7-55ac-4ce5-a0b1-e691160f3b1c">
+            <transitionNodeMoniker Id="ebba4866-8c87-4179-855b-084f9e1e5d24" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="5a59bad1-ba57-4205-8552-da6bb44e78d7">
+      <state Id="40420e89-643f-4905-b5d9-461e78aace31" name="INIT" comments="Initialization" x="923.5294" y="141.17647" isInitial="false">
+        <actionSet>
+          <actionLink Id="04d38064-7235-4938-a5f6-c5672261b36a">
+            <actionSetMoniker Id="5c529e54-bbbb-44e5-a24b-96de1bd68729" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="0273d411-7f87-4eef-ac0e-4f6ad61f6e52">
+            <transitionNodeMoniker Id="6f25ac71-8e49-4cea-a46b-92f519b2b41e" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="a06fa905-0681-492b-a252-443cf8a15547">
+      <actionSet Id="5c529e54-bbbb-44e5-a24b-96de1bd68729" x="1181.25" y="175">
+        <actionItems>
+          <actionSetHasActionItems Id="5564b00c-0b74-448e-96ff-244deb43aefc">
+            <actionEvent Id="acbc3f1d-df60-4cef-a3cc-a6228d62d968">
+              <event>
+                <actionEventReferencesEvent Id="0701b299-ffda-4db4-b4c4-4f63258d847a">
+                  <eventMoniker name="/AccelDecel/AccelDecel/violated" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="d22fccb5-88b3-4e3d-ab1e-c50ab4794bfa">
+            <actionAlgorithm Id="1c6dcb30-d5ae-4d73-a608-225595f4dcfd">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="f8f98005-a276-4574-804e-e9d049d01b60">
+                  <algorithmMoniker name="/AccelDecel/INIT" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="634ec2fb-2cca-4ae4-8ee5-47f6f8c559d6">
+      <algorithm Id="0842ae43-aba5-4181-b497-10f1763a076e" name="INIT" comments="Initialization algorithm" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="b63263ee-9032-4043-9176-4017b3fde0ee">
+      <functionBlockInterface Id="777f42ab-118e-4bdc-b1d8-de957a343754" name="AccelDecel" x="1312.5" y="437.5">
+        <events>
+          <functionBlockHasEvents Id="733468fb-3f7e-4778-91ec-7ba7c8b57bf2">
+            <event Id="31f8d25a-9743-4376-a654-b2a45673d366" name="speedSet" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="72a2d9f6-2eb8-4977-b59d-fd07a66f8be9">
+            <event Id="c2a954c2-538c-483d-ab42-f95ebd82c346" name="violated" comments="Initialization Confirm" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="7863fdb5-5b30-47ca-9811-35f6879f242f">
+            <variable Id="1e457548-7ac0-4d3e-afb0-e733bf85c1d9" name="cruiseSpeed" comments="Input event qualifier" scope="Input" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="d46443f8-76b5-436a-ab1b-0c4241bc0961">
+            <inputEventPort Id="65ebb5a1-1346-4edd-8b04-cfcdbc780b19">
+              <targetPort>
+                <association Id="4a3ed918-b4c2-41cf-81a5-37fc3e904328">
+                  <inputVariablePortMoniker Id="9886de45-d47b-499b-8afd-d9724e7610d4" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="88a30610-1802-4b59-9c4d-511c5ee68f93">
+                  <eventMoniker name="/AccelDecel/AccelDecel/speedSet" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="bee7d720-4130-481b-94a8-ed79c8667675">
+            <outputEventPort Id="8ef79ff4-1b84-4811-a41f-9091bf79cbce">
+              <event>
+                <outputEventPortReferencesEvent Id="c600dc3a-7703-4d84-a004-497a56a70017">
+                  <eventMoniker name="/AccelDecel/AccelDecel/violated" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="302d832a-d1de-478f-9a43-2246af900434">
+            <inputVariablePort Id="9886de45-d47b-499b-8afd-d9724e7610d4">
+              <variable>
+                <inputVariablePortReferencesVariable Id="cc594b37-5cfa-45e0-af15-de976584db1a">
+                  <variableMoniker name="/AccelDecel/AccelDecel/cruiseSpeed" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="ae3f78d4-7ee1-443e-a0a3-622b1808ea64">
+      <transitionNode Id="ebba4866-8c87-4179-855b-084f9e1e5d24" x="923.5294" y="429.41174000000007" event="speedSet">
+        <targetState>
+          <transitionNodeConnectsToStates Id="bb490b07-80df-46f2-bec4-159d329ad7e2">
+            <stateMoniker name="/AccelDecel/INIT" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="8dec3785-7c71-46a0-9a1b-5fa31ca48e79">
+      <transitionNode Id="6f25ac71-8e49-4cea-a46b-92f519b2b41e" x="552.94116" y="141.17647" expression="1">
+        <targetState>
+          <transitionNodeConnectsToStates Id="1023c966-cb87-4e78-a4cc-dc8976c36c87">
+            <stateMoniker name="/AccelDecel/START" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

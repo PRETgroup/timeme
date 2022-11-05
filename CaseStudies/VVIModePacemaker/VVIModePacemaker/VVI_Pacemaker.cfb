@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<compositeFunctionBlockModel Id="0ec2b206-28e5-4cb9-a65c-9d7dd4805825" name="VVI_Pacemaker" organization="NE734EFZE6G0NVX" date="2014-08-19" author="Administrator" modelType="Composite">
+  <functionBlockInterface>
+    <cFBModelHasFBInterface Id="1588c159-67a8-495d-b701-c3553a4c46c8">
+      <functionBlockInterface Id="bbafcbba-4216-40c6-8bbd-ab0adf6b01c0" name="VVI_Pacemaker" x="2318.75" y="1006.25" modelType="Composite">
+        <events>
+          <functionBlockHasEvents Id="71fd358f-5bd8-4dd1-a028-4ab857b1dab1">
+            <event Id="26712a40-b50c-4636-b626-8106fd6b62ff" name="VPulse" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="f13126df-5cfd-4d6a-99d9-a35eb38b52a1">
+            <event Id="7abd9f21-8d68-41cf-98fd-c7eaea3ec3c7" name="VRP_Timer_Timeout" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="a7657eea-101d-4766-a033-451fdd486651">
+            <event Id="33d3ea75-7538-486b-94c4-51c701a2c338" name="VPace" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="71817db2-8fb1-4abb-bed2-1f6adccfebdc">
+            <event Id="f9d44cbc-9519-4dbe-9b5a-9c8381fb4456" name="VRefractory" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="0e832db7-680d-4bd6-9dba-b8bce79c6c55">
+            <event Id="900a41d6-adc6-420c-9e68-bb9a834716e6" name="VRP_Start_Timer" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="b7ca2e6f-d673-4060-bb72-eb16d3eaa75d">
+            <event Id="889d0c68-2d5a-4128-b95b-e306af749a05" name="LRI_Timer_Start" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="229c45e3-9902-4e05-9c43-cc2fa95a0457">
+            <event Id="cdc2ee22-e1b1-418e-b022-75ddee10b61d" name="LRI_Timer_Stop" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="0400e12a-67f3-478b-9976-c3a761ed809b">
+            <event Id="42c72cdd-3d63-4515-9e77-3dce22e0fd4a" name="LRI_Timer_Timeout" scope="Input" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="d9890e2d-3155-402e-8d2f-05cfca48bfd6">
+            <variable Id="27db2c8e-e9dc-4e20-a3f6-f375e836b33f" name="VRP_Timeout_Value" scope="Output" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="e3ca8518-4228-4b40-9529-abb60b2ff8b9">
+            <variable Id="714dccb8-db70-4465-a25a-647afddbde48" name="LRI_Timeout_Value" scope="Output" type="INT" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="b205ff3f-f3ea-434d-ad00-a02ab7da964c">
+            <inputEventPort Id="d1384b28-d5f6-43a6-8f99-05652fbff28b">
+              <proxyTargetPorts>
+                <proxyConnection Id="5917b233-241f-42b7-b929-bbae90b3dbbb">
+                  <inputEventPortMoniker Id="4e2b198b-afb9-4fb1-8896-e183f695fc90" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="d31c02cb-7199-48df-881f-6e7acd92d9c6">
+                  <eventMoniker name="/VVI_Pacemaker/VVI_Pacemaker/VPulse" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="2a5d5180-676a-4a48-8f67-0f823438b376">
+            <inputEventPort Id="9d3cb253-c383-41f0-9782-9df05f9a1e8b">
+              <proxyTargetPorts>
+                <proxyConnection Id="0e981368-f210-4271-828a-f836e4a55ff9">
+                  <inputEventPortMoniker Id="b9506e16-1f82-4723-adfa-ac92a1476faa" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="409e5f31-02e6-447c-af3a-276f76b73ccf">
+                  <eventMoniker name="/VVI_Pacemaker/VVI_Pacemaker/VRP_Timer_Timeout" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="b929d155-596d-44d5-b4d3-df7ce232b995">
+            <inputEventPort Id="166e93b3-bcbd-40c8-89c8-502e92618f18">
+              <proxyTargetPorts>
+                <proxyConnection Id="a1b4f820-b992-4be5-8c7b-15fb40e5ae5c">
+                  <inputEventPortMoniker Id="bff3a93f-0cd7-4a75-b36a-539c281a9954" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="82f644a7-265f-4164-90e0-69ff920877a3">
+                  <eventMoniker name="/VVI_Pacemaker/VVI_Pacemaker/LRI_Timer_Timeout" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="01574241-c41a-47cd-b124-af3073d6cbaf">
+            <outputEventPort Id="9b5b6d6a-41c3-477f-b2bd-ac3522ba3afc">
+              <proxyTargetPorts>
+                <proxyConnection Id="fc2a814b-0988-4b30-88ee-cce9983ebd98">
+                  <outputEventPortMoniker Id="40140127-d822-483c-b887-401310187733" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="3ee65db2-1d5a-4841-b15a-723b81a12768">
+                  <eventMoniker name="/VVI_Pacemaker/VVI_Pacemaker/VPace" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="153d9930-cfbf-40f2-b080-d1623da07d8f">
+            <outputEventPort Id="995f8d64-6716-495b-b131-25ea313c85c8">
+              <proxyTargetPorts>
+                <proxyConnection Id="e6015610-a340-45e7-8a4c-a1c5d2e9fdff">
+                  <outputEventPortMoniker Id="e4e9a9ba-196e-4be9-bb78-021cc3fa6b9e" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="6a54a56d-5f87-4eab-81e4-6b9bec28c646">
+                  <eventMoniker name="/VVI_Pacemaker/VVI_Pacemaker/VRefractory" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="c1f4e8a4-d821-4f87-8410-414d5c174e43">
+            <outputEventPort Id="5dc41b9f-1060-4764-9d0c-6963609ad661">
+              <proxyTargetPorts>
+                <proxyConnection Id="a4331e5e-9e69-4a5d-ad5c-a71847907f54">
+                  <outputEventPortMoniker Id="441995f6-aae3-4277-89ea-c7982686cfee" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="3a42cd3a-762c-4ae2-a134-e0e515a23ab3">
+                  <eventMoniker name="/VVI_Pacemaker/VVI_Pacemaker/VRP_Start_Timer" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="82be662d-ecef-4b57-a8fe-3269326bc3c6">
+            <outputEventPort Id="c9a73778-96ba-4164-bbcd-d4b3be329cc2">
+              <proxyTargetPorts>
+                <proxyConnection Id="0a9c7574-2598-4ed1-9598-c296477d420e">
+                  <outputEventPortMoniker Id="cee3c1a0-eb87-423c-a2e2-e5a7cf58fd3b" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="2d6fa93d-e6d9-4967-a929-cdc723f0831e">
+                  <eventMoniker name="/VVI_Pacemaker/VVI_Pacemaker/LRI_Timer_Start" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="c9847402-b5cf-4be0-8f62-1bf52e7ec28d">
+            <outputEventPort Id="d72e37f7-29a8-4e65-847d-8269ee3af379">
+              <proxyTargetPorts>
+                <proxyConnection Id="02843235-3d00-4f47-bd19-068a31a44f01">
+                  <outputEventPortMoniker Id="781999b8-afc2-48d7-b5f8-e5e75e3f4163" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="06ff6f41-793e-4a60-88e0-46048b44bf3b">
+                  <eventMoniker name="/VVI_Pacemaker/VVI_Pacemaker/LRI_Timer_Stop" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="7e8566f7-8ed1-459e-bebf-430f5d32408b">
+            <outputVariablePort Id="fd191f10-34a4-4d81-8034-e4f818d17cd3">
+              <proxyTargetPorts>
+                <proxyConnection Id="bf383bd5-8f18-4d25-941b-245bf0488770">
+                  <outputVariablePortMoniker Id="2bc55611-7774-4f48-87f6-ba3eb45ba862" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="a7a76aba-9ef4-4b9b-878e-9266bc4e8905">
+                  <variableMoniker name="/VVI_Pacemaker/VVI_Pacemaker/VRP_Timeout_Value" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="205d8e6c-c3cd-47e6-885c-d4be058d515f">
+            <outputVariablePort Id="faf6ca9a-f90e-4408-a9bc-79192cc7b30b">
+              <proxyTargetPorts>
+                <proxyConnection Id="f8b65c19-262d-427f-8b8a-4e7c59001850">
+                  <outputVariablePortMoniker Id="59614cb0-0c83-40a0-8616-6d863295a05b" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="add9b2d5-7522-400f-aa3b-1e3d7ed7c4f3">
+                  <variableMoniker name="/VVI_Pacemaker/VVI_Pacemaker/LRI_Timeout_Value" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </cFBModelHasFBInterface>
+  </functionBlockInterface>
+  <functionBlockReferences>
+    <cFBModelHasFBReferences Id="ebc0e196-5b8c-4831-9f71-35f43bf50575">
+      <functionBlockReference Id="0ff15ec7-c335-4e40-844f-700a01cc171a" name="VVI_LRI" x="612.5" y="1181.25" creationMode="Resource" referencedFile="VVI_LRI.fb">
+        <events>
+          <functionBlockHasEvents Id="7476433f-64bf-49c7-a4ff-011499a48f33">
+            <eventRef Id="ad29b8e3-9df8-4c58-93d7-ca9a5762fa1a" name="VSense" scope="Input" referencedID="f1e95170-55e2-4db8-8294-70b1ff9ea9ab" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="79145139-d7cb-484e-984a-d7e283c89413">
+            <eventRef Id="5fdc30c8-7a61-4e8c-8a33-fd7e3b78a3e3" name="LRI_Timer_Timeout" scope="Input" referencedID="548173ed-92f7-4a30-ad8a-4bf831cd4b8d" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="4b526eb7-5587-4a57-83c0-e20bdd83c8a4">
+            <eventRef Id="31b04057-7681-4dd5-a3af-82c667c2e9f8" name="LRI_Timer_Start" scope="Output" referencedID="693b6ba7-810b-41d8-81b0-7f823f8b7c2b" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="34f19b3f-54cc-487a-b0ef-21f727fd0052">
+            <eventRef Id="1f47a1af-6494-493d-aad2-01100dc284b5" name="LRI_Timer_Stop" scope="Output" referencedID="c99f9104-3b3f-4f4f-af0c-b0f69955fcbd" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="2c34bad3-c7ef-41f4-9cec-e1deedcb6f01">
+            <eventRef Id="7378703d-3149-443d-a4b2-9dca3a1ad16e" name="VPace" scope="Output" referencedID="1a4214d3-ce4f-4766-9a99-c2559a49283c" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="f743affb-06a7-40cd-ac24-a612a7d0954d">
+            <variableRef Id="dadbe814-205a-4933-82a5-d1953421c456" name="LRI_Timeout_Value" scope="Output" type="INT" referencedID="7b5e92bd-2eb1-4ada-94c1-e0a36f6ef192" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="9864d371-d6dd-4faf-a9f3-a512bb03d544">
+            <inputEventPort Id="b4c068a4-db52-4b73-826d-f2da586443fd">
+              <event>
+                <inputEventPortReferencesEvent Id="40415ce4-b426-4bab-9dbc-caca102d5e84">
+                  <eventRefMoniker name="/VVI_Pacemaker/VVI_LRI/VSense" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="2b70d9cc-d7a2-42dd-8a34-10cdcc14bcbb">
+            <inputEventPort Id="bff3a93f-0cd7-4a75-b36a-539c281a9954">
+              <event>
+                <inputEventPortReferencesEvent Id="ef3c10e7-44b2-405a-b8a5-218789d0232b">
+                  <eventRefMoniker name="/VVI_Pacemaker/VVI_LRI/LRI_Timer_Timeout" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="f284984b-3c4b-4189-97e7-a8251125dfdb">
+            <outputEventPort Id="40140127-d822-483c-b887-401310187733">
+              <wireTargetPorts>
+                <wireConnection Id="4f26fa22-09d2-4dd7-8a20-565090abe86a" unitDelayed="false">
+                  <inputEventPortMoniker Id="7cd94f08-e8f3-4ecb-a903-82184768c84c" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="0a6defbe-7135-4edf-8f4c-85949c2f4afb">
+                  <eventRefMoniker name="/VVI_Pacemaker/VVI_LRI/VPace" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="6e1edef0-6d03-495c-b239-76f9d874dcb4">
+            <outputEventPort Id="cee3c1a0-eb87-423c-a2e2-e5a7cf58fd3b">
+              <event>
+                <outputEventPortReferencesEvent Id="8b25bc07-e201-442d-9bc5-0e460cff0c1f">
+                  <eventRefMoniker name="/VVI_Pacemaker/VVI_LRI/LRI_Timer_Start" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="1c3ee95e-b2db-4ded-9ec9-02bd8fab7883">
+            <outputEventPort Id="781999b8-afc2-48d7-b5f8-e5e75e3f4163">
+              <event>
+                <outputEventPortReferencesEvent Id="46b90b24-5a41-4752-b1d1-0f77b5cfcb5d">
+                  <eventRefMoniker name="/VVI_Pacemaker/VVI_LRI/LRI_Timer_Stop" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="68fbca0b-d6e7-46f5-be15-c017235ee91d">
+            <outputVariablePort Id="59614cb0-0c83-40a0-8616-6d863295a05b">
+              <variable>
+                <outputVariablePortReferencesVariable Id="bdfd77c6-edde-4403-a890-ba988dd7c57f">
+                  <variableRefMoniker name="/VVI_Pacemaker/VVI_LRI/LRI_Timeout_Value" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockReference>
+    </cFBModelHasFBReferences>
+    <cFBModelHasFBReferences Id="273f1305-e6c6-4ec7-b7b9-56be986aff01">
+      <functionBlockReference Id="4d31a636-3275-4134-a498-b31d679004de" name="VVI_VRP" x="612.5" y="393.75" creationMode="Resource" referencedFile="VVI_VRP.fb">
+        <events>
+          <functionBlockHasEvents Id="49b15c80-7a0b-42a9-8e9a-c338a7906a84">
+            <eventRef Id="8c364af8-66f5-4646-9ac2-edf349b24dbd" name="VPulse" scope="Input" referencedID="c2872a61-def5-44de-bb5c-6e1581ccc79f" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="c87b0528-7fbd-45b6-87e5-017e46e84573">
+            <eventRef Id="f81386da-0fab-4bcd-90b0-12c5448fc4e9" name="VPace" scope="Input" referencedID="6a5ac1a4-17c5-42ff-ad7f-cdddc9470830" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="5494ec28-436d-4dc5-ab2b-611b2286f993">
+            <eventRef Id="646dce7e-3f0d-4e23-9b1b-a68c7946a0c0" name="VRP_Timer_Timeout" scope="Input" referencedID="dd2f59a0-db20-4eb5-a5df-8e0b3d5fc9b0" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="3e23df2b-5b98-4f6c-82c1-062437cb1455">
+            <eventRef Id="8a30a586-2685-4b6f-be15-2b459ba9fa91" name="VSense" scope="Output" referencedID="16974523-9817-4eda-bba7-00ba665fe1ec" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="20f888a7-d93f-4f56-9ed7-2e3b8ef86eaa">
+            <eventRef Id="7eeff60f-6bd8-4a6a-a921-072658437b28" name="VRefractory" scope="Output" referencedID="c2340b2a-3026-41b5-ac2b-ccd00daaa06a" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="0262108f-5161-4c1c-8522-65e7bc5878e7">
+            <eventRef Id="047706c7-09cc-428f-a3d1-2b1ac2071fda" name="VRP_Start_Timer" scope="Output" referencedID="df7be37d-2650-4aea-b7dc-86027f7b4d2f" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="b2bf8e8f-73e9-42e1-9631-e9c5a7d9ea0a">
+            <variableRef Id="be7b7e14-9779-47db-8dbd-3945dff581ca" name="VRP_Timeout_Value" scope="Output" type="INT" referencedID="f6044b04-73a1-4d3d-90f9-18690fd948cd" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="2e564a9a-38d8-4ed2-a38f-308d930454e5">
+            <inputEventPort Id="4e2b198b-afb9-4fb1-8896-e183f695fc90">
+              <event>
+                <inputEventPortReferencesEvent Id="060c8ff1-be1f-4758-8048-ce1291adcb8f">
+                  <eventRefMoniker name="/VVI_Pacemaker/VVI_VRP/VPulse" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="4688e1a8-0c77-4e81-9595-6f5b0ec949f8">
+            <inputEventPort Id="7cd94f08-e8f3-4ecb-a903-82184768c84c">
+              <event>
+                <inputEventPortReferencesEvent Id="9beff423-2001-4f0f-abf6-ee1139e3a2de">
+                  <eventRefMoniker name="/VVI_Pacemaker/VVI_VRP/VPace" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="bbf1a117-5c32-4eab-bc4c-be60d148c512">
+            <inputEventPort Id="b9506e16-1f82-4723-adfa-ac92a1476faa">
+              <event>
+                <inputEventPortReferencesEvent Id="1d750323-6849-4ac9-a092-95396cb1758f">
+                  <eventRefMoniker name="/VVI_Pacemaker/VVI_VRP/VRP_Timer_Timeout" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="42e5b391-70b3-44a2-b8f8-d6bcc9b27c3d">
+            <outputEventPort Id="df5428e8-b06d-4d35-bd2f-f7f588f2f41c">
+              <wireTargetPorts>
+                <wireConnection Id="9984c083-c14f-4e96-8682-79aba75e1f86" unitDelayed="false">
+                  <inputEventPortMoniker Id="b4c068a4-db52-4b73-826d-f2da586443fd" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="25baae5f-8105-4285-ac2e-710274e0e61a">
+                  <eventRefMoniker name="/VVI_Pacemaker/VVI_VRP/VSense" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="92c6f689-d604-48a2-b44c-1f7c2c86fd07">
+            <outputEventPort Id="e4e9a9ba-196e-4be9-bb78-021cc3fa6b9e">
+              <event>
+                <outputEventPortReferencesEvent Id="7ad8991f-d996-48ad-9bfc-5f1ff077c2b1">
+                  <eventRefMoniker name="/VVI_Pacemaker/VVI_VRP/VRefractory" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="9ea0a55e-36c6-4cac-a636-d47072a9a93b">
+            <outputEventPort Id="441995f6-aae3-4277-89ea-c7982686cfee">
+              <event>
+                <outputEventPortReferencesEvent Id="fedba6ae-7b2d-496f-9c54-6d51eb694e53">
+                  <eventRefMoniker name="/VVI_Pacemaker/VVI_VRP/VRP_Start_Timer" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="92444ba8-49c3-4078-ab0c-8c3095baa44c">
+            <outputVariablePort Id="2bc55611-7774-4f48-87f6-ba3eb45ba862">
+              <variable>
+                <outputVariablePortReferencesVariable Id="6973dbc3-4d41-4340-8e39-b1cbaf85278e">
+                  <variableRefMoniker name="/VVI_Pacemaker/VVI_VRP/VRP_Timeout_Value" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockReference>
+    </cFBModelHasFBReferences>
+  </functionBlockReferences>
+</compositeFunctionBlockModel>

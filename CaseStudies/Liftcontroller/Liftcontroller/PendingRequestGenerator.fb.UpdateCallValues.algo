@@ -1,0 +1,48 @@
+int i = 0;
+//update PendingCabinCall
+if (me->_input.event.CabinCall) {
+	for (i = 0; i < 4; ++i) {
+		me->PendingCabinCallValue[i] |= me->CabinCallValue[i];
+	}
+}
+if (me->_input.event.StoppedAtFloor) {
+	me->PendingCabinCallValue[me->StoppedAtFloorValue] = 0;
+}
+//update PendingUpCall
+int hasUpRequests = 0;
+if (me->_input.event.UpCall) {
+	for (i = 0; i < 4; ++i) {
+		me->PendingUpCallValue[i] |= me->UpCallValue[i];
+		hasUpRequests|= me->UpCallValue[i];
+	}
+}
+//update PendingDownCall
+int hasDownRequests = 0;
+if (me->_input.event.DownCall) {
+	for (i = 0; i < 4; ++i) {
+		me->PendingDownCallValue[i] |= me->DownCallValue[i];
+		hasDownRequests |= me->DownCallValue[i];
+	}
+}
+if ((me->_input.event.StoppedAtFloor&&me->preMotorDirectionUp) || (hasDownRequests==0)) {
+	me->PendingUpCallValue[me->StoppedAtFloorValue] = 0;
+}
+if ((me->_input.event.StoppedAtFloor&&me->preMotorDirectionDown) || (hasUpRequests==0)) {
+	me->PendingDownCallValue[me->StoppedAtFloorValue] = 0;
+}
+me->preCallRequest = 0;
+//update PendingCall
+for (i = 0; i < 4; ++i) {
+    me->PendingCallValue[i] |=  me->PendingCabinCallValue[i] ||  me->PendingUpCallValue[i] || me->PendingDownCallValue[i];
+	me->preCallRequest |= me->PendingCallValue[i];
+}
+if (me->_input.event.StoppedAtFloor) {
+	me->PendingCallValue[me->StoppedAtFloorValue] = 0;
+}
+//update PendingReq
+for (i = 0; i < 4; ++i) {
+    me->PendingReqValue[i] = me->PendingCallValue[i];
+}
+me->preMotorDirectionUp = me->_input.event.MotorDirectionUp;
+me->preMotorDirectionDown = me->_input.event.MotorDirectionDown;
+

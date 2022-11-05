@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{92B81AF7-8D03-46D0-9C71-430DAE7A074E}") = "Liftcontroller", "Liftcontroller\Liftcontroller.bproj", "{2AC68A12-F85C-4D3A-8A49-075EDE381411}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Deploy|gnu = Deploy|gnu
+		OpenRTM|gnu = OpenRTM|gnu
+		Remote|gnu = Remote|gnu
+		Run|gnu = Run|gnu
+		Simulation|gnu = Simulation|gnu
+		Verification|gnu = Verification|gnu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.Deploy|gnu.ActiveCfg = Deploy|gnu
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.Deploy|gnu.Build.0 = Deploy|gnu
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.OpenRTM|gnu.ActiveCfg = OpenRTM|gnu
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.OpenRTM|gnu.Build.0 = OpenRTM|gnu
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.Remote|gnu.ActiveCfg = Remote|gnu
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.Remote|gnu.Build.0 = Remote|gnu
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.Run|gnu.ActiveCfg = Run|gnu
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.Run|gnu.Build.0 = Run|gnu
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.Simulation|gnu.ActiveCfg = Simulation|gnu
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.Simulation|gnu.Build.0 = Simulation|gnu
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.Verification|gnu.ActiveCfg = Verification|gnu
+		{2AC68A12-F85C-4D3A-8A49-075EDE381411}.Verification|gnu.Build.0 = Verification|gnu
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

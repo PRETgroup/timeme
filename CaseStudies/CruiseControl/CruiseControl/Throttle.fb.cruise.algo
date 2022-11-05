@@ -1,0 +1,8 @@
+me->tmp = (me->cruiseSpeed - me->speed);
+me->tmp = me->tmp * 3;
+if(me->tmp > 45) {
+    me->tmp = 45;
+} else if (me->tmp < 0) {
+    me->tmp = 0;
+ }
+ me->throttleVal = me->tmp;

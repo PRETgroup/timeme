@@ -1,0 +1,2 @@
+me->throttleVal = me->throttleOffset;
+me->prevOffset = 0;

@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="082e3a4a-5301-4d73-befd-eddd15f7a748" name="RequestConsumer" organization="CANTO-AIR-PC" date="2014-07-16" author="Canto-Air">
+  <states>
+    <functionBlockModelHasStates Id="af24d84c-0c26-46f1-b213-cffb202d58c9">
+      <state Id="e2bf086c-ba79-4456-946d-bd74211bbbf1" name="FloorHasHighestPriority" x="1487.5" y="568.75" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="955d64b1-82a2-4240-b09d-142bcc51a41c">
+            <transitionNodeMoniker Id="42834cf6-44db-440b-9d9f-cc6a4984a634" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="e9a44917-3c18-4055-96d8-7465c168b4bd">
+      <state Id="dccdfcc6-2a77-43a1-9bc0-622e03321037" name="FloorHasNotHighestPriority" x="1750" y="1400" isInitial="false">
+        <actionSet>
+          <actionLink Id="3eb79da5-91e0-42ba-8067-f1df33aa872e">
+            <actionSetMoniker Id="f873ec32-f5e3-491e-9eb4-298a0ee135d7" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="5921dcd0-4c8a-4c13-a7f7-5de2ae7e3f0e">
+            <transitionNodeMoniker Id="0be721ef-8c6f-4571-9b28-f3720bdeee71" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="23993e28-b049-4f1e-b57d-fce168729367">
+            <transitionNodeMoniker Id="9387546d-8173-469b-afa4-a4c17efefec0" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="62a242ba-6e55-42c8-9064-81cc0dd91617">
+      <actionSet Id="f873ec32-f5e3-491e-9eb4-298a0ee135d7" x="2625" y="1400">
+        <actionItems>
+          <actionSetHasActionItems Id="e6ec6237-be06-4515-b6f6-723637de32fc">
+            <actionEvent Id="aa16f1d4-68f6-400d-9583-3833fb88ee0d">
+              <event>
+                <actionEventReferencesEvent Id="ce92309f-099f-4689-bf64-c2d63d34d00d">
+                  <eventMoniker name="/RequestConsumer/RequestConsumer/request" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="74b24406-6b47-4896-a15e-99694c9d28b0">
+            <actionAlgorithm Id="b6672143-f04b-4dda-84b2-04719df6850d">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="a20a81dd-aed3-41b6-82b2-b4d14ad66ce2">
+                  <algorithmMoniker name="/RequestConsumer/UpdateRequest" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="e92b0f75-b7de-43fe-9a58-6cd8b8a705d9">
+      <algorithm Id="7e9170b4-ce2c-4947-8fbc-ed82fd63058e" name="UpdateRequest" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="16bfef5e-5786-467c-a8c2-7ac1b4c75c05">
+      <functionBlockInterface Id="9c4c80ff-2782-4194-89ba-2c84e3729aa4" name="RequestConsumer" x="1400" y="481.25">
+        <events>
+          <functionBlockHasEvents Id="aaf58e4e-2748-4c4f-8757-0f76f195d5e1">
+            <event Id="7e95bbad-b3f1-4d5e-8549-2c435fc0042c" name="CurrentPriority" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="f8b8a39c-5b15-4a14-8a7a-50abbfb5e4d4">
+            <event Id="ba503525-61ac-4325-9ed2-87b21e0ba777" name="StoppedAtFloor" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="027f5d54-256a-4617-95da-c8cac01a7fe7">
+            <event Id="56028ab8-b3ed-4d91-adb5-a8f70c892bbe" name="request" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="d13bfe25-d6fd-44a1-a5b1-9218ecb15896">
+            <variable Id="ddab5110-17d3-4f16-938e-e41a1983c9ab" name="CurrentPriorityValue" scope="Input" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="de965218-9ff7-4d87-b544-17fbee040703">
+            <variable Id="74dacff1-3737-4b29-83dc-d840550f210b" name="StoppedAtFloorValue" scope="Input" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="e5deed30-7529-4cab-aa5c-9de1009528da">
+            <variable Id="25654e13-52d0-443b-b235-0951ec765f3b" name="requestValue" scope="Output" type="INT" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="a51de850-9c9e-4663-9f1c-5b92e8dd11bd">
+            <inputEventPort Id="dcfda567-b0ce-408a-b716-915f30c2fe1f">
+              <targetPort>
+                <association Id="e2818a9f-3fb7-4c6a-a39b-c928b34a567a">
+                  <inputVariablePortMoniker Id="3e0f8650-640d-4dc9-9b2d-e24689256dbb" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="7d29c75c-fc5b-416e-ae22-d0d654c8694d">
+                  <eventMoniker name="/RequestConsumer/RequestConsumer/CurrentPriority" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="d959f156-672f-4846-9908-9c08cb986a08">
+            <inputEventPort Id="856c1e2f-4e99-4fd1-b8c4-8994787adebd">
+              <targetPort>
+                <association Id="81992d0b-ada3-40f7-82fa-fb77d51532e0">
+                  <inputVariablePortMoniker Id="0ebc7fe6-5520-48bd-abf3-aa3bf30bd047" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="4905b1b4-521f-447d-91cc-0fac6744cbb4">
+                  <eventMoniker name="/RequestConsumer/RequestConsumer/StoppedAtFloor" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="c253d575-2182-4a30-9f69-90b204837c77">
+            <outputEventPort Id="b3b0253b-f445-4308-bcef-db68a87bb337">
+              <targetPort>
+                <association Id="8df4b179-a270-43b4-9c93-2300cb00f7c5">
+                  <outputVariablePortMoniker Id="4ee1c787-9584-49e6-8659-42db4fa37c82" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="4d71fe19-da66-49a0-9e84-6d4c97f29d91">
+                  <eventMoniker name="/RequestConsumer/RequestConsumer/request" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="e81d5e44-44e1-43d1-be80-5b58afd354b3">
+            <inputVariablePort Id="3e0f8650-640d-4dc9-9b2d-e24689256dbb">
+              <variable>
+                <inputVariablePortReferencesVariable Id="e3f3565b-c547-4d26-b18c-299b6b91b732">
+                  <variableMoniker name="/RequestConsumer/RequestConsumer/CurrentPriorityValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="a30cc1e0-7103-42a8-bfce-b89ebad3abfa">
+            <inputVariablePort Id="0ebc7fe6-5520-48bd-abf3-aa3bf30bd047">
+              <variable>
+                <inputVariablePortReferencesVariable Id="88cff048-b7ab-42ed-ac69-48ad36b5536c">
+                  <variableMoniker name="/RequestConsumer/RequestConsumer/StoppedAtFloorValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="1f3f36f5-dd22-47c0-b172-632b5aebaf5a">
+            <outputVariablePort Id="4ee1c787-9584-49e6-8659-42db4fa37c82">
+              <variable>
+                <outputVariablePortReferencesVariable Id="c8368058-14fd-42b8-817c-4a4c21bdca83">
+                  <variableMoniker name="/RequestConsumer/RequestConsumer/requestValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="b1433655-7538-49b4-850b-7b20eeb5f389">
+      <transitionNode Id="42834cf6-44db-440b-9d9f-cc6a4984a634" x="2493.75" y="1006.25" event="CurrentPriority" expression="CurrentPriorityValue != StoppedAtFloorValue">
+        <targetState>
+          <transitionNodeConnectsToStates Id="84079fe6-5b18-4d2d-9201-8c4de0093a3e">
+            <stateMoniker name="/RequestConsumer/FloorHasNotHighestPriority" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="c6473659-f777-4b52-ab8e-59cacbb4463b">
+      <transitionNode Id="0be721ef-8c6f-4571-9b28-f3720bdeee71" x="262.49999999999983" y="1050" event="StoppedAtFloor" expression="CurrentPriorityValue == StoppedAtFloorValue">
+        <targetState>
+          <transitionNodeConnectsToStates Id="2248ef9b-cc86-4042-820b-54148a408782">
+            <stateMoniker name="/RequestConsumer/FloorHasHighestPriority" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="33d4755b-1127-4f7e-805a-56e491b49e8c">
+      <transitionNode Id="9387546d-8173-469b-afa4-a4c17efefec0" x="2012.5" y="1618.75">
+        <targetState>
+          <transitionNodeConnectsToStates Id="0ad2cb5a-3a81-4af2-b2ea-3a74f3d2e8d1">
+            <stateMoniker name="/RequestConsumer/FloorHasNotHighestPriority" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

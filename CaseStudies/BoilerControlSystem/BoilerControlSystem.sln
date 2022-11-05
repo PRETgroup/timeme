@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{92B81AF7-8D03-46D0-9C71-430DAE7A074E}") = "BoilerControlSystem", "BoilerControlSystem\BoilerControlSystem.tmproj", "{58DB6D2A-E1B0-4D1F-B976-BE2E4E5BC2B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Run|x86 = Run|x86
+		Simulation|x86 = Simulation|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58DB6D2A-E1B0-4D1F-B976-BE2E4E5BC2B6}.Run|x86.ActiveCfg = Run|gnu
+		{58DB6D2A-E1B0-4D1F-B976-BE2E4E5BC2B6}.Simulation|x86.ActiveCfg = Simulation|gnu
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

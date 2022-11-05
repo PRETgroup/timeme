@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="f0944ccd-87d4-48ef-9aae-bab493dc11bc" name="OrValue" organization="EC" date="2012-02-28" author="zbha001">
+  <states>
+    <functionBlockModelHasStates Id="26532f46-61ab-4f5f-b54d-886c61e32fcb">
+      <state Id="cabc7dfa-e9ea-409d-8653-1a1932cc82cc" name="IDLE" x="612.5" y="831.25" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="b764fe21-a0da-4879-9a74-8bf03ee4fe90">
+            <transitionNodeMoniker Id="ba6c4024-12fb-47e1-8c95-72f63774072b" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="c117d720-034c-4435-a60b-cce10f0beca2">
+            <transitionNodeMoniker Id="966271ef-f1fe-4d7f-b8ed-dc458fa25b83" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="7d7ca278-4d61-4f6d-a017-0168b92abca4">
+      <state Id="f7bc009b-95b1-4ee1-8eb1-57adc1f23b32" name="INPUT1" x="1137.5" y="525" isInitial="false">
+        <actionSet>
+          <actionLink Id="42f71131-b898-433b-ba41-3547fbe81148">
+            <actionSetMoniker Id="fdc6c956-772b-4f71-bbe3-a63034bb7cba" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="2ebc11f4-c6d7-496c-846f-bf9cea171416">
+            <transitionNodeMoniker Id="26e62bae-846d-424a-b352-bae02ac0b1e6" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="c526594d-451d-4e96-9d63-0682fe8ebb8f">
+            <transitionNodeMoniker Id="3496a6a2-4f86-4f7f-bb7a-181832158ba0" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="e0321ce4-49f9-40cf-ab00-06df72974b55">
+      <state Id="2eb09a73-09dd-4b66-812c-31e20a29991d" name="INPUT2" x="1137.5" y="1137.5" isInitial="false">
+        <actionSet>
+          <actionLink Id="6ef3873d-ad78-4e1b-bb04-9b2f5b8768bd">
+            <actionSetMoniker Id="c699f973-6868-4bf7-8814-dd348b858275" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="da997019-482c-42a4-ac3c-b207bbc98878">
+            <transitionNodeMoniker Id="92ae61c9-ec4d-4333-99d8-5713365e2617" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="f5b6e1ba-7761-4dd1-b3e8-d1faa033abd9">
+            <transitionNodeMoniker Id="88195203-9bb9-4bfd-b358-b2b6ec2accaf" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="f6856e3a-5fc4-403b-a43c-d643e3adfa4a">
+      <actionSet Id="fdc6c956-772b-4f71-bbe3-a63034bb7cba" x="1476.8544480204582" y="525">
+        <actionItems>
+          <actionSetHasActionItems Id="81c05b5d-d52f-497e-b5d7-87b539f89edb">
+            <actionEvent Id="9ab0232c-dd88-4fa6-adbe-68742a467cda">
+              <event>
+                <actionEventReferencesEvent Id="6ecead1f-c500-48b4-9c0b-e8a41adb208f">
+                  <eventMoniker name="/OrValue/OrValue/output" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="4b1ac9a9-b814-4b45-9960-065cf4ff4e37">
+            <actionAlgorithm Id="25ee2a79-848b-4952-b0da-650d404a7812">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="e65445fa-9392-48e2-a67e-a9a9342702ef">
+                  <algorithmMoniker name="/OrValue/emitValue1" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="89aab814-c698-4779-8220-39741d0e1c36">
+      <actionSet Id="c699f973-6868-4bf7-8814-dd348b858275" x="1476.8544480204582" y="1137.5">
+        <actionItems>
+          <actionSetHasActionItems Id="add69931-2ef2-4273-ae79-553697ad1976">
+            <actionEvent Id="d8b8752f-f221-46c9-b8a8-9aefb379429e">
+              <event>
+                <actionEventReferencesEvent Id="cb52e4d8-2aa5-4278-866a-42e2488aaca1">
+                  <eventMoniker name="/OrValue/OrValue/output" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="88211ae6-331e-4f4b-a577-191791f7952e">
+            <actionAlgorithm Id="7ddd5a6d-d27f-4b08-a19a-8e2b21f11bb4">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="6d8d87fc-1cca-480f-b28a-a9dfbbcf13ad">
+                  <algorithmMoniker name="/OrValue/emitValue2" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="760f2015-7e4f-46c0-89f2-93c4f96be2dd">
+      <algorithm Id="a0e04d55-f6c5-48ac-9b70-64ee1b4c8928" name="emitValue1" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="25fe5452-1523-4e19-8a16-5e8edadacda3">
+      <algorithm Id="652a6a89-eae6-4826-9561-b3022ef92660" name="emitValue2" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="3e29428a-2e42-4b95-9059-f1af565af1e5">
+      <functionBlockInterface Id="70583b60-a38e-41de-ac0e-3c8d9ea7ce5c" name="OrValue" x="700" y="481.25">
+        <events>
+          <functionBlockHasEvents Id="897832cc-f9b4-4c1f-8ba0-2c44d00abcb1">
+            <event Id="c74299d5-3527-4d80-aa2a-7da7b3ec37f4" name="input1" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="f8633988-5b73-472a-a0a4-bec2f27d0afa">
+            <event Id="6ae3c7e4-9594-4e6c-992d-ed5849a82cd6" name="output" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="e36c4475-ac7d-4881-a637-daf770581bc8">
+            <event Id="8cefccef-1f8e-418a-935d-c344cbfbc07d" name="input2" scope="Input" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="97655afd-032e-4b21-b3e7-63b9117c58a2">
+            <variable Id="7718709c-a8da-4367-9cd4-7766bd725147" name="value1" scope="Input" initialValue="false" type="BOOL" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="a35fa549-9f30-4f7b-8259-259750ac93e2">
+            <variable Id="d042de86-d4fe-4c2e-b72d-44beaa771d94" name="value2" scope="Input" initialValue="false" type="BOOL" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="195eb14b-4b7a-467c-baf7-a88939858ab4">
+            <variable Id="cee80090-6135-429f-b662-f398aacf8a0e" name="oValue" scope="Output" initialValue="false" type="BOOL" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="f3ae5af7-5dfd-4d88-9cf8-f45b8dfa7198">
+            <inputEventPort Id="3d077903-6d70-4bde-971d-12abb064fed0">
+              <targetPort>
+                <association Id="e2784714-63fa-4ef6-8793-deac36d7656d">
+                  <inputVariablePortMoniker Id="363c2417-9b78-4cba-a314-08081aa2aa78" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="39005a5a-001b-49b3-bdae-428228b676d1">
+                  <eventMoniker name="/OrValue/OrValue/input1" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="509a2368-bc46-4990-ab40-7d6acf9a40d8">
+            <inputEventPort Id="785af62b-f970-43da-bc1b-cdaaeb9a6e70">
+              <targetPort>
+                <association Id="32006080-099b-4cfd-bd57-6f46f59e8dee">
+                  <inputVariablePortMoniker Id="bc637353-a09c-4ff1-96d0-2051f049cdf2" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="13e0e2f9-6a53-4472-9ab3-2b8c7a97059f">
+                  <eventMoniker name="/OrValue/OrValue/input2" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="31c0f6bd-bd33-400a-b9aa-19f3294458a8">
+            <outputEventPort Id="de8b5dc0-23dc-4b1a-b30a-e2d583ffb2c5">
+              <targetPort>
+                <association Id="ec421e2a-49af-4abd-87a4-20a7e7e4ba8d">
+                  <outputVariablePortMoniker Id="a044a2ff-4d56-47ec-9881-0104f641368a" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="d13baed6-9ef3-473a-ad00-47fc42a93154">
+                  <eventMoniker name="/OrValue/OrValue/output" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="c0220739-28cb-4dcf-980d-c9df56108804">
+            <inputVariablePort Id="363c2417-9b78-4cba-a314-08081aa2aa78">
+              <variable>
+                <inputVariablePortReferencesVariable Id="4496b9d8-bfe8-4902-90a3-a85a04b921d5">
+                  <variableMoniker name="/OrValue/OrValue/value1" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="eb906f2d-b1b4-48c6-b552-79b527bcc71a">
+            <inputVariablePort Id="bc637353-a09c-4ff1-96d0-2051f049cdf2">
+              <variable>
+                <inputVariablePortReferencesVariable Id="1923d40d-3b19-4116-8205-7d5d43f69333">
+                  <variableMoniker name="/OrValue/OrValue/value2" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="222fa4ae-0a40-4e74-9463-8baa2703a30a">
+            <outputVariablePort Id="a044a2ff-4d56-47ec-9881-0104f641368a">
+              <variable>
+                <outputVariablePortReferencesVariable Id="3924fb9d-d9f8-4868-9024-1e0bfe8aa60c">
+                  <variableMoniker name="/OrValue/OrValue/oValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="f1c0ff13-aba7-48d5-8bcf-f81e96961bcf">
+      <transitionNode Id="ba6c4024-12fb-47e1-8c95-72f63774072b" x="831.25" y="612.5" event="input1">
+        <targetState>
+          <transitionNodeConnectsToStates Id="b433911a-6372-408a-abc3-8913a61d984f">
+            <stateMoniker name="/OrValue/INPUT1" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="a6856936-b7b4-443d-8fff-217afeef1f86">
+      <transitionNode Id="966271ef-f1fe-4d7f-b8ed-dc458fa25b83" x="831.25" y="1050" event="input2">
+        <targetState>
+          <transitionNodeConnectsToStates Id="f98a835c-6931-4fc8-a0e6-f8867a81bfac">
+            <stateMoniker name="/OrValue/INPUT2" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="f48f18e9-df64-429a-a1a3-ffb0fa90f24e">
+      <transitionNode Id="26e62bae-846d-424a-b352-bae02ac0b1e6" x="1006.25" y="831.25" event="input2">
+        <targetState>
+          <transitionNodeConnectsToStates Id="caf07e69-c0e6-40b5-87f6-0e53637eb435">
+            <stateMoniker name="/OrValue/INPUT2" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="d7c4cddf-40a9-4e22-a13d-66c717a9760d">
+      <transitionNode Id="92ae61c9-ec4d-4333-99d8-5713365e2617" x="1268.75" y="831.25" event="input1">
+        <targetState>
+          <transitionNodeConnectsToStates Id="b8846e92-2667-4fe6-a167-4a9df7a8bf92">
+            <stateMoniker name="/OrValue/INPUT1" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="a1808225-2d0c-40d9-b08f-f1a9a893ba33">
+      <transitionNode Id="88195203-9bb9-4bfd-b358-b2b6ec2accaf" x="1181.25" y="1312.5" event="input2">
+        <targetState>
+          <transitionNodeConnectsToStates Id="39d29e03-3216-49d6-b8d7-e3a014aacb3a">
+            <stateMoniker name="/OrValue/INPUT2" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="3961f2bd-56a5-4c78-be30-a90efda6ad33">
+      <transitionNode Id="3496a6a2-4f86-4f7f-bb7a-181832158ba0" x="1181.25" y="350" event="input1">
+        <targetState>
+          <transitionNodeConnectsToStates Id="18e1244c-d244-476f-be82-8161ae995438">
+            <stateMoniker name="/OrValue/INPUT1" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Simulation</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4ad8b6a1-17ba-4b96-b763-1b2d6ab1d0d5}</ProjectGuid>
+    <ProjectType>TimeMe Project</ProjectType>
+    <ProjectTypeGuids>{92B81AF7-8D03-46D0-9C71-430DAE7A074E}</ProjectTypeGuids>
+    <RootNamespace>TimeMeNamespace</RootNamespace>
+    <AssemblyName>TimeMeAssemblyName</AssemblyName>
+    <OutputFormat>CCode</OutputFormat>
+    <MaxStringLength>32</MaxStringLength>
+    <Name>CruiseControl</Name>
+    <CompilerPath>z:\workspace\timeme\FBC\release\dotNet</CompilerPath>
+    <TimingAnalyzerPath>z:\workspace\timeme\TA\release\dotNet</TimingAnalyzerPath>
+    <ActivePlatform>gnu</ActivePlatform>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Set the TimeMePath property by proving in different locations where TimeMe could be installed -->
+    <DevEnv10Path>$(VS100COMNTOOLS)..\IDE</DevEnv10Path>
+    <DevEnv11Path>$(VS110COMNTOOLS)..\IDE</DevEnv11Path>
+    <TimeMeAppExt10Path>$(DevEnv10Path)\Extensions\TimeMeVS2010\</TimeMeAppExt10Path>
+    <TimeMeAppExt10Path2>$(DevEnv10Path)\Extensions\BlokTech\TimeMeVS2010\1.0\</TimeMeAppExt10Path2>
+    <TimeMeAppExt11Path>$(DevEnv11Path)\Extensions\TimeMeVS2012\</TimeMeAppExt11Path>
+    <TimeMeAppExt11Path2>$(DevEn11vPath)\Extensions\BlokTech\TimeMeVS2012\1.0\</TimeMeAppExt11Path2>
+    <TimeMeUsrExt10Path>$(LocalAppData)\Microsoft\VisualStudio\10.0\Extensions\BlokTech\TimeMeVS2010\1.0\</TimeMeUsrExt10Path>
+    <TimeMeUsrExt11Path>$(LocalAppData)\Microsoft\VisualStudio\11.0\Extensions\BlokTech\TimeMeVS2012\1.0\</TimeMeUsrExt11Path>
+    <TimeMeUsrExpExt10Path>$(LocalAppData)\Microsoft\VisualStudio\10.0Exp\Extensions\BlokTech\TimeMeVS2010\1.0\</TimeMeUsrExpExt10Path>
+    <TimeMeUsrExpExt11Path>$(LocalAppData)\Microsoft\VisualStudio\11.0Exp\Extensions\BlokTech\TimeMeVS2012\1.0\</TimeMeUsrExpExt11Path>
+    <!-- Shell App extension (when installed using MSI) -->
+    <TimeMePath Condition=" Exists('$(BlokIDEExtPath)\UoA.IEC61499.Compiler.targets')">$(BlokIDEExtPath)</TimeMePath>
+    <!-- Regular App extension (when installed using MSI) -->
+    <TimeMePath Condition=" '$(TimeMePath)' == '' AND Exists('$(TimeMeAppExt10Path)\UoA.IEC61499.Compiler.targets')">$(TimeMeAppExt10Path)</TimeMePath>
+    <TimeMePath Condition=" '$(TimeMePath)' == '' AND Exists('$(TimeMeAppExt11Path)\UoA.IEC61499.Compiler.targets')">$(TimeMeAppExt11Path)</TimeMePath>
+    <!-- Regular LocalAppData (when installed using VSIX) -->
+    <TimeMePath Condition=" '$(TimeMePath)' == '' AND Exists('$(TimeMeUsrExt10Path)\UoA.IEC61499.Compiler.targets')">$(TimeMeUsrExt10Path)</TimeMePath>
+    <TimeMePath Condition=" '$(TimeMePath)' == '' AND Exists('$(TimeMeUsrExt11Path)\UoA.IEC61499.Compiler.targets')">$(TimeMeUsrExt11Path)</TimeMePath>
+    <!-- Experimental LocalAppData -->
+    <TimeMePath Condition=" '$(TimeMePath)' == '' AND Exists('$(TimeMeUsrExpExt10Path)\UoA.IEC61499.Compiler.targets')">$(TimeMeUsrExpExt10Path)</TimeMePath>
+    <TimeMePath Condition=" '$(TimeMePath)' == '' AND Exists('$(TimeMeUsrExpExt11Path)\UoA.IEC61499.Compiler.targets')">$(TimeMeUsrExpExt11Path)</TimeMePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Simulation'">
+    <CompilationMode>Simulate</CompilationMode>
+    <OutputPath>Generated\Simulation\</OutputPath>
+    <CodeSortingMode>Acyclic</CodeSortingMode>
+    <CompilerName>gcc</CompilerName>
+    <ExecuteMakeScript>true</ExecuteMakeScript>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Run'">
+    <CompilationMode>Run</CompilationMode>
+    <OutputPath>Generated\Run\</OutputPath>
+    <CodeSortingMode>Acyclic</CodeSortingMode>
+    <CompilerName>gcc</CompilerName>
+    <ExecuteMakeScript>true</ExecuteMakeScript>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Verification'">
+    <CompilationMode>Verify</CompilationMode>
+    <OutputPath>Generated\Verification\</OutputPath>
+    <CodeSortingMode>Acyclic</CodeSortingMode>
+    <ExecuteMakeScript>false</ExecuteMakeScript>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Timing Analysis'">
+    <CompilationMode>Timing</CompilationMode>
+    <OutputPath>Generated\TimingAnalysis\</OutputPath>
+    <CodeSortingMode>Acyclic</CodeSortingMode>
+    <ExecuteMakeScript>false</ExecuteMakeScript>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'test' ">
+    <CompilationMode>Run</CompilationMode>
+    <CodeSortingMode>Acyclic</CodeSortingMode>
+    <CompilerName>gcc</CompilerName>
+    <ExecuteMakeScript>true</ExecuteMakeScript>
+    <OutputPath>bin\test\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Deploy' ">
+    <CompilationMode>Run</CompilationMode>
+    <CodeSortingMode>Acyclic</CodeSortingMode>
+    <CompilerName>gcc</CompilerName>
+    <ExecuteMakeScript>true</ExecuteMakeScript>
+    <OutputPath>bin\Deploy\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AccelDecel.fb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="Activate.fb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="CruiseControl.cfb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="CruiseController_FBDKInterface.fb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="CruiseController_FBDKTestBench.cfb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="CruiseController_FORTEInterface.fb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="CruiseControlObs.cfb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="CruiseManager.fb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="SpeedGauge.fb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="Throttle.fb">
+      <SubType>Content</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BrakePressed.fb">
+      <SubType>Content</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resume.fb">
+      <SubType>Content</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SpeedGauge.fb.calcSpeed.algo">
+      <SubType>Content</SubType>
+      <DependentUpon>SpeedGauge.fb</DependentUpon>
+      <LinkedIntoProjectAt>calcSpeed.algo</LinkedIntoProjectAt>
+    </Content>
+    <Content Include="Throttle.fb.accel.algo">
+      <SubType>Content</SubType>
+      <DependentUpon>Throttle.fb</DependentUpon>
+      <LinkedIntoProjectAt>accel.algo</LinkedIntoProjectAt>
+    </Content>
+    <Content Include="Throttle.fb.cruise.algo">
+      <SubType>Content</SubType>
+      <DependentUpon>Throttle.fb</DependentUpon>
+      <LinkedIntoProjectAt>cruise.algo</LinkedIntoProjectAt>
+    </Content>
+    <Content Include="Throttle.fb.normal.algo">
+      <SubType>Content</SubType>
+      <DependentUpon>Throttle.fb</DependentUpon>
+      <LinkedIntoProjectAt>normal.algo</LinkedIntoProjectAt>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(TimeMePath)\UoA.IEC61499.Compiler.targets" />
+</Project>

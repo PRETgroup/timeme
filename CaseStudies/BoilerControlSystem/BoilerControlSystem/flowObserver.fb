@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="530427df-15f6-4469-9f12-17983e565722" name="flowObserver" organization="ZEESHAN-HP" date="2013-02-17" author="Zeeshan" modelType="Observer">
+  <states>
+    <functionBlockModelHasStates Id="2b8bfb59-fdc0-4fbb-b13e-7309cc9f9688">
+      <state Id="55a3d961-75b7-491a-8a42-7b7bd3f55404" name="Start" x="700" y="481.25" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="e026da12-adf1-4bb5-8a3e-3b2e04cc5b5a">
+            <transitionNodeMoniker Id="84eb8721-c27e-4c6b-aed0-31dd7b4fd7a6" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="0f80d5b8-950e-47d5-bc52-8a25d9c1b04d">
+      <state Id="6531faec-dac2-42d3-92b4-9a39824cbd4a" name="Violation" x="1925" y="700" isInitial="false" />
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="393a346e-6856-4d02-bf2e-fb75bb935adf">
+      <state Id="43c3e267-5f58-4592-a8fb-e5c517638586" name="STEP1" x="1381.25" y="468.74999999999994" isInitial="false">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="e545ffe7-2330-43ab-948b-13cb25c8d678">
+            <transitionNodeMoniker Id="54b54db6-a80f-4d6d-b1f0-8b824b75c24d" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="d07c189b-ad62-47e5-9176-a196da1be039">
+            <transitionNodeMoniker Id="70f157ac-e33a-43d9-8e37-7ab40ed7a51e" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="eaac54fc-d1d6-4d37-aa88-fc70feaa6c66">
+      <state Id="0ac99d84-1cb6-4c37-ab98-d66e2fc08754" name="STEP2" x="1356.25" y="962.5" isInitial="false">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="2d493999-e95b-425e-9436-2bd0af70fe9a">
+            <transitionNodeMoniker Id="ea8edbdb-85af-4c11-85e2-629d0a6b6337" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="ec22c005-bb03-444c-bcbc-75cc012bd5e1">
+            <transitionNodeMoniker Id="cc0b4ea7-9feb-4acb-bcbb-8ce3385aff3c" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="36f25245-efcc-4c40-bfc5-e52a0b59c24b">
+      <functionBlockInterface Id="ee58d37c-b44d-4e0a-98c6-454ea6feaa71" name="flowObserver" x="1400" y="481.25" modelType="Observer">
+        <events>
+          <functionBlockHasEvents Id="147fa6c9-17d7-4f21-a2a0-dd4200d69da2">
+            <event Id="9bbb44fb-9135-4f63-bbe9-42f45ae22dc6" name="valveEvent" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="38e245e0-7381-4fa9-8380-afccb21306be">
+            <event Id="3dba02c1-ce32-4a28-8543-aa0e89190208" name="flowEvent" scope="Input" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="61f00017-ca1a-4fc6-a16b-3a931228cd8f">
+            <variable Id="64eb40b1-3432-46dc-a220-623dc619f54a" name="flowIndication" scope="Input" type="BOOL" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="81141b7c-ea7d-42d0-8560-56eafa44c7e6">
+            <variable Id="abfd9bfc-ed9f-4b2a-81ca-bfc5a48183f7" name="valveOpen" scope="Input" type="BOOL" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="61de9a7c-2eaa-4e5b-900e-4afc82913218">
+            <inputEventPort Id="3b5676a1-f594-4985-a990-143ca5095fe0">
+              <targetPort>
+                <association Id="fcce8dc7-a7d7-4a89-a381-7a8c7b57033c">
+                  <inputVariablePortMoniker Id="5896a1ef-2dce-4c60-8722-1beb13705fcc" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="feb0d924-3383-41a2-87a9-3484beb835d8">
+                  <eventMoniker name="/flowObserver/flowObserver/flowEvent" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="e90332df-ef6b-4e2a-aebe-099a206f5a54">
+            <inputEventPort Id="e419bcc7-98a4-412e-b262-08eb2fcaf73f">
+              <targetPort>
+                <association Id="6ef5441e-df0d-4d29-9e95-fb45b9ed7907">
+                  <inputVariablePortMoniker Id="522038c5-9a5d-4d64-8109-64520f92fd93" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="cba2b811-8ea5-4511-b42c-e56fe8ea61ff">
+                  <eventMoniker name="/flowObserver/flowObserver/valveEvent" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="c4e4c6c5-971f-4649-9f80-dc2dcfb12823">
+            <inputVariablePort Id="522038c5-9a5d-4d64-8109-64520f92fd93">
+              <variable>
+                <inputVariablePortReferencesVariable Id="db727e43-b9e4-453e-9146-5351d78aab4e">
+                  <variableMoniker name="/flowObserver/flowObserver/valveOpen" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="30917ee5-8a2b-4acf-a615-4c2984844556">
+            <inputVariablePort Id="5896a1ef-2dce-4c60-8722-1beb13705fcc">
+              <variable>
+                <inputVariablePortReferencesVariable Id="80f61c99-9180-48c5-9454-6457311feeaa">
+                  <variableMoniker name="/flowObserver/flowObserver/flowIndication" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="9a0eb282-c991-411f-8d58-a50fb84c5254">
+      <transitionNode Id="84eb8721-c27e-4c6b-aed0-31dd7b4fd7a6" x="1006.25" y="306.25" event="valveEvent">
+        <targetState>
+          <transitionNodeConnectsToStates Id="5d27b479-4553-4016-97b2-114713436e15">
+            <stateMoniker name="/flowObserver/STEP1" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="0674fc0e-ab90-4bd9-9095-b0ad730395b1">
+      <transitionNode Id="70f157ac-e33a-43d9-8e37-7ab40ed7a51e" x="1988.427083333333" y="601.27083333333326">
+        <targetState>
+          <transitionNodeConnectsToStates Id="4de6f6ab-cc82-4e5d-82cf-72b20f127144">
+            <stateMoniker name="/flowObserver/STEP2" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="6c8b734f-9dad-4c38-9252-38e888d304f9">
+      <transitionNode Id="ea8edbdb-85af-4c11-85e2-629d0a6b6337" x="1431.625" y="350" event="flowEvent" expression="flowIndication == valveOpen">
+        <targetState>
+          <transitionNodeConnectsToStates Id="f35636e8-7f16-4326-8181-5b0b2c8fc6a3">
+            <stateMoniker name="/flowObserver/Start" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="70fb2457-d1d1-4d88-a0fe-526fc7b5e0a1">
+      <transitionNode Id="54b54db6-a80f-4d6d-b1f0-8b824b75c24d" x="1599.2499999999998" y="350" event="valveEvent">
+        <targetState>
+          <transitionNodeConnectsToStates Id="882b3105-dbfd-425a-8816-03678590feab">
+            <stateMoniker name="/flowObserver/STEP1" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="7a8ffa24-bc5d-48c4-9e8e-599cbf692976">
+      <transitionNode Id="cc0b4ea7-9feb-4acb-bcbb-8ce3385aff3c" x="1823.625" y="699.25">
+        <targetState>
+          <transitionNodeConnectsToStates Id="9e641c2a-a62c-46c7-9396-c8bd2fdbaf79">
+            <stateMoniker name="/flowObserver/Violation" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

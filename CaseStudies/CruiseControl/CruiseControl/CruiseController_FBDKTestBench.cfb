@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<compositeFunctionBlockModel Id="3256e228-bccd-4577-99a0-06110cccb2b9" name="CruiseController_FBDKTestBench" organization="Rockwell Automation" version="0" date="2000-05-27" author="JHC" header="package fb.rt.benchmarks.cruisecontrol;" modelType="Composite">
+  <functionBlockInterface>
+    <cFBModelHasFBInterface Id="020ef456-56e5-4a76-a2c5-90a23c189d7e">
+      <functionBlockInterface Id="b24cbe94-7cd2-4c93-9b67-1050fb114e1e" name="CruiseController_FBDKTestBench" x="700" y="393.75" modelType="Composite">
+        <events>
+          <functionBlockHasEvents Id="be884643-2c2b-462f-af15-a62d9d72bbd9">
+            <event Id="4e34f86e-bb3b-4e8a-95ae-3f6376c63612" name="INIT" comments="Initialization Request" scope="Input" />
+          </functionBlockHasEvents>
+        </events>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="bde8d00a-05f6-4011-be38-60cc23cf8a34">
+            <inputEventPort Id="719a6c1e-19e7-406f-8ae4-37155564fb51">
+              <proxyTargetPorts>
+                <proxyConnection Id="c8ff9f9f-4911-4c35-adcf-9850b311a2d5">
+                  <inputEventPortMoniker Id="06e86e6f-4fb2-4a5c-86d9-7b48c5d4dc00" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="e58a50d0-3db2-464c-8e81-cdf7641e0511">
+                  <eventMoniker name="/CruiseController_FBDKTestBench/CruiseController_FBDKTestBench/INIT" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+      </functionBlockInterface>
+    </cFBModelHasFBInterface>
+  </functionBlockInterface>
+  <functionBlockReferences>
+    <cFBModelHasFBReferences Id="c93d39ad-fbbb-4f63-a567-b2d00337c86e">
+      <functionBlockReference Id="da8dfcef-9b25-49e9-96ea-eb14ada0d2e2" name="Interface" x="1105.5555" y="461.11107999999996" reference="modelbus://UoA.IEC61499.FunctionBlock.FunctionBlockAdapter/CruiseController_FBDKInterface//.\CruiseController_FBDKInterface.fb" typeName="CruiseController_FBDKInterface" creationMode="NotApplicable">
+        <events>
+          <functionBlockHasEvents Id="3dc4ee7a-7a03-4be4-8463-5a37c704dd03">
+            <eventRef Id="f848ed30-f0c2-4078-a94d-dbce31980d17" name="INIT" scope="Input" referencedID="cd00ac3f-2684-4598-8a2c-b723221fbb71" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="08093128-62b1-4f10-8727-c75889271162">
+            <eventRef Id="9d453caa-f397-4d13-9b2c-ec60da17ff81" name="cclock" scope="Output" referencedID="f9f4ca03-bb2c-499d-8028-81fde7b04dc4" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="755e4392-b16d-40e1-a48c-707a7c949fe1">
+            <eventRef Id="ef606a27-1b5d-4747-abb7-7b6e2269f0d6" name="set" scope="Output" referencedID="8b91cb92-4ea4-41e4-ada5-5b7507f96f11" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="3fbbeef2-cfe8-43b1-8807-6907ec2cbfdc">
+            <eventRef Id="4977ed15-7b41-465c-9322-ef21ea57dab3" name="off" scope="Output" referencedID="a851100a-e2d8-4ad4-8248-cc384223b69b" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="6bb2218c-1c4c-4cae-abf9-3ca861450aae">
+            <eventRef Id="0bc8c4ef-b86d-4408-910e-3183e5957498" name="resume" scope="Output" referencedID="a2ac630b-1227-42e5-9191-929791f189f0" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="dcbbc762-6873-47ba-b075-f951a51045b5">
+            <eventRef Id="0b512d62-0fb4-42ea-8764-c117f73f7289" name="quickAccel" scope="Output" referencedID="7335ab68-0f45-47b5-a51c-5937d54a296c" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="613c6d08-ddc4-4d4f-b8b4-9df7befb08c6">
+            <eventRef Id="aa29ad9c-f357-4295-bf6a-6757bd57185b" name="quickDecel" scope="Output" referencedID="ca8bd5ed-90db-4200-973d-8da5b89fe87c" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="20c825a0-f357-4402-8aa9-3a82cf8892a8">
+            <eventRef Id="ba0f5a9d-98a8-4e14-babe-a35348300e5b" name="brakePressed" scope="Output" referencedID="35de0f48-f513-4759-ab33-33c9f3fa8841" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="e6fa0624-5deb-4ab4-abf7-47d3de2d5477">
+            <eventRef Id="52840e5e-b88d-41bd-bee9-31abf54a51ac" name="accelPressed" scope="Output" referencedID="bb4bbd7e-4474-46dc-800f-51e2390ae7af" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="adc544ce-cdc1-4cd2-b851-4dec0d482a0a">
+            <eventRef Id="cce81acc-b303-42be-8110-4584c92a1fca" name="accelReleased" scope="Output" referencedID="c91ad05f-bddf-4cc3-adbd-ef61d4351d65" unitDelayed="false" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="3f0f70bd-7254-4cd5-ac3c-9551e27715d9">
+            <variableRef Id="879ac511-c1d6-490a-972a-a48e727dc3be" name="time" scope="Output" type="UDINT" referencedID="7cf8d341-3efc-470d-b29f-24bbe592b021" unitDelayed="false" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="546d45ec-8f6f-4ee8-889f-b74509064919">
+            <variableRef Id="11483bd1-d3ec-43ae-9b51-c4dee4b51361" name="rotaryCount" scope="Output" type="UINT" referencedID="fc730560-7b69-4f29-a320-230d43562410" unitDelayed="false" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="b37ee126-5d4d-41f4-bd7d-1c53e46eb387">
+            <variableRef Id="15703376-0a9f-4d36-ab40-0821b0473332" name="throttleOffset" scope="Output" type="SINT" referencedID="ed395081-7f6f-4b64-9c75-24cbef937e69" unitDelayed="false" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="eb3f2e19-0bb9-4853-a87f-17020734f240">
+            <inputEventPort Id="06e86e6f-4fb2-4a5c-86d9-7b48c5d4dc00">
+              <event>
+                <inputEventPortReferencesEvent Id="1f72597d-f12e-43a1-a4ee-1fd99f050926">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/Interface/INIT" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="1117da41-ed39-4e83-9dd7-921193e4ce3a">
+            <outputEventPort Id="18bbcd4f-37ee-49b7-85a8-1cafa1c6c741">
+              <wireTargetPorts>
+                <wireConnection Id="9ac9b3f8-0f2d-4b30-9336-45f40de09875">
+                  <inputEventPortMoniker Id="5d4e580d-f04d-4dc7-81a1-54cdee052243" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="4887c271-9757-4441-b73e-208b7089e46e">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/Interface/cclock" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="ca9f06c1-8ed9-44cb-9532-8be01a74ee8a">
+            <outputEventPort Id="3c768f69-d864-4de8-b8a4-04d7d5ee831f">
+              <wireTargetPorts>
+                <wireConnection Id="32b700ee-63af-4f15-8597-0e9224076f93">
+                  <inputEventPortMoniker Id="de30f9a3-0d15-48b2-b029-cf44885909ea" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="6b58661e-eba1-403a-b50d-feaedb4faa82">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/Interface/set" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="5fe1ed29-9b03-4636-8015-6dfd79889609">
+            <outputEventPort Id="2ca4d9d2-1449-4a82-b3fd-a188c087b6a2">
+              <wireTargetPorts>
+                <wireConnection Id="a4e0dc37-f26a-4b2a-9161-9cf882bf3689">
+                  <inputEventPortMoniker Id="9c92c4e4-5bfa-4e21-8d00-13c569df5032" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="8f2a65f9-7ebb-4214-ad62-0067cbe33603">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/Interface/off" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="2754eb35-9efb-4b3d-a438-9b390ca28d8c">
+            <outputEventPort Id="ec383806-c46e-44ec-9de6-046c7c0e1393">
+              <wireTargetPorts>
+                <wireConnection Id="1bf82257-1352-4f7f-8f25-813a7f271256">
+                  <inputEventPortMoniker Id="57ab4fb9-74ad-4a58-b3b2-0791f5378360" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="676efc0b-4925-4558-95df-fc4448cec05e">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/Interface/resume" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="480dac38-5cbf-493c-af81-cfd41305ee9a">
+            <outputEventPort Id="b0f5f0f0-cc7e-401a-a5d3-8137011c21cc">
+              <wireTargetPorts>
+                <wireConnection Id="f278441c-6cba-421c-859e-487f0c3762a1">
+                  <inputEventPortMoniker Id="2ed52b71-4e15-4732-8758-b8d5428c7e52" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="b15a102d-f860-4ad1-bf4d-bdb2dc2ed6de">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/Interface/quickAccel" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="48f795ab-7fdb-4e59-9298-79ea9688b0c2">
+            <outputEventPort Id="a41a0129-931e-446b-8b6f-4144227fcc63">
+              <wireTargetPorts>
+                <wireConnection Id="3eb09d26-2ac7-4744-b8be-64b7e942e2f9">
+                  <inputEventPortMoniker Id="9e7fdf01-b215-434e-ab5f-d0cf505ac1ae" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="2202fb39-b4d1-4a48-b3f8-e8fe4ded99dd">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/Interface/quickDecel" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="1b1c3226-9d95-45a0-8583-6cb01a84a9d5">
+            <outputEventPort Id="3ea4d159-11ec-44ba-8da4-76d875da3be1">
+              <wireTargetPorts>
+                <wireConnection Id="4b2068f0-18a1-4d76-8d9c-f2b5c0252e63">
+                  <inputEventPortMoniker Id="b6d0fa01-4b1d-4203-a30e-c4b5f65cec47" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="e8fccc06-3f81-4afe-8b5a-f6a789c98c7d">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/Interface/brakePressed" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="e843fefb-9c89-4a98-ad3a-b5367fc35865">
+            <outputEventPort Id="f17d867d-b64e-43f4-96cf-ab3095400354">
+              <wireTargetPorts>
+                <wireConnection Id="ed23f1bf-c2c0-48e8-ab9e-c4f89d6714b7">
+                  <inputEventPortMoniker Id="af2de16a-3562-426a-a938-da47e6f307ff" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="246319dd-ec93-440f-b8ad-02e9bfc81259">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/Interface/accelPressed" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="4e52a00d-4981-46ad-9e70-116eebee783a">
+            <outputEventPort Id="24079df5-f56e-4c55-9072-400d0ef00efb">
+              <wireTargetPorts>
+                <wireConnection Id="9eb9aa14-de5c-4840-a5b9-bf9f3efdfe13">
+                  <inputEventPortMoniker Id="5cb18259-641b-49b8-848a-522dc94583a3" />
+                </wireConnection>
+              </wireTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="d30c2f09-1771-43bb-ad41-407d0fa42a1e">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/Interface/accelReleased" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="b1b7c4b5-c051-4aab-954b-e13a948f26d5">
+            <outputVariablePort Id="821fd239-862f-414f-bdbd-994e4315a43b">
+              <wireTargetPorts>
+                <wireConnection Id="0ea64cd5-e2c2-49fe-add5-19b56e26e232">
+                  <inputVariablePortMoniker Id="ad5a7e8f-d26a-4eb3-98be-752604a73054" />
+                </wireConnection>
+              </wireTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="a9e3ba76-ec85-4e32-9d0c-2590fbe9c858">
+                  <variableRefMoniker name="/CruiseController_FBDKTestBench/Interface/time" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="d1302af3-b8b7-48ab-a45c-be08f35dd3e4">
+            <outputVariablePort Id="aa1b3595-b959-48bb-892a-90c10e62c92d">
+              <wireTargetPorts>
+                <wireConnection Id="0643cbe1-c0c8-4d89-ac9c-d09e080397b5">
+                  <inputVariablePortMoniker Id="4662b1cf-39af-4daf-91dd-95a8423dd834" />
+                </wireConnection>
+              </wireTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="3d0361ac-c02b-4ebd-a3ab-255a47ade145">
+                  <variableRefMoniker name="/CruiseController_FBDKTestBench/Interface/rotaryCount" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="b20234e3-14e9-49d9-83d3-dc287ed0c0d8">
+            <outputVariablePort Id="066404e7-8102-4144-bd40-5b53c7dad414">
+              <wireTargetPorts>
+                <wireConnection Id="93f7d056-1490-46d0-ae9e-3f819261d1f1">
+                  <inputVariablePortMoniker Id="dfa01528-4c7b-4a44-97f8-7d527285fc4d" />
+                </wireConnection>
+              </wireTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="72206c5f-e664-4765-a7fb-c25c39cfc2e8">
+                  <variableRefMoniker name="/CruiseController_FBDKTestBench/Interface/throttleOffset" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockReference>
+    </cFBModelHasFBReferences>
+    <cFBModelHasFBReferences Id="d4d237c9-28c7-4753-a423-6fc8025acf2f">
+      <functionBlockReference Id="db5dbd1c-147e-4643-9aa7-0d97b9e9bc84" name="UUT" x="3066.6665" y="461.11107999999996" modelType="Composite" reference="modelbus://UoA.IEC61499.CompositeFunctionBlock.CompositeFunctionBlockAdapter/CruiseControl//.\CruiseControl.cfb" typeName="CruiseControl" creationMode="NotApplicable">
+        <events>
+          <functionBlockHasEvents Id="d1cdad97-7590-4a44-9b40-30de66d506f7">
+            <eventRef Id="e2de4af6-e4cd-4708-a5eb-f973bc0429c0" name="cclock" scope="Input" referencedID="0f581d12-2069-4502-b4b9-ebc0a3eacfbe" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="1094486a-a0fa-4494-930d-ec4188a42aee">
+            <eventRef Id="0875812d-41a3-4f88-999b-de40b5b228d6" name="set" scope="Input" referencedID="2b8b0e2f-c850-49f2-90b0-1f332436ee45" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="6a052008-457b-4d94-90a9-b1c0604eb0c1">
+            <eventRef Id="77e1428d-a462-4b4d-9c3c-8ebd85cce364" name="off" scope="Input" referencedID="b1c09d8f-4f3b-44b2-84c8-62cfbe90ccaf" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="8d4ec32a-b1f5-48ea-8c69-1c0794b3ce04">
+            <eventRef Id="c605368c-f462-4f62-8609-e8bb588df7f0" name="resume" scope="Input" referencedID="d57c1d33-f984-4a1e-8e32-546e77fefbf2" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="c330995e-10b8-4395-b444-9f192fe63094">
+            <eventRef Id="8633a19a-1142-4732-8815-49373a04d23d" name="quickAccel" scope="Input" referencedID="b0266da9-99a7-4218-bd53-6e684d6ebfcf" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="08c973bc-a4b2-4e8f-b922-a62922239cc2">
+            <eventRef Id="fa35ca4c-01d0-4c25-93f4-edc940d1f4ef" name="quickDecel" scope="Input" referencedID="516ada6c-8bbc-4e28-9ecd-945fb2d17bf2" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="b34cb058-135d-49c3-affa-93b41c8c6d98">
+            <eventRef Id="f8c44e1b-12e8-4460-8756-066c5cff6104" name="brakePressed" scope="Input" referencedID="32517cb4-7079-46bb-a361-5f1efc8b296c" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="1d3f65bd-bf40-40eb-b8a3-7a3a96fc0314">
+            <eventRef Id="dd392799-fb34-41cb-a6d1-4ff3dc71c1f5" name="accelPressed" scope="Input" referencedID="23813623-b1c0-4fc8-9ff4-973a0e3b3a4a" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="36206c22-97c4-4dad-a293-09003b7f8db9">
+            <eventRef Id="de6471f1-6032-4ceb-aa37-32790f50472b" name="accelReleased" scope="Input" referencedID="5e1772b3-d83c-42fb-8adc-fbe8347779e5" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="42fc1bce-16c2-4745-861e-a06e0fc40ca7">
+            <eventRef Id="457caaae-9b53-40f3-a8ba-2fa3edaa3214" name="speed" scope="Output" referencedID="f3d8692c-41e7-4fbd-9715-6729be0b8e18" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="bc0337eb-4877-48ea-8938-1c43e06fc295">
+            <eventRef Id="17e5a832-9051-4395-98bf-47ad493ecf24" name="speedSet" scope="Output" referencedID="33163c61-6e21-4abf-8f72-b78ee3668144" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="f22081ef-b1b8-4373-a485-246c169193a9">
+            <eventRef Id="2245d3a9-24d9-4458-8ade-8e4153151856" name="throttleChg" scope="Output" referencedID="5c08bd89-6eb3-4854-b667-70db76d57fa5" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="5514e0fa-35fe-4061-805f-5eb9d741e6fe">
+            <eventRef Id="eca4066f-ea24-40e8-a83f-331ff2d04455" name="regulOff" scope="Output" referencedID="954a665b-af68-4cca-9ed5-9631b55a8ec2" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="ce972df6-8024-4a1f-a013-16855bca186b">
+            <eventRef Id="0b79f67d-50ca-47fa-9951-3029cbcb5eff" name="regulStdby" scope="Output" referencedID="bfea4980-cdc5-4444-9870-739544016d4d" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="982677c5-3bd6-4fc4-93a3-44f0cd6ccb7e">
+            <eventRef Id="0d59afe6-cbb7-44e6-87dd-adce55aa5f88" name="regulSet" scope="Output" referencedID="5f856f10-9dc2-4d04-8a1b-6896c73aa308" unitDelayed="false" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="0f4541ed-598e-4cc4-993d-03c60e9bb8ee">
+            <eventRef Id="2e34cc8f-e661-4cb0-b089-e253ff8da7c1" name="regulResume" scope="Output" referencedID="fc48d31f-c0ba-480b-84a2-4e3507918793" unitDelayed="false" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="972563be-91a3-4747-a85d-4af5dc3044de">
+            <variableRef Id="59eccced-09e8-4841-b5d1-efaae65ace85" name="time" scope="Input" type="UDINT" referencedID="951d4fef-ad3d-4428-8ecd-3843e2a7c08f" unitDelayed="false" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="49299241-ff8b-46f3-80d7-006b2731f468">
+            <variableRef Id="86dbfc4f-14fa-46d0-8a86-0bbbb585935a" name="rotaryCount" scope="Input" type="UINT" referencedID="20f78f06-bc7a-48ae-93b0-9f13d5563743" unitDelayed="false" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="283bdfbc-0505-4e56-980f-ca16bbd434d2">
+            <variableRef Id="46e87708-a33b-4988-aad3-4985d2ed246b" name="throttleOffset" scope="Input" type="SINT" referencedID="e093cb83-a140-473c-9e81-10f0627178c0" unitDelayed="false" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="50fbcbb8-2ac3-4e5c-83f8-efd347dfb8f3">
+            <variableRef Id="ae9c323e-494e-434d-ab4a-99a1f643bf01" name="speedVal" scope="Output" referencedID="bfa1a44d-523f-443a-b079-d52b9a678858" unitDelayed="false" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="e13bc0b3-7424-4dc4-b5dc-fae202550a86">
+            <variableRef Id="6ac1803d-4c08-4075-9a74-37f9276bbb3c" name="cruiseSpeed" scope="Output" referencedID="32fe9cad-df2b-4e7f-9dad-1f8e33848452" unitDelayed="false" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="79dfffc2-393c-4874-a518-31493fc94fcd">
+            <variableRef Id="af32971e-9fb6-4cbf-88c5-a7e56c4e3e83" name="throttleVal" scope="Output" type="SINT" referencedID="120c0e98-8865-43f8-ae64-2c6faa9736ef" unitDelayed="false" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="0a2809cf-7a97-45f2-b86b-01af9e8e02cc">
+            <inputEventPort Id="5d4e580d-f04d-4dc7-81a1-54cdee052243">
+              <event>
+                <inputEventPortReferencesEvent Id="6be3b35d-a532-44ab-959b-11bf2fccfdb6">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/cclock" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="803df461-8453-4122-8a6b-e10930231864">
+            <inputEventPort Id="de30f9a3-0d15-48b2-b029-cf44885909ea">
+              <event>
+                <inputEventPortReferencesEvent Id="55d22d90-5533-46a1-8522-5a9a93e5715c">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/set" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="10ed4a15-474b-4333-b9ae-96cab241a027">
+            <inputEventPort Id="9c92c4e4-5bfa-4e21-8d00-13c569df5032">
+              <event>
+                <inputEventPortReferencesEvent Id="5f55ce41-5572-42f8-9164-21c14aa90e2c">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/off" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="a7abc32c-6ae1-4144-92d9-eeb15abe8272">
+            <inputEventPort Id="57ab4fb9-74ad-4a58-b3b2-0791f5378360">
+              <event>
+                <inputEventPortReferencesEvent Id="6568df84-9f24-401f-9ae9-632546441034">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/resume" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="516b2fd6-280e-47b2-9d7e-a88a631dd189">
+            <inputEventPort Id="2ed52b71-4e15-4732-8758-b8d5428c7e52">
+              <event>
+                <inputEventPortReferencesEvent Id="21d22f3b-a0c2-4357-aef4-6a07403dde83">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/quickAccel" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="63bf1e35-0315-48d6-ab8b-382b56369c56">
+            <inputEventPort Id="9e7fdf01-b215-434e-ab5f-d0cf505ac1ae">
+              <event>
+                <inputEventPortReferencesEvent Id="cb2f6318-8c97-451d-b831-dbce2c8c3d5b">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/quickDecel" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="b3e5af80-2d96-4fd2-b8b2-b6a093372eff">
+            <inputEventPort Id="b6d0fa01-4b1d-4203-a30e-c4b5f65cec47">
+              <event>
+                <inputEventPortReferencesEvent Id="666de348-cce2-498b-ac16-ba2494d8238a">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/brakePressed" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="7dd98211-82a1-4d47-96f9-008425a86dd1">
+            <inputEventPort Id="af2de16a-3562-426a-a938-da47e6f307ff">
+              <event>
+                <inputEventPortReferencesEvent Id="6889c85b-4e7f-46bc-a580-2a0dfe6abf3c">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/accelPressed" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="3fbd1242-e48e-4ebb-8166-04659266e011">
+            <inputEventPort Id="5cb18259-641b-49b8-848a-522dc94583a3">
+              <event>
+                <inputEventPortReferencesEvent Id="130a3a19-8dea-446d-aeeb-6bfebb9bb10f">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/accelReleased" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="dbbdcd86-385f-4aca-8bbb-993dc390a021">
+            <outputEventPort Id="0a663e5e-5b64-42d5-86e5-3e23903b96db">
+              <event>
+                <outputEventPortReferencesEvent Id="834694ff-3612-47f5-8717-453cab14d938">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/speed" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="5eb5b1c0-cbec-4828-b03f-3084aa6bd698">
+            <outputEventPort Id="ec7cc433-e813-44c2-855b-e8a2e1582e29">
+              <event>
+                <outputEventPortReferencesEvent Id="ce66bffd-4c8d-49cf-83ca-712ca1e8aae4">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/speedSet" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="f93590ac-f328-47cf-8a02-cedef5311557">
+            <outputEventPort Id="62b41dec-46ae-4fa5-acab-acbb29917059">
+              <event>
+                <outputEventPortReferencesEvent Id="3f6b3b4c-2478-46a2-bf48-674f4acc6672">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/throttleChg" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="1f202f5a-c8c5-4c8f-bd93-52a834a4825d">
+            <outputEventPort Id="a706128a-1df5-4d01-b002-c4ea87499813">
+              <event>
+                <outputEventPortReferencesEvent Id="fbea0d9d-e9d3-4840-a0fb-aeb9b2b700d8">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/regulOff" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="fba3936e-55b9-413b-b731-777bf1007b0d">
+            <outputEventPort Id="65032573-4f2a-44d6-a19e-3b5824c9c52a">
+              <event>
+                <outputEventPortReferencesEvent Id="ec774e50-362a-4ea4-b20a-4ed5bde37792">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/regulStdby" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="9c86b154-3f3b-4b8f-97a6-c8cd6f02ab3a">
+            <outputEventPort Id="c52c4bd4-9c8e-4473-a0cd-4952ee0d440c">
+              <event>
+                <outputEventPortReferencesEvent Id="7ed4b845-e02c-46ae-88c1-8e200cdd48d0">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/regulSet" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="28a7a8c6-27f5-4df1-b097-3f62b4a439b4">
+            <outputEventPort Id="5d349d46-19ac-4cac-a3ba-dc96fb8ef3ca">
+              <event>
+                <outputEventPortReferencesEvent Id="3a63ef1c-2aa3-4092-a786-6347e7aa48c5">
+                  <eventRefMoniker name="/CruiseController_FBDKTestBench/UUT/regulResume" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="fd41e3fd-cb6b-4b70-994e-2cb3ce18fa60">
+            <inputVariablePort Id="ad5a7e8f-d26a-4eb3-98be-752604a73054">
+              <variable>
+                <inputVariablePortReferencesVariable Id="addbcdfa-7e7f-4801-92e5-22ec7cb43462">
+                  <variableRefMoniker name="/CruiseController_FBDKTestBench/UUT/time" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="07a725b0-28ce-4983-a77d-d39228a990cb">
+            <inputVariablePort Id="4662b1cf-39af-4daf-91dd-95a8423dd834">
+              <variable>
+                <inputVariablePortReferencesVariable Id="c4f44ea5-ff26-4dca-aad8-9f7fa7450f06">
+                  <variableRefMoniker name="/CruiseController_FBDKTestBench/UUT/rotaryCount" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="274f5a8a-7a0d-4330-ab65-65876f86bb4e">
+            <inputVariablePort Id="dfa01528-4c7b-4a44-97f8-7d527285fc4d">
+              <variable>
+                <inputVariablePortReferencesVariable Id="4dcc75b7-10cb-42e6-b9fe-3f4b2c701469">
+                  <variableRefMoniker name="/CruiseController_FBDKTestBench/UUT/throttleOffset" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="8ee30313-5143-41d4-8a04-4e7f74033bfa">
+            <outputVariablePort Id="7f6b74cb-b384-45c1-815f-719a516512e5">
+              <variable>
+                <outputVariablePortReferencesVariable Id="a0ea04ae-6005-4b81-8d8a-88c6a2677c52">
+                  <variableRefMoniker name="/CruiseController_FBDKTestBench/UUT/speedVal" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="781e5a27-1dc7-4c94-bfaf-20cb37adf307">
+            <outputVariablePort Id="0a6eda47-319a-476e-92ca-1bcbdb919f41">
+              <variable>
+                <outputVariablePortReferencesVariable Id="581e9740-f239-42f2-a31a-12366f52c708">
+                  <variableRefMoniker name="/CruiseController_FBDKTestBench/UUT/cruiseSpeed" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="81211db3-e2de-4a45-b8ad-c563417c0dc8">
+            <outputVariablePort Id="b84314c2-5a42-420c-9e71-f3c39cd8d7f7">
+              <variable>
+                <outputVariablePortReferencesVariable Id="e411fbe1-3b0d-43ad-8e4a-6e93f43b4698">
+                  <variableRefMoniker name="/CruiseController_FBDKTestBench/UUT/throttleVal" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockReference>
+    </cFBModelHasFBReferences>
+  </functionBlockReferences>
+</compositeFunctionBlockModel>

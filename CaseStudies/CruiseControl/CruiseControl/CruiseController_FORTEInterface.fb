@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="548602a9-258f-4ea1-8707-5bdf3d23ea94" name="CruiseController_FORTEInterface" organization="Rockwell Automation" version="0" date="2000-05-30" author="JHC" header="package fb.rt.benchmarks.cruisecontrol;" modelType="Basic">
+  <states>
+    <functionBlockModelHasStates Id="29de9e81-4c07-42a6-9bba-d046ad2b6bb8">
+      <state Id="b23887ca-f91f-4f7f-bcb4-d760b1787138" name="START" comments="Initial State" x="555" y="425" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="fbb5a0d4-b851-4ce7-b302-03f61f9dbbbb">
+            <transitionNodeMoniker Id="f240d756-9062-4df6-b13f-c98ad9f09976" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="638cb117-5f5f-4833-a0c2-adf0cebf593f">
+      <state Id="85f33e03-8485-4a54-b0b3-93d5ef35f706" name="REQ" comments="Normal execution" x="215" y="755" isInitial="false">
+        <actionSet>
+          <actionLink Id="9001b2b4-338a-420c-8cd2-3679a5a7e85c">
+            <actionSetMoniker Id="a522753f-88c2-4af4-9821-2990d29437d4" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="0ebf0082-d361-447e-a263-500813ef24b3">
+            <transitionNodeMoniker Id="28f481e6-5c91-486e-9e3e-0f6f57969ea6" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="ef82108f-df7c-4f9b-a2b8-9c369dc8769a">
+      <actionSet Id="a522753f-88c2-4af4-9821-2990d29437d4" x="365" y="755">
+        <actionItems>
+          <actionSetHasActionItems Id="83c1b708-4e2b-42da-9fc9-30cd98e91e19">
+            <actionAlgorithm Id="f0b632a0-2398-430a-87d9-9c751365b3eb">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="a6d7a5f9-6b3e-448e-adf1-41d379711529">
+                  <algorithmMoniker name="/CruiseController_FORTEInterface/REQ" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="c1d6409e-627c-4643-9b16-34696e7cad7a">
+      <algorithm Id="d7bf0015-7c1f-4529-beed-68e94805dac1" name="REQ" comments="Normally executed algorithm" code="(*&#xD;&#xA;File Code goes here&#xD;&#xA;*)" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="cefde310-8d43-4acf-b007-2c281238b632">
+      <functionBlockInterface Id="6903ddd5-db08-4542-add3-0ed9be1ffef0" name="CruiseController_FORTEInterface" x="500" y="500">
+        <events>
+          <functionBlockHasEvents Id="e8f42e27-60fa-4b93-b9f3-7c6ab63e0e2c">
+            <event Id="75047459-03db-4807-baa2-c6d48921a3e5" name="REQ" comments="Initialization Request" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="702d3c33-e748-45d6-b7f1-2bba00fdb10f">
+            <event Id="c2d052f0-2abf-4b6a-96da-f8e7c50e0839" name="cclock" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="f37c45a8-f318-4160-a56d-5d8635709fda">
+            <event Id="52a6c0cf-62b1-433d-9e4d-c244a1e1c59c" name="set" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="ecc95aed-5f70-44e7-9ef6-50d3611f236f">
+            <event Id="dcfe0d7c-0aa4-4a65-993f-13d2434bd514" name="off" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="a04ecc18-85e4-45d5-b3e3-3595443742d1">
+            <event Id="05181845-a63a-4c5b-a77e-00cb9551089a" name="resume" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="9e739d82-36c9-4b32-94e1-eb81ab3eeb6b">
+            <event Id="67214136-e4af-4ea6-af6b-112cd97b71ea" name="quickAccel" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="d54566e3-93fb-4685-97a6-f8b4dc81e80a">
+            <event Id="fd8c413f-3ce8-4233-83d8-b53029a03cf7" name="quickDecel" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="5e6556fb-dfaf-41dc-8044-c601cfb80e2e">
+            <event Id="ab830fab-1eb7-415b-bd4a-8cd39abc6537" name="brakePressed" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="583183db-a68f-4701-ad38-9c51cf14603a">
+            <event Id="513b03bf-c473-428a-b30b-cd02daec4f7f" name="accelPressed" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="7d738fde-b288-4a19-b4dd-61fff2b5c969">
+            <event Id="8b79e505-1c08-4158-a135-7bd995a113ec" name="accelReleased" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="044a868e-cd33-46e5-adbb-b5ee77dc34ff">
+            <variable Id="eebf117f-b020-4e22-ad76-dc3f252a4557" name="time" comments="10ms tick" scope="Output" type="UDINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="5d866eb9-ee31-49d3-8d1f-4cbf1db7b333">
+            <variable Id="5bbe7a7e-901f-4d69-b3da-b9c49d8f883e" name="rotaryCount" scope="Output" type="UINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="5e4e1af4-8bfa-4006-9ad8-5a066777f48e">
+            <variable Id="c9b039b5-332d-4893-b76d-04077bcd746a" name="throttleOffset" scope="Output" type="SINT" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="10e38d39-94c1-49fc-b0d6-e8e3556858fa">
+            <inputEventPort Id="5e24dd65-f8be-41d7-ba72-95db862eabdf">
+              <event>
+                <inputEventPortReferencesEvent Id="2fc5f0cd-3eac-491e-a88c-d48d8cdb3129">
+                  <eventMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/REQ" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="9fc16228-4a20-44d6-96a3-895f660d4095">
+            <outputEventPort Id="ada47315-976f-4c51-bfdc-9ddb270db72b">
+              <targetPort>
+                <association Id="cb8f3a22-4714-4785-9be1-6140230d1707">
+                  <outputVariablePortMoniker Id="9c84297d-9263-4472-8839-268a6651c4e5" />
+                </association>
+                <association Id="c22bbecb-2fa3-4c3c-86da-a361b887201d">
+                  <outputVariablePortMoniker Id="bac77f5f-a3a4-4eb7-af7c-f1d01a4b1d7c" />
+                </association>
+                <association Id="382f6688-25b3-4566-99d0-5d43cfffdbe9">
+                  <outputVariablePortMoniker Id="c0db5deb-5221-4047-ba6b-dd5b0ab322bb" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="636858e1-4f0c-4578-a61c-e9f6dae4c883">
+                  <eventMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/cclock" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="dc0e0006-34cc-4491-9229-88daa4975fd7">
+            <outputEventPort Id="9e458e15-2f0f-4b5c-88a1-0dc7e76d39ec">
+              <targetPort>
+                <association Id="004be7cf-4c6d-4740-bc0d-04aabf8d6cb1">
+                  <outputVariablePortMoniker Id="9c84297d-9263-4472-8839-268a6651c4e5" />
+                </association>
+                <association Id="700b5f78-9a4f-4808-9ced-906df639c81d">
+                  <outputVariablePortMoniker Id="bac77f5f-a3a4-4eb7-af7c-f1d01a4b1d7c" />
+                </association>
+                <association Id="05729001-52e0-4628-a99a-b7286003ed17">
+                  <outputVariablePortMoniker Id="c0db5deb-5221-4047-ba6b-dd5b0ab322bb" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="9353d3ef-74c7-44a6-bc9f-fff28a01bed6">
+                  <eventMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/set" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="deb28cdd-ac3e-42c0-971d-8d36c1b14870">
+            <outputEventPort Id="6fff8927-8a5a-4849-bc3a-8b5dce5ecd8f">
+              <targetPort>
+                <association Id="9f7fabd0-45a9-4f4c-866f-95201b84b38e">
+                  <outputVariablePortMoniker Id="9c84297d-9263-4472-8839-268a6651c4e5" />
+                </association>
+                <association Id="4ff8656f-18d5-4209-a007-40764d034c07">
+                  <outputVariablePortMoniker Id="bac77f5f-a3a4-4eb7-af7c-f1d01a4b1d7c" />
+                </association>
+                <association Id="f4a51abb-cda7-4ec7-b55c-4de2c7e0a6b2">
+                  <outputVariablePortMoniker Id="c0db5deb-5221-4047-ba6b-dd5b0ab322bb" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="fdcb7560-aa37-4b20-b31f-6a77538a5426">
+                  <eventMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/off" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="34095500-9192-444f-aefe-51da3a5270cd">
+            <outputEventPort Id="51efa5ab-574e-4bb6-a02f-06aef39f4c09">
+              <targetPort>
+                <association Id="6e46f216-29a2-457c-8dc0-a0e642d12197">
+                  <outputVariablePortMoniker Id="9c84297d-9263-4472-8839-268a6651c4e5" />
+                </association>
+                <association Id="cc18dfac-b6a5-4756-944d-3fd5f3b31aa1">
+                  <outputVariablePortMoniker Id="bac77f5f-a3a4-4eb7-af7c-f1d01a4b1d7c" />
+                </association>
+                <association Id="de850d03-2bec-4792-8235-a6ca17eb818b">
+                  <outputVariablePortMoniker Id="c0db5deb-5221-4047-ba6b-dd5b0ab322bb" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="b176b324-fbd2-4135-ae0c-44b210903409">
+                  <eventMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/resume" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="7ff9c406-31a9-41e0-97c4-eeea400d7687">
+            <outputEventPort Id="8a53b8fa-b537-4435-84c2-fd5acdf32b6c">
+              <targetPort>
+                <association Id="77c505a0-fc62-4b5a-aa4d-fb188c6a7a46">
+                  <outputVariablePortMoniker Id="9c84297d-9263-4472-8839-268a6651c4e5" />
+                </association>
+                <association Id="1bee8941-d285-492e-bf83-63cdc884e1da">
+                  <outputVariablePortMoniker Id="bac77f5f-a3a4-4eb7-af7c-f1d01a4b1d7c" />
+                </association>
+                <association Id="ca05279e-7e1c-4d38-805b-83d1d7193f6a">
+                  <outputVariablePortMoniker Id="c0db5deb-5221-4047-ba6b-dd5b0ab322bb" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="0b99459d-66e0-4141-96a6-ddb0cd5ef01b">
+                  <eventMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/quickAccel" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="7208b1a8-3179-468e-b837-f1141fa78b40">
+            <outputEventPort Id="5605c203-7998-4487-bdfe-81498f46c8be">
+              <targetPort>
+                <association Id="aec46376-b4cc-48a8-a023-308a04237bdf">
+                  <outputVariablePortMoniker Id="9c84297d-9263-4472-8839-268a6651c4e5" />
+                </association>
+                <association Id="07771903-5083-496b-869d-28d0d8fb743f">
+                  <outputVariablePortMoniker Id="bac77f5f-a3a4-4eb7-af7c-f1d01a4b1d7c" />
+                </association>
+                <association Id="d88ab50e-9659-4c33-8089-eb1f2e0363f5">
+                  <outputVariablePortMoniker Id="c0db5deb-5221-4047-ba6b-dd5b0ab322bb" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="434dd5a8-fff0-4b24-8e9a-f67d42dbbc7c">
+                  <eventMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/quickDecel" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="1a67a857-bc78-49e5-829a-5b6942790ca7">
+            <outputEventPort Id="c4286f76-96f6-4281-925a-7ce159d249e8">
+              <targetPort>
+                <association Id="46a9423c-9c4e-4dca-b8b6-02eaf4a99e09">
+                  <outputVariablePortMoniker Id="9c84297d-9263-4472-8839-268a6651c4e5" />
+                </association>
+                <association Id="365c21e7-11d6-4902-bbc6-dece7574eaca">
+                  <outputVariablePortMoniker Id="bac77f5f-a3a4-4eb7-af7c-f1d01a4b1d7c" />
+                </association>
+                <association Id="3f1c81ca-662c-4bb8-b3b1-d52bc5153138">
+                  <outputVariablePortMoniker Id="c0db5deb-5221-4047-ba6b-dd5b0ab322bb" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="13ec8e6a-1728-4209-8246-7734589d79c5">
+                  <eventMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/brakePressed" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="a989cac8-d7c9-48a8-8722-57a40eac5b6b">
+            <outputEventPort Id="bd69c13d-9551-46cb-aef3-6d993a7ffcaa">
+              <targetPort>
+                <association Id="3536e04a-07a5-4ece-a305-70e1101077f0">
+                  <outputVariablePortMoniker Id="9c84297d-9263-4472-8839-268a6651c4e5" />
+                </association>
+                <association Id="6bdd470f-afc7-46f5-ba75-2de47633351d">
+                  <outputVariablePortMoniker Id="bac77f5f-a3a4-4eb7-af7c-f1d01a4b1d7c" />
+                </association>
+                <association Id="1b375cb8-b86c-4557-a5c0-e302c58e1586">
+                  <outputVariablePortMoniker Id="c0db5deb-5221-4047-ba6b-dd5b0ab322bb" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="86e58157-9207-4d89-a934-b0f348760c54">
+                  <eventMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/accelPressed" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="547b6ad4-3442-46bd-a07a-0584e2d6de7b">
+            <outputEventPort Id="1439e2e4-1f60-4a91-8eaa-8545ccabad0f">
+              <targetPort>
+                <association Id="620330d8-1204-4dd0-96ea-d7290ff9e74e">
+                  <outputVariablePortMoniker Id="9c84297d-9263-4472-8839-268a6651c4e5" />
+                </association>
+                <association Id="4427760c-592b-46b3-bb56-193922d4fe14">
+                  <outputVariablePortMoniker Id="bac77f5f-a3a4-4eb7-af7c-f1d01a4b1d7c" />
+                </association>
+                <association Id="9c67af5a-d85f-44fa-9c31-79243871180b">
+                  <outputVariablePortMoniker Id="c0db5deb-5221-4047-ba6b-dd5b0ab322bb" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="eff12301-8c26-4343-b72a-24d4a26675b0">
+                  <eventMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/accelReleased" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="4cbf9006-f9c3-4748-9c88-8e3217c59f2c">
+            <outputVariablePort Id="9c84297d-9263-4472-8839-268a6651c4e5">
+              <variable>
+                <outputVariablePortReferencesVariable Id="21da0eca-c05c-4ce5-beb1-879eefe961c5">
+                  <variableMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/time" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="caef4fb2-58fa-479b-954b-fff889c92906">
+            <outputVariablePort Id="bac77f5f-a3a4-4eb7-af7c-f1d01a4b1d7c">
+              <variable>
+                <outputVariablePortReferencesVariable Id="db15c8e5-c617-4d07-be97-ed6ea87562cb">
+                  <variableMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/rotaryCount" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="54487e63-4d98-4c67-857d-949a9aaa4ef3">
+            <outputVariablePort Id="c0db5deb-5221-4047-ba6b-dd5b0ab322bb">
+              <variable>
+                <outputVariablePortReferencesVariable Id="4a3773fb-9bda-4074-a938-2bd7e3b355c1">
+                  <variableMoniker name="/CruiseController_FORTEInterface/CruiseController_FORTEInterface/throttleOffset" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="32176a56-73e2-4019-bf54-41e8e63604cd">
+      <transitionNode Id="f240d756-9062-4df6-b13f-c98ad9f09976" x="555" y="600" event="REQ">
+        <targetState>
+          <transitionNodeConnectsToStates Id="247a6ada-7540-4191-a9c8-ded8d0c567fa">
+            <stateMoniker name="/CruiseController_FORTEInterface/REQ" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="8d3e9651-5042-4333-880f-282f1689c7bc">
+      <transitionNode Id="28f481e6-5c91-486e-9e3e-0f6f57969ea6" x="215" y="425" expression="1">
+        <targetState>
+          <transitionNodeConnectsToStates Id="671048ba-cd70-42ae-8a92-233a550fde55">
+            <stateMoniker name="/CruiseController_FORTEInterface/START" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

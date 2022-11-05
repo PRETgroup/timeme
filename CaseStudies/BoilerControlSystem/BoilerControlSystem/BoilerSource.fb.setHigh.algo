@@ -1,0 +1,2 @@
+me->pressure = 350;
+me->counter = 0;

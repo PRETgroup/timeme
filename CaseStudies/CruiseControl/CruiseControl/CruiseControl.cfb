@@ -1,0 +1,1035 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<compositeFunctionBlockModel Id="d082f3c7-a5ef-4c89-8094-8f35092c4a42" name="CruiseControl" organization="Rockwell Automation" version="0" date="2000-05-27" author="JHC" header="package fb.rt.benchmarks.cruisecontrol;" modelType="Composite">
+  <functionBlockInterface>
+    <cFBModelHasFBInterface Id="d5885db7-4e56-4d3e-b2ff-7afb3f8bc24a">
+      <functionBlockInterface Id="f0c4ae9d-6a38-4915-9b80-52fb9ae29894" name="CruiseControl" x="1268.75" y="131.25" modelType="Composite">
+        <events>
+          <functionBlockHasEvents Id="02240865-6017-4bbd-aea9-3f5840a47317">
+            <event Id="0f581d12-2069-4502-b4b9-ebc0a3eacfbe" name="cclock" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="853ec149-8f60-4df6-b5cb-19bdd92be4d3">
+            <event Id="2b8b0e2f-c850-49f2-90b0-1f332436ee45" name="set" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="d3fb64f0-964f-463a-8229-6980e9682c4b">
+            <event Id="b1c09d8f-4f3b-44b2-84c8-62cfbe90ccaf" name="off" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="d58e102c-f361-4f48-b47b-92c6bbd44013">
+            <event Id="d57c1d33-f984-4a1e-8e32-546e77fefbf2" name="resume" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="a2958765-39b0-4537-8851-524a4d2d59ad">
+            <event Id="b0266da9-99a7-4218-bd53-6e684d6ebfcf" name="quickAccel" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="f3030ac7-ecae-4ae6-a8ae-7231eb138482">
+            <event Id="516ada6c-8bbc-4e28-9ecd-945fb2d17bf2" name="quickDecel" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="4eba3a10-466f-4d62-a4c2-68c419a540f7">
+            <event Id="32517cb4-7079-46bb-a361-5f1efc8b296c" name="brakePressed" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="69fce244-02d5-4dbc-96e6-4121d357902d">
+            <event Id="23813623-b1c0-4fc8-9ff4-973a0e3b3a4a" name="accelPressed" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="bf51e4e0-2e00-496f-8855-ab10c56799df">
+            <event Id="5e1772b3-d83c-42fb-8adc-fbe8347779e5" name="accelReleased" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="d3d72b73-2734-4747-a0ee-5b760d485ffd">
+            <event Id="f3d8692c-41e7-4fbd-9715-6729be0b8e18" name="speed" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="e957df19-85ee-4987-80d5-be5e2644f4ef">
+            <event Id="33163c61-6e21-4abf-8f72-b78ee3668144" name="speedSet" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="21fb9c16-a484-4b49-8772-d327d2745e1d">
+            <event Id="5c08bd89-6eb3-4854-b667-70db76d57fa5" name="throttleChg" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="d7e3bb06-fd26-403f-8aa1-35b4ca6520a7">
+            <event Id="954a665b-af68-4cca-9ed5-9631b55a8ec2" name="regulOff" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="d229c8d8-9658-4f0c-b25a-f1c7bc3ccf57">
+            <event Id="bfea4980-cdc5-4444-9870-739544016d4d" name="regulStdby" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="09d39f3c-9aa6-4914-ac27-5bcbda44b828">
+            <event Id="5f856f10-9dc2-4d04-8a1b-6896c73aa308" name="regulSet" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="c8898ddf-67b8-4da6-8a32-91b3e03fef7d">
+            <event Id="fc48d31f-c0ba-480b-84a2-4e3507918793" name="regulResume" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="cd7a5232-6818-4625-8d99-847246e4d0fd">
+            <variable Id="951d4fef-ad3d-4428-8ecd-3843e2a7c08f" name="time" comments="10ms tick" scope="Input" type="UDINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="6a8d626b-3d1d-4d9f-8c83-7e42ceb66e37">
+            <variable Id="20f78f06-bc7a-48ae-93b0-9f13d5563743" name="rotaryCount" scope="Input" type="UINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="fc2603b2-1c54-4114-9cd8-6650010d9c85">
+            <variable Id="e093cb83-a140-473c-9e81-10f0627178c0" name="throttleOffset" scope="Input" type="SINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="3e88f4d8-baa8-4004-a513-f74a3815efc1">
+            <variable Id="bfa1a44d-523f-443a-b079-d52b9a678858" name="speedVal" comments="Output event qualifier" scope="Output" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="5043c5de-4958-42cf-a003-5ff84af6a9f7">
+            <variable Id="32fe9cad-df2b-4e7f-9dad-1f8e33848452" name="cruiseSpeed" scope="Output" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="11da1ac0-1c10-4a10-85f2-dcd131011b41">
+            <variable Id="120c0e98-8865-43f8-ae64-2c6faa9736ef" name="throttleVal" scope="Output" type="SINT" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="eab2462c-dca5-45f0-ae03-eb5882ee1c4d">
+            <inputEventPort Id="4474b006-6689-4d3d-a66a-622876cbbdad">
+              <targetPort>
+                <association Id="4787dd52-8380-440e-8635-3226f6b5ba48">
+                  <inputVariablePortMoniker Id="28c5f81e-867c-4151-b7a0-43218da888d2" />
+                </association>
+                <association Id="48ee8b7e-8550-47df-a66d-393fe2ab2d19">
+                  <inputVariablePortMoniker Id="112ae4db-f5bb-49f1-8862-6650cd191649" />
+                </association>
+                <association Id="c55cbf9b-0454-4752-aa12-492e8e331b0e">
+                  <inputVariablePortMoniker Id="c6b4a32e-571a-4294-9cad-25137fe38ccd" />
+                </association>
+              </targetPort>
+              <proxyTargetPorts>
+                <proxyConnection Id="30329787-fa76-42cd-b94d-67723dc55ccd">
+                  <inputEventPortMoniker Id="7b6306a5-7e94-4c13-a3a9-dfef05639e71" />
+                </proxyConnection>
+                <proxyConnection Id="74919121-bd34-4d1e-a6bc-a5f8a534e982">
+                  <inputEventPortMoniker Id="5383d598-c677-4949-8d93-4696a67a801b" />
+                </proxyConnection>
+                <proxyConnection Id="580989d4-3334-45bf-a31b-dc1047bd3277">
+                  <inputEventPortMoniker Id="678eb46e-b5f2-4f61-9738-aad20c6a4d6c" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="ea581482-51ab-4126-923e-9ed1b31433d3">
+                  <eventMoniker name="/CruiseControl/CruiseControl/cclock" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="b1fd5631-91f9-4b90-8694-5f699fa456be">
+            <inputEventPort Id="b1504f40-30cb-49b1-8e10-63a670d9093b">
+              <targetPort>
+                <association Id="874c58d5-f666-42f0-9f94-a0d9128ef056">
+                  <inputVariablePortMoniker Id="28c5f81e-867c-4151-b7a0-43218da888d2" />
+                </association>
+                <association Id="1a7ee310-cb24-4661-8081-a8c0240584fe">
+                  <inputVariablePortMoniker Id="112ae4db-f5bb-49f1-8862-6650cd191649" />
+                </association>
+                <association Id="eb4febcc-07e6-4360-8b79-057456a73146">
+                  <inputVariablePortMoniker Id="c6b4a32e-571a-4294-9cad-25137fe38ccd" />
+                </association>
+              </targetPort>
+              <proxyTargetPorts>
+                <proxyConnection Id="fbdb1de6-51f0-49da-bb5b-894e5a7cd470">
+                  <inputEventPortMoniker Id="04ae4e51-b7e9-41c8-945d-8c6c0b6635b2" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="92b8c0e7-b96d-4ef8-8a31-e00bae9b47fd">
+                  <eventMoniker name="/CruiseControl/CruiseControl/set" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="67526075-af5c-4556-894e-6fd3c813f360">
+            <inputEventPort Id="edb56f8c-54ae-47a8-bbc5-d475cf4ddb80">
+              <targetPort>
+                <association Id="2667a9b7-ba56-41a6-b4c4-5a30a85fd215">
+                  <inputVariablePortMoniker Id="28c5f81e-867c-4151-b7a0-43218da888d2" />
+                </association>
+                <association Id="fc8b53bb-e6d7-4b8c-af6f-941ae217561b">
+                  <inputVariablePortMoniker Id="112ae4db-f5bb-49f1-8862-6650cd191649" />
+                </association>
+                <association Id="8a5b7fb4-b8f2-42a3-abd3-a892ee922587">
+                  <inputVariablePortMoniker Id="c6b4a32e-571a-4294-9cad-25137fe38ccd" />
+                </association>
+              </targetPort>
+              <proxyTargetPorts>
+                <proxyConnection Id="f4bc641b-f96d-4e81-9ebd-893a08ba744f">
+                  <inputEventPortMoniker Id="5815b7b9-f625-459b-aa1d-162e23e58bd3" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="5354fee5-43f1-4b09-975d-e2880a8bc2ef">
+                  <eventMoniker name="/CruiseControl/CruiseControl/off" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="eeb385f2-8119-4655-9bb7-751029fa39f3">
+            <inputEventPort Id="ed4c95d6-d47f-4714-9b60-501b6bc65daa">
+              <targetPort>
+                <association Id="064a73de-688a-4432-a11a-6a5f9825507d">
+                  <inputVariablePortMoniker Id="28c5f81e-867c-4151-b7a0-43218da888d2" />
+                </association>
+                <association Id="a653f0e2-47e3-4cd3-bcfa-72316ee908b2">
+                  <inputVariablePortMoniker Id="112ae4db-f5bb-49f1-8862-6650cd191649" />
+                </association>
+                <association Id="b72a393c-9226-4777-8bf3-f6cf71925e3d">
+                  <inputVariablePortMoniker Id="c6b4a32e-571a-4294-9cad-25137fe38ccd" />
+                </association>
+              </targetPort>
+              <proxyTargetPorts>
+                <proxyConnection Id="62502417-0d93-4c66-b725-b5140560cf3a">
+                  <inputEventPortMoniker Id="18b8c3e7-93c9-46df-9dce-9098f41bb8c5" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="856928bd-17a7-4a14-926b-1eebb94fba0e">
+                  <eventMoniker name="/CruiseControl/CruiseControl/resume" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="577c801d-d32b-457b-94db-c09d8ed681b8">
+            <inputEventPort Id="9828eb33-e06f-4d4a-8b5e-306fa2aa1a90">
+              <targetPort>
+                <association Id="9d0b335b-c1a6-4d04-8328-5d3517e2df69">
+                  <inputVariablePortMoniker Id="28c5f81e-867c-4151-b7a0-43218da888d2" />
+                </association>
+                <association Id="77ad0c13-585f-4506-a9c3-8a1213ea0c35">
+                  <inputVariablePortMoniker Id="112ae4db-f5bb-49f1-8862-6650cd191649" />
+                </association>
+                <association Id="2f01ec2f-e39c-4629-acc7-f3d4f9f99406">
+                  <inputVariablePortMoniker Id="c6b4a32e-571a-4294-9cad-25137fe38ccd" />
+                </association>
+              </targetPort>
+              <proxyTargetPorts>
+                <proxyConnection Id="0fc0a5db-77cf-4136-a831-50b2b1cd26f1">
+                  <inputEventPortMoniker Id="8d6c1c97-64c1-4b94-92ca-33c875973262" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="c507af46-819d-4a45-bdd1-3992ac3f552e">
+                  <eventMoniker name="/CruiseControl/CruiseControl/quickAccel" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="46c6cf68-f5e8-403d-8ec4-02c7a856789e">
+            <inputEventPort Id="1a28bcfc-b725-42ad-b256-3ed74d86facb">
+              <targetPort>
+                <association Id="fee8d6ba-e30b-44cb-a7b4-b6cc71b46dc7">
+                  <inputVariablePortMoniker Id="28c5f81e-867c-4151-b7a0-43218da888d2" />
+                </association>
+                <association Id="8ceb522e-60e1-4bde-bfc3-71baf566a85c">
+                  <inputVariablePortMoniker Id="112ae4db-f5bb-49f1-8862-6650cd191649" />
+                </association>
+                <association Id="e25f94cb-d8de-418c-9f28-62e6429e1eb1">
+                  <inputVariablePortMoniker Id="c6b4a32e-571a-4294-9cad-25137fe38ccd" />
+                </association>
+              </targetPort>
+              <proxyTargetPorts>
+                <proxyConnection Id="d1d0d0c3-931f-4962-ad37-233f166b2625">
+                  <inputEventPortMoniker Id="7810761e-d698-4310-ba1c-5d73919c5c1b" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="d565f738-1844-4a2c-8ecc-e6a0c5eca1b5">
+                  <eventMoniker name="/CruiseControl/CruiseControl/quickDecel" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="8d94bd8b-e8a7-4c29-a42d-be1d1de63b11">
+            <inputEventPort Id="be5cbf80-8090-4653-8d5e-fbccb980eac7">
+              <targetPort>
+                <association Id="b3c35356-973f-4c4a-aa2a-7220feb6a2f6">
+                  <inputVariablePortMoniker Id="28c5f81e-867c-4151-b7a0-43218da888d2" />
+                </association>
+                <association Id="1baf7cdc-66da-427d-8764-ccb22503edd9">
+                  <inputVariablePortMoniker Id="112ae4db-f5bb-49f1-8862-6650cd191649" />
+                </association>
+                <association Id="cfb17b5b-7803-49ea-90f4-92b2e287c5f0">
+                  <inputVariablePortMoniker Id="c6b4a32e-571a-4294-9cad-25137fe38ccd" />
+                </association>
+              </targetPort>
+              <proxyTargetPorts>
+                <proxyConnection Id="3dcbb7e7-bdf2-45b2-b4be-0945a18466f2">
+                  <inputEventPortMoniker Id="986d11a7-06e6-47d7-9b45-87465274bbf0" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="66a52de8-88f0-4cc8-88cf-fb9fa4769c00">
+                  <eventMoniker name="/CruiseControl/CruiseControl/brakePressed" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="6bceb8d1-e969-4733-8143-1079867b89bf">
+            <inputEventPort Id="496f86c0-ccf6-400c-8d16-54559a491180">
+              <targetPort>
+                <association Id="d58004ea-7a0b-401d-9686-7d8d0cc64fe0">
+                  <inputVariablePortMoniker Id="28c5f81e-867c-4151-b7a0-43218da888d2" />
+                </association>
+                <association Id="64bd462e-fb62-47cf-af16-e9edc1cf9b58">
+                  <inputVariablePortMoniker Id="112ae4db-f5bb-49f1-8862-6650cd191649" />
+                </association>
+                <association Id="8839c2f6-6b8f-446d-b427-0a498e3c2825">
+                  <inputVariablePortMoniker Id="c6b4a32e-571a-4294-9cad-25137fe38ccd" />
+                </association>
+              </targetPort>
+              <proxyTargetPorts>
+                <proxyConnection Id="75e668a1-a5a0-4777-8322-af85d98e1160">
+                  <inputEventPortMoniker Id="12b19435-10d6-4128-a5bf-26bcddc3a122" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="50077eea-d82c-41ff-bc32-0969e51a7076">
+                  <eventMoniker name="/CruiseControl/CruiseControl/accelPressed" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="dab68e64-e4a3-4514-880e-75bb985a0c41">
+            <inputEventPort Id="72bfe657-49d1-4444-89ae-481d75b972d6">
+              <targetPort>
+                <association Id="80dbf543-2e68-48a0-b70e-219a3c116fa1">
+                  <inputVariablePortMoniker Id="28c5f81e-867c-4151-b7a0-43218da888d2" />
+                </association>
+                <association Id="17277376-095d-4318-b8b1-e67adaaef822">
+                  <inputVariablePortMoniker Id="112ae4db-f5bb-49f1-8862-6650cd191649" />
+                </association>
+                <association Id="9b01b22f-f3bd-4285-bc20-fab70509311a">
+                  <inputVariablePortMoniker Id="c6b4a32e-571a-4294-9cad-25137fe38ccd" />
+                </association>
+              </targetPort>
+              <proxyTargetPorts>
+                <proxyConnection Id="e1781489-d5b7-482c-937e-7be62294b221">
+                  <inputEventPortMoniker Id="95c815aa-4a56-457b-a325-071ec9a8519e" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <inputEventPortReferencesEvent Id="dbf65f0f-835e-4a19-b3b6-37bea199ea36">
+                  <eventMoniker name="/CruiseControl/CruiseControl/accelReleased" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="6def9506-c9e2-4dc6-9ea8-7c6c22571ef2">
+            <outputEventPort Id="ac1202b4-e4ec-4bbd-841b-7f0cbd2a9361">
+              <targetPort>
+                <association Id="91a7c2fd-81c2-4c08-94ca-48f74d31b16a">
+                  <outputVariablePortMoniker Id="29255957-9b82-42da-8d08-012200cc950f" />
+                </association>
+                <association Id="e8874bb1-7c79-4f83-a936-3956e940a7f3">
+                  <outputVariablePortMoniker Id="c0e5991d-efe8-4c21-97bb-d9c74232af5e" />
+                </association>
+                <association Id="8cbb2b31-4f65-4d1d-8628-694603617a34">
+                  <outputVariablePortMoniker Id="db9fde72-16ac-4464-849b-aa2939323773" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="88a1a61e-f322-4627-ac17-ac744c0670e6">
+                  <eventMoniker name="/CruiseControl/CruiseControl/speed" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="198b5d55-8653-441f-b823-3e64b260a57b">
+            <outputEventPort Id="9f40ef54-8488-4315-a52c-7672c03fbe3b">
+              <targetPort>
+                <association Id="38a7b67d-3a51-4246-89c6-52e78c69c011">
+                  <outputVariablePortMoniker Id="29255957-9b82-42da-8d08-012200cc950f" />
+                </association>
+                <association Id="9987b381-7841-4c08-acbb-6b495c81d134">
+                  <outputVariablePortMoniker Id="c0e5991d-efe8-4c21-97bb-d9c74232af5e" />
+                </association>
+                <association Id="313ef67f-1c85-4e72-b14a-b796535bb9f4">
+                  <outputVariablePortMoniker Id="db9fde72-16ac-4464-849b-aa2939323773" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="b375b318-5d85-461c-b743-221dfc853130">
+                  <eventMoniker name="/CruiseControl/CruiseControl/speedSet" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="d25f6607-8816-4204-b6e6-55adcd26ba7c">
+            <outputEventPort Id="cdc55023-5637-4d4b-a67b-9c2cb4fc1b54">
+              <targetPort>
+                <association Id="43f60c14-b1de-419d-aece-bf9f27a40189">
+                  <outputVariablePortMoniker Id="29255957-9b82-42da-8d08-012200cc950f" />
+                </association>
+                <association Id="e22ab369-f461-4ec1-94ff-bf5023d79604">
+                  <outputVariablePortMoniker Id="c0e5991d-efe8-4c21-97bb-d9c74232af5e" />
+                </association>
+                <association Id="253c54bf-e829-4eb1-a5ee-1dd9f93f65e0">
+                  <outputVariablePortMoniker Id="db9fde72-16ac-4464-849b-aa2939323773" />
+                </association>
+              </targetPort>
+              <proxyTargetPorts>
+                <proxyConnection Id="06ce8a66-64cc-41ec-baaf-7bc4bd6aed92">
+                  <outputEventPortMoniker Id="cf1a44ac-70b9-4388-9e0d-4cedfa9e381c" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="9c69f50a-ecf2-46a8-9785-68cfa4d07aee">
+                  <eventMoniker name="/CruiseControl/CruiseControl/throttleChg" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="34ef24a8-f934-433d-adef-fe101c995249">
+            <outputEventPort Id="af006d1d-7037-431d-9b21-9930fa4df0c7">
+              <targetPort>
+                <association Id="ac4b55f8-91cf-4cde-9513-4837268aed42">
+                  <outputVariablePortMoniker Id="29255957-9b82-42da-8d08-012200cc950f" />
+                </association>
+                <association Id="bbdb831f-5a1e-4ecb-9688-e2001a2bc28c">
+                  <outputVariablePortMoniker Id="c0e5991d-efe8-4c21-97bb-d9c74232af5e" />
+                </association>
+                <association Id="d15ce9fd-b3aa-49ee-9868-a8c5e8a6b851">
+                  <outputVariablePortMoniker Id="db9fde72-16ac-4464-849b-aa2939323773" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="b6906807-5b3e-4455-ba03-6917422466e7">
+                  <eventMoniker name="/CruiseControl/CruiseControl/regulOff" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="e9cfd630-3f4b-4871-8753-a6561eb50c5c">
+            <outputEventPort Id="4a831e8d-86e2-46bb-9c5d-ad9281a417c6">
+              <targetPort>
+                <association Id="8debdc75-f436-4974-9873-cf228aa5d477">
+                  <outputVariablePortMoniker Id="29255957-9b82-42da-8d08-012200cc950f" />
+                </association>
+                <association Id="cc83feab-1cd4-4b31-b62b-d893cb23204a">
+                  <outputVariablePortMoniker Id="c0e5991d-efe8-4c21-97bb-d9c74232af5e" />
+                </association>
+                <association Id="55fac1db-e556-4316-9fe1-a1b99057499c">
+                  <outputVariablePortMoniker Id="db9fde72-16ac-4464-849b-aa2939323773" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="e90258f4-f616-4a6c-a7e7-fb50399cf80b">
+                  <eventMoniker name="/CruiseControl/CruiseControl/regulStdby" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="0eddb0cf-4391-4467-a6f5-6b68ce3422eb">
+            <outputEventPort Id="be7b8366-6ce8-4f63-99bb-ef254ad145bf">
+              <targetPort>
+                <association Id="a5155a08-5c12-4c62-bffb-a7381cad83c5">
+                  <outputVariablePortMoniker Id="29255957-9b82-42da-8d08-012200cc950f" />
+                </association>
+                <association Id="f9f7bbc7-f109-4de0-91ed-a1ee7dbdc2f1">
+                  <outputVariablePortMoniker Id="c0e5991d-efe8-4c21-97bb-d9c74232af5e" />
+                </association>
+                <association Id="bc3dd8f8-6822-45a1-b319-2e532324f048">
+                  <outputVariablePortMoniker Id="db9fde72-16ac-4464-849b-aa2939323773" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="6d89f687-446e-4de3-af43-fa2b1a9fc00c">
+                  <eventMoniker name="/CruiseControl/CruiseControl/regulSet" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="dff90b31-7a49-4fb7-abe8-3e45145d1c0a">
+            <outputEventPort Id="50475e69-3c6f-46c4-af23-ad9795eb4bb8">
+              <targetPort>
+                <association Id="4dd5f8af-b0d8-4744-b6a1-f44196287315">
+                  <outputVariablePortMoniker Id="29255957-9b82-42da-8d08-012200cc950f" />
+                </association>
+                <association Id="ef37de39-e3c1-4653-8f22-17416e7ff81a">
+                  <outputVariablePortMoniker Id="c0e5991d-efe8-4c21-97bb-d9c74232af5e" />
+                </association>
+                <association Id="0ed71f33-2bee-4c97-acd7-bc34c316c01d">
+                  <outputVariablePortMoniker Id="db9fde72-16ac-4464-849b-aa2939323773" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="71a57280-bcc8-4425-8ad1-5f9bc9ff4aff">
+                  <eventMoniker name="/CruiseControl/CruiseControl/regulResume" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="3d3b05ef-c571-47a2-9244-326fbbcdaac8">
+            <inputVariablePort Id="28c5f81e-867c-4151-b7a0-43218da888d2">
+              <proxyTargetPorts>
+                <proxyConnection Id="456d0371-d430-4194-921c-540aa0088906">
+                  <inputVariablePortMoniker Id="acf41cff-9f8e-47a6-9b66-f1880fbc7d46" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <inputVariablePortReferencesVariable Id="4b929f21-77cd-48ac-bdec-d16cd0273f55">
+                  <variableMoniker name="/CruiseControl/CruiseControl/time" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="19c33f20-64cc-4cfc-9692-afa20f3f1413">
+            <inputVariablePort Id="112ae4db-f5bb-49f1-8862-6650cd191649">
+              <proxyTargetPorts>
+                <proxyConnection Id="902f6411-e26c-4065-a6a4-f1b2514f1a65">
+                  <inputVariablePortMoniker Id="6462c10a-a2f9-4cae-bb3c-e44ee88be24d" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <inputVariablePortReferencesVariable Id="73e1c3ac-2acf-4713-b570-81a927a6e900">
+                  <variableMoniker name="/CruiseControl/CruiseControl/rotaryCount" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="1e956071-80ac-4be0-afdd-620f44cc282a">
+            <inputVariablePort Id="c6b4a32e-571a-4294-9cad-25137fe38ccd">
+              <proxyTargetPorts>
+                <proxyConnection Id="307833b9-1947-4e5c-af6a-925bfc08dc18">
+                  <inputVariablePortMoniker Id="e5f793bf-a824-48aa-b1ce-05a53afc06f5" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <inputVariablePortReferencesVariable Id="73b69082-9c7e-473e-a85f-df893fcab52a">
+                  <variableMoniker name="/CruiseControl/CruiseControl/throttleOffset" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="58d87e48-45a2-40e5-a27e-7241c0f56450">
+            <outputVariablePort Id="29255957-9b82-42da-8d08-012200cc950f">
+              <variable>
+                <outputVariablePortReferencesVariable Id="7acc4d46-e02f-4715-ae22-f74d8f368837">
+                  <variableMoniker name="/CruiseControl/CruiseControl/speedVal" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="f427b480-cd77-45c3-8d90-3ec52fccd2d2">
+            <outputVariablePort Id="c0e5991d-efe8-4c21-97bb-d9c74232af5e">
+              <variable>
+                <outputVariablePortReferencesVariable Id="65a9d250-48b7-4c6d-9ff1-4eee622abaa7">
+                  <variableMoniker name="/CruiseControl/CruiseControl/cruiseSpeed" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="d9f965be-52b4-4e52-a831-249cb6b69bea">
+            <outputVariablePort Id="db9fde72-16ac-4464-849b-aa2939323773">
+              <proxyTargetPorts>
+                <proxyConnection Id="5e4454cd-7760-4a35-bf81-c091a5cc7bbd">
+                  <outputVariablePortMoniker Id="57756bae-c64d-4c32-91c7-c60f269ea60f" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="c4abdbef-092e-44ad-8c2e-67edb7531d3b">
+                  <variableMoniker name="/CruiseControl/CruiseControl/throttleVal" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </cFBModelHasFBInterface>
+  </functionBlockInterface>
+  <functionBlockReferences>
+    <cFBModelHasFBReferences Id="0afcfc21-cf2b-4f81-9bf7-0f05e8b9ee62">
+      <functionBlockReference Id="b41e723b-b77e-43f0-9e1b-cd86295aeebc" name="speedo" x="787.5" y="481.25" creationMode="NotApplicable" referencedFile="SpeedGauge.fb">
+        <events>
+          <functionBlockHasEvents Id="e96e3da3-17a1-402e-a000-823b501a779e">
+            <eventRef Id="a376db6a-ced4-410a-ab57-6975022836d3" name="cclock" scope="Input" referencedID="998dd425-fd63-4e4e-aa84-c519eb612b1e" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="8c4e6f68-c497-4428-80ba-1d0f887e5c77">
+            <eventRef Id="b9b89245-8b8d-4b44-9679-f440afde2cc5" name="speed" scope="Output" referencedID="648bd634-8443-4147-98a3-c56052fd102d" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="96418e27-0d3d-4462-bf47-d8f0f5b89103">
+            <variableRef Id="3d35de4b-8d9c-4ce0-af25-1c2c57a36e6d" name="time" scope="Input" initialValue="0" type="UDINT" referencedID="b63991f1-aae5-4fb7-a3c7-817ddb167716" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="5c10293e-b3d1-4c70-9325-3dd86f0a6acd">
+            <variableRef Id="b366b4fe-aae9-489d-bde3-3b3e5b1eae53" name="rotaryCount" scope="Input" initialValue="0" type="UINT" referencedID="6a1a590d-fd16-4657-918a-891c6d95be60" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="c9471dad-0dbe-45f5-a3c6-79ffa1a33d46">
+            <variableRef Id="75796f72-1fcc-42b3-af5a-e10aa808e73d" name="speedVal" scope="Output" initialValue="0" referencedID="91109431-6609-40ac-b5dc-d52646d1aa56" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="06aec027-70a5-430a-8614-032f9568f3b5">
+            <inputEventPort Id="7b6306a5-7e94-4c13-a3a9-dfef05639e71">
+              <event>
+                <inputEventPortReferencesEvent Id="b8014e6c-14d6-403d-ad3f-7375df8f7824">
+                  <eventRefMoniker name="/CruiseControl/speedo/cclock" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="60f2069b-9f78-48d6-a017-3f4c33731815">
+            <outputEventPort Id="4ee159d0-47fa-40f0-8b24-efdddcdb9640">
+              <proxyTargetPorts>
+                <proxyConnection Id="95d2a3d6-9b7e-4e7c-9a88-c67e8a605fbb">
+                  <outputEventPortMoniker Id="ac1202b4-e4ec-4bbd-841b-7f0cbd2a9361" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="142574ec-2306-45c5-a2f4-ce21f0cf0011">
+                  <eventRefMoniker name="/CruiseControl/speedo/speed" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="8d83a8ad-8e10-40e0-ab83-64af1d0e743c">
+            <inputVariablePort Id="acf41cff-9f8e-47a6-9b66-f1880fbc7d46">
+              <variable>
+                <inputVariablePortReferencesVariable Id="64769f73-35ec-4cf6-bf9f-8ecbe49d4adc">
+                  <variableRefMoniker name="/CruiseControl/speedo/time" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="d7ea8352-17bd-4bb1-b3aa-043edcc70f3d">
+            <inputVariablePort Id="6462c10a-a2f9-4cae-bb3c-e44ee88be24d">
+              <variable>
+                <inputVariablePortReferencesVariable Id="bd437e35-97e4-4f81-8438-21548840a35d">
+                  <variableRefMoniker name="/CruiseControl/speedo/rotaryCount" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="0ee2dea0-3b48-429f-88d8-ce6fff534071">
+            <outputVariablePort Id="378cddf0-c6dd-44a7-9b45-c5b62bd83222">
+              <wireTargetPorts>
+                <wireConnection Id="0b7f06de-8db5-456c-a5b1-7ad6b6aedf81" unitDelayed="false">
+                  <inputVariablePortMoniker Id="e9b0135b-93c5-43ea-b197-1c8d65af6db9" />
+                </wireConnection>
+                <wireConnection Id="9d5ca401-4c6f-4050-af9b-8c16162cfbe2" unitDelayed="false">
+                  <inputVariablePortMoniker Id="0cdfa5df-1d58-4d6e-9265-1d2c54027ccb" />
+                </wireConnection>
+              </wireTargetPorts>
+              <proxyTargetPorts>
+                <proxyConnection Id="3ff74b30-b825-4cee-8a74-2997990341f6">
+                  <outputVariablePortMoniker Id="29255957-9b82-42da-8d08-012200cc950f" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="23a0d8ab-14bb-4143-aaf4-3cb0ed254aa5">
+                  <variableRefMoniker name="/CruiseControl/speedo/speedVal" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockReference>
+    </cFBModelHasFBReferences>
+    <cFBModelHasFBReferences Id="8138a1bb-bde2-44d2-945c-80ac4f821ea5">
+      <functionBlockReference Id="098d8723-002d-42a7-995b-3298a613df9e" name="controller" x="1531.25" y="175" creationMode="NotApplicable" referencedFile="CruiseManager.fb">
+        <events>
+          <functionBlockHasEvents Id="db95a3ed-a038-410f-975b-ea71308603c3">
+            <eventRef Id="043e64e5-24c5-4437-b321-83f326067aa9" name="set" scope="Input" referencedID="8549a80a-bfc0-4dbd-bcaf-ee0b945daf32" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="45d4f427-669d-4648-a1cd-d5c8600dc8d3">
+            <eventRef Id="cd4c1824-0926-4a1d-954a-6aa9c2dd866a" name="off" scope="Input" referencedID="67ebf579-e13d-4feb-823a-5761a4187609" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="338393a1-0122-4bba-9dd8-9faa20e416fb">
+            <eventRef Id="3a759f8a-d0dd-4e63-9ffc-4803a6711e0f" name="resume" scope="Input" referencedID="9263e46d-8a91-487d-8a65-154f0eea1c94" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="5bbbad2d-089b-41ee-9056-90e3acb4f709">
+            <eventRef Id="55564b6e-b715-4ced-bc9e-0a659c66f6f4" name="quickAccel" scope="Input" referencedID="f5cd83e4-2ddf-443e-b960-d72af04da7d2" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="e95f3190-2fe7-4023-a701-a1f335a6eb05">
+            <eventRef Id="aece9536-1355-4109-b41f-e6b04e68d888" name="quickDecel" scope="Input" referencedID="271bfede-d4f3-422b-8133-6d6345b4fa29" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="bb1945d9-d6bc-44a3-9b0b-b00d8c4a982b">
+            <eventRef Id="e8ed473a-0b53-4581-ad99-cd032e2b3c56" name="brakePressed" scope="Input" referencedID="a3bec465-1ee8-4b18-84df-d1bf8e78312a" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="ad2170c6-76e5-4f71-ba53-a1bd83793985">
+            <eventRef Id="50fd9e19-eb2f-4a13-ab67-91a6d59cf8b3" name="cclock" scope="Input" referencedID="f07500ac-16b9-4603-95fe-7e3c9167902b" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="73d24758-14ce-4038-842e-2093cf5cba8f">
+            <eventRef Id="b47d990e-0ec0-4216-aa32-e6863e4c1039" name="regulOff" scope="Output" referencedID="4fdaf42d-40ed-4b07-a1ab-d59b7cea5b8b" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="d7f27524-0280-4731-976e-eeb1e15c2db5">
+            <eventRef Id="374bc3df-2015-40b0-b8d0-17d1226ced92" name="regulSet" scope="Output" referencedID="c121c606-f05b-4ba4-96a5-83af2e00296a" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="68738d8c-a0a3-405b-b200-f67737170d1c">
+            <eventRef Id="871d65a5-6d27-4f83-a5af-5fe4c4168e19" name="regulStdby" scope="Output" referencedID="608c24ae-1cd4-440b-92b5-2c0abba68e4d" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="810d7d08-b073-4bb6-8092-191fc5caa56f">
+            <eventRef Id="73370aee-bb64-44c0-99ad-6b34226ebc2c" name="regulResume" scope="Output" referencedID="e7c8ad72-b3ad-4d32-9175-aff70391458a" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="f5348116-00a4-409e-bd92-6232c94ded6f">
+            <eventRef Id="b97934d0-08dd-4ecc-b65a-3f6d9e9aa46f" name="speedSet" scope="Output" referencedID="baf0ca33-da3e-4928-8514-2789a1d78e96" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="12b8b1a8-bac8-4664-9f31-749c580cce33">
+            <variableRef Id="12f7b830-7e3b-479b-9e39-4858f069747a" name="speed" scope="Input" initialValue="0" referencedID="5aa2fe63-ec3f-4b94-abe2-63d289e8eed8" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="9670744e-a8ee-406e-982f-1164ba3a6e33">
+            <variableRef Id="b69b06d9-9f75-4120-a859-900c7b20e460" name="cruiseSpeed" scope="Output" initialValue="0" referencedID="f05a62e3-0b3a-4699-ab07-fef55663bb8c" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="580441b3-983c-438d-8d3f-7011bcb37be1">
+            <inputEventPort Id="04ae4e51-b7e9-41c8-945d-8c6c0b6635b2">
+              <event>
+                <inputEventPortReferencesEvent Id="5b2c4c20-a5aa-4443-8399-bd2b1f1888ad">
+                  <eventRefMoniker name="/CruiseControl/controller/set" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="db7e0018-d5a7-4b3f-b7cd-b637c98768a3">
+            <inputEventPort Id="5815b7b9-f625-459b-aa1d-162e23e58bd3">
+              <event>
+                <inputEventPortReferencesEvent Id="4ff02995-0d35-4be5-b6f8-a2e607d02d98">
+                  <eventRefMoniker name="/CruiseControl/controller/off" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="4eefb47b-841d-469c-be13-baa12c4d3d3b">
+            <inputEventPort Id="18b8c3e7-93c9-46df-9dce-9098f41bb8c5">
+              <event>
+                <inputEventPortReferencesEvent Id="98ce93b6-65de-474e-af49-bb530a0626d5">
+                  <eventRefMoniker name="/CruiseControl/controller/resume" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="ed3ff63c-b556-4431-b96c-b6ce006c2131">
+            <inputEventPort Id="8d6c1c97-64c1-4b94-92ca-33c875973262">
+              <event>
+                <inputEventPortReferencesEvent Id="f1ada8ee-101a-4a4e-9499-9269ab7eddd4">
+                  <eventRefMoniker name="/CruiseControl/controller/quickAccel" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="8983607a-e631-43b0-a04a-4a428b8696dc">
+            <inputEventPort Id="7810761e-d698-4310-ba1c-5d73919c5c1b">
+              <event>
+                <inputEventPortReferencesEvent Id="f142f7da-4ac6-4d11-bf3c-0043862b3506">
+                  <eventRefMoniker name="/CruiseControl/controller/quickDecel" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="dd76a85e-c0a8-4f8a-8bdb-2f1a289c16fd">
+            <inputEventPort Id="986d11a7-06e6-47d7-9b45-87465274bbf0">
+              <event>
+                <inputEventPortReferencesEvent Id="14d79245-8fc7-44ad-932f-5127583684c5">
+                  <eventRefMoniker name="/CruiseControl/controller/brakePressed" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="b6cdfeec-a5d0-479b-bee2-dce99e6b4ecb">
+            <inputEventPort Id="5383d598-c677-4949-8d93-4696a67a801b">
+              <event>
+                <inputEventPortReferencesEvent Id="14096f49-cf88-40d0-89fa-587ab47bbbdc">
+                  <eventRefMoniker name="/CruiseControl/controller/cclock" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="71cb840e-1069-4789-b66a-79170480501a">
+            <outputEventPort Id="fcc2ff4a-bbb9-470e-a666-ae379b60d774">
+              <wireTargetPorts>
+                <wireConnection Id="ef0d69d7-3986-48b1-9e55-da74dc98fd29" unitDelayed="false">
+                  <inputEventPortMoniker Id="b8ebaf27-7324-46b8-ae0e-679f410d9f68" />
+                </wireConnection>
+              </wireTargetPorts>
+              <proxyTargetPorts>
+                <proxyConnection Id="a992f708-2e2e-4407-ac25-2ce54f48fe50">
+                  <outputEventPortMoniker Id="af006d1d-7037-431d-9b21-9930fa4df0c7" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="cd618451-6a99-4c5d-9ac1-3af0ee254061">
+                  <eventRefMoniker name="/CruiseControl/controller/regulOff" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="970d0cc3-cb19-494e-9d71-0fcfbc71e753">
+            <outputEventPort Id="2dcb0c17-559b-48bf-bd2b-c94db5206c10">
+              <wireTargetPorts>
+                <wireConnection Id="f6874a65-4a7e-4590-8bdf-0453bf200e35" unitDelayed="false">
+                  <inputEventPortMoniker Id="e2d618dd-d866-48db-ba39-6f51b058b011" />
+                </wireConnection>
+              </wireTargetPorts>
+              <proxyTargetPorts>
+                <proxyConnection Id="f4268d4c-519c-46e4-9389-681e083d1447">
+                  <outputEventPortMoniker Id="be7b8366-6ce8-4f63-99bb-ef254ad145bf" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="98687aa5-a146-45d6-863d-7c0998be8b5d">
+                  <eventRefMoniker name="/CruiseControl/controller/regulSet" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="ba78802c-21d8-4b64-8256-95441b043242">
+            <outputEventPort Id="63928ee4-d2cf-4cbf-85a6-03b6e822bae7">
+              <wireTargetPorts>
+                <wireConnection Id="80264d07-4d36-4fc4-8548-3c8259573cd3" unitDelayed="false">
+                  <inputEventPortMoniker Id="b8ebaf27-7324-46b8-ae0e-679f410d9f68" />
+                </wireConnection>
+              </wireTargetPorts>
+              <proxyTargetPorts>
+                <proxyConnection Id="e6a9ec87-16c1-49b0-8550-47d1a313ec95">
+                  <outputEventPortMoniker Id="4a831e8d-86e2-46bb-9c5d-ad9281a417c6" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="0754df95-dd85-44b1-b6b9-97ced8d0ffa8">
+                  <eventRefMoniker name="/CruiseControl/controller/regulStdby" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="6df5f427-fc25-4377-b20f-bfb1f854fd0c">
+            <outputEventPort Id="776756f9-ae8f-4cda-baaa-0f618fae9333">
+              <wireTargetPorts>
+                <wireConnection Id="356b64e8-2e02-4558-98d0-364274feb061" unitDelayed="false">
+                  <inputEventPortMoniker Id="e2d618dd-d866-48db-ba39-6f51b058b011" />
+                </wireConnection>
+              </wireTargetPorts>
+              <proxyTargetPorts>
+                <proxyConnection Id="5e791625-d1b0-4a79-bbcc-ae2055ec0df0">
+                  <outputEventPortMoniker Id="50475e69-3c6f-46c4-af23-ad9795eb4bb8" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="309709eb-23ab-4209-ba7d-9c8af7794029">
+                  <eventRefMoniker name="/CruiseControl/controller/regulResume" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="86c3fd26-11d1-4cf7-a459-9496e95295c1">
+            <outputEventPort Id="c5fae53a-0050-415d-9dde-f8f6e0d1afef">
+              <wireTargetPorts>
+                <wireConnection Id="28304503-6393-44ba-a60a-81c931e2c2d3" unitDelayed="false">
+                  <inputEventPortMoniker Id="2c35835b-5142-41a4-bfa4-49618268551e" />
+                </wireConnection>
+              </wireTargetPorts>
+              <proxyTargetPorts>
+                <proxyConnection Id="7aea84c8-f6ec-44fe-9223-89b69c9631ed">
+                  <outputEventPortMoniker Id="9f40ef54-8488-4315-a52c-7672c03fbe3b" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="72306051-124e-4dde-98a3-0272e5a1efe2">
+                  <eventRefMoniker name="/CruiseControl/controller/speedSet" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="f4080248-fa85-4b99-9466-1c512121f917">
+            <inputVariablePort Id="e9b0135b-93c5-43ea-b197-1c8d65af6db9">
+              <variable>
+                <inputVariablePortReferencesVariable Id="71d3e3d8-2dde-48d2-b698-a5693e25fd3d">
+                  <variableRefMoniker name="/CruiseControl/controller/speed" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="3b8abc20-ec83-41b5-9d17-8a801bd44b0b">
+            <outputVariablePort Id="f829ef94-7d7c-4d8f-8bcc-abcaeaea8080">
+              <wireTargetPorts>
+                <wireConnection Id="42d05c79-16ed-4172-a67f-9d2fa61b4000" unitDelayed="false">
+                  <inputVariablePortMoniker Id="79573d9a-c634-420b-802a-4e3170a3e0b6" />
+                </wireConnection>
+              </wireTargetPorts>
+              <proxyTargetPorts>
+                <proxyConnection Id="c335f450-8bc4-4e5f-a112-31335c37fe56">
+                  <outputVariablePortMoniker Id="c0e5991d-efe8-4c21-97bb-d9c74232af5e" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="6bc662d1-2970-4de9-a823-1f65b7fa8e85">
+                  <variableRefMoniker name="/CruiseControl/controller/cruiseSpeed" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockReference>
+    </cFBModelHasFBReferences>
+    <cFBModelHasFBReferences Id="6140256c-f0fe-496d-8ea7-9dc6f4a0f272">
+      <functionBlockReference Id="7ad450f3-238a-4af5-8917-cf45886f5ce6" name="throttle" x="2493.75" y="175" creationMode="NotApplicable" referencedFile="Throttle.fb">
+        <events>
+          <functionBlockHasEvents Id="b61345be-4f42-4a57-add1-d01e28fa7164">
+            <eventRef Id="2045a5f4-8c21-4063-b555-675e4c846928" name="cruiseOff" scope="Input" referencedID="5edd62f8-c303-4459-bb5a-3981760182d3" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="98db1de8-a7e5-4178-a145-71735fc58905">
+            <eventRef Id="1a1b3d63-b3c3-4b00-88b2-7c13ce95aa10" name="cruiseOn" scope="Input" referencedID="a7864b3b-4182-4a37-9b4c-b7832fe96745" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="081fd7f8-16ac-48c6-b55a-432410ba8c8b">
+            <eventRef Id="68192f10-7732-4a83-8a96-651edc844c1e" name="speedSet" scope="Input" referencedID="afca4de0-044f-49fe-ac03-d1ebdaacec45" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="8b386cdb-8989-4c0b-abc3-3c26e8bf9c0f">
+            <eventRef Id="8643bae0-ce13-4c38-b715-ea375d6f0493" name="cclock" scope="Input" referencedID="6f815b03-d4b4-44f2-b295-2f5973ff879f" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="f8b1fc24-76f2-40df-a71f-0319a9a16dbe">
+            <eventRef Id="3535e8ed-20f0-488a-9eeb-6e6f1c05e6e7" name="accelPressed" scope="Input" referencedID="491b522e-79cb-41a4-a6ae-1aa0e9f3e8b3" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="3b7275cb-4b48-405c-8820-a03320b017a8">
+            <eventRef Id="266bf281-fa64-428b-83f8-d2c7af1f44f1" name="accelReleased" scope="Input" referencedID="013c2c01-55b2-4138-b061-2a144493fcf5" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="0e6053b2-be40-4ba1-8e35-f3392b7fd7b4">
+            <eventRef Id="0da4b327-446a-4369-8226-b99c945152df" name="throttleChg" scope="Output" referencedID="30d44fab-2184-412e-b68f-ed3cc6d41c2c" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="470c5aec-c2d9-4247-8458-3c297f0fde8d">
+            <variableRef Id="16243382-2dda-46e9-b3ca-931d49742bd7" name="cruiseSpeed" scope="Input" initialValue="0" referencedID="6e41fd5d-f6f1-4e94-b8bc-ea68ef91bde6" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="309d2d83-ef86-4458-b9ed-9aca20124a8a">
+            <variableRef Id="ccfcbb1d-f2fc-49eb-bb0c-51cee8cbb0af" name="speed" scope="Input" initialValue="0" referencedID="a58aa722-1f89-4060-8f14-243b45bae8d8" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="2e23806c-4d1a-427a-9e1d-c440e04aa2f2">
+            <variableRef Id="f2746b82-02fb-4354-bd95-7ff202e3f66a" name="throttleOffset" scope="Input" initialValue="0" type="SINT" referencedID="c642532b-7246-4738-b8b0-0fdf5a24dd46" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="97848acd-3cd3-431f-a2ab-89ab0c1c66a2">
+            <variableRef Id="9f046311-669f-409c-a9ff-60480772f806" name="throttleVal" scope="Output" initialValue="0" type="SINT" referencedID="b3f6076f-3c4a-4dbf-a6ca-c76483ed1d89" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="fd1f1d30-5915-48ef-9025-6b8e46670be8">
+            <inputEventPort Id="b8ebaf27-7324-46b8-ae0e-679f410d9f68">
+              <event>
+                <inputEventPortReferencesEvent Id="4a7b3954-80da-46c4-96d1-7e44c0fddb3e">
+                  <eventRefMoniker name="/CruiseControl/throttle/cruiseOff" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="e5fefd27-2d09-4b66-b8ef-6117d233e318">
+            <inputEventPort Id="e2d618dd-d866-48db-ba39-6f51b058b011">
+              <event>
+                <inputEventPortReferencesEvent Id="665e5f4c-4a26-484f-8566-f5a84133b380">
+                  <eventRefMoniker name="/CruiseControl/throttle/cruiseOn" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="22b52c8e-5347-465d-bccd-adfdbbeb7a73">
+            <inputEventPort Id="2c35835b-5142-41a4-bfa4-49618268551e">
+              <event>
+                <inputEventPortReferencesEvent Id="e573d7cd-c72d-4a85-b2cb-199713ff7526">
+                  <eventRefMoniker name="/CruiseControl/throttle/speedSet" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="88cf93cd-91b6-480c-bbe6-ccbb36488b0b">
+            <inputEventPort Id="678eb46e-b5f2-4f61-9738-aad20c6a4d6c">
+              <event>
+                <inputEventPortReferencesEvent Id="9b6c7fd8-27de-4c97-bef6-4cdc2861fbfd">
+                  <eventRefMoniker name="/CruiseControl/throttle/cclock" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="567bbda4-4a82-4b99-b213-6e3f895d24d7">
+            <inputEventPort Id="12b19435-10d6-4128-a5bf-26bcddc3a122">
+              <event>
+                <inputEventPortReferencesEvent Id="fe352b0a-31fa-4980-a376-45af08ca81b7">
+                  <eventRefMoniker name="/CruiseControl/throttle/accelPressed" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="2c53afec-392a-4274-b504-0e1c6c8418af">
+            <inputEventPort Id="95c815aa-4a56-457b-a325-071ec9a8519e">
+              <event>
+                <inputEventPortReferencesEvent Id="c05391bd-4c04-4f8d-90ab-39153be97ae9">
+                  <eventRefMoniker name="/CruiseControl/throttle/accelReleased" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="8b1677b6-57e6-4e90-9114-5e1fd8a0b4d2">
+            <outputEventPort Id="cf1a44ac-70b9-4388-9e0d-4cedfa9e381c">
+              <proxyTargetPorts>
+                <proxyConnection Id="24f080e7-c3ee-4f3a-a47a-80ea8e6e829f">
+                  <outputEventPortMoniker Id="cdc55023-5637-4d4b-a67b-9c2cb4fc1b54" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <event>
+                <outputEventPortReferencesEvent Id="d3b17bc8-6686-4a14-9a16-039427d83eb6">
+                  <eventRefMoniker name="/CruiseControl/throttle/throttleChg" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="50a236ba-49d7-4905-b6b4-caf2810c64d1">
+            <inputVariablePort Id="79573d9a-c634-420b-802a-4e3170a3e0b6">
+              <variable>
+                <inputVariablePortReferencesVariable Id="aff2f9e2-569f-41fd-807e-9391eca88b27">
+                  <variableRefMoniker name="/CruiseControl/throttle/cruiseSpeed" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="bfa94a6a-23e5-4d3e-a118-1ae8e3b928a7">
+            <inputVariablePort Id="0cdfa5df-1d58-4d6e-9265-1d2c54027ccb">
+              <variable>
+                <inputVariablePortReferencesVariable Id="0084612e-cbbb-4ccd-b47c-b278c7efaba8">
+                  <variableRefMoniker name="/CruiseControl/throttle/speed" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="0c224f68-967c-49c9-b1a9-55e2a7d02eab">
+            <inputVariablePort Id="e5f793bf-a824-48aa-b1ce-05a53afc06f5">
+              <variable>
+                <inputVariablePortReferencesVariable Id="683faf96-1569-4722-8b53-933b05243cf4">
+                  <variableRefMoniker name="/CruiseControl/throttle/throttleOffset" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="6983d815-42b2-4da6-afa0-7c29cb0ac4b1">
+            <outputVariablePort Id="57756bae-c64d-4c32-91c7-c60f269ea60f">
+              <proxyTargetPorts>
+                <proxyConnection Id="cb3d53f3-714a-42cc-8828-703e7e5028aa">
+                  <outputVariablePortMoniker Id="db9fde72-16ac-4464-849b-aa2939323773" />
+                </proxyConnection>
+              </proxyTargetPorts>
+              <variable>
+                <outputVariablePortReferencesVariable Id="7c01ff74-7133-42f0-a088-4798ebe880c8">
+                  <variableRefMoniker name="/CruiseControl/throttle/throttleVal" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockReference>
+    </cFBModelHasFBReferences>
+  </functionBlockReferences>
+</compositeFunctionBlockModel>

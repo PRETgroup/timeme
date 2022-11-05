@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{92B81AF7-8D03-46D0-9C71-430DAE7A074E}") = "CruiseControl", "CruiseControl\CruiseControl.tmproj", "{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Deploy|gnu = Deploy|gnu
+		Deploy|x86 = Deploy|x86
+		Run|gnu = Run|gnu
+		Run|x86 = Run|x86
+		Simulation|gnu = Simulation|gnu
+		Simulation|x86 = Simulation|x86
+		Timing Analysis|gnu = Timing Analysis|gnu
+		Timing Analysis|x86 = Timing Analysis|x86
+		Verification|gnu = Verification|gnu
+		Verification|x86 = Verification|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Deploy|gnu.ActiveCfg = Deploy|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Deploy|gnu.Build.0 = Deploy|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Deploy|x86.ActiveCfg = Deploy|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Run|gnu.ActiveCfg = Run|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Run|gnu.Build.0 = Run|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Run|x86.ActiveCfg = Run|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Simulation|gnu.ActiveCfg = Simulation|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Simulation|gnu.Build.0 = Simulation|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Simulation|x86.ActiveCfg = Simulation|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Timing Analysis|gnu.ActiveCfg = Timing Analysis|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Timing Analysis|gnu.Build.0 = Timing Analysis|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Timing Analysis|x86.ActiveCfg = Timing Analysis|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Verification|gnu.ActiveCfg = Verification|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Verification|gnu.Build.0 = Verification|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Verification|x86.ActiveCfg = Verification|gnu
+		{4AD8B6A1-17BA-4B96-B763-1B2D6AB1D0D5}.Verification|x86.Build.0 = Verification|gnu
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

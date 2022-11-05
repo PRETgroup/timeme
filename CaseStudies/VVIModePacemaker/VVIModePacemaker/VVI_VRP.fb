@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="acf0384e-7100-4c66-ac68-fe04211c63da" name="VVI_VRP" organization="NE734EFZE6G0NVX" date="2014-08-19" author="Administrator">
+  <states>
+    <functionBlockModelHasStates Id="1ff126f4-792f-4210-9c64-6995a525d749">
+      <state Id="a84c9c80-49c8-404a-8add-2613bd64e4b1" name="Wait_For_VSense" x="2231.25" y="1400" isInitial="false">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="df6cb75b-cec8-497c-9925-4f089508104b">
+            <transitionNodeMoniker Id="eef8a165-ddc6-49e7-b650-1cdf519d5363" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="8f856877-d2ed-4dd3-92bc-528c1aaf7c4c">
+            <transitionNodeMoniker Id="5f41e9db-a02a-42e4-8c81-b16b2ba29337" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="5d0ef0df-3318-43f9-a5bc-f0577f031bd4">
+      <state Id="02d5be14-553b-4d78-9b38-d1590a233f44" name="Resting" x="2318.75" y="1050" isInitial="false">
+        <actionSet>
+          <actionLink Id="9ceb1ef8-45d6-4292-ad69-81174e261e57">
+            <actionSetMoniker Id="e96c9ab7-2b3c-4b40-865a-a2fa697a98f0" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="3b2f4461-4159-482c-8f64-fe4e7e43601e">
+            <transitionNodeMoniker Id="dac18e24-ad51-43ab-8a06-be523536e468" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="41a87986-385f-4199-b604-49b60ff1c1c2">
+            <transitionNodeMoniker Id="48efa264-d8cb-40f3-8dd1-b04722304226" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="14eef629-0541-4840-b353-a4e27d724853">
+      <state Id="62995572-9316-49ab-807a-283290656db4" name="Start" x="1531.25" y="175" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="adcfb993-ed13-429d-a5e1-be35db2ec05b">
+            <transitionNodeMoniker Id="59197d9f-c8f2-4222-9509-2c423b821089" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="af12cc50-5c90-43d8-9cf0-a67eae4a5117">
+      <state Id="a3dafa80-f122-415f-bc65-380e337cfc36" name="Detected_VPulse" x="1443.75" y="525" isInitial="false">
+        <actionSet>
+          <actionLink Id="8718afda-ea97-46cf-89b5-141e879660d3">
+            <actionSetMoniker Id="d2413a23-d953-4006-a331-6f2f2b5bd66b" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="a18695a8-33f0-4699-9965-7fe3ab365ce1">
+            <transitionNodeMoniker Id="1965114b-69e8-49c7-b67d-ea4b1337a4a2" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="5f9c8fb9-337a-4218-a60c-b3fe5898fb48">
+      <state Id="1ed5a9a3-74be-44d1-9dff-30dbeab4a192" name="Detected_VRefractory" x="2187.5" y="700" isInitial="false">
+        <actionSet>
+          <actionLink Id="c5e6da35-594e-485b-9bdc-35f974116cd3">
+            <actionSetMoniker Id="4a6b4b43-90dc-46bb-9eff-2ec248e7b153" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="cd935630-cf78-4f32-8c5d-3f2353cf3767">
+            <transitionNodeMoniker Id="05988158-ac3a-44ec-8f8b-5adf077a7c41" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="80e128e8-4b30-48a4-9fd3-6ccc6d106251">
+      <actionSet Id="e96c9ab7-2b3c-4b40-865a-a2fa697a98f0" x="2712.5" y="918.75">
+        <actionItems>
+          <actionSetHasActionItems Id="fa59c814-2cb9-481c-94d8-66f5186197a6">
+            <actionAlgorithm Id="09e2cf77-4f0b-43c0-aa9d-a92c41e9f1dc">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="89ff00e5-e9af-4e0e-a44d-b2f351391945">
+                  <algorithmMoniker name="/VVI_VRP/VRP_Set_Timeout_Value" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="d6b4b81c-568c-40f6-b222-643082d3bb38">
+            <actionEvent Id="0e16a90a-a9ae-4ae4-a030-9a0838bf1a67">
+              <event>
+                <actionEventReferencesEvent Id="c49e4374-a803-4010-a70c-ea36c02a044a">
+                  <eventMoniker name="/VVI_VRP/VVI_VRP/VRP_Start_Timer" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="e1b74019-b6a0-4d44-a013-83ce87c93ecf">
+            <actionEvent Id="6ff76f61-7a4c-4443-a753-247b54a14f07">
+              <event>
+                <actionEventReferencesEvent Id="250d044e-b38d-4865-8918-3b066daad0c2">
+                  <eventMoniker name="/VVI_VRP/VVI_VRP/VSense" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="8ca9a15d-d061-4c4b-8396-b1a3ad36b1f6">
+      <actionSet Id="d2413a23-d953-4006-a331-6f2f2b5bd66b" x="2012.5" y="568.75">
+        <actionItems>
+          <actionSetHasActionItems Id="9d9699ff-5dca-49bb-9891-92d75183c338">
+            <actionAlgorithm Id="91dc339d-16f0-4b47-a19a-fced86a471a3">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="ae08379d-9b2b-4a47-a4ce-fd4e54db872d">
+                  <algorithmMoniker name="/VVI_VRP/VRP_Set_Timeout_Value" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="9a97f8f8-f3b7-41e9-8450-97d1b96eb868">
+            <actionEvent Id="a06a0b1a-b533-4501-a81f-5a1614eb0917">
+              <event>
+                <actionEventReferencesEvent Id="fe4f0f9c-f218-411a-8e83-2f502deaf647">
+                  <eventMoniker name="/VVI_VRP/VVI_VRP/VRP_Start_Timer" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="c10f21d4-7423-45b9-9cbd-60ed6631d3e3">
+      <actionSet Id="4a6b4b43-90dc-46bb-9eff-2ec248e7b153" x="2800" y="700">
+        <actionItems>
+          <actionSetHasActionItems Id="a1d0a94f-d466-4c6b-ae7d-236dc9ae6c32">
+            <actionEvent Id="be932c5c-e21c-4307-8529-c811a892abc7">
+              <event>
+                <actionEventReferencesEvent Id="18cb71c6-7ff4-4d32-98fb-d5b0d2963bf6">
+                  <eventMoniker name="/VVI_VRP/VVI_VRP/VRefractory" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="d9b6b39f-8632-4f45-a16f-97373bb6948e">
+      <algorithm Id="a666ae8f-6803-4c55-ab59-6b478e5b0b2c" name="VRP_Set_Timeout_Value" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="f617e833-e9e8-4600-b992-3ee8e2bdb429">
+      <functionBlockInterface Id="8170650f-8e8b-4c3c-84f5-e9070ff6305a" name="VVI_VRP" x="1225" y="612.5">
+        <events>
+          <functionBlockHasEvents Id="3269a569-df33-4348-8966-241ba9ffed55">
+            <event Id="c2872a61-def5-44de-bb5c-6e1581ccc79f" name="VPulse" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="c0624740-3a33-4b65-83ff-96367f08f7fc">
+            <event Id="6a5ac1a4-17c5-42ff-ad7f-cdddc9470830" name="VPace" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="67c756cf-fe0d-4dfc-8a69-e0933ceb50c6">
+            <event Id="df7be37d-2650-4aea-b7dc-86027f7b4d2f" name="VRP_Start_Timer" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="c6e64712-9d70-4238-9ecd-b8bb47db1a62">
+            <event Id="16974523-9817-4eda-bba7-00ba665fe1ec" name="VSense" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="88809dbc-6555-4e37-9ec2-3086c91e82f7">
+            <event Id="dd2f59a0-db20-4eb5-a5df-8e0b3d5fc9b0" name="VRP_Timer_Timeout" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="a2233783-821f-409e-9601-70dcd8576367">
+            <event Id="c2340b2a-3026-41b5-ac2b-ccd00daaa06a" name="VRefractory" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="f7d46503-37a7-4bc5-b1b1-0bc27b49dbbd">
+            <variable Id="f6044b04-73a1-4d3d-90f9-18690fd948cd" name="VRP_Timeout_Value" scope="Output" type="INT" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="eae7dd84-021a-4b74-a150-09bf4244e255">
+            <inputEventPort Id="ef044747-e2c9-4921-9855-8d84be9e4410">
+              <event>
+                <inputEventPortReferencesEvent Id="b44d441b-b85e-4764-a881-e373d8182b8c">
+                  <eventMoniker name="/VVI_VRP/VVI_VRP/VPulse" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="03a12156-47c9-41b2-9967-4f1db0fca98b">
+            <inputEventPort Id="720252a5-82a3-4ec7-b84f-84ab5123968c">
+              <event>
+                <inputEventPortReferencesEvent Id="8723dbc1-a197-4390-8d63-625bb5aa57fd">
+                  <eventMoniker name="/VVI_VRP/VVI_VRP/VPace" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="dbb896ae-c1bb-40a6-b764-188a5adca3f1">
+            <inputEventPort Id="e7d57365-0452-4399-9e42-5bc879a683e0">
+              <event>
+                <inputEventPortReferencesEvent Id="6ba086c8-e786-40d2-ba10-ad5a8daf094f">
+                  <eventMoniker name="/VVI_VRP/VVI_VRP/VRP_Timer_Timeout" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="40d02d37-f6c3-4d3a-bc9b-31e294949731">
+            <outputEventPort Id="63381402-a6a1-46df-ad86-11ac2faa1b0a">
+              <event>
+                <outputEventPortReferencesEvent Id="0da2b7a5-0818-47ab-b4aa-ac2c337baddf">
+                  <eventMoniker name="/VVI_VRP/VVI_VRP/VSense" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="2a700976-9145-4699-a31e-b2b12d6cd775">
+            <outputEventPort Id="e1577791-a69c-4192-b222-dd2300f47e2c">
+              <event>
+                <outputEventPortReferencesEvent Id="1178fc5b-894c-4228-8010-e53ad2213783">
+                  <eventMoniker name="/VVI_VRP/VVI_VRP/VRefractory" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="efc58527-3f92-412a-aa1e-9378ac3dd80e">
+            <outputEventPort Id="1688c609-493b-4eeb-8312-e3cf576bc4bb">
+              <targetPort>
+                <association Id="c1a04437-d120-4bc5-a77c-671d045c7b8e">
+                  <outputVariablePortMoniker Id="e37df0f1-bf6d-4773-b1fc-360d5c041b0f" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="fdafa864-55f6-43fa-b05d-051b7e4ac726">
+                  <eventMoniker name="/VVI_VRP/VVI_VRP/VRP_Start_Timer" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="0c5e5d39-3652-4280-971b-6c8799899b33">
+            <outputVariablePort Id="e37df0f1-bf6d-4773-b1fc-360d5c041b0f">
+              <variable>
+                <outputVariablePortReferencesVariable Id="f5535fe4-c97a-4540-a190-a82574209fbd">
+                  <variableMoniker name="/VVI_VRP/VVI_VRP/VRP_Timeout_Value" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="aca1e3a1-b087-4f1b-bc64-e2d320032bb6">
+      <transitionNode Id="eef8a165-ddc6-49e7-b650-1cdf519d5363" x="2450" y="1225" event="VPulse">
+        <targetState>
+          <transitionNodeConnectsToStates Id="fccebded-694e-4e96-8219-7a21e64261e7">
+            <stateMoniker name="/VVI_VRP/Resting" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="e674c361-bbff-4eaf-a286-bb68eabf07cc">
+      <transitionNode Id="5f41e9db-a02a-42e4-8c81-b16b2ba29337" x="2143.75" y="1225" event="VPace">
+        <targetState>
+          <transitionNodeConnectsToStates Id="a59831a3-c290-46a7-ab0f-f5999f5d7597">
+            <stateMoniker name="/VVI_VRP/Resting" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="f91c2028-4283-47b6-bd62-2240043dad0d">
+      <transitionNode Id="59197d9f-c8f2-4222-9509-2c423b821089" x="1531.25" y="350" event="VPulse">
+        <targetState>
+          <transitionNodeConnectsToStates Id="67a2274d-be55-4af9-b492-528907051870">
+            <stateMoniker name="/VVI_VRP/Detected_VPulse" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="96f45aa8-472a-4d4b-b971-53ea3c2d8afc">
+      <transitionNode Id="dac18e24-ad51-43ab-8a06-be523536e468" x="2143.75" y="875" event="VPulse">
+        <targetState>
+          <transitionNodeConnectsToStates Id="62b7d59b-b9f1-4dab-9e11-999066b0cd77">
+            <stateMoniker name="/VVI_VRP/Detected_VRefractory" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="67b1e183-2b94-45ca-9476-6064580e342f">
+      <transitionNode Id="05988158-ac3a-44ec-8f8b-5adf077a7c41" x="2450" y="875">
+        <targetState>
+          <transitionNodeConnectsToStates Id="851e53af-a78a-4fea-8966-6c251a826ea9">
+            <stateMoniker name="/VVI_VRP/Resting" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="aae71a44-6b72-4d5e-a7e6-c16056878ee7">
+      <transitionNode Id="48efa264-d8cb-40f3-8dd1-b04722304226" x="2800" y="1225" event="VRP_Timer_Timeout">
+        <targetState>
+          <transitionNodeConnectsToStates Id="489a476b-c5d4-4e79-a401-fce586c047db">
+            <stateMoniker name="/VVI_VRP/Wait_For_VSense" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="81238abc-7483-4fc5-96d2-c02731dc91c4">
+      <transitionNode Id="1965114b-69e8-49c7-b67d-ea4b1337a4a2" x="1857.5" y="882.5" event="VRP_Timer_Timeout">
+        <targetState>
+          <transitionNodeConnectsToStates Id="b8504318-3144-482f-80bd-c0a8005dbc5a">
+            <stateMoniker name="/VVI_VRP/Wait_For_VSense" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

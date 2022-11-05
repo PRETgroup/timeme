@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="e7922848-b97b-4abc-a643-0a87580d7efb" name="FlowContract" organization="Zeeshan-HP" date="2012-06-14" author="Zeeshan">
+  <states>
+    <functionBlockModelHasStates Id="6e88723e-8a6b-4aa7-80e0-8099b4ded5cd">
+      <state Id="3dae2306-97c6-4366-b444-de50b79848b6" name="S1" x="131.25" y="262.5" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="6e4b4989-7a5f-467f-8670-db2ff4ab62ba">
+            <transitionNodeMoniker Id="ff0143e1-c7a8-4ae9-aaa4-ba399441023d" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="6d3f8ba4-12c8-4627-aaaf-7ccbd57e9c80">
+      <state Id="a1aa18b4-8a46-44ae-bbd7-643615cf9692" name="S2" x="568.75" y="262.5" isInitial="false">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="686e17e7-f9d2-412e-bd73-6c6565be39c4">
+            <transitionNodeMoniker Id="d3f5b926-7385-445f-ac8c-f8f52157cd6f" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="9663f411-adbd-4fbd-89b3-6c19a7d31359">
+            <transitionNodeMoniker Id="7f521af3-834b-44ae-abb5-4a61091175ed" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="17661533-b9ec-419d-9e09-930fcfd16ae2">
+      <state Id="7b5fd83b-74d7-4a20-ae90-a8c39734015f" name="S4" x="568.75" y="568.75" isInitial="false">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="80016fdc-a998-4bdd-b668-dc7079954719">
+            <transitionNodeMoniker Id="af4791dd-8248-43ee-a1db-3e0d654bc21b" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="c7894364-e865-4e0c-b6da-79c1735964cb">
+      <state Id="8c4e0fa7-f627-401a-89e1-a56b25e2a86f" name="S3" x="1050" y="262.5" isInitial="false">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="ca700426-f776-4c42-8766-e6a8be674507">
+            <transitionNodeMoniker Id="ff1c71a9-b53a-4158-94ec-87d2367ef655" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="ade1d58e-e38b-4d8d-8566-ccb9c7ad8079">
+      <state Id="89039e54-38a3-4fa7-bd77-ee0e8331d7dd" name="T" x="1050" y="568.75" isInitial="false" />
+    </functionBlockModelHasStates>
+  </states>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="f83da042-3620-4f85-a362-3625b257b73e">
+      <functionBlockInterface Id="a1511b45-1bd2-4f7b-a0fc-3272202bca1e" name="FlowContract" x="1225" y="393.75">
+        <events>
+          <functionBlockHasEvents Id="12f876c8-2097-4565-9cda-f193d820fc0f">
+            <event Id="d21ca087-c054-4f83-aa2f-b41e4d2ceb23" name="output" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="3f868769-1ebd-478d-9dec-82bfdfcf4c5b">
+            <event Id="3d7f9d0c-b9e2-4113-a0f5-48dde49730e8" name="input" scope="Input" />
+          </functionBlockHasEvents>
+        </events>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="35a61efd-4c79-46d2-a93c-00c364099c39">
+            <inputEventPort Id="8e025ba0-8ac0-43d9-b1a6-a2166f42cca4">
+              <event>
+                <inputEventPortReferencesEvent Id="b10f214f-fdce-4410-be53-0603d24bb77b">
+                  <eventMoniker name="/FlowContract/FlowContract/output" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="28c7a1ff-5863-4a30-a2ca-88d188cded5f">
+            <inputEventPort Id="36e37d49-deaa-4444-8aba-4a7d58197b4e">
+              <event>
+                <inputEventPortReferencesEvent Id="3484b63f-f208-431a-9d60-c737e86057e2">
+                  <eventMoniker name="/FlowContract/FlowContract/input" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="4b40d76e-ecb6-41e9-b225-5e0ada866db2">
+      <transitionNode Id="ff0143e1-c7a8-4ae9-aaa4-ba399441023d" x="603" y="350" event=" input ">
+        <targetState>
+          <transitionNodeConnectsToStates Id="f1f504ee-0e56-4e79-b07a-60d30b6ad2fc">
+            <stateMoniker name="/FlowContract/S2" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="012ecc2a-8d49-480d-b764-82a33d07cf4a">
+      <transitionNode Id="d3f5b926-7385-445f-ac8c-f8f52157cd6f" x="681.5" y="856.5" expression="[0, 0.2]">
+        <targetState>
+          <transitionNodeConnectsToStates Id="c1e5d55e-cf06-43da-b3d1-07a941ba45a1">
+            <stateMoniker name="/FlowContract/S3" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="95d52b96-b327-4ec2-b6bb-19c3e7be46bc">
+      <transitionNode Id="7f521af3-834b-44ae-abb5-4a61091175ed" x="350" y="350" expression="[0.2, 1]">
+        <targetState>
+          <transitionNodeConnectsToStates Id="40781fd2-e9d9-483d-b721-bbca1470c394">
+            <stateMoniker name="/FlowContract/S4" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="c2364678-24c6-453e-b828-d8c7995b1d9a">
+      <transitionNode Id="ff1c71a9-b53a-4158-94ec-87d2367ef655" x="1318" y="350" event=" input ">
+        <targetState>
+          <transitionNodeConnectsToStates Id="6a6661ba-d234-4a28-9ff9-b946f3711166">
+            <stateMoniker name="/FlowContract/T" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="40c795d0-ff45-4d52-8c16-b5eb36f58606">
+      <transitionNode Id="af4791dd-8248-43ee-a1db-3e0d654bc21b" x="682" y="878.625" event=" output ">
+        <targetState>
+          <transitionNodeConnectsToStates Id="d4e44770-6914-444d-af8b-08abf0f52049">
+            <stateMoniker name="/FlowContract/S1" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

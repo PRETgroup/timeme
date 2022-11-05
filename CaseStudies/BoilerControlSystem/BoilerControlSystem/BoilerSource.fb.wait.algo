@@ -1,0 +1,4 @@
+me->counter = (me->counter < 10) ? me->counter + 1 : me->counter;
+
+me->flow_1 = (me->pressure > 300) ? true : false;
+me->flow_2 = (me->pressure > 300) ? true : false;

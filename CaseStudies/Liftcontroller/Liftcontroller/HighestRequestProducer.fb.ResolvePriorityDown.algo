@@ -1,0 +1,18 @@
+int bitmask;
+int PendingReq = 0;
+int i = 0;
+me->CurrentPriorityValue = -1;
+for (i = 0; i < 4; ++i) {
+    PendingReq |= me->PendingReqValue[i] << i;
+}
+printf("Pending Request, direction, current: %d 2 %d\n", PendingReq, me->FloorSensorValue);
+bitmask = 0x08;
+for (i = 4 - 1; i > -1; --i) {
+    if (i < me->FloorSensorValue && (PendingReq & bitmask)) {
+        me->CurrentPriorityValue  = i;
+        printf("Down Priority = %d\n", me->CurrentPriorityValue );
+        break;
+    }
+    bitmask = bitmask >> 1;
+}
+    

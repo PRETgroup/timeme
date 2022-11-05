@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="9b51616b-c453-4d9b-abe1-8e402786723d" name="PendingRequestGenerator" organization="CANTO-AIR-PC" date="2014-07-16" author="Canto-Air">
+  <states>
+    <functionBlockModelHasStates Id="38de80db-0cd9-4cb9-a6c5-4277c29f032b">
+      <state Id="bc19995e-dd28-47cd-a2ae-a5a8c43b5d1e" name="Start" x="1400" y="656.25" isInitial="true">
+        <actionSet>
+          <actionLink Id="127093a4-e1f2-44e1-b217-ba66e77423bc">
+            <actionSetMoniker Id="ada76dc1-655d-475f-8446-0d95fc5ca160" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="77c0decb-b7fc-4838-86c8-1e1da444bade">
+            <transitionNodeMoniker Id="6aa09d58-f8a7-4676-a274-d2593991582c" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="4cfb4cbf-e7d2-42da-a95a-d37653afd22a">
+            <transitionNodeMoniker Id="2fd06bb3-0ed8-4745-a26d-ed3050344812" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="5bc64a70-7b48-4301-a36c-415a38dec183">
+      <state Id="717f8cb2-1b25-4de7-8701-8ca368de12a6" name="PendingReq" x="1312.5" y="1356.25" isInitial="false">
+        <actionSet>
+          <actionLink Id="b5fd07cb-03ce-418c-b837-a4cd7588a95c">
+            <actionSetMoniker Id="8e176c62-78e3-4462-bed3-b2dff722d665" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="b2ad3bbb-edd5-405a-b0f0-89562601c87a">
+            <transitionNodeMoniker Id="c24277f9-f606-46d5-856f-bf97b7323a7f" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="4ec73f03-c421-4dd3-8a1e-e260ee570045">
+            <transitionNodeMoniker Id="dba67d68-603b-4097-83ae-8964eb7551a5" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="576adaca-f016-49c1-9cfa-34d05149dde2">
+      <actionSet Id="ada76dc1-655d-475f-8446-0d95fc5ca160" x="1717.658891379833" y="656.25">
+        <actionItems>
+          <actionSetHasActionItems Id="5025c010-0100-487a-96e8-11f9b1a00c54">
+            <actionEvent Id="bac8ef4f-8dd7-40c2-a532-36045e026587">
+              <event>
+                <actionEventReferencesEvent Id="7e9c2615-ac3d-43e5-948a-273603405024">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingCabinCall" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="31a5c101-1c7d-495a-85aa-a1dd901db0a3">
+            <actionEvent Id="9ebf08b3-468c-4c3a-999b-15c70d8f854d">
+              <event>
+                <actionEventReferencesEvent Id="84d619fc-278d-4f3e-9663-27ab55705cb1">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingUpCall" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="8d557adc-cb75-4213-ba10-429ceddbc101">
+            <actionEvent Id="93fbf0e8-a9d1-4acd-9b34-17a00144c1b2">
+              <event>
+                <actionEventReferencesEvent Id="b2314658-575b-4970-a580-962df3c98be5">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingDownCall" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="b7468a74-361b-4bad-92b8-6857b78b2c33">
+            <actionEvent Id="8c4a02f2-fe6b-4923-b808-3384df4bddc7">
+              <event>
+                <actionEventReferencesEvent Id="726b6a2b-e76c-4cf7-97f1-2fba8916f51b">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingCall" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="47d29052-7027-4489-9aa9-4db2ade036ca">
+            <actionAlgorithm Id="d4046af9-1ee3-4f10-b0bf-c3dc24d6e966">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="ea39b6c1-4022-43d0-bbce-c2deda71bed4">
+                  <algorithmMoniker name="/PendingRequestGenerator/UpdateCallValues" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="15c53f3e-8f1b-43db-ac65-3f42ee855ee0">
+      <actionSet Id="8e176c62-78e3-4462-bed3-b2dff722d665" x="1750" y="1356.25">
+        <actionItems>
+          <actionSetHasActionItems Id="bb3cb960-45f6-4657-aee2-baee5aef8ac3">
+            <actionEvent Id="536ef2bd-33f7-4110-a9e5-803b8a4a3667">
+              <event>
+                <actionEventReferencesEvent Id="be1289e2-0ffd-44f2-8db5-8e3d18f31c48">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingReq" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="ad2a531e-66d9-489c-8f39-8fb4eedb2e90">
+            <actionAlgorithm Id="aaac39c0-1136-41ef-a3e5-6259a5d8233a">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="0202e047-9dd1-4acd-995e-74c53f83ce06">
+                  <algorithmMoniker name="/PendingRequestGenerator/UpdateCallValues" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="be91d3a8-23a0-4d17-975d-fd2a38b81fc8">
+            <actionEvent Id="18979dcf-83d2-45f2-b7fb-1826e30cc9e1">
+              <event>
+                <actionEventReferencesEvent Id="17e2412b-d422-4e23-84b1-75b8db5aa91f">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingCabinCall" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="8f42e991-eaf9-48c2-b65c-4a7ec34e07dc">
+            <actionEvent Id="798f26d9-bf43-43ca-8139-fad9dece0bbb">
+              <event>
+                <actionEventReferencesEvent Id="617807d0-b61c-4288-b310-c85d17b1d788">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingUpCall" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="c0deb4e7-4015-4ea2-8bfa-7c5efbca77fa">
+            <actionEvent Id="bb4f6189-1c44-45c8-a7df-bb71f01da3a4">
+              <event>
+                <actionEventReferencesEvent Id="35ae6327-82fb-4c2b-9720-25ea88269094">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingDownCall" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="9b390505-dc59-4fbf-860d-d9605dd99890">
+            <actionEvent Id="2e21b173-5723-4fc4-9189-36a76bfc42b0">
+              <event>
+                <actionEventReferencesEvent Id="9a48cbbe-67e4-4429-af04-bf7f2fc5f32d">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingCall" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="0ec3561d-f549-4a8f-8783-d459d02d098c">
+      <algorithm Id="317a0b12-3146-41a3-91d1-b22791e6f52a" name="UpdateCallValues" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="5a1740c8-1491-4618-902b-b43b54f06224">
+      <functionBlockInterface Id="7177132a-ca0d-492c-b71c-3c1099aa7154" name="PendingRequestGenerator" x="1400" y="481.25">
+        <events>
+          <functionBlockHasEvents Id="a490d72d-7260-4a80-b674-a0b76b6496b1">
+            <event Id="657e50b6-49c5-4038-b38a-d17c19954033" name="CabinCall" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="97115eee-a5c8-4274-9c4a-cd75f1f261b9">
+            <event Id="37bba855-d45e-4846-81c0-c067ad9872d6" name="UpCall" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="5967abd8-67a8-457a-9282-aaff3dc09b3a">
+            <event Id="47b0c137-42a6-4bf8-8e80-6ca2cffb2c34" name="DownCall" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="7cfa91f7-3319-403b-8f61-8750a3aedb54">
+            <event Id="2925d508-f2e7-4110-853a-83032e6596a3" name="PendingCabinCall" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="001ca20e-783d-4e63-9354-a56e096a9c00">
+            <event Id="c175cfd0-3f70-4079-9dde-0836b9b94cb0" name="PendingUpCall" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="b155df08-bfb6-46c5-aea3-0203c4449ae4">
+            <event Id="cfc38b91-2d26-4d7d-a534-e5ff2c23a6cf" name="PendingDownCall" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="edec9fcd-e9de-40f6-845d-ea56caa3d48b">
+            <event Id="62beeb91-ce03-4dc0-ae3b-444c1fcd0e52" name="PendingCall" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="e9a498b8-8666-421a-a0b5-a5184f30a476">
+            <event Id="391dafef-a362-441c-8c4e-45b639c8d2e5" name="PendingReq" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="f7c10f9a-930d-4365-afa4-e79755cc9c5d">
+            <event Id="31198174-2b8a-4dc2-9dbb-abeb0e574369" name="StoppedAtFloor" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="31eb3a7d-4c42-4051-9275-fd047b2ffc91">
+            <event Id="0a55d934-80ec-4f4c-862e-c58ced920e40" name="MotorDirectionUp" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="dae12641-c416-45c5-94fd-611550f2dec4">
+            <event Id="972b4a79-231a-47be-9c66-4bd2862fb0aa" name="MotorDirectionDown" scope="Input" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="7a72ae1f-0bad-4015-b582-a2694625512f">
+            <variable Id="d424f449-0af8-4e2c-9451-de96df9576c6" name="CabinCallValue" scope="Input" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="b9049e74-d050-4ef1-b4ae-bd01b5b138af">
+            <variable Id="104f148f-5b9c-40ad-8be2-d77dd78fa045" name="UpCallValue" scope="Input" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="5ac49965-aec4-48f8-99c0-37599ae41dd1">
+            <variable Id="59641a3a-643d-4596-85e3-b292151c24be" name="DownCallValue" scope="Input" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="1948cfdd-e429-47d0-a90c-b27ab5795f82">
+            <variable Id="4cdbd534-05e7-4274-9606-1549f3ea67cb" name="PendingCabinCallValue" scope="Output" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="6c0f2d4f-2944-4bc8-a41a-144524c26f78">
+            <variable Id="49518f5e-12aa-4a32-a315-ffbce1b766d6" name="PendingUpCallValue" scope="Output" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="92a74c24-acba-4575-ad07-8978408b0fef">
+            <variable Id="4e3feb4a-fc7b-4caf-a4e6-c4f0345134af" name="PendingDownCallValue" scope="Output" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="378d480a-2077-4cab-96d7-95136746204f">
+            <variable Id="c6f2d1f0-652d-4a3b-a3d2-9214415fa54b" name="PendingCallValue" scope="Output" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="1f87493a-f7e8-487d-a933-9f9c2633d673">
+            <variable Id="b770ca71-1bd2-4f72-a749-231051086fa3" name="PendingReqValue" scope="Output" arraySize="4" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="68fd49d5-94db-4e7e-a781-1c3a3700fa76">
+            <variable Id="64751844-26fd-4f3a-a77b-214553ac53d9" name="preCallRequest" scope="Internal" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="e67a0cc9-3470-4a7f-93da-59a50bb862ca">
+            <variable Id="61679b18-6d19-4aa5-979c-06e1f23589cf" name="StoppedAtFloorValue" scope="Input" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="a0b14ea0-75d0-47eb-bed6-46510d0b2abb">
+            <variable Id="0829b99d-3847-4f7d-a647-351f9f1c598a" name="preMotorDirectionDown" scope="Internal" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="7dc74cab-77d7-4da7-b3ac-39695e73ac64">
+            <variable Id="8ddb3e3e-cc94-4328-b5ec-6b6939d2fcfb" name="preMotorDirectionUp" scope="Internal" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="0ff3e760-7dfd-49d2-9974-d6823f2426e7">
+            <inputEventPort Id="4a4fb78b-1c9d-4f34-818c-5d0c27786930">
+              <targetPort>
+                <association Id="bc152fb6-68de-43a6-abe6-00a69093be0c">
+                  <inputVariablePortMoniker Id="ab442006-e0b6-4747-a855-b396f5270a87" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="1f887cbe-551f-463c-a025-645a72f6aa43">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/CabinCall" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="04260b1f-66f2-482b-b98b-a96d57678b3a">
+            <inputEventPort Id="7c0be85b-87c3-4957-8a13-780c6dfe64c4">
+              <targetPort>
+                <association Id="5608a1cf-30e8-432e-b34e-41781e418dfd">
+                  <inputVariablePortMoniker Id="8ea3a5de-f768-4dcf-a11b-1fae1e907400" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="d4f99951-59ae-4156-95b0-c6c05e521244">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/UpCall" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="1ad00076-93f5-4000-a649-4344f4361028">
+            <inputEventPort Id="1df779fb-14db-4827-bd51-f5c01af91fdd">
+              <targetPort>
+                <association Id="7cb5bb0b-eda3-455f-8adf-e32afd38c1b5">
+                  <inputVariablePortMoniker Id="1b06ee83-8c42-4ab4-8c54-a3b5d4f25d14" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="f2132fe8-bd0b-4a21-a328-9c3c4ae96a24">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/DownCall" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="0b43c0cd-5864-4d18-b5b0-4561b71d2da0">
+            <inputEventPort Id="2491b42f-7275-4c25-b8dc-cdb56965e6ae">
+              <targetPort>
+                <association Id="769c42e6-7c5c-4ee0-b41e-810d5ad1709b">
+                  <inputVariablePortMoniker Id="73908865-2ce5-4d50-b426-90541a083fe1" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="b3c1d531-0ea9-40ce-9556-0185dfb1b26e">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/StoppedAtFloor" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="477c30f3-39b9-42e8-b7d2-1eb2c17b71e9">
+            <inputEventPort Id="e67846c6-c549-46c3-9ffd-1217c2393bb8">
+              <event>
+                <inputEventPortReferencesEvent Id="d4c889de-d1c5-4404-a1cc-1a8ba6a9b698">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/MotorDirectionUp" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="8cc10632-047f-4a99-8523-c4bb0529f944">
+            <inputEventPort Id="93a88607-d39b-4d60-a52e-84ae0c5a7e7a">
+              <event>
+                <inputEventPortReferencesEvent Id="5a9dd83e-84cf-404a-b4c8-900836bbc572">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/MotorDirectionDown" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="3892e9f8-beb9-42d7-8090-6115bd564e8d">
+            <outputEventPort Id="6c53ab30-2703-41a0-9679-bc44ac6a6e63">
+              <targetPort>
+                <association Id="d462fba4-0434-4888-b538-e63988c20596">
+                  <outputVariablePortMoniker Id="f3e167c8-7cc8-431a-b7fa-e99004028900" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="52b5bfc2-add4-40d5-b191-029940c02439">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingCabinCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="9ac124d3-d760-454e-a491-dcbd11609ea3">
+            <outputEventPort Id="482b1849-b9fe-43ec-8b1a-b7ce490175d5">
+              <targetPort>
+                <association Id="b0b84e8d-91ce-4bdc-a647-a91a6263b484">
+                  <outputVariablePortMoniker Id="f1dd3a60-fbcc-4680-9281-5256425a59e3" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="cd24434d-9e9b-4a00-9d57-d70701cf1ca0">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingUpCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="12c26e0d-6a74-4ac6-abb4-1bca02d8a39a">
+            <outputEventPort Id="6be3357b-3bcf-4977-8eea-02338dbca5c4">
+              <targetPort>
+                <association Id="ef9ebfb9-2422-42f4-a19a-45f35a27abe1">
+                  <outputVariablePortMoniker Id="47a671a1-9a43-472f-bfc8-ac86769dd6d5" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="83c8d488-0e6f-4297-b650-ef4bbbbf11b2">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingDownCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="0bff0be7-83cf-4cd6-b49a-ccd2ca23252c">
+            <outputEventPort Id="e6396978-c236-4b3c-8c90-770e77347b6a">
+              <targetPort>
+                <association Id="878296b8-eaa1-4e11-acdc-ffd6c11d4af6">
+                  <outputVariablePortMoniker Id="c0962ea5-b149-4290-b7fe-80bb1944cc59" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="a103cdfb-eabf-495f-8e2c-230e771b8d04">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingCall" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="2a660620-37c4-47d8-81a0-a5c67dcb8a66">
+            <outputEventPort Id="9232840d-6d45-44e5-926d-977b49783dc5">
+              <targetPort>
+                <association Id="44a9e733-8b76-4f3c-9ff7-1e6ae1f55e5a">
+                  <outputVariablePortMoniker Id="49dd249b-57b5-40df-a501-e9062e2d8573" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="c8515967-4486-4a08-b7d5-a1384aec0e69">
+                  <eventMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingReq" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="280b4a97-21ce-40df-bad5-bbe6801da79b">
+            <inputVariablePort Id="ab442006-e0b6-4747-a855-b396f5270a87">
+              <variable>
+                <inputVariablePortReferencesVariable Id="26c063d3-091e-4722-a7cb-9b626ce17089">
+                  <variableMoniker name="/PendingRequestGenerator/PendingRequestGenerator/CabinCallValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="4a734997-7e31-4743-9c22-9c1113612012">
+            <inputVariablePort Id="8ea3a5de-f768-4dcf-a11b-1fae1e907400">
+              <variable>
+                <inputVariablePortReferencesVariable Id="3396e97c-66ab-4667-ac6b-8f19fa78e6d4">
+                  <variableMoniker name="/PendingRequestGenerator/PendingRequestGenerator/UpCallValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="2e3366ab-07a8-4c77-b5d9-8bc84ef69329">
+            <inputVariablePort Id="1b06ee83-8c42-4ab4-8c54-a3b5d4f25d14">
+              <variable>
+                <inputVariablePortReferencesVariable Id="1e402a21-32b6-49ef-be6a-fe77280d2106">
+                  <variableMoniker name="/PendingRequestGenerator/PendingRequestGenerator/DownCallValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="87c2121a-b3c2-4cc3-bbee-0d3fe3ca6690">
+            <inputVariablePort Id="73908865-2ce5-4d50-b426-90541a083fe1">
+              <variable>
+                <inputVariablePortReferencesVariable Id="dbb5efa2-c9ed-4970-b44e-45d72b08d537">
+                  <variableMoniker name="/PendingRequestGenerator/PendingRequestGenerator/StoppedAtFloorValue" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="03e67ee3-5fd9-4702-93da-77289e5800ee">
+            <outputVariablePort Id="f3e167c8-7cc8-431a-b7fa-e99004028900">
+              <variable>
+                <outputVariablePortReferencesVariable Id="e3055fd4-27b8-44d0-ac87-ae542692f31a">
+                  <variableMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingCabinCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="043ee651-c865-441a-a0cc-a15252b22714">
+            <outputVariablePort Id="f1dd3a60-fbcc-4680-9281-5256425a59e3">
+              <variable>
+                <outputVariablePortReferencesVariable Id="03705d1f-360c-4d89-b5f7-b46c89e58347">
+                  <variableMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingUpCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="756d4f3d-1d46-43f9-8b5f-b03d51851935">
+            <outputVariablePort Id="47a671a1-9a43-472f-bfc8-ac86769dd6d5">
+              <variable>
+                <outputVariablePortReferencesVariable Id="486d8b06-490a-4706-853d-21662fc48fec">
+                  <variableMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingDownCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="555f3902-e227-4e6e-aa17-f54df3caedd6">
+            <outputVariablePort Id="c0962ea5-b149-4290-b7fe-80bb1944cc59">
+              <variable>
+                <outputVariablePortReferencesVariable Id="d83d8177-069e-4eec-b702-cd61e5999495">
+                  <variableMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingCallValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="eed17eda-ee4c-4eb0-8cdf-37ed5399c82a">
+            <outputVariablePort Id="49dd249b-57b5-40df-a501-e9062e2d8573">
+              <variable>
+                <outputVariablePortReferencesVariable Id="e34ab7dc-5632-4835-be37-22963535d3be">
+                  <variableMoniker name="/PendingRequestGenerator/PendingRequestGenerator/PendingReqValue" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="0ea35b31-2ed8-4c92-9976-e2e8d787f4e2">
+      <transitionNode Id="2fd06bb3-0ed8-4745-a26d-ed3050344812" x="1400" y="437.5">
+        <targetState>
+          <transitionNodeConnectsToStates Id="a4a6a1df-1f13-4375-8f68-75464d1cee38">
+            <stateMoniker name="/PendingRequestGenerator/Start" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="f568ce14-bebd-46b1-b450-672a65b973da">
+      <transitionNode Id="6aa09d58-f8a7-4676-a274-d2593991582c" x="824.4140625" y="1006.25" expression="preCallRequest==true">
+        <targetState>
+          <transitionNodeConnectsToStates Id="1d6f9421-2618-407d-87a0-7d9b824cb1f3">
+            <stateMoniker name="/PendingRequestGenerator/PendingReq" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="63eec639-520e-489d-8e20-06231cc75f1f">
+      <transitionNode Id="c24277f9-f606-46d5-856f-bf97b7323a7f" x="1447.7020263671875" y="1006.25" expression="preCallRequest==false">
+        <targetState>
+          <transitionNodeConnectsToStates Id="dccbff9e-ad9f-4973-907d-8114628c3324">
+            <stateMoniker name="/PendingRequestGenerator/Start" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="2cdb6751-f893-4430-81a4-a84cf3dc7ab8">
+      <transitionNode Id="dba67d68-603b-4097-83ae-8964eb7551a5" x="1400" y="1618.75">
+        <targetState>
+          <transitionNodeConnectsToStates Id="b0c167a4-8e15-4dc7-ac18-54386eceb06d">
+            <stateMoniker name="/PendingRequestGenerator/PendingReq" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="2d441655-e9b6-4d42-9a2a-ba96dc3484ea" name="Activate" organization="Rockwell Automation" version="0" date="2000-05-30" author="JHC" header="package fb.rt.benchmarks.cruisecontrol;" modelType="Observer">
+  <states>
+    <functionBlockModelHasStates Id="28b1f400-fa1a-404c-8109-94bfc2c9042b">
+      <state Id="b24fc6e9-15ca-422e-bd48-d6364c1124a1" name="START" comments="Initial State" x="552.94116" y="429.41174000000007" isInitial="true">
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="8293a05e-2168-4d08-84f6-43016070d0d2">
+            <transitionNodeMoniker Id="496e7f8f-b98d-46ce-b07b-4a62fe1f51e7" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="dc1a22fe-53c0-42ac-9d70-05bd291c94de">
+      <state Id="c0ae2d3c-bebb-4847-ab64-af48c3331379" name="Violation" comments="Initialization" x="923.5294" y="141.17647" isInitial="false">
+        <actionSet>
+          <actionLink Id="3fe1cffd-0435-4114-b245-efb207797d4a">
+            <actionSetMoniker Id="8123a57f-4f58-40b3-84d1-ba8dcfd0b28f" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="9769a91f-a231-4043-a53c-9c31865dc016">
+            <transitionNodeMoniker Id="a98510aa-9484-49f5-a2b9-f03f04163b2c" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="f41ddf43-1ff4-45cc-9696-e5b53c799455">
+      <actionSet Id="8123a57f-4f58-40b3-84d1-ba8dcfd0b28f" x="1312.5" y="175">
+        <actionItems>
+          <actionSetHasActionItems Id="1938c796-3244-466a-88b1-a172b6021a2f">
+            <actionEvent Id="1588b8c6-ba32-4a9b-8db4-a3fc3bb98c37">
+              <event>
+                <actionEventReferencesEvent Id="7b25bf8b-d2e2-4834-bfdc-9eb6fac3fb5b">
+                  <eventMoniker name="/Activate/Activate/violated" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="210b442f-7ff1-4880-9efb-d8ada1e5a583">
+            <actionAlgorithm Id="94c4d09c-8df0-43ef-b87c-97e7d696591f">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="abc8510d-e1c2-4f9b-8b10-5daa7ff05835">
+                  <algorithmMoniker name="/Activate/INIT" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="8fc138a0-ad90-45cc-9245-610c613f9922">
+      <algorithm Id="1adbeda3-95d3-4147-8e9c-307b7b100eed" name="INIT" comments="Initialization algorithm" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="ae1c626d-674b-4315-b729-e428a9579c5b">
+      <functionBlockInterface Id="65c95eba-4c8c-4591-8f43-85e01c4772cd" name="Activate" x="500" y="500" modelType="Observer">
+        <events>
+          <functionBlockHasEvents Id="33a293a0-82db-4542-8aa1-9419fc3a5b87">
+            <event Id="b0b08b4c-58d1-437f-b1ac-1eebb203396b" name="regulSet" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="2e4994f9-ccb5-46e4-94e0-a8b56c8e1c8d">
+            <event Id="03ed38ad-bd52-4728-a64f-e30f40dc4f92" name="violated" comments="Initialization Confirm" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="f1084bea-7766-49ca-96aa-5f475fe36a25">
+            <inputEventPort Id="b15fb37f-a01c-4c30-8ee1-b385421a3e4a">
+              <event>
+                <inputEventPortReferencesEvent Id="aa82d359-7df9-466c-8e5f-c6a4b4b582df">
+                  <eventMoniker name="/Activate/Activate/regulSet" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="4bb27720-4e36-49e2-aa12-32a108728c06">
+            <outputEventPort Id="485d6509-6f3b-4103-84b7-ee5b2ae43f5a">
+              <event>
+                <outputEventPortReferencesEvent Id="d55aa3a8-3e8c-44ac-8267-0788dfec9f89">
+                  <eventMoniker name="/Activate/Activate/violated" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="6d7a111c-fd6b-45a9-8a94-ebd439ea579e">
+      <transitionNode Id="496e7f8f-b98d-46ce-b07b-4a62fe1f51e7" x="923.5294" y="429.41174000000007" event="regulSet">
+        <targetState>
+          <transitionNodeConnectsToStates Id="11d61446-f662-4f67-ab14-de17d2543786">
+            <stateMoniker name="/Activate/Violation" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="9922ec9d-ca9d-4135-a9d4-06bee8b76545">
+      <transitionNode Id="a98510aa-9484-49f5-a2b9-f03f04163b2c" x="552.94116" y="141.17647" expression="1">
+        <targetState>
+          <transitionNodeConnectsToStates Id="cc280480-05b1-42e8-a1bc-c5fd763881b6">
+            <stateMoniker name="/Activate/START" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="cbd8173e-07d0-4715-b7e3-123120fee556" name="Throttle" organization="Rockwell Automation" version="0" date="2000-05-30" author="JHC" header="package fb.rt.benchmarks.cruisecontrol;">
+  <states>
+    <functionBlockModelHasStates Id="fb37a9e9-eaf8-4e9e-b617-3ab7d1395867">
+      <state Id="c2a4bee5-5884-4c26-a5da-b47d4bdc1aa5" name="NORMAL" x="1558.8235" y="405.88235" isInitial="true">
+        <actionSet>
+          <actionLink Id="71adda6e-a39e-4145-88b7-66160f6ef0fe">
+            <actionSetMoniker Id="6228abd6-6085-447c-8f47-b89c2cfd53f6" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="f83c9992-fa38-424f-803f-9f0f6030fda5">
+            <transitionNodeMoniker Id="414328b0-5ee9-41ef-8649-171e857dfb8b" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="7271e34d-9693-44fa-a4e4-4877af781d5e">
+            <transitionNodeMoniker Id="33b8007d-492d-48a9-84bc-2e9e65e29a4b" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="58a72c92-14fd-4f03-940e-a2782219af78">
+            <transitionNodeMoniker Id="59a370ac-0a31-4358-8dd2-1a97e49bc1f9" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="513f88f1-a164-49de-b9ec-d8d11a86e959">
+            <transitionNodeMoniker Id="d5a36f53-5f4e-42d9-abe5-0b2bca3dd1b0" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="3739abad-1568-452d-a83e-b5e10f658614">
+      <state Id="cf3df91e-18e7-4b97-9a62-783ce58c7948" name="CRUISE" x="1576.4705999999999" y="1188.2352" isInitial="false">
+        <actionSet>
+          <actionLink Id="a78a2649-012a-4e09-b6c3-9b79c9342a68">
+            <actionSetMoniker Id="1fc393a1-7854-44c3-9719-d9fba57c6afb" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="79a44503-f558-4d07-81d3-88e49c9fb374">
+            <transitionNodeMoniker Id="1f3dd935-f04a-4b8c-bd99-b5a2cc52ea1c" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="cdd33092-980f-43c1-8ad2-1d7a436472bb">
+            <transitionNodeMoniker Id="db3008b5-7042-42d7-b41f-3c562128082b" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="c847b8e4-e6d7-40d3-95c3-289d9acc8b1f">
+            <transitionNodeMoniker Id="23b45e4c-e42d-4f8c-8b01-ce40a0dd7301" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="4e889081-c1bf-4206-b25f-7666165980bb">
+            <transitionNodeMoniker Id="ba199bd5-facd-43b4-a157-3394f4ffdb16" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="92d0d280-7110-4813-8d66-d4b6f769d813">
+            <transitionNodeMoniker Id="189931ba-1679-4e6e-a11b-2bb2421872b9" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="05310031-2033-4271-829f-69ecd8cd3e1e">
+      <state Id="bda74b87-7a88-446b-bb5b-99789315eb2d" name="ACCEL" x="2688.2354" y="782.35290000000009" isInitial="false">
+        <actionSet>
+          <actionLink Id="deeccf63-47e9-474c-896f-ed469a762497">
+            <actionSetMoniker Id="981656ba-2e55-44c6-854d-86eb13f1d27d" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="6df15832-40e1-4200-8f13-86db360dbf69">
+            <transitionNodeMoniker Id="7f5cea58-e164-43c9-a838-37b827c877ba" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="ba687b74-fd9d-4aca-9a0d-89a84df184a6">
+            <transitionNodeMoniker Id="c882d8cf-6519-4072-bfbf-bc22097c165a" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="02de8e60-65f7-42dc-b5eb-4db2ad03542c">
+            <transitionNodeMoniker Id="d78e6ee2-b96f-4701-bfd0-fb05f69b1b18" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="51334b82-f9ac-43b7-b10f-6a8cc16a6779">
+      <actionSet Id="6228abd6-6085-447c-8f47-b89c2cfd53f6" x="1925" y="393.75">
+        <actionItems>
+          <actionSetHasActionItems Id="24193a97-8d10-4df9-94f5-7bbf90a3ec02">
+            <actionEvent Id="990a5d26-402e-42a1-8e29-c721876352bb">
+              <event>
+                <actionEventReferencesEvent Id="e5862f3c-d81e-41c4-8019-f8d22447f5ab">
+                  <eventMoniker name="/Throttle/Throttle/throttleChg" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="973dae4d-af69-4e02-8827-bad01f0d56b8">
+            <actionAlgorithm Id="37461579-644a-487f-a748-8d00302ccaea">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="577aa324-0f02-47b6-b156-e8f4ee5e448c">
+                  <algorithmMoniker name="/Throttle/normal" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="2624a91a-66d1-403b-9b00-af2d02230bd2">
+      <actionSet Id="1fc393a1-7854-44c3-9719-d9fba57c6afb" x="1881.25" y="1181.25">
+        <actionItems>
+          <actionSetHasActionItems Id="a338cd2f-244b-4c0b-a976-b1b8557db35d">
+            <actionEvent Id="bf5b3ae9-0378-4b3a-b3ad-2a27ecf3a443">
+              <event>
+                <actionEventReferencesEvent Id="005ee32c-bf89-4349-b001-945989707ee3">
+                  <eventMoniker name="/Throttle/Throttle/throttleChg" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="9b5194dd-2fbb-42e7-a928-3ea039d80c5c">
+            <actionAlgorithm Id="3a61938d-edd1-4001-9e2c-c9d38ff27686">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="88805969-ecde-483d-8b3a-c1f05200da92">
+                  <algorithmMoniker name="/Throttle/cruise" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="d81a6d27-4a35-4920-a4f4-25764ff4bad3">
+      <actionSet Id="981656ba-2e55-44c6-854d-86eb13f1d27d" x="2975" y="787.5">
+        <actionItems>
+          <actionSetHasActionItems Id="0fe7625d-3a39-46a3-b48f-c102a2ed04ef">
+            <actionEvent Id="ea2ac219-ba09-40de-b102-3957259c7683">
+              <event>
+                <actionEventReferencesEvent Id="80a04dab-7600-4ed4-a0a5-b2585c3af0f2">
+                  <eventMoniker name="/Throttle/Throttle/throttleChg" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="9ba4bf24-37a9-4646-a966-019286682e72">
+            <actionAlgorithm Id="1ca0408f-ec2e-405b-a9da-f7f3b96f98c9">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="1eb08197-5bea-423f-ba60-e36cde96e042">
+                  <algorithmMoniker name="/Throttle/accel" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="4f4351e8-f254-4b50-a5b3-5a577b0da903">
+      <algorithm Id="bee93763-1a40-46fa-bb1a-df05ed2ad92d" name="normal" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="8efcadfc-10b0-417f-8976-9d3c439b52db">
+      <algorithm Id="b0c3ee2e-663f-4fd6-b4a4-e5043cd4cbeb" name="accel" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="df1a435d-b68e-4dee-9d49-5318b2f6ca28">
+      <algorithm Id="376b2ef8-e11b-4a37-993d-9f64e74ab450" name="cruise" code="tmp := (cruiseSpeed - speed);&#xA;tmp := tmp * 3;&#xA; IF tmp &gt; 45 THEN&#xA;    tmp := 45;&#xA;ELSIF tmp &lt; 0 THEN&#xA;    tmp := 0;&#xA; END_IF;&#xA; throttleVal := tmp;&#xA;" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="c63e844f-60c5-4932-a07e-6fb1b1a33091">
+      <functionBlockInterface Id="f102a264-b580-4bb2-a5b0-84d66e78ceff" name="Throttle" x="1093.75" y="393.75">
+        <events>
+          <functionBlockHasEvents Id="de228d05-a1b5-425b-a27b-242b152bc9ba">
+            <event Id="5edd62f8-c303-4459-bb5a-3981760182d3" name="cruiseOff" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="29ef6dfb-fd1f-41cd-a2da-100d4dcaf8b7">
+            <event Id="a7864b3b-4182-4a37-9b4c-b7832fe96745" name="cruiseOn" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="b42e87f0-2ed1-4155-870a-940ecfc9a157">
+            <event Id="afca4de0-044f-49fe-ac03-d1ebdaacec45" name="speedSet" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="6b2ebeba-76cc-418b-813f-383d0c5f8ab7">
+            <event Id="6f815b03-d4b4-44f2-b295-2f5973ff879f" name="cclock" comments="10ms tick" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="c563864b-903b-4895-86b5-750c7a88c729">
+            <event Id="491b522e-79cb-41a4-a6ae-1aa0e9f3e8b3" name="accelPressed" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="fe14911d-e49a-433a-ac20-9819c2c6be2d">
+            <event Id="013c2c01-55b2-4138-b061-2a144493fcf5" name="accelReleased" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="658559b0-04b9-4694-888e-7c7a329e31d7">
+            <event Id="30d44fab-2184-412e-b68f-ed3cc6d41c2c" name="throttleChg" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="133a29a4-a253-4b4c-bc71-4e1ad08d9481">
+            <variable Id="6e41fd5d-f6f1-4e94-b8bc-ea68ef91bde6" name="cruiseSpeed" comments="desired speed" scope="Input" initialValue="0" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="03365d09-bd62-4dd3-b5c5-81a1559be54e">
+            <variable Id="a58aa722-1f89-4060-8f14-243b45bae8d8" name="speed" comments="actual speed" scope="Input" initialValue="0" type="INT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="bdd9552a-c324-46dd-b10c-070a62082c78">
+            <variable Id="c642532b-7246-4738-b8b0-0fdf5a24dd46" name="throttleOffset" comments="offset angle" scope="Input" initialValue="0" type="SINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="a0d7646f-81b0-4a8f-8bc3-d1ace9150a7e">
+            <variable Id="b3f6076f-3c4a-4dbf-a6ca-c76483ed1d89" name="throttleVal" comments="throttle angle" scope="Output" initialValue="0" type="SINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="4e115539-202a-4309-b750-c1c16d3a56ab">
+            <variable Id="04b743ef-040d-45d7-8742-3219fd8b0f9c" name="prevOffset" scope="Internal" initialValue="0" type="SINT" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="ffbcd0f0-2a94-4b51-ada2-322567723f29">
+            <variable Id="db65071f-114b-445d-8ee7-2d00e1d2164a" name="tmp" scope="Internal" initialValue="0" type="SINT" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="028b2f82-d036-4ccb-89f4-a7d58530da40">
+            <inputEventPort Id="b5f3f941-c176-43e7-987a-626b07a10e5f">
+              <targetPort>
+                <association Id="cf27aa1b-5bf3-44c3-b0f1-34b5d7375150">
+                  <inputVariablePortMoniker Id="2ec8c623-3674-4621-adeb-fbee614d92bf" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="f0b0210e-b6b6-49cc-94ac-6bef47ef5d05">
+                  <eventMoniker name="/Throttle/Throttle/cruiseOff" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="cdd6da8b-897d-446e-a281-c3a837146a4f">
+            <inputEventPort Id="d3dd256c-9928-4507-8379-3b8f849ee8fe">
+              <targetPort>
+                <association Id="ba3d3017-da8d-4436-849e-370881b42639">
+                  <inputVariablePortMoniker Id="2ec8c623-3674-4621-adeb-fbee614d92bf" />
+                </association>
+                <association Id="386ea1bc-be00-4a34-8bdb-7f9ac6ba97ad">
+                  <inputVariablePortMoniker Id="d9a790ad-a322-4924-b4db-90e8e83a37cc" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="a27c90d9-6bf4-40ca-9877-332a139ceee3">
+                  <eventMoniker name="/Throttle/Throttle/cruiseOn" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="6068953c-68ec-4acd-9276-5e2bd5461624">
+            <inputEventPort Id="cdf0b0a7-53d2-4d8c-8258-874d52d60128">
+              <targetPort>
+                <association Id="0c06bc5f-be6a-4827-9ec4-a5ec9a427620">
+                  <inputVariablePortMoniker Id="2ec8c623-3674-4621-adeb-fbee614d92bf" />
+                </association>
+                <association Id="ce274760-d50c-4206-baaf-3ab109da2526">
+                  <inputVariablePortMoniker Id="d9a790ad-a322-4924-b4db-90e8e83a37cc" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="3f54d976-c09e-4354-b444-ce7ce9b7533f">
+                  <eventMoniker name="/Throttle/Throttle/speedSet" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="c3daf1db-bc2d-44d9-b853-5d919a3b66cd">
+            <inputEventPort Id="0160d6cb-f06c-4608-9bc6-513df36f8581">
+              <targetPort>
+                <association Id="5b54fbdf-e673-49d7-8bfc-11262ed0540d">
+                  <inputVariablePortMoniker Id="d9a790ad-a322-4924-b4db-90e8e83a37cc" />
+                </association>
+                <association Id="883e17ed-1fc6-4e84-88b1-b715bcb69654">
+                  <inputVariablePortMoniker Id="f14dae46-47af-4102-b278-9bbd7f320252" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="be1b8bc0-b0a7-4a72-90c1-e2b2a6d12f6a">
+                  <eventMoniker name="/Throttle/Throttle/cclock" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="6daa45f6-2505-47a0-9662-c9e6ca305afc">
+            <inputEventPort Id="5edd7d6a-d9fb-4ef5-bc6a-3cb70c437c7a">
+              <targetPort>
+                <association Id="278a6f42-8787-4c42-8fe1-ba7b8b6990fa">
+                  <inputVariablePortMoniker Id="f14dae46-47af-4102-b278-9bbd7f320252" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="532484c5-8161-49b4-accb-f354a74fdff0">
+                  <eventMoniker name="/Throttle/Throttle/accelPressed" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="56cab68a-37db-44b5-b8bb-5c595a93af29">
+            <inputEventPort Id="6dc1d7b1-7f4b-44c3-8c52-065011ff7848">
+              <targetPort>
+                <association Id="5d4c9d6b-7d15-4656-b4cc-05389f5e26fa">
+                  <inputVariablePortMoniker Id="f14dae46-47af-4102-b278-9bbd7f320252" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="39aa871d-5c92-4528-b846-9ff38b569bbe">
+                  <eventMoniker name="/Throttle/Throttle/accelReleased" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="8f1bb63d-b901-4828-b914-03258f411731">
+            <outputEventPort Id="9213107f-20ae-45d8-9919-2533824c63da">
+              <targetPort>
+                <association Id="cbd0ce9e-eb3b-4160-aafb-e0243d3aa0b2">
+                  <outputVariablePortMoniker Id="e786fdaa-9052-48d1-b655-02e2166d11e1" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="f96e9496-b1b6-4b28-a237-b0ae8223ae97">
+                  <eventMoniker name="/Throttle/Throttle/throttleChg" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="400fe2d0-d4bb-4261-ae1f-f0ae2e669ac0">
+            <inputVariablePort Id="2ec8c623-3674-4621-adeb-fbee614d92bf">
+              <variable>
+                <inputVariablePortReferencesVariable Id="9aaf1e63-508d-4b6a-a821-51b3db79a2b9">
+                  <variableMoniker name="/Throttle/Throttle/cruiseSpeed" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="c5103f3e-8ced-4b1c-8dfd-0f7490df9dde">
+            <inputVariablePort Id="d9a790ad-a322-4924-b4db-90e8e83a37cc">
+              <variable>
+                <inputVariablePortReferencesVariable Id="8408cf09-e023-4c17-942b-4e7828c08ce3">
+                  <variableMoniker name="/Throttle/Throttle/speed" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="e52c08e5-7b61-4489-85e4-3b137e5c6ccd">
+            <inputVariablePort Id="f14dae46-47af-4102-b278-9bbd7f320252">
+              <variable>
+                <inputVariablePortReferencesVariable Id="fc51033a-67a9-4af2-8450-e83c5a738ad5">
+                  <variableMoniker name="/Throttle/Throttle/throttleOffset" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="d5b9cfc5-9b06-4c24-aeb6-6b04d21f9d5d">
+            <outputVariablePort Id="e786fdaa-9052-48d1-b655-02e2166d11e1">
+              <variable>
+                <outputVariablePortReferencesVariable Id="f181028d-90d1-424c-9c46-a46827ab1f1e">
+                  <variableMoniker name="/Throttle/Throttle/throttleVal" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="2d769fa4-5290-4af4-95eb-de43f78c0027">
+      <transitionNode Id="414328b0-5ee9-41ef-8649-171e857dfb8b" x="1323.5294" y="817.64703" event="cruiseOn">
+        <targetState>
+          <transitionNodeConnectsToStates Id="b6546404-8dfe-48ac-90ea-6152975c7c32">
+            <stateMoniker name="/Throttle/CRUISE" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="92a26944-ad64-4c8b-96ca-949c4f982a9c">
+      <transitionNode Id="33b8007d-492d-48a9-84bc-2e9e65e29a4b" x="1400" y="175" event="accelPressed">
+        <targetState>
+          <transitionNodeConnectsToStates Id="fb6c2769-bdd8-4d30-907d-22f0332519aa">
+            <stateMoniker name="/Throttle/NORMAL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="3d2fb6e9-5df4-489f-8529-2b73b8e5db8f">
+      <transitionNode Id="59a370ac-0a31-4358-8dd2-1a97e49bc1f9" x="1750" y="218.75" event="accelReleased">
+        <targetState>
+          <transitionNodeConnectsToStates Id="1031ddfb-f8c0-46c2-9d05-b568b841079e">
+            <stateMoniker name="/Throttle/NORMAL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="2e32d605-c7e6-4adc-9d92-40cfbaff9abb">
+      <transitionNode Id="d5a36f53-5f4e-42d9-abe5-0b2bca3dd1b0" x="1200" y="405.88235" event="cclock">
+        <targetState>
+          <transitionNodeConnectsToStates Id="b406a36a-ca14-45b5-8651-92cb3966f6a7">
+            <stateMoniker name="/Throttle/NORMAL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="fcbeb518-06c7-4b61-a08a-79e0f0db9937">
+      <transitionNode Id="1f3dd935-f04a-4b8c-bd99-b5a2cc52ea1c" x="1817.6469999999997" y="823.5294" event="cruiseOff">
+        <targetState>
+          <transitionNodeConnectsToStates Id="e0c025bc-e0f2-42fb-8cde-c8dfaba4b2a6">
+            <stateMoniker name="/Throttle/NORMAL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="42300e5e-b0eb-4cf9-9d32-0a87ffe82386">
+      <transitionNode Id="db3008b5-7042-42d7-b41f-3c562128082b" x="2194.1177" y="782.35290000000009" event="accelPressed">
+        <targetState>
+          <transitionNodeConnectsToStates Id="e9efcf32-d54b-4fb6-b3c3-953c21c487a7">
+            <stateMoniker name="/Throttle/ACCEL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="dba2f2ac-5165-4779-8771-8a1779a96f27">
+      <transitionNode Id="23b45e4c-e42d-4f8c-8b01-ce40a0dd7301" x="1152.9412" y="1188.2352" event="cruiseOn">
+        <targetState>
+          <transitionNodeConnectsToStates Id="299b6e8a-1034-44f3-9ccb-8f85741f9f40">
+            <stateMoniker name="/Throttle/CRUISE" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="20769da1-2b1e-4974-abdd-0384d127a818">
+      <transitionNode Id="ba199bd5-facd-43b4-a157-3394f4ffdb16" x="1487.5" y="1400" event="speedSet">
+        <targetState>
+          <transitionNodeConnectsToStates Id="77244e42-a8c4-4827-aa50-69afc0868313">
+            <stateMoniker name="/Throttle/CRUISE" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="3d5984bb-1695-4565-982d-6b84f9e91f47">
+      <transitionNode Id="189931ba-1679-4e6e-a11b-2bb2421872b9" x="1750" y="1443.75" event="cclock">
+        <targetState>
+          <transitionNodeConnectsToStates Id="bd203768-87f8-4df5-b3ae-e0c2fa8b6f53">
+            <stateMoniker name="/Throttle/CRUISE" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="18501ac7-e1c8-4c7e-a3e1-f380f53027b8">
+      <transitionNode Id="7f5cea58-e164-43c9-a838-37b827c877ba" x="2158.8235" y="641.17645" event="cruiseOff">
+        <targetState>
+          <transitionNodeConnectsToStates Id="990b719b-337d-4062-83ed-6055ac019dbe">
+            <stateMoniker name="/Throttle/NORMAL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="286599ad-b74b-4d07-8054-a6066fa42fb2">
+      <transitionNode Id="c882d8cf-6519-4072-bfbf-bc22097c165a" x="2581.25" y="962.5" event="accelReleased">
+        <targetState>
+          <transitionNodeConnectsToStates Id="5eb445fd-cd20-4675-8859-a20279f2ea38">
+            <stateMoniker name="/Throttle/CRUISE" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="6dc6cbc2-db4d-46ec-81b0-b5ab5fa17dcc">
+      <transitionNode Id="d78e6ee2-b96f-4701-bfd0-fb05f69b1b18" x="2688.2354" y="605.8823" event="cclock">
+        <targetState>
+          <transitionNodeConnectsToStates Id="d42f9880-9e5b-4c21-8169-ccc6ef2d044b">
+            <stateMoniker name="/Throttle/ACCEL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

@@ -1,0 +1,771 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<functionBlockModel Id="60e580c4-5d0e-43b6-a1b7-a6b3cbb46a30" name="CruiseManager" organization="Rockwell Automation" version="0" date="2000-05-30" author="JHC" header="package fb.rt.benchmarks.cruisecontrol;">
+  <states>
+    <functionBlockModelHasStates Id="021ba363-f337-4c56-a3bb-82599ada74d7">
+      <state Id="bac9944a-fab6-412b-a8d9-1e44b3c2b913" name="OFF" comments="Initial State" x="2600" y="158.82353" isInitial="true">
+        <actionSet>
+          <actionLink Id="819ee074-9789-49f7-bd4f-894f0da81bc7">
+            <actionSetMoniker Id="c747ab00-19c7-4e83-970a-33412fb776f0" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="3221b0a1-8bef-4f8d-bdde-c88649f41bb5">
+            <transitionNodeMoniker Id="d3111185-5d42-416b-9fc6-9b6a29da739d" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="63aa1c4f-9931-4679-93f6-8c27b1a36fd8">
+      <state Id="349365a2-4d7b-4fde-ac3f-ec2fb933579b" name="SET" x="1152.9412" y="1005.8823" isInitial="false">
+        <actionSet>
+          <actionLink Id="1ab59ff0-80b8-4175-8723-71f9a8d6fa7b">
+            <actionSetMoniker Id="72e8be80-3f9d-452b-923b-a176438b644a" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="8251d423-a754-4b61-a578-8948c9796eb7">
+            <transitionNodeMoniker Id="89abe29e-f7c7-4a8e-9314-9a59eb412295" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="d130923f-a2e1-479e-bf8f-4b82a3c577c9">
+            <transitionNodeMoniker Id="519dca63-dd4a-45f8-8b14-37561aa8fd88" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="c6fa4f1a-1fa2-49e0-b876-61cb26a0d141">
+            <transitionNodeMoniker Id="ee640347-00ac-4dcc-b4b6-5606d60ab202" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="82fc5fd2-0cfb-4cd7-bc17-bdf15dbb6eab">
+            <transitionNodeMoniker Id="90ba04d1-d601-43ce-bb5d-356e1ea44259" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="f891e539-e90e-405f-9f97-78cd566cbca8">
+            <transitionNodeMoniker Id="da758c92-88f0-4c8a-b78b-e964270779f3" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="577ef982-f17d-4cde-887b-f70e5fa07ff9">
+      <state Id="8d5faf7e-bde7-417d-a886-8505b611c925" name="STDBY" x="3441.1764999999996" y="1029.4117" isInitial="false">
+        <actionSet>
+          <actionLink Id="e0265e40-5175-4b96-b221-163b23ca17c1">
+            <actionSetMoniker Id="18f5882d-a362-4728-b714-65c5cdb8645f" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="0a6403e0-74e8-4019-92d5-8f1f6a0b431e">
+            <transitionNodeMoniker Id="e134ebbe-2220-4e9a-a420-c0509ee9a47b" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="86804059-fa0e-4ece-a699-e758b9f8798d">
+            <transitionNodeMoniker Id="6b3db158-6ae6-4615-8133-b0be2949cdd2" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="dc745438-b916-474f-81f4-c70121cb66b8">
+            <transitionNodeMoniker Id="0d687197-b63e-4f3a-8e9a-e0c77e7b41c2" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="3dc5abd4-ebfc-4b03-a4ed-20456f0a99d9">
+      <state Id="938e968e-ef32-4556-bec3-beb713069927" name="RESUME" x="3758.8235" y="417.64706" isInitial="false">
+        <actionSet>
+          <actionLink Id="aa2ff785-a02b-495f-aef1-85d5e062fcb2">
+            <actionSetMoniker Id="a26b5443-a260-4c75-b2d7-5757d4769d25" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="0cf313be-fb36-4e85-b8c3-794ab4f1f24b">
+            <transitionNodeMoniker Id="4b744ea6-e870-4ec1-a9b1-324aadf42db7" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="03ac687b-cbde-414f-a2a1-17d494005111">
+            <transitionNodeMoniker Id="3886cc54-8a60-4329-a259-f4cee34bdba7" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="473b266b-2cb0-403b-be64-15935ca8197b">
+            <transitionNodeMoniker Id="ece7bcbb-4efd-4360-850a-ca38b3bdabfb" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="91a18cdf-ca21-4391-8693-8f7b33b977c5">
+            <transitionNodeMoniker Id="62d32299-5bcc-407a-92bb-d8f1ee12a697" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="2ed1944b-2d01-414d-b6ee-9eab12e6c22e">
+            <transitionNodeMoniker Id="6eb6ac9f-06fe-40c9-9a26-a6c40492baa7" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="7b18d174-37be-4886-ba60-874687727296">
+      <state Id="50a48ac9-ee9c-43ab-bafb-ed015ea026bd" name="ACCEL" x="311.7647" y="2117.647" isInitial="false">
+        <actionSet>
+          <actionLink Id="c1349c8c-37a5-4857-86d2-c68c6ddb9a5c">
+            <actionSetMoniker Id="6c72051f-0971-4115-a551-a99a2bc87569" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="775da1d5-6800-41bc-8862-ad958d9c6d77">
+            <transitionNodeMoniker Id="a3afe5a1-6d0e-4d96-874f-f69419681a79" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="59046c77-8ae0-4fb2-a2b4-de5c5d9a85b0">
+            <transitionNodeMoniker Id="2f19d1e6-46dc-48fb-b20b-a10d330e095e" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="5576db9b-eb5b-456f-a3a1-2fb091fdda83">
+            <transitionNodeMoniker Id="48c7a8d4-7886-4929-b145-cbdc1d9b5961" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="8069d2a6-8fff-46db-acce-c0f2292c1486">
+            <transitionNodeMoniker Id="543505d5-0d54-4d0e-893a-75a06027da3a" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="033bd4f9-734b-4320-8b4e-bd72d241f503">
+            <transitionNodeMoniker Id="71f1f66f-43bb-47ce-a0e1-9ec19f395ff1" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+    <functionBlockModelHasStates Id="fd5b5af2-bce1-4f7a-b509-cf4f936163bb">
+      <state Id="c5d8142c-d510-40d1-8f97-cdb4209b1f3f" name="DECEL" x="2111.7646" y="1594.1177" isInitial="false">
+        <actionSet>
+          <actionLink Id="3c9be584-63d7-4117-9552-5e8308a68fae">
+            <actionSetMoniker Id="da492ea8-076e-4990-84ff-03170dccebed" />
+          </actionLink>
+        </actionSet>
+        <fromTransitionNodes>
+          <stateConnectsToTransitionNodes Id="04f0b1b9-5138-4c9c-8ab4-5fe8708a4707">
+            <transitionNodeMoniker Id="dcdbd696-0118-41c7-a380-6d98367e8aa5" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="d220b7a7-7471-4651-8a56-792b589222a4">
+            <transitionNodeMoniker Id="dd6675af-eb1b-4467-a233-ae4738fe33d7" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="08354a5b-198f-4b2f-8748-3be65b49e94b">
+            <transitionNodeMoniker Id="abeb12c6-d93f-4407-811f-4563f34b8f6b" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="83dc15b9-1ab0-43fa-9c9f-c1ab767fe954">
+            <transitionNodeMoniker Id="87d5073d-b92c-4123-b92b-ace9355787f9" />
+          </stateConnectsToTransitionNodes>
+          <stateConnectsToTransitionNodes Id="e75060d4-4984-47ec-a338-8688606d1809">
+            <transitionNodeMoniker Id="7470d576-c22d-484b-8a58-32c19bdee327" />
+          </stateConnectsToTransitionNodes>
+        </fromTransitionNodes>
+      </state>
+    </functionBlockModelHasStates>
+  </states>
+  <actionSets>
+    <functionBlockModelHasActionSets Id="9551ee8e-bd56-436b-8603-df8d7d5b692b">
+      <actionSet Id="c747ab00-19c7-4e83-970a-33412fb776f0" x="2843.75" y="175">
+        <actionItems>
+          <actionSetHasActionItems Id="3d97f59f-68df-4859-8351-cc86920ed511">
+            <actionEvent Id="07b8f6b3-59b8-440d-94d2-cfcbd8a583af">
+              <event>
+                <actionEventReferencesEvent Id="bdd8bd18-f6fc-40b9-a564-b02249e99f41">
+                  <eventMoniker name="/CruiseManager/CruiseManager/regulOff" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="1d5580a2-e7f5-42e2-991f-fbe208b524ae">
+            <actionAlgorithm Id="d7077063-17b9-4995-92bf-1f992c4ee4ad">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="c7ff6280-37fb-4b09-9fc1-472f1b587331">
+                  <algorithmMoniker name="/CruiseManager/off" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="9bc7f480-bc77-4b63-ab63-8be30cee402f">
+      <actionSet Id="72e8be80-3f9d-452b-923b-a176438b644a" x="481.25" y="1006.25">
+        <actionItems>
+          <actionSetHasActionItems Id="31d33e7a-e876-4916-9333-afbe45118845">
+            <actionEvent Id="611c30b4-d777-48a3-8ab2-2de5f81b30ae">
+              <event>
+                <actionEventReferencesEvent Id="64a5e493-0a40-4646-b823-ee4d3ce6f040">
+                  <eventMoniker name="/CruiseManager/CruiseManager/regulSet" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="1bfcf4ee-b3a6-4ffc-8a4e-b3368104f509">
+            <actionAlgorithm Id="1160abd3-2f76-4331-944f-585bb215fbae">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="0763d939-1d78-428a-8883-c923864f8b60">
+                  <algorithmMoniker name="/CruiseManager/set" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="84a64f1b-d600-4529-9931-072d9aa5317a">
+      <actionSet Id="18f5882d-a362-4728-b714-65c5cdb8645f" x="3762.5" y="1006.25">
+        <actionItems>
+          <actionSetHasActionItems Id="4210b78f-74d1-42d2-a2a1-95e98ee5ca74">
+            <actionEvent Id="0cc569b1-8755-4686-ba29-2fd3afda6d5a">
+              <event>
+                <actionEventReferencesEvent Id="47f4c7f7-20c1-487d-a3fc-2126847226eb">
+                  <eventMoniker name="/CruiseManager/CruiseManager/regulStdby" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="142a7521-9e86-4f24-b49e-e92f9a9097c8">
+            <actionAlgorithm Id="43d37ff7-2bbb-47b7-bae2-230dd9f87653">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="20109543-ebf2-4075-b0df-823291a267e6">
+                  <algorithmMoniker name="/CruiseManager/standby" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="ca596f66-67d2-458d-ac62-74a766b2a836">
+      <actionSet Id="a26b5443-a260-4c75-b2d7-5757d4769d25" x="4068.75" y="437.5">
+        <actionItems>
+          <actionSetHasActionItems Id="356b1471-5692-4569-a43b-73a0ab17d4b7">
+            <actionEvent Id="10680466-6c41-4470-bb99-9fb2d47711c3">
+              <event>
+                <actionEventReferencesEvent Id="31a7a4e8-abc8-4f80-97a4-9354b9580a43">
+                  <eventMoniker name="/CruiseManager/CruiseManager/regulResume" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="b9397a94-f639-45e3-9ef0-81e05b983394">
+            <actionAlgorithm Id="b68689b1-b359-465d-8a46-a583297fd7d8">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="577c328f-3511-4dda-bf48-412252fe8c63">
+                  <algorithmMoniker name="/CruiseManager/resume" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="46f16c8b-aa18-42da-a867-a867514913cf">
+      <actionSet Id="6c72051f-0971-4115-a551-a99a2bc87569" x="612.5" y="2100">
+        <actionItems>
+          <actionSetHasActionItems Id="6dc27846-0a8b-49af-8494-3043dd5d1a1f">
+            <actionEvent Id="40b2ef7c-4da5-48e0-824f-67f34b56d390">
+              <event>
+                <actionEventReferencesEvent Id="47f24e6c-bbed-4612-aa7b-ddc315acbbfe">
+                  <eventMoniker name="/CruiseManager/CruiseManager/speedSet" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="345c7642-2a2c-4e75-aed3-c5a197072157">
+            <actionAlgorithm Id="92ca0160-447f-4fab-87f7-045223ef8b34">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="52836368-45af-4c6f-bd8d-abc2457912d0">
+                  <algorithmMoniker name="/CruiseManager/accel" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+    <functionBlockModelHasActionSets Id="d353d4f9-4dac-474a-8ce9-10ce905db29b">
+      <actionSet Id="da492ea8-076e-4990-84ff-03170dccebed" x="2406.25" y="1531.25">
+        <actionItems>
+          <actionSetHasActionItems Id="a290331c-c024-4cc0-8175-e82affff4b97">
+            <actionEvent Id="93cd2098-9caf-4bb8-aaff-8a3cb2887c03">
+              <event>
+                <actionEventReferencesEvent Id="eeeebad8-39be-4def-ae00-0759274cff4c">
+                  <eventMoniker name="/CruiseManager/CruiseManager/speedSet" />
+                </actionEventReferencesEvent>
+              </event>
+            </actionEvent>
+          </actionSetHasActionItems>
+          <actionSetHasActionItems Id="62a2d2c0-8a13-46a6-a541-d97e57ce6119">
+            <actionAlgorithm Id="d9271950-6745-4e86-b862-f2b2826d5cfa">
+              <algorithm>
+                <actionAlgorithmReferencesAlgorithm Id="6ff8633b-cf83-4c2c-a391-49adc9dfbe04">
+                  <algorithmMoniker name="/CruiseManager/decel" />
+                </actionAlgorithmReferencesAlgorithm>
+              </algorithm>
+            </actionAlgorithm>
+          </actionSetHasActionItems>
+        </actionItems>
+      </actionSet>
+    </functionBlockModelHasActionSets>
+  </actionSets>
+  <algorithms>
+    <functionBlockModelHasAlgorithms Id="0b350516-a69b-4a29-ac89-20246da0f945">
+      <algorithm Id="cc01776b-6054-47e3-8435-635e58d2f6ff" name="off" code="desiredSpeed := 0;&#xA;cruiseSpeed := 0;&#xA;" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="2982684e-877d-4fe0-ac92-3397264df02f">
+      <algorithm Id="67d38d27-c645-45bf-b68f-37d75d847e6d" name="set" code="desiredSpeed := speed;&#xA;cruiseSpeed := desiredSpeed;&#xA;" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="1a6dde39-6fac-4b3c-ae8a-1685b88d6a01">
+      <algorithm Id="21f26b43-84ee-4727-b7e1-0887ad3539e4" name="resume" code="cruiseSpeed := desiredSpeed;&#xA;" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="2d3573d0-55a6-4140-806c-cc039fb56641">
+      <algorithm Id="0191f97d-a9be-4e4b-9f96-553344fb78de" name="standby" code="cruiseSpeed := 0;&#xA;" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="0b24eb65-dd42-4f9a-8962-490a2fe5971b">
+      <algorithm Id="30b3aafc-7f8e-4ad9-b2fb-bee01082a574" name="accel" code="IF desiredSpeed &lt; 165 THEN &#xA;    desiredSpeed := desiredSpeed + 5;&#xA;    cruiseSpeed := desiredSpeed;&#xA;END_IF;&#xA;" />
+    </functionBlockModelHasAlgorithms>
+    <functionBlockModelHasAlgorithms Id="cb0068b8-9b3a-4910-9dac-e88875867a39">
+      <algorithm Id="0b6fa5f3-feca-4ad2-a71a-d2e301d53e77" name="decel" code="IF desiredSpeed &gt;= 5 THEN &#xA;    desiredSpeed := desiredSpeed - 5;&#xA;    cruiseSpeed := desiredSpeed;&#xA;ELSE desiredSpeed := 0;&#xA; END_IF;&#xA;" />
+    </functionBlockModelHasAlgorithms>
+  </algorithms>
+  <functionBlockInterface>
+    <functionBlockModelHasFunctionBlockInterface Id="9037a795-fe20-42fb-9d39-1d515eba2686">
+      <functionBlockInterface Id="fe95d028-4d8e-41ea-be10-357b9150da55" name="CruiseManager" x="1137.5" y="218.75">
+        <events>
+          <functionBlockHasEvents Id="be2e3913-4a32-44f5-afc6-ad0a91ced9a6">
+            <event Id="8549a80a-bfc0-4dbd-bcaf-ee0b945daf32" name="set" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="8f576388-9d67-4952-acba-7da68e827ec3">
+            <event Id="67ebf579-e13d-4feb-823a-5761a4187609" name="off" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="f7ce9653-8c7b-4c3e-aaf1-0b257e192748">
+            <event Id="9263e46d-8a91-487d-8a65-154f0eea1c94" name="resume" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="755279df-5619-4738-b95b-10e12c5239f8">
+            <event Id="f5cd83e4-2ddf-443e-b960-d72af04da7d2" name="quickAccel" comments="increase desired speed by 5km/h" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="b4628784-17b0-4050-a09e-70cd727865cc">
+            <event Id="271bfede-d4f3-422b-8133-6d6345b4fa29" name="quickDecel" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="69b48540-f916-4b83-a89a-fd3f0ab0af2e">
+            <event Id="a3bec465-1ee8-4b18-84df-d1bf8e78312a" name="brakePressed" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="b4a1a9fa-0212-4a88-8ef7-134b2d3f22d4">
+            <event Id="f07500ac-16b9-4603-95fe-7e3c9167902b" name="cclock" comments="10ms tick" scope="Input" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="efcac75a-53ee-446e-bad1-4de1543a8d2e">
+            <event Id="4fdaf42d-40ed-4b07-a1ab-d59b7cea5b8b" name="regulOff" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="e8ff4c81-77cd-4cb3-ae3f-ea0bfe8557c7">
+            <event Id="c121c606-f05b-4ba4-96a5-83af2e00296a" name="regulSet" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="c91ca70f-005a-401e-824d-05c738ffec98">
+            <event Id="608c24ae-1cd4-440b-92b5-2c0abba68e4d" name="regulStdby" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="96cc9666-38d5-4646-b100-e7a2f98acaf7">
+            <event Id="e7c8ad72-b3ad-4d32-9175-aff70391458a" name="regulResume" scope="Output" />
+          </functionBlockHasEvents>
+          <functionBlockHasEvents Id="8e3fb15c-83d4-4ccc-b004-7c0903d0c6f5">
+            <event Id="baf0ca33-da3e-4928-8514-2789a1d78e96" name="speedSet" scope="Output" />
+          </functionBlockHasEvents>
+        </events>
+        <variables>
+          <functionBlockHasVariables Id="fd83bb0f-c15e-4a0b-a0fe-9572d0840263">
+            <variable Id="5aa2fe63-ec3f-4b94-abe2-63d289e8eed8" name="speed" scope="Input" initialValue="0" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="942c41a8-7d0a-4ae7-9bff-b3ca1611a27a">
+            <variable Id="f05a62e3-0b3a-4699-ab07-fef55663bb8c" name="cruiseSpeed" scope="Output" initialValue="0" />
+          </functionBlockHasVariables>
+          <functionBlockHasVariables Id="b3277598-d2b4-4c8b-8280-46cc9674cf3b">
+            <variable Id="be7a0ee1-c329-4eb8-b4af-e79af7483b55" name="desiredSpeed" scope="Internal" initialValue="0" />
+          </functionBlockHasVariables>
+        </variables>
+        <inputEventPorts>
+          <functionBlockHasInputEventPorts Id="8f8e3cc7-bb46-4dcd-886a-a6a9003877da">
+            <inputEventPort Id="7357e8f9-acb0-4994-874f-45cdc189515b">
+              <targetPort>
+                <association Id="73f4ec34-0a0c-44bf-8f6f-fb7ac6d8442b">
+                  <inputVariablePortMoniker Id="f25b19d4-978b-4824-9365-4846ca9eba38" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="bb2f9ec8-4f3e-441b-9752-4eb6a9f7391e">
+                  <eventMoniker name="/CruiseManager/CruiseManager/set" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="ea0b3b48-4ce1-4539-bd8f-2e1a6f551b1d">
+            <inputEventPort Id="f9c51408-2890-4a32-bb32-d5cddc4ba9af">
+              <targetPort>
+                <association Id="1f42a40f-7278-46b9-b350-86a899fdf958">
+                  <inputVariablePortMoniker Id="f25b19d4-978b-4824-9365-4846ca9eba38" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="6fc236b8-1afc-43a0-b78b-dd087fbfa62a">
+                  <eventMoniker name="/CruiseManager/CruiseManager/off" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="fb177d9e-1714-40d8-a3f3-495620f0f5ee">
+            <inputEventPort Id="4edc6cd1-d6c7-4e86-a1ec-d0eaaa803d39">
+              <targetPort>
+                <association Id="dadfc438-0f12-4473-8ff8-96d585591a93">
+                  <inputVariablePortMoniker Id="f25b19d4-978b-4824-9365-4846ca9eba38" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="a537e478-adaf-49f1-b3d4-6d396af91464">
+                  <eventMoniker name="/CruiseManager/CruiseManager/resume" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="25347a3f-24c4-450e-a0e4-71e7f5646c36">
+            <inputEventPort Id="52b9e20a-7471-4dd4-8cac-b47d0e163658">
+              <targetPort>
+                <association Id="29a11ee0-6be3-4384-9df3-119ee12c2c02">
+                  <inputVariablePortMoniker Id="f25b19d4-978b-4824-9365-4846ca9eba38" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="62fa0744-7c97-4ba0-9486-5954076c9a4b">
+                  <eventMoniker name="/CruiseManager/CruiseManager/quickAccel" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="e802083f-0bb7-46a6-add4-3e2083c6e65f">
+            <inputEventPort Id="f6814c4e-4c04-4fc5-8f93-ec31bb8a4d08">
+              <targetPort>
+                <association Id="eb76d671-d9a7-4308-94d1-6f5e91c24afd">
+                  <inputVariablePortMoniker Id="f25b19d4-978b-4824-9365-4846ca9eba38" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="be04d8f9-cc7f-4009-a13a-cf050da3e6e8">
+                  <eventMoniker name="/CruiseManager/CruiseManager/quickDecel" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="595e32cb-483d-4393-af76-ba36cd1610cf">
+            <inputEventPort Id="fe9ff236-07c0-4f70-b219-213a662c6509">
+              <targetPort>
+                <association Id="4f65f476-b7c9-4b91-bbc9-475d4b982dbb">
+                  <inputVariablePortMoniker Id="f25b19d4-978b-4824-9365-4846ca9eba38" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="366db8f4-e8a7-4da3-a35a-22e3ae1be973">
+                  <eventMoniker name="/CruiseManager/CruiseManager/brakePressed" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+          <functionBlockHasInputEventPorts Id="62bf419c-b111-44c7-87b3-86717ef26923">
+            <inputEventPort Id="40769001-ebb1-48f3-8720-27d31512875b">
+              <targetPort>
+                <association Id="6e39a43f-73fd-44a4-b82c-96a2ac85dbe6">
+                  <inputVariablePortMoniker Id="f25b19d4-978b-4824-9365-4846ca9eba38" />
+                </association>
+              </targetPort>
+              <event>
+                <inputEventPortReferencesEvent Id="3c465b66-6064-4724-a93e-4a1c41f9a73a">
+                  <eventMoniker name="/CruiseManager/CruiseManager/cclock" />
+                </inputEventPortReferencesEvent>
+              </event>
+            </inputEventPort>
+          </functionBlockHasInputEventPorts>
+        </inputEventPorts>
+        <outputEventPorts>
+          <functionBlockHasOutputEventPorts Id="97244e69-f4cb-4086-83f2-44375d6b7e0a">
+            <outputEventPort Id="1aa7d0f0-56e4-4f2e-af4f-2d837cb6134e">
+              <targetPort>
+                <association Id="e4417d32-eb5d-4868-abdd-9306b5f91433">
+                  <outputVariablePortMoniker Id="9dd71eb3-38df-4cf1-93ab-9168c33c17be" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="a7efc387-7d42-463b-979b-5122e14a2aae">
+                  <eventMoniker name="/CruiseManager/CruiseManager/regulOff" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="d7fc3f88-d54a-4f6a-903d-68e22597000e">
+            <outputEventPort Id="2e7f7345-31d7-4a19-8c9e-bf3ee80d1f32">
+              <targetPort>
+                <association Id="60cb3eb9-769e-4a9c-94e7-1983a50cfb30">
+                  <outputVariablePortMoniker Id="9dd71eb3-38df-4cf1-93ab-9168c33c17be" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="cf80d385-36aa-4257-b785-5aa9809b19e6">
+                  <eventMoniker name="/CruiseManager/CruiseManager/regulSet" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="d2777c8c-fb85-4681-b571-b4d26c1b930e">
+            <outputEventPort Id="124bbabd-eb4a-4f5f-a362-dd1acc970bce">
+              <event>
+                <outputEventPortReferencesEvent Id="ea762482-d12c-46ba-b1d9-e48c31dc6f58">
+                  <eventMoniker name="/CruiseManager/CruiseManager/regulStdby" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="00c56abb-6d8c-4787-b452-e76f2f15ee30">
+            <outputEventPort Id="b81352f8-30fc-4a66-8aed-cec58d97eef1">
+              <targetPort>
+                <association Id="6492d548-7580-4907-9a83-27547e5fea20">
+                  <outputVariablePortMoniker Id="9dd71eb3-38df-4cf1-93ab-9168c33c17be" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="b8fd6dc1-edf3-4fb8-86ca-effb3ade17f5">
+                  <eventMoniker name="/CruiseManager/CruiseManager/regulResume" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+          <functionBlockHasOutputEventPorts Id="7f2f6c8b-374b-496a-a66f-bc738429ca9e">
+            <outputEventPort Id="b7fde98f-a075-4268-a0f8-82e0727c4b81">
+              <targetPort>
+                <association Id="ac61b306-01af-445d-a55c-944545e83a35">
+                  <outputVariablePortMoniker Id="9dd71eb3-38df-4cf1-93ab-9168c33c17be" />
+                </association>
+              </targetPort>
+              <event>
+                <outputEventPortReferencesEvent Id="48ae86bb-186b-4c0c-8375-9fe3f2d4ba83">
+                  <eventMoniker name="/CruiseManager/CruiseManager/speedSet" />
+                </outputEventPortReferencesEvent>
+              </event>
+            </outputEventPort>
+          </functionBlockHasOutputEventPorts>
+        </outputEventPorts>
+        <inputVariablePorts>
+          <functionBlockHasInputVariablePorts Id="9b3a17da-ada3-4e84-a610-44b7ccc2f4a7">
+            <inputVariablePort Id="f25b19d4-978b-4824-9365-4846ca9eba38">
+              <variable>
+                <inputVariablePortReferencesVariable Id="52ccee05-a03f-4804-83e8-8170604ddcac">
+                  <variableMoniker name="/CruiseManager/CruiseManager/speed" />
+                </inputVariablePortReferencesVariable>
+              </variable>
+            </inputVariablePort>
+          </functionBlockHasInputVariablePorts>
+        </inputVariablePorts>
+        <outputVariablePorts>
+          <functionBlockHasOutputVariablePorts Id="444e4d48-b669-429b-af35-f58e39ff9639">
+            <outputVariablePort Id="9dd71eb3-38df-4cf1-93ab-9168c33c17be">
+              <variable>
+                <outputVariablePortReferencesVariable Id="88e734f0-6728-48c8-ba41-762245e6a210">
+                  <variableMoniker name="/CruiseManager/CruiseManager/cruiseSpeed" />
+                </outputVariablePortReferencesVariable>
+              </variable>
+            </outputVariablePort>
+          </functionBlockHasOutputVariablePorts>
+        </outputVariablePorts>
+      </functionBlockInterface>
+    </functionBlockModelHasFunctionBlockInterface>
+  </functionBlockInterface>
+  <transitionNodes>
+    <functionBlockModelHasTransitionNodes Id="5e3eb003-8187-4953-a003-fecf5e7c17f9">
+      <transitionNode Id="d3111185-5d42-416b-9fc6-9b6a29da739d" x="1750" y="525" event="set" expression="speed&gt;50 &amp;&amp; speed&lt;170">
+        <targetState>
+          <transitionNodeConnectsToStates Id="e2466fc4-8417-444b-8ded-313f51e9ac8b">
+            <stateMoniker name="/CruiseManager/SET" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="c5196983-c45c-4e4d-be78-e946fdeb6ebc">
+      <transitionNode Id="89abe29e-f7c7-4a8e-9314-9a59eb412295" x="1670.5883" y="411.7647" event="off">
+        <targetState>
+          <transitionNodeConnectsToStates Id="4fd87455-7529-4311-ac87-555e5cd1055b">
+            <stateMoniker name="/CruiseManager/OFF" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="d22e9986-7e7d-477e-8334-dc7b552b363c">
+      <transitionNode Id="519dca63-dd4a-45f8-8b14-37561aa8fd88" x="829.41174" y="800" event="set" expression="speed&gt;50 &amp;&amp; speed&lt;170">
+        <targetState>
+          <transitionNodeConnectsToStates Id="db3797dc-eb81-4de0-8402-55f3cc90f914">
+            <stateMoniker name="/CruiseManager/SET" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="4dcda5d4-70fb-467a-8f1f-d2c6ad28ff25">
+      <transitionNode Id="ee640347-00ac-4dcc-b4b6-5606d60ab202" x="2488.2354" y="1029.4117" event="brakePressed">
+        <targetState>
+          <transitionNodeConnectsToStates Id="a3d8de65-3526-4c26-9f27-163a51dfffed">
+            <stateMoniker name="/CruiseManager/STDBY" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="c6f98a53-a60b-465a-afa6-cb01da8a9c9b">
+      <transitionNode Id="90ba04d1-d601-43ce-bb5d-356e1ea44259" x="1152.9412" y="1482.3529" event="quickAccel">
+        <targetState>
+          <transitionNodeConnectsToStates Id="888dacd0-a256-428b-9d69-0d20bc654077">
+            <stateMoniker name="/CruiseManager/ACCEL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="6172ccaa-0fc2-4ecc-8ab6-e7f45f8a4f4d">
+      <transitionNode Id="da758c92-88f0-4c8a-b78b-e964270779f3" x="1552.9412" y="1347.0588" event="quickDecel">
+        <targetState>
+          <transitionNodeConnectsToStates Id="1b614a2f-12ae-4bbc-b726-31a3714d17fc">
+            <stateMoniker name="/CruiseManager/DECEL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="da242f7e-51f5-4beb-8999-d1ec6b057ab8">
+      <transitionNode Id="e134ebbe-2220-4e9a-a420-c0509ee9a47b" x="2894.1177" y="464.70587" event="off">
+        <targetState>
+          <transitionNodeConnectsToStates Id="07d76eef-2c58-48c3-ae35-a64cb31f6d49">
+            <stateMoniker name="/CruiseManager/OFF" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="54726975-c474-4f3e-87d4-46718c562739">
+      <transitionNode Id="6b3db158-6ae6-4615-8133-b0be2949cdd2" x="2594.1177" y="882.3529" event="set" expression="speed&gt;50 &amp;&amp; speed&lt;170">
+        <targetState>
+          <transitionNodeConnectsToStates Id="15e89500-65f2-4b80-93a9-321a54140b0c">
+            <stateMoniker name="/CruiseManager/SET" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="61466965-4e5e-4003-a3d4-fda60fa1aeaa">
+      <transitionNode Id="0d687197-b63e-4f3a-8e9a-e0c77e7b41c2" x="3237.5" y="481.25" event="resume">
+        <targetState>
+          <transitionNodeConnectsToStates Id="34648bb4-8bd3-422a-a675-4d0fde3c94ca">
+            <stateMoniker name="/CruiseManager/RESUME" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="db54b7e9-1a2c-458d-9392-386d3873d429">
+      <transitionNode Id="4b744ea6-e870-4ec1-a9b1-324aadf42db7" x="3264.7057999999997" y="323.52942" event="off">
+        <targetState>
+          <transitionNodeConnectsToStates Id="4b342039-74cd-408c-8fd3-d206689f6893">
+            <stateMoniker name="/CruiseManager/OFF" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="349c0519-d9ed-4e09-961c-f40ad061deea">
+      <transitionNode Id="3886cc54-8a60-4329-a259-f4cee34bdba7" x="2611.7646" y="747.05884" event="set" expression="speed&gt;50 &amp;&amp; speed&lt;170">
+        <targetState>
+          <transitionNodeConnectsToStates Id="f73732a5-b847-418f-8033-9716aba2a13f">
+            <stateMoniker name="/CruiseManager/SET" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="dcdefa31-1b06-4eef-877f-330938920a09">
+      <transitionNode Id="ece7bcbb-4efd-4360-850a-ca38b3bdabfb" x="3587.5" y="700" event="brakePressed">
+        <targetState>
+          <transitionNodeConnectsToStates Id="defe03e1-8071-4ff2-b1c9-b691911bc1ca">
+            <stateMoniker name="/CruiseManager/STDBY" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="a5151ece-e8fd-48c8-9c8c-5f440ca0108c">
+      <transitionNode Id="62d32299-5bcc-407a-92bb-d8f1ee12a697" x="3456.25" y="2012.5" event="quickAccel">
+        <targetState>
+          <transitionNodeConnectsToStates Id="86d83585-ea2c-4ad9-a9c3-fd5439eb17ae">
+            <stateMoniker name="/CruiseManager/ACCEL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="46dab38c-7510-4378-ba8c-6bc31a74404b">
+      <transitionNode Id="6eb6ac9f-06fe-40c9-9a26-a6c40492baa7" x="2450" y="1225" event="quickDecel">
+        <targetState>
+          <transitionNodeConnectsToStates Id="ed45841e-3ad9-4719-ab5c-7e53d758b495">
+            <stateMoniker name="/CruiseManager/DECEL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="06b0b92b-55e1-41c3-ab82-2274a94baf8e">
+      <transitionNode Id="a3afe5a1-6d0e-4d96-874f-f69419681a79" x="393.75" y="656.25" event="off">
+        <targetState>
+          <transitionNodeConnectsToStates Id="ac36a40b-a3e6-4767-93b2-f98e7c20d7da">
+            <stateMoniker name="/CruiseManager/OFF" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="e1c78d3f-0505-4952-bc61-b40a5001f170">
+      <transitionNode Id="2f19d1e6-46dc-48fb-b20b-a10d330e095e" x="723.52940000000012" y="1282.3529" event="set" expression="speed&gt;50 &amp;&amp; speed&lt;170">
+        <targetState>
+          <transitionNodeConnectsToStates Id="4faca7b8-512b-45d5-869e-244bf25c3b17">
+            <stateMoniker name="/CruiseManager/SET" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="63ddb583-b391-4493-9a38-3b375553a1e1">
+      <transitionNode Id="48c7a8d4-7886-4929-b145-cbdc1d9b5961" x="3106.25" y="1837.5" event="brakePressed">
+        <targetState>
+          <transitionNodeConnectsToStates Id="e5bd85f5-3d9d-499c-9a85-a6c415ea177a">
+            <stateMoniker name="/CruiseManager/STDBY" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="59a45c55-b46f-4e38-b58d-8a8ed282b1f4">
+      <transitionNode Id="543505d5-0d54-4d0e-893a-75a06027da3a" x="311.7647" y="2341.1765" event="quickAccel">
+        <targetState>
+          <transitionNodeConnectsToStates Id="22ffcba6-d3c3-4ac8-b891-7d79a553dba2">
+            <stateMoniker name="/CruiseManager/ACCEL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="51027bca-ee36-4ba5-8fa8-efd8e851bf5c">
+      <transitionNode Id="71f1f66f-43bb-47ce-a0e1-9ec19f395ff1" x="1305.8823" y="1788.2352000000003" event="quickDecel">
+        <targetState>
+          <transitionNodeConnectsToStates Id="2e7ff421-f592-4f1f-83a3-51ac35684849">
+            <stateMoniker name="/CruiseManager/DECEL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="a9c329fa-e7a1-48d0-af7e-3fb261826d26">
+      <transitionNode Id="dcdbd696-0118-41c7-a380-6d98367e8aa5" x="2406.25" y="437.5" event="off">
+        <targetState>
+          <transitionNodeConnectsToStates Id="291a36d9-cb23-4ca8-a46b-c48fa0453ae3">
+            <stateMoniker name="/CruiseManager/OFF" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="aca9a459-d476-4661-b51e-9e497daa84bc">
+      <transitionNode Id="dd6675af-eb1b-4467-a233-ae4738fe33d7" x="1575" y="1137.5" event="set" expression="speed&gt;50 &amp;&amp; speed&lt;170">
+        <targetState>
+          <transitionNodeConnectsToStates Id="00ad0bd4-948a-4dc9-8fe5-cbe9856c3f97">
+            <stateMoniker name="/CruiseManager/SET" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="65ce1eed-eea2-4734-961b-a9f551178ae6">
+      <transitionNode Id="abeb12c6-d93f-4407-811f-4563f34b8f6b" x="3150" y="1443.75" event="brakePressed">
+        <targetState>
+          <transitionNodeConnectsToStates Id="db7056f9-ab71-487d-bd15-0f49bb1e3e2c">
+            <stateMoniker name="/CruiseManager/STDBY" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="7daa42ea-004f-469e-83a1-86edf4518607">
+      <transitionNode Id="87d5073d-b92c-4123-b92b-ace9355787f9" x="1400" y="1923.5294000000001" event="quickAccel">
+        <targetState>
+          <transitionNodeConnectsToStates Id="82965029-5aa7-4ce6-b082-3ca1f6bdd101">
+            <stateMoniker name="/CruiseManager/ACCEL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+    <functionBlockModelHasTransitionNodes Id="21dc6052-7f9c-45d7-807d-af600694e369">
+      <transitionNode Id="7470d576-c22d-484b-8a58-32c19bdee327" x="2111.7646" y="1852.9412" event="quickDecel">
+        <targetState>
+          <transitionNodeConnectsToStates Id="809e22ea-de1d-4b29-a0b7-a72e051afa14">
+            <stateMoniker name="/CruiseManager/DECEL" />
+          </transitionNodeConnectsToStates>
+        </targetState>
+      </transitionNode>
+    </functionBlockModelHasTransitionNodes>
+  </transitionNodes>
+</functionBlockModel>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Run</Configuration>
+    <Platform Condition="'$(Platform)' == ''">gnu</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2ac68a12-f85c-4d3a-8a49-075ede381411}</ProjectGuid>
+    <ProjectType>BlokIDE Project</ProjectType>
+    <ProjectTypeGuids>{92B81AF7-8D03-46D0-9C71-430DAE7A074E}</ProjectTypeGuids>
+    <RootNamespace>BlokIDENamespace</RootNamespace>
+    <AssemblyName>BlokIDEAssemblyName</AssemblyName>
+    <OutputFormat>CCode</OutputFormat>
+    <MaxStringLength>32</MaxStringLength>
+    <Name>Liftcontroller</Name>
+    <ActivePlatform>gnu</ActivePlatform>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'OpenRTM'">
+    <CompilationMode>OpenRTM</CompilationMode>
+    <OutputPath>Generated\OpenRTM\</OutputPath>
+    <CodeSortingMode>None</CodeSortingMode>
+    <ExecuteMakeScript>false</ExecuteMakeScript>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Deploy'">
+    <CompilationMode>Deploy</CompilationMode>
+    <OutputPath>Generated\Run\</OutputPath>
+    <CodeSortingMode>None</CodeSortingMode>
+    <CompilerName>arm-uclinux-elf-gcc</CompilerName>
+    <ExecuteMakeScript>true</ExecuteMakeScript>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Remote'">
+    <CompilationMode>Remote</CompilationMode>
+    <OutputPath>Generated\Simulation\</OutputPath>
+    <CodeSortingMode>None</CodeSortingMode>
+    <ExecuteMakeScript>false</ExecuteMakeScript>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Run'">
+    <CompilationMode>Run</CompilationMode>
+    <OutputPath>Generated\Run\</OutputPath>
+    <CodeSortingMode>None</CodeSortingMode>
+    <CompilerName>gcc</CompilerName>
+    <ExecuteMakeScript>true</ExecuteMakeScript>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Verification'">
+    <CompilationMode>Verify</CompilationMode>
+    <OutputPath>Generated\Verification\</OutputPath>
+    <CodeSortingMode>None</CodeSortingMode>
+    <ExecuteMakeScript>false</ExecuteMakeScript>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Simulation'">
+    <CompilationMode>Simulate</CompilationMode>
+    <OutputPath>Generated\Simulation\</OutputPath>
+    <CodeSortingMode>None</CodeSortingMode>
+    <CompilerName>gcc</CompilerName>
+    <ExecuteMakeScript>true</ExecuteMakeScript>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="UnitControl.fb">
+      <SubType>Content</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RequestResolver.cfb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="PendingRequestGenerator.fb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="HighestRequestProducer.fb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="RequestConsumer.fb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="SimpleLiftController.cfb">
+      <SubType>Content</SubType>
+    </Compile>
+    <Content Include="HighestRequestProducer.fb.ResolvePriorityDown.algo">
+      <SubType>Content</SubType>
+      <DependentUpon>HighestRequestProducer.fb</DependentUpon>
+      <LinkedIntoProjectAt>ResolvePriorityDown.algo</LinkedIntoProjectAt>
+    </Content>
+    <Content Include="HighestRequestProducer.fb.ResolvePriorityIdle.algo">
+      <SubType>Content</SubType>
+      <DependentUpon>HighestRequestProducer.fb</DependentUpon>
+      <LinkedIntoProjectAt>ResolvePriorityIdle.algo</LinkedIntoProjectAt>
+    </Content>
+    <Content Include="HighestRequestProducer.fb.ResolvePriorityUp.algo">
+      <SubType>Content</SubType>
+      <DependentUpon>HighestRequestProducer.fb</DependentUpon>
+      <LinkedIntoProjectAt>ResolvePriorityUp.algo</LinkedIntoProjectAt>
+    </Content>
+    <Content Include="PendingRequestGenerator.fb.UpdateCallValues.algo">
+      <SubType>Content</SubType>
+      <DependentUpon>PendingRequestGenerator.fb</DependentUpon>
+      <LinkedIntoProjectAt>UpdateCallValues.algo</LinkedIntoProjectAt>
+    </Content>
+    <Content Include="RequestConsumer.fb.UpdateRequest.algo">
+      <SubType>Content</SubType>
+      <DependentUpon>RequestConsumer.fb</DependentUpon>
+      <LinkedIntoProjectAt>UpdateRequest.algo</LinkedIntoProjectAt>
+    </Content>
+    <Content Include="UnitControl.fb.ResetStoppedAtFloor.algo">
+      <SubType>Content</SubType>
+      <DependentUpon>UnitControl.fb</DependentUpon>
+      <LinkedIntoProjectAt>ResetStoppedAtFloor.algo</LinkedIntoProjectAt>
+    </Content>
+    <Content Include="UnitControl.fb.UpdateStoppedAtFloor.algo">
+      <SubType>Content</SubType>
+      <DependentUpon>UnitControl.fb</DependentUpon>
+      <LinkedIntoProjectAt>UpdateStoppedAtFloor.algo</LinkedIntoProjectAt>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(TimeMePath)\UoA.IEC61499.Compiler.targets" />
+</Project>
